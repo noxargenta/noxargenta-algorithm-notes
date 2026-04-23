@@ -1,0 +1,1 @@
+{"name":"Local: MC0448 诗词难度系数","url":"c:\\code\\c++lan\\competition\\2026matiji\\MC0448 诗词难度系数.cpp","tests":[{"id":1776915608462,"input":"5 1\n1 2 3 4 5\n2 4 7","output":"1 7 7 7 5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2026matiji\\MC0448 诗词难度系数.cpp","group":"local","local":true}

@@ -15,6 +15,8 @@ void solve() {
     cout << ans ;
 }
 
+
+
 signed main() {
 //  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
     ios::sync_with_stdio(false);
