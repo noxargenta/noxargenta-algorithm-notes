@@ -5,6 +5,7 @@ using i64 = long long;
 #define int long long
 void solve() {
     cout << 1 << endl;
+    cout << 2 << endl;
 }
 
 signed main() {
