@@ -6,7 +6,7 @@ using i64 = long long;
 void solve() {
     cout << 1 << endl;
     cout << 2 << endl;
-    cout << 3 << enl;
+    cout << 3 << endl;
 }
 
 signed main() {
