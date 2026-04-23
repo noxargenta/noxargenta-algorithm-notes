@@ -22,7 +22,7 @@ void solve() {
             cin >> x;
             int x2;
             cin >> x2;
-            m[x]++;
+            
         }
     }
 }
