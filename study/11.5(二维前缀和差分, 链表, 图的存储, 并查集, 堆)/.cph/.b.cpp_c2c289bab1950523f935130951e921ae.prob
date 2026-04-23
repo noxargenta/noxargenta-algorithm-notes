@@ -1,0 +1,1 @@
+{"name":"Local: b","url":"c:\\code\\c++lan\\study\\11.5(二维前缀和差分, 链表, 图的存储, 并查集, 堆)\\b.cpp","tests":[{"id":1762420184978,"input":"5 3\n2 2 3 3\n3 3 5 5\n1 2 1 4","output":"146"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\study\\11.5(二维前缀和差分, 链表, 图的存储, 并查集, 堆)\\b.cpp","group":"local","local":true}

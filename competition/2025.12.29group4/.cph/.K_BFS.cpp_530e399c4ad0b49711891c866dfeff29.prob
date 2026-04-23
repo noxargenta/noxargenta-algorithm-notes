@@ -1,0 +1,1 @@
+{"name":"Local: K_BFS","url":"c:\\code\\c++lan\\competition\\2025.12.29group4\\K_BFS.cpp","tests":[{"id":1765456625183,"input":"3\n4\n1 4 3 2\n2\n1 2\n3\n1 2 3\n","output":"3\n1\n1\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2025.12.29group4\\K_BFS.cpp","group":"local","local":true}

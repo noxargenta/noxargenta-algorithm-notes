@@ -1,0 +1,1 @@
+{"name":"Local: g","url":"c:\\code\\c++lan\\competition\\20251110ECUT计协第四次训练赛\\g.cpp","tests":[{"id":1762774574406,"input":"3\n1 4\n1 5\n5 4\n","output":"1\n10\n21\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\20251110ECUT计协第四次训练赛\\g.cpp","group":"local","local":true}

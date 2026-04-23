@@ -1,0 +1,1 @@
+{"name":"Local: c","url":"c:\\code\\c++lan\\competition\\计算机协会第二次\\c.cpp","tests":[{"id":1761821542413,"input":"10\na\nb\nc\nd\ne\nf\ng\nh\ni\nj\n","output":"NO\nNO\nYES\nYES\nYES\nYES\nNO\nNO\nNO\nNO\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\计算机协会第二次\\c.cpp","group":"local","local":true}

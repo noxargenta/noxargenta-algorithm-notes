@@ -1,0 +1,1 @@
+{"name":"Local: MC0434 序列排名","url":"c:\\code\\c++lan\\competition\\2026matiji\\MC0434 序列排名.cpp","tests":[{"id":1776601855199,"input":"3\n1 1 2","output":"1 1 3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2026matiji\\MC0434 序列排名.cpp","group":"local","local":true}

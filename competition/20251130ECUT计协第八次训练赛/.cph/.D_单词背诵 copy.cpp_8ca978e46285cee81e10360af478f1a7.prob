@@ -1,0 +1,1 @@
+{"name":"Local: D_单词背诵 copy","url":"c:\\code\\c++lan\\competition\\20251130ECUT计协第八次训练赛\\D_单词背诵 copy.cpp","tests":[{"id":1764488082399,"input":"3\nhot\ndog\nmilk\n5\nhot\ndog\ndog\nmilk\nhot\n","output":"3\n3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\20251130ECUT计协第八次训练赛\\D_单词背诵 copy.cpp","group":"local","local":true}

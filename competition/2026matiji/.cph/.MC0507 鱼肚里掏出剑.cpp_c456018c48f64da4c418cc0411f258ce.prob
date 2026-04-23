@@ -1,0 +1,1 @@
+{"name":"Local: MC0507 鱼肚里掏出剑","url":"c:\\code\\c++lan\\competition\\2026matiji1\\MC0507 鱼肚里掏出剑.cpp","tests":[{"id":1775479148264,"input":"5 4\n1 0 1 0\n1 1 1 1\n0 0 1 0\n1 1 1 1\n0 0 0 0","output":"83"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2026matiji1\\MC0507 鱼肚里掏出剑.cpp","group":"local","local":true}

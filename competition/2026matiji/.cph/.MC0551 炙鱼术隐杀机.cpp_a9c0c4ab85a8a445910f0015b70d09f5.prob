@@ -1,0 +1,1 @@
+{"name":"Local: MC0551 炙鱼术隐杀机","url":"c:\\code\\c++lan\\competition\\2026matiji\\MC0551 炙鱼术隐杀机.cpp","tests":[{"id":1775738691192,"input":"3 1\n1 2 3\n4 5 6\n7 8 9\n1","output":"44"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2026matiji\\MC0551 炙鱼术隐杀机.cpp","group":"local","local":true}

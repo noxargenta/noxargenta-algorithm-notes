@@ -1,0 +1,1 @@
+{"name":"Local: MC0417 哨岗逆序对","url":"c:\\code\\c++lan\\competition\\2026matiji\\MC0417 哨岗逆序对.cpp","tests":[{"id":1776309304239,"input":"3\n3 2 1","output":"3"},{"id":1776310140006,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2026matiji\\MC0417 哨岗逆序对.cpp","group":"local","local":true}

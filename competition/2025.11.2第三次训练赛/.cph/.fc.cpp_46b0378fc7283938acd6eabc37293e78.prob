@@ -1,0 +1,1 @@
+{"name":"Local: fc","url":"c:\\code\\c++lan\\competition\\2025.11.2第三次训练赛\\fc.cpp","tests":[{"id":1762226162274,"input":"5\n1 5 3 3 4\n1 2 2 2 1","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2025.11.2第三次训练赛\\fc.cpp","group":"local","local":true}

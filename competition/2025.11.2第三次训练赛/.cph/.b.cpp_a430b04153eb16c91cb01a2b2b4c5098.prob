@@ -1,0 +1,1 @@
+{"name":"Local: b","url":"c:\\code\\c++lan\\competition\\2025.11.2第三次训练赛\\b.cpp","tests":[{"id":1762082394691,"input":"5\n213132\n973894\n045207\n000000\n055776\n","output":"YES\nNO\nYES\nYES\nNO\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2025.11.2第三次训练赛\\b.cpp","group":"local","local":true}

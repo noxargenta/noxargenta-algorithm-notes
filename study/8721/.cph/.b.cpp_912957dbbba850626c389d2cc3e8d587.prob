@@ -1,0 +1,1 @@
+{"name":"Local: b","url":"c:\\code\\c++lan\\study\\8721\\b.cpp","tests":[{"id":1761567955790,"input":"234","output":"3"},{"id":1761567961054,"input":"Ca 45","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\study\\8721\\b.cpp","group":"local","local":true}

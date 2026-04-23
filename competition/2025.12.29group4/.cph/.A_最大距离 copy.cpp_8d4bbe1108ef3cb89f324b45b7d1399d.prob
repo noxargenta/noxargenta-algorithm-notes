@@ -1,0 +1,1 @@
+{"name":"Local: A_最大距离 copy","url":"c:\\code\\c++lan\\competition\\2025.12.29group4\\A_最大距离 copy.cpp","tests":[{"id":1765443448409,"input":"3 3 2\n2 1 1\n1 2\n3 1\n3 2\n","output":"1 0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2025.12.29group4\\A_最大距离 copy.cpp","group":"local","local":true}

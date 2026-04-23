@@ -1,0 +1,1 @@
+{"name":"Local: MC0403 判断奇偶","url":"c:\\code\\c++lan\\competition\\2026matiji\\MC0403 判断奇偶.cpp","tests":[{"id":1776167057800,"input":"2\n2 3\n4 5","output":"odd\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2026matiji\\MC0403 判断奇偶.cpp","group":"local","local":true}

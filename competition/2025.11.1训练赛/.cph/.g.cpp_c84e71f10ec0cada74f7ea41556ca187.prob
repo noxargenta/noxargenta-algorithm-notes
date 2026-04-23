@@ -1,0 +1,1 @@
+{"name":"Local: g","url":"c:\\code\\c++lan\\competition\\2025.11.1训练赛\\g.cpp","tests":[{"id":1761986255543,"input":"5\n2\n5 5\n4\n6 3 6 9\n2\n2 3\n7\n30 10 12 10 10 9 18\n5\n2 4 8 16 32\n","output":"YES\nYES\nNO\nYES\nNO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2025.11.1训练赛\\g.cpp","group":"local","local":true}

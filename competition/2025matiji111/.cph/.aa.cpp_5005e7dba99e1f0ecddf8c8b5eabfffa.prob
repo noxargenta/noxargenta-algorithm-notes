@@ -1,0 +1,1 @@
+{"name":"Local: aa","url":"c:\\code\\c++lan\\competition\\2025matiji111\\aa.cpp","tests":[{"id":1773833827623,"input":"3\nabc abc\nabc acb\naba cba","output":"Y\nY\nN"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2025matiji111\\aa.cpp","group":"local","local":true}

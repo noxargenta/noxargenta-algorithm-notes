@@ -1,0 +1,1 @@
+{"name":"Local: c copy","url":"c:\\code\\c++lan\\competition\\2025.11.11\\c copy.cpp","tests":[{"id":1762843276533,"input":"2\n3\n4\n","output":"2\n3 2\n3 2\n3\n3 4\n4 2\n4 2\n"},{"id":1762843738165,"input":"1\n1001","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2025.11.11\\c copy.cpp","group":"local","local":true}
