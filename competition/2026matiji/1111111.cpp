@@ -4,7 +4,7 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
-    
+    cout << 1111 << endl;
 }
 
 signed main() {
