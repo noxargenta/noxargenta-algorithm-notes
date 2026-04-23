@@ -20,16 +20,21 @@ void solve() {
         if(opt==1){
             string str;
             cin >> str;
-            if(!s.find(str)){
-                continue;
-            }
             int x2;
             cin >> x2;
+            if(!s.count(str)){
+                continue;
+            }
             ma[str]+=x2;
         }else {
             string s2;
             cin >> s2;
-
+            
+            if(!s.count(s2)){
+                cout << -1 << endl;
+            }else {
+                cout << ma[s2] << endl;
+            }
         }
     }
 }
