@@ -13,16 +13,23 @@ void solve() {
         s.insert(x);
     }
     cin >> m;
-    map<string,int> m;
+    map<string,int> ma;
     for(int i=1;i<=m;i++){
         int opt;
         cin >> opt;
         if(opt==1){
-            string x;
-            cin >> x;
+            string str;
+            cin >> str;
+            if(!s.find(str)){
+                continue;
+            }
             int x2;
             cin >> x2;
-            
+            ma[str]+=x2;
+        }else {
+            string s2;
+            cin >> s2;
+
         }
     }
 }
