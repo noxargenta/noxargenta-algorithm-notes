@@ -1,0 +1,2064 @@
+------------------------------------------ 
+�ļ���: a.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n;
+    cin >> n;
+    int a=0,b=0,c=0,d=0;
+    for(int i=1;i<=n;i++){
+        int x;
+        cin >> x;
+        if(x<60){
+            a++;
+        }else if(x<80){
+            b++;
+        }else if(x<90){
+            c++;
+        }else {
+            d++;
+        }
+    }
+    cout << a <<' '<<b<<' '<<c<<' '<<d<<endl; 
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: b.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    string s;
+    cin >> s;
+    string s2;
+    for(auto x:s){
+        if(x=='D' ){
+            if(!s2.empty())s2.pop_back();
+        }else {
+            s2.push_back(x);
+        }
+    }
+    if(s2.empty()){
+        cout << "!!!!\n";
+    }else {
+        cout << s2 << endl; 
+    }
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0403 �ж���ż.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+#define int long long 
+#define endl '\n'
+using namespace std;
+void solve(){
+    int n;
+    cin >> n;
+    vector<int> a(n+1),b(n+1);
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+    }
+    for(int i=1;i<=n;i++){
+        cin >> b[i];
+    }
+    int ansa=0;
+    int ansb=0;
+    for(int i=1;i<=n;i++){
+        ansa=(ansa+a[i])%2;
+        ansb=(ansb+b[i])%2;
+        
+    }
+    if(ansa*ansb%2==0){
+        cout << "even\n";
+    }else {
+        cout << "odd\n";
+    }
+}
+signed main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _=1;
+    //cin >> _;
+    while(_--){
+        solve();
+    }
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0409 ����ʥ����1.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n,k;
+    cin >> n >> k;
+    vector<int> a(n+1);
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+    }
+    int ans=0;
+    int num=0;
+    sort(a.begin(),a.end());
+    for(int i=1;i<=n && num!=k;i++){
+        while(a[i]>0){
+            if(num==k){
+                break;
+            }
+            ans+=a[i];
+            num++;
+            a[i]--;
+        }
+    }
+    cout << ans << endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0411 ��λ֮��.cpp 
+------------------------------------------ 
+ 
+#include<bits/stdc++.h>
+using namespace std;
+#define endl '\n'
+#define int long long
+void solve(){
+    int n;
+    cin >> n;
+    string s;
+    int ans=0;
+    for(int i=1;i<=n;i++){
+        cin >> s;
+        for(int x:s){
+            ans+=(x-'0');
+        }
+    }
+    cout << ans << endl;
+}
+signed main(){
+    ios::sync_with_stdio(false );
+    cin.tie(nullptr);
+    int _=1;
+    //cin >>_;
+    while(_--){
+        solve();
+    }
+
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0412 ���ķ���.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n,m;
+    cin >> n >> m;
+    int a[n][m][m];
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            for(int c=0;c<m;c++){
+                cin >>a[i][j][c];
+            }
+        }
+    }
+    int b[m][m];
+    for(int i=1;i<n;i++){
+        for(int x=0;x<m;x++){
+            for(int y=0;y<m;y++){
+                int ans=0;
+                for(int k=0;k<=m-1;k++){
+                    ans+=a[0][x][k]*a[i][k][y];
+                }   
+                b[x][y]=ans%2;  
+            }
+        }
+        for(int x=0; x<m; x++)
+            for(int y=0; y<m; y++)
+                a[0][x][y] = b[x][y];
+    }
+    for(int i=0;i<m;i++){
+        for(int j=0;j<m;j++){
+            cout << a[0][i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0413 �ƶ�����.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n,q;
+    cin >> n >> q;
+    deque<int> a;
+    for(int i=1;i<=n;i++){
+        int x;
+        cin >> x;
+        a.push_back(x);
+    }
+    for(int i=1;i<=q;i++){
+        int x;
+        cin >> x;
+        if(x==1){
+            a.push_back(a.front());
+            a.pop_front();
+        }else {
+            a.push_front(a.back());
+            a.pop_back();
+        }
+    }
+    for(int i=1;i<=n;i++){
+        int x=a.front();
+        cout << x << " ";
+        a.pop_front();
+    }
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0416 ��Сֵ֮��.cpp 
+------------------------------------------ 
+ 
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+#define endl '\n'
+void solve(){
+    int n;
+    cin >> n ;
+    int a[n+1];
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+    }
+    stack<int> s;
+    vector<int> left(n+1,0),right(n+1,n+1);
+    for(int i=1;i<=n;i++){
+        while(!s.empty() && a[s.top()]>=a[i]) s.pop();
+        if(!s.empty()) left[i]=s.top();
+        s.push(i);
+    }
+    while(!s.empty()){
+        s.pop();
+    }
+    for(int i=n;i>=1;i--){
+        while(!s.empty() && a[s.top()] > a[i]){
+            s.pop();
+        }
+        if(!s.empty()) {
+            right[i]=s.top();
+        }else {
+            right[i]=n+1;
+        }
+        s.push(i);
+    }
+    int ans=0;
+    for(int i=1;i<=n;i++){
+        ans+=a[i] * (i-left[i]) * (right[i]-i);
+    }
+    cout << ans << endl;
+}
+signed main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _=1;
+    //cin >> _;
+    while(_--){
+        solve();
+    }
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0417 �ڸ������.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n;
+    cin >> n;
+    int ans=0;
+    vector<int> cnt(101,0);
+    for(int i=1;i<=n;i++){
+        int x;
+        cin >> x;
+        for(int j=100;j>x;j--){
+            ans=(ans+cnt[j])%100;
+        }
+        cnt[x]++;
+    }
+    cout << ans << endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0418 ��������.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n;
+    cin  >> n;
+    map<int ,int> cnt;
+    vector<int> a(n+1);
+    
+    set<int> s;
+    int maxx=0;
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+        cnt[a[i]]++;
+        if(cnt[a[i]]>maxx){
+            maxx=cnt[a[i]];
+            s.clear();
+            s.insert(a[i]);
+        }else if(cnt[a[i]]==maxx){
+            s.insert(a[i]);
+        }
+    }
+    for(auto x : s){
+        cout << x << endl;
+    }
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0419 ��ͬ�Ӵ�.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    string s;
+    cin >> s;
+    set<string> se;
+    for(int i=0;i<s.length();i++){
+        for(int j=1;j<s.length()-i+1;j++){
+            se.insert(s.substr(i,j));
+        }
+    }
+    cout << se.size() << endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0420 ���Ƹ��Ӷ�.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n,m;
+    cin >> n >> m;
+    vector<vector<int>> b(n+1,vector<int> (m+1,0));
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=m;j++){
+            int val;
+            cin >> val;
+            b[i][j]+=val + b[i-1][j]+b[i][j-1] - b[i-1][j-1];
+        }
+    }
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=m;j++){
+            cout << b[i][j]/(i*j) << ' ' ;
+        }
+        cout << endl;
+    }
+
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0422 ����1���Ӵ�.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    int last=-1;
+    int ans=0;
+    for(int i=0;i<s.length();i++){
+        if(s[i]=='0'){
+            continue;
+        }else {
+            ans+=(i-last)*(s.length()-i);
+            last=i;
+        }
+    }
+    cout << ans << endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0424 01���� .cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n;
+    cin >> n;
+    int a[n+1];
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+    }
+    int ans=1;
+    int val=1;
+    for(int i=1;i<n;i++){
+        if(a[i]!=a[i+1]){
+            val++;
+            ans=max(ans,val);
+        }else {
+            val=1;
+        }
+    }
+    cout << ans << endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0431 ������ƥ��.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+string s;
+void solve() {
+    string s2;
+    cin >> s2;
+    int j=0,k=0;
+    for(;j<s2.length() && k<s.length();){
+        if(s[k]==s2[j]){
+            j++;
+            k++;
+        }else{
+            k++;
+        }
+        
+    }
+    if(j==s2.length()){
+        cout << "YES\n";
+    }else {
+        cout << "NO\n";
+    }
+    
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cin >> s;
+    int _ = 1;
+    cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0432 ��ͬԪ��.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n;
+    cin >> n;
+    int a[n+1];
+    map<int,int> m;
+    
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+        m[a[i]]++;
+    
+    }
+    for(int i=1;i<=n;i++){
+        cout << m[a[i]]-1 << " ";
+    }
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0434 ��������.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+struct Node{
+    int val,id,rank;
+};
+void solve() {
+    int n;
+    cin >> n;
+    vector<Node> a(n);
+    for(int i=0;i<n;i++){
+        cin >> a[i].val;
+        a[i].id=i+1;
+    }
+    sort(a.begin(),a.end(),[&](Node x,Node y){
+        return x.val<y.val;
+    });
+    int last=0;
+    for(int i=0;i<n;i++){
+        if(i==0){
+            a[i].rank=1;
+            last=i;
+        }
+        if(a[i].val==a[last].val){
+            a[i].rank=a[last].rank;
+        }else {
+            a[i].rank=i+1;
+            last=i;
+        }
+    }
+    sort(a.begin(),a.end(),[&](Node x ,Node y){
+        return x.id<y.id;
+    });
+    for(int i=0;i<n;i++){
+        cout << a[i].rank << ' ';
+    }
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0435 ��������.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n,m;
+    cin  >> n >> m;
+    int a[n][m];
+    int list[n];
+    fill(list,list+n,0);
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cin >> a[i][j];
+
+        }
+    }
+    int q;
+    cin  >> q;
+    while(q--){
+        int opt,y,k;
+        cin >> opt >> y >> k;
+        int x=y-1;
+        if(opt==1)list[x]=(list[x]+k)%m;
+        else{
+            list[x]-=k;
+            list[x]=(list[x]+m)%m;
+        }
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cout << a[i][(list[i]+j+m)%m] << ' ';
+        }
+        cout << endl;
+    }
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0436 ������� copy.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n;
+    cin >>n;
+    int val=1;
+    int cnt2 = 0, cnt5 = 0;
+    for (int i = 1; i <= n; i++) {
+    int x;
+    cin >> x;
+    // 除去因子 2
+    while (x > 0 && x % 2 == 0) { cnt2++; x /= 2; }
+    // 除去因子 5
+    while (x > 0 && x % 5 == 0) { cnt5++; x /= 5; }
+    // 剩下的部分乘到 val 里，只保留个位
+    val = (val * (x % 10)) % 10;
+    }
+
+    // 把多出的因子 2 乘回来（因为 2 的数量一般多于 5）
+    for (int i = 0; i < cnt2 - cnt5; i++) {
+        val = (val * 2) % 10;
+    }
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0436 �������.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n;
+    cin >> n;
+    int val=1;
+    int cnt5=0,cnt2=0;
+    for(int i=1;i<=n;i  ++){
+        
+        int x;
+        cin >> x;
+        while(x>0 && x%2==0){
+            cnt2++;
+            x/=2;
+        }
+        while(x>0 && x%5==0){
+            cnt5++;
+            x/=5;
+        }
+        val=(val*(x%10))%10;
+    }
+    if(cnt5>cnt2){
+        val=5;
+    }else {
+        for(int i=1;i<=cnt2-cnt5;i++){
+            val=(val*2)%10;
+        }
+    }
+    cout << val << endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0438 ��������.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n,m;
+    cin >> n ;
+    set<string> s;
+    for(int i=1;i<=n;i++){
+        string x;
+        cin   >> x;
+        s.insert(x);
+    }
+    cin >> m;
+    map<string,int> ma;
+    for(int i=1;i<=m;i++){
+        int opt;
+        cin >> opt;
+        if(opt==1){
+            string str;
+            cin >> str;
+            int x2;
+            cin >> x2;
+            if(!s.count(str)){
+                continue;
+            }
+            ma[str]+=x2;
+        }else {
+            string s2;
+            cin >> s2;
+            
+            if(!s.count(s2)){
+                cout << -1 << endl;
+            }else {
+                cout << ma[s2] << endl;
+            }
+        }
+    }
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0444 ϡȱ����ָ��.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for(int i=0;i<n;i++){
+        cin >> a[i];
+    }
+    sort(a.begin(),a.end());
+    int last=0;
+    if(a[0]!=0){
+        cout << 0 << endl;
+        return ;
+    }
+    for(auto x:a){
+        if(x!=last+1 && x!=0 && x!=last){
+            cout  << last+1 << endl;
+            return;
+        }
+        last=x;
+    }
+    cout << a[n-1]+1<< endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0444 ϡȱ����ָ��̰��.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    sort(a.begin(), a.end());
+
+    int mex = 0; // 期待出现的下一个最小非负整数
+    for(int x : a) {
+        if(x == mex) {
+            mex++; // 找到了期待的数，期待下一个
+        } else if(x > mex) {
+            // 发现当前的数跳过了期待的 mex，说明 mex 就是我们要找的
+            break;
+        }
+        // 如果 x < mex，说明是重复元素，直接跳过
+    }
+    cout << mex << endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0445 �Ӵ�����.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    string s;
+    cin >> s;
+    int ans=0;
+    int n=s.length();
+    for(int i=0;i<n;i++){
+        for(auto k : {0,1}){
+            int l=i,r=i+k;
+            while(l>=0 && r<n && s[l]==s[r]){
+                ans++;
+                l--;
+                r++;
+            }
+        }
+    }
+    cout << ans << endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0448 ʫ���Ѷ�ϵ��.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+ 
+struct Query{
+    int l,r,x;
+};
+
+void solve() {
+    int n,m;
+    cin >> n >> m;
+    vector<int> a(n+1);
+    set<int> s;
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+        s.insert(i);
+    }
+    vector<Query> q(m+1);
+    for(int i=1;i<=m;i++){
+        cin >> q[i].l >> q[i].r >> q[i].x;
+    }
+    for(int i=m;i>=1;i--){
+        int l=q[i].l,r=q[i].r, x=q[i].x;
+        auto it=s.lower_bound(l);
+        while(it!=s.end() && *it<=r){
+            a[*it]=x;
+            it=s.erase(it);
+        }
+    }
+    for(int i=1;i<=n;i++){
+        cout << a[i] << " " ;
+    }
+}
+
+signed main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0450 Сa����.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+#define mod 998244353
+void solve() {
+    int a,n;
+    cin >> a >> n;
+    int ans=0,current=0;
+    for(int i=1;i<=n;i++){
+        current=(current*10+a)%mod;
+        ans=(ans+current)%mod;
+    }
+    cout << ans ;
+}
+
+
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0463 �Ĵ�����-ˮ�ǩ��.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n;
+    cin  >> n;
+    //int a[n+1];
+    int x=0;
+    int ans=0;
+    for(int i=1;i<=n;i++){
+        int val ;
+        cin >> val;
+        if(x<2){
+            ans+=val;
+        }  else {
+            ans-=val;
+        }
+        x=(x+1)%4;
+    }
+    cout << ans << endl;
+
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0470 ޤ��������.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n;
+    cin >> n;
+    for(int i=1;i<=n;i++){
+        int x;
+        cin >> x;
+    }
+    cout << ((n)*(n-1))/2 << endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0478 ҹϮ����.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    
+    int n,m;
+    cin >> n >> m;
+    vector<int> a(n+1);
+    vector<int> b(n+1);
+    vector<bool> c(n+1,0);
+    
+    for(int i=1;i<=n;i++){
+        cin >>a[i];
+    }
+    for(int i=1;i<=n;i++){
+        cin >> b[i];
+    }
+    int x=1;
+    int end_1=-1;
+    for(int i=1;i<=n;i++){
+        if(a[i]==b[x]){
+            x++;
+            c[i]=1;
+        }
+        if(x==m){
+            end_1=i;
+            break;
+        }
+    }
+    if(end_1==-1){
+        cout << "No";
+        return;
+    }
+    int end_2=-1;
+    int y=m;
+    for(int i=n;i>=1;i--){
+        if(a[i]==b[y] && c[i]==0){
+            y--;
+        }
+        if(y==0){
+            break;
+        }
+    }
+    if(y==0 && x==m){
+        cout << "Yes";
+        return ;
+    }else {
+        cout << "No";
+    }
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0480 ��������.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n,k;
+    cin >> n >> k;
+    set<int> a;
+    map<int,int> m;
+    for(int i=1;i<=n;i++){
+        int x;
+        cin >> x;
+        a.insert(x);
+        m[x]++;
+    }
+    if(a.size()<k){
+        cout << -1;
+    }
+    int l=0;
+    for(auto x : a){
+        l++;
+        if(l==k){
+            cout << x ;
+        }
+    }
+
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0505 ������������.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n,q;
+    cin >> n >> q;
+    vector<int> a(n+1);
+    //vector<int> b(n+1);
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+        //b[i]=a[i]+a[i-1];
+    }
+    for(int i=1;i<=q;i++){
+        int opt;
+        cin >> opt;
+        if(opt==1){
+            int l,r,x;
+            cin >> l >> r >> x;
+            int ii=1;
+            for(int j=l;j<=r;j++){
+                //a[j]+=x*ii;
+                //ii++;
+                a[j]+=x;
+            }
+        }else if(opt==2){
+            int l,r,x;
+            cin >> l >> r >> x;
+            for(int j=l;j<=r;j++){
+                if(a[j]>x){
+                    a[j]=x;
+                }
+            }
+        }else {
+            int l,r;
+            cin >> l >> r;
+            int sum=0;
+            for(int j=l;j<=r;j++){
+                sum+=a[j];
+            }
+            cout << sum <<endl;
+        }
+    }
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0506 �ھ�ϯ��Ȧ��.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n;
+    cin >> n;
+    vector<int> a(n+1);
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+
+    }
+    vector<int> L(n+1,0),R(n+1,0);
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<i;j++){
+            if(a[j]<a[i]){
+                L[i]++;
+            }
+        }
+    }
+    for(int i=1;i<=n;i++){
+        for(int j=i+1;j<=n;j++){
+            if(a[j]<a[i]){
+                R[i]++;
+            }
+        }
+    }
+    int sum=0;
+    for(int i=1;i<=n;i++){
+        for(int j=i+1;j<=n;j++){
+            if(a[i]==a[j]){
+            sum+=(R[j]*L[i]) %10007;   
+            }
+        }
+    }
+    cout << sum%10007 << endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0507 ������ͳ���.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n,m;
+    cin >> n >> m;
+    vector<vector<int>> a(n+1,vector<int>(m+1));
+    int ans=0;
+    vector<vector<int>> b(n+1,vector<int>(m+1,0));
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=m;j++){
+            cin >>a[i][j];
+            b[i][j]=a[i][j]+b[i-1][j]+b[i][j-1]-b[i-1][j-1];
+            
+        }
+    }
+    ////四个for循环是重点
+    for (int x1 = 1; x1 <= n; x1++) {
+        for (int y1 = 1; y1 <= m; y1++) {
+            for (int x2 = x1; x2 <= n; x2++) {
+                for (int y2 = y1; y2 <= m; y2++) {
+                    int ones = b[x2][y2] - b[x1 - 1][y2] - b[x2][y1 - 1] + b[x1 - 1][y1 - 1];
+                    int total = (x2 - x1 + 1) * (y2 - y1 + 1);
+                    if (2 * ones > total) {
+                        ans++;
+                    }
+                }
+            }
+        }
+    }
+    cout << ans << endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0508 ר�����˫��.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n,q;
+    cin >> n >> q;
+    vector<int> a(n+1);
+    
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+    }
+    vector<int> cnt(1000005, 0); 
+    while(q--){
+        int l,r;
+        cin >> l >> r;
+        //map<int,int> m;
+        int ans=0;
+        for(int i=l;i<=r;i++){
+            cnt[a[i]]++;
+            if(cnt[a[i]]>ans){
+                ans=cnt[a[i]];
+            }
+        }
+        for(int i=l;i<=r;i++){
+            cnt[a[i]]=0;
+        }
+        cout << ans << endl;
+    }
+
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0509 �쵶���鶨��.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+#define endl '\n'
+#define int long long
+int n,m,k;
+vector<int> G[300005];
+int dist[300005];
+void solve(){
+    cin >> n >> m >> k;
+    for(int i=1;i<=m;i++){
+        int v ,u;
+        cin >> v >> u;
+        G[v].push_back(u);
+        G[u].push_back(v);
+    }
+    fill(dist+1,dist+n+1,-1);
+    queue<int> q;
+    for(int i=1;i<=k;i++){
+        int x;
+        cin >> x;
+        dist[x]=0;
+        q.push(x);
+    }
+    while(!q.empty()){
+        int x=q.front();
+        q.pop();
+        for(auto v : G[x]){
+            if(dist[v]==-1){
+                q.push(v);
+                dist[v]=dist[x]+1;
+            }
+        }
+    }
+    int ans=0;
+    for(int i=1;i<+n;i++){
+        if(dist[i]==-1){
+            cout << -1 << endl;
+            return;
+        }else {
+            ans=max(ans,dist[i]);
+        }
+    }
+    cout << ans << endl;
+}
+signed main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _=1;
+    //cin >> _;
+    while(_--){
+        solve();
+    }
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0510 Ⱥ����������.CPP 
+------------------------------------------ 
+ 
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+const int MOD = 998244353;
+
+// 因为 n 最大是 200，端点最多有 400 个。
+// dp[层数][左端点][右端点]：记录某个区间内，刚好凑出某层数的方案数
+int dp[205][405][405];
+
+// pre[层数][左端点][右端点]：记录某个区间内，凑出的层数 <= 某层数的总方案数(前缀和)
+int pre[205][405][405];
+
+// e[l] 就像一个登记册，记录“所有从左端点 l 开始的线段，它们的右端点在哪里”
+vector<int> e[405]; 
+
+int main() {
+    // 优化输入输出速度
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int n;
+    if (!(cin >> n)) return 0;
+
+    // 存储一开始输入的线段
+    vector<pair<int, int>> segments(n + 1); 
+    // 用于“离散化”的篮子，把所有坐标装进去
+    vector<int> ls; 
+
+    /* ==========================================
+       第一战区：读入数据与离散化 (坐标压缩)
+       ========================================== */
+    for (int i = 1; i <= n; i++) {
+        cin >> segments[i].first >> segments[i].second;
+        ls.push_back(segments[i].first);
+        ls.push_back(segments[i].second);
+    }
+
+    // 将所有坐标从小到大排序，并去掉重复的坐标
+    sort(ls.begin(), ls.end());
+    ls.erase(unique(ls.begin(), ls.end()), ls.end());
+
+    // sz 是压缩后一共有多少个不同的坐标点
+    int sz = ls.size();
+
+    // 将原坐标替换为 1, 2, 3... 这样的小号，并登记到 e 数组中
+    for (int i = 1; i <= n; i++) {
+        // lower_bound 用于查找原坐标在压缩列表中的位置
+        int l_idx = lower_bound(ls.begin(), ls.end(), segments[i].first) - ls.begin() + 1;
+        int r_idx = lower_bound(ls.begin(), ls.end(), segments[i].second) - ls.begin() + 1;
+        e[l_idx].push_back(r_idx);
+    }
+
+    /* ==========================================
+       第二战区：打底子 (初始化 0 层状态)
+       ========================================== */
+    // 注意边界开到 sz + 1，防止后面的 [l+1] 或 [p+1] 越界
+    for (int i = 0; i <= sz + 1; i++) {
+        for (int j = 0; j <= sz + 1; j++) {
+            // “什么都不画”也是一种合法画法，最高层数为 0
+            dp[0][i][j] = 1; 
+        }
+    }
+    for (int k = 0; k <= n; k++) {
+        for (int l = 0; l <= sz + 1; l++) {
+            for (int r = 0; r <= sz + 1; r++) {
+                // 既然 0 层方案数是 1，那么初始状态下“<= k层”的方案数底薪就是 1
+                pre[k][l][r] = 1; 
+            }
+        }
+    }
+
+    /* ==========================================
+       第三战区 & 第四战区：区间 DP 核心推导
+       ========================================== */
+    for (int k = 1; k <= n; k++) {                         // 枚举目标层数 k
+        for (int len = 1; len <= sz; len++) {              // 枚举当前观察的直尺长度 len
+            for (int l = 1; l + len - 1 <= sz; l++) {      // 枚举直尺的左端点 l
+                int r = l + len - 1;                       // 算出直尺的右端点 r
+
+                // 基础选择：如果不在起点 l 画任何最外层线段
+                // 那么这片区域的画法，等同于去掉了最左边一点后的区域画法
+                dp[k][l][r] = (dp[k][l][r] + dp[k][l + 1][r]) % MOD;
+
+                // 复杂选择：如果选择画一条从 l 开始的线段
+                // 遍历登记册，找到所有以 l 为起点的线段，p 是它的右端点
+                for (int p : e[l]) {
+                    // 如果这条线段太长，超出了我们当前观察的直尺范围，就不考虑
+                    if (p > r) continue; 
+
+                    if (p == r) {
+                        // 特殊情况：这条线段完美覆盖了整个 [l, r] 区间
+                        // 因为没有“外部区域”了，只用管“内部区域” [l+1, r-1]
+                        if (k == 1) {
+                            // 只要凑1层，这条线段本身就是1层，内部什么都不准画(即1种空集画法)
+                            dp[k][l][r] = (dp[k][l][r] + 1) % MOD;
+                        } else {
+                            // 要凑k层，外面这条线段占了1层，内部必须刚好凑齐 k-1 层
+                            dp[k][l][r] = (dp[k][l][r] + dp[k - 1][l + 1][r - 1]) % MOD;
+                        }
+                    } else {
+                        // 普遍情况：大线段是 [l, p]，它把世界分成了：
+                        // 内部区域：[l+1, p-1]
+                        // 外部区域：[p+1, r]
+
+                        // 套路 A：内部刚好凑 k-1 层 (用dp) × 外部随便只要不超 k 层 (用pre)
+                        long long wayA = 1LL * dp[k - 1][l + 1][p - 1] * pre[k][p + 1][r] % MOD;
+                        
+                        // 套路 B：内部随便只要不超 k-1 层 (用pre) × 外部刚好凑 k 层 (用dp)
+                        long long wayB = 1LL * pre[k - 1][l + 1][p - 1] * dp[k][p + 1][r] % MOD;
+                        
+                        // 去重：减去 (内部刚好 k-1 层) 且 (外部刚好 k 层) 的被重复计算的次数
+                        long long overlap = 1LL * dp[k - 1][l + 1][p - 1] * dp[k][p + 1][r] % MOD;
+
+                        // 把上述三种情况合并进去
+                        dp[k][l][r] = (dp[k][l][r] + wayA) % MOD;
+                        dp[k][l][r] = (dp[k][l][r] + wayB) % MOD;
+                        
+                        // C++中减法取模可能出现负数，加上 MOD 再取模可以修正为正数
+                        dp[k][l][r] = (dp[k][l][r] - overlap + MOD) % MOD; 
+                    }
+                } // 结束属于 l 的线段遍历
+
+                // 当前区间 [l, r] 在刚好 k 层的方案数算完了
+                // 立刻更新辅助登记表 pre (<=k层 的方案数)
+                pre[k][l][r] = (pre[k - 1][l][r] + dp[k][l][r]) % MOD;
+
+            } // 结束枚举左端点 l
+        } // 结束枚举区间长度 len
+    } // 结束枚举层数 k
+
+    /* ==========================================
+       第五战区：结账算总得分
+       ========================================== */
+    long long ans = 0; // 记录最终答案
+    for (int k = 1; k <= n; k++) {
+        // dp[k][1][sz] 代表在整把完整的尺子 [1, sz] 上，最高套娃刚好为 k 层的方案数
+        // 这部分方案产生的得分为：层数 k * 对应的方案数
+        ans = (ans + 1LL * k * dp[k][1][sz]) % MOD;
+    }
+
+    // 打印答案
+    cout << ans << "\n";
+
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0510 Ⱥ����������copy.cpp 
+------------------------------------------ 
+ 
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+const int MOD = 998244353;
+
+int dp[205][405][405];
+int pre[205][405][405];
+vector<int> e[405]; 
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int n;
+    if (!(cin >> n)) return 0;
+
+    vector<pair<int, int>> segments(n + 1); 
+    vector<int> ls; 
+
+    for (int i = 1; i <= n; i++) {
+        cin >> segments[i].first >> segments[i].second;
+        ls.push_back(segments[i].first);
+        ls.push_back(segments[i].second);
+    }
+
+    sort(ls.begin(), ls.end());
+    ls.erase(unique(ls.begin(), ls.end()), ls.end());
+
+    int sz = ls.size();
+
+    for (int i = 1; i <= n; i++) {
+        int l_idx = lower_bound(ls.begin(), ls.end(), segments[i].first) - ls.begin() + 1;
+        int r_idx = lower_bound(ls.begin(), ls.end(), segments[i].second) - ls.begin() + 1;
+        e[l_idx].push_back(r_idx);
+    }
+
+    for (int i = 0; i <= sz + 1; i++) {
+        for (int j = 0; j <= sz + 1; j++) {
+            dp[0][i][j] = 1; 
+        }
+    }
+    for (int k = 0; k <= n; k++) {
+        for (int l = 0; l <= sz + 1; l++) {
+            for (int r = 0; r <= sz + 1; r++) {
+                pre[k][l][r] = 1; 
+            }
+        }
+    }
+
+    for (int k = 1; k <= n; k++) {                         
+        for (int len = 1; len <= sz; len++) {              
+            for (int l = 1; l + len - 1 <= sz; l++) {      
+                int r = l + len - 1;                       
+
+                dp[k][l][r] = (dp[k][l][r] + dp[k][l + 1][r]) % MOD;
+
+                for (int p : e[l]) {
+                    if (p > r) continue; 
+
+                    if (p == r) {
+                        if (k == 1) {
+                            dp[k][l][r] = (dp[k][l][r] + 1) % MOD;
+                        } else {
+                            dp[k][l][r] = (dp[k][l][r] + dp[k - 1][l + 1][r - 1]) % MOD;
+                        }
+                    } else {
+                        long long wayA = 1LL * dp[k - 1][l + 1][p - 1] * pre[k][p + 1][r] % MOD;
+                        long long wayB = 1LL * pre[k - 1][l + 1][p - 1] * dp[k][p + 1][r] % MOD;
+                        long long overlap = 1LL * dp[k - 1][l + 1][p - 1] * dp[k][p + 1][r] % MOD;
+
+                        dp[k][l][r] = (dp[k][l][r] + wayA) % MOD;
+                        dp[k][l][r] = (dp[k][l][r] + wayB) % MOD;
+                        dp[k][l][r] = (dp[k][l][r] - overlap + MOD) % MOD; 
+                    }
+                } 
+
+                pre[k][l][r] = (pre[k - 1][l][r] + dp[k][l][r]) % MOD;
+            } 
+        } 
+    } 
+
+    long long ans = 0; 
+    for (int k = 1; k <= n; k++) {
+        ans = (ans + 1LL * k * dp[k][1][sz]) % MOD;
+    }
+
+    cout << ans << "\n";
+
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0511 �¼�������ʷ.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n;
+    cin >> n;
+    set<int> a;
+    int ans=0;
+    for(int i=1;i<=n;i++){
+        int x;
+        cin >> x;
+        if(!a.count(x)){
+        a.insert(x);
+            ans++;
+        }
+
+    }
+    cout << ans << endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0549 ר���о�����.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n,m;
+    cin >> n >> m;
+    int ans=0;
+    int minx=1000000009;
+    for(int i=1;i<=n;i++){
+        int x;
+        cin >> x;
+        minx=min(minx,x);
+    }
+    int maxx=minx+n-1;
+    for(int i=1;i<=m;i++){
+        int l,r;
+        cin >> l >> r;
+        l=max(l,minx);
+        r=min(r,maxx);
+        if(l<=r){
+            ans+=(n-(r-l+1));
+            ans%=10007;    
+        }else {
+            ans+=n;
+            ans%=10007;
+        }
+        //或者说最后使用n*m- Σ（rx-lx+1）；
+    }
+    cout << ans << endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0550 �㳦���Է�â.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {-
+    int n,q;
+    cin >> n >> q;
+    vector<int> a(2005,0);
+    int ans=0;
+    int ans1=0;
+    for(int i=1;i<=n;i++){
+        int x;
+        cin >>x;
+        a[x]++;
+        ans1+=x;
+    }
+    
+    vector<int> b(2005,0);
+    for(int i=1;i<=q;i++){
+        int x;
+        cin >> x;
+        
+        if(x==1 || ans1==0){
+            cout << ans1 << endl;
+            continue;
+        }
+        fill(b.begin(),b.end(),0);
+        ans=0;
+        for(int j=1;j<=2000;j++){
+            
+            if(a[j]==0)continue;
+            ans+=a[j]*(j/x);
+            // a[j/x]+=a[j];
+            b[j/x]+=a[j];
+        }
+        a=b;
+        cout << ans << endl;
+        ans1=ans;
+        
+    }
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
+------------------------------------------ 
+�ļ���: MC0551 ��������ɱ��.cpp 
+------------------------------------------ 
+ 
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+int n,m;
+int a[1005][1005];
+int b[1005][1005];
+int s[1005][1005];
+const int MOD = 1e9 + 7;
+void solve() {
+    cin >> n >> m;
+    int ans=0;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            cin >>a[i][j];
+        }
+    }
+    for(int i=1;i<=m;i++){
+        for(int j=1;j<=m;j++){
+            cin >> b[i][j];
+        }
+    }
+    for(int p=0;p<30;p++){
+        
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                int bits_a=(a[i][j]>>p)&1;
+                s[i][j]=bits_a + s[i-1][j] + s[i][j-1] -s[i-1][j-1];
+            }
+        }
+        int bits_b_one=0;
+        for(int i=1;i<=m;i++){
+            for(int j=1;j<=m;j++){
+                int k=i+n-m;
+                int l=j+n-m;
+                int ones_ina=s[k][l]-s[i-1][l]-s[k][j-1]+s[i-1][j-1];
+                int bits_b=(b[i][j]>>p)&1;
+                if(bits_b==1){
+                    bits_b_one+=(n-m+1)*(n-m+1)-ones_ina;
+                }else {
+                    bits_b_one+=ones_ina;
+                }
+            }
+        }
+        int bitb=(1LL<<p)%MOD;
+        ans=(ans+bitb*(bits_b_one%MOD))%MOD;    
+    }
+    cout << ans << endl;
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+} 
+ 
