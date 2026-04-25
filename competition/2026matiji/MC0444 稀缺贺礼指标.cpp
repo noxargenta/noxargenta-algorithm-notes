@@ -6,28 +6,24 @@ using i64 = long long;
 void solve() {
     int n;
     cin >> n;
-    int a[n+1];
-    int minn=1000000000+9;
-    int maxx=-99999999;
-    set<int> s;
-    for(int i=1;i<=n;i++){
+    vector<int> a(n);
+    for(int i=0;i<n;i++){
         cin >> a[i];
-        //cout <<"min:" <<minn << endl;
-        minn=min(minn,a[i]);
-        //cout <<"min:" <<minn << endl;
-        maxx=max(maxx,a[i]);
-        s.insert(a[i]);
     }
-    //cout <<"min:" <<minn << endl;
-    if(minn>0){
+    sort(a.begin(),a.end());
+    int last=0;
+    if(a[0]!=0){
         cout << 0 << endl;
-    }else {
-        for(int i=1;i<=maxx+1;i++){
-            if(!s.count(i)){
-                cout << i << endl; 
-            }
-        }
+        return ;
     }
+    for(auto x:a){
+        if(x!=last+1 && x!=0 && x!=last){
+            cout  << last+1 << endl;
+            return;
+        }
+        last=x;
+    }
+    cout << a[n-1]+1<< endl;
 }
 
 signed main() {
