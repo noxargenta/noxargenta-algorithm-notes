@@ -3,7 +3,7 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
-void solve() {
+void solve() {-
     int n,q;
     cin >> n >> q;
     vector<int> a(2005,0);

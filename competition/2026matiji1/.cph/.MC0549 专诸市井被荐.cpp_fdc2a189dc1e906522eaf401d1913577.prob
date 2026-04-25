@@ -1,1 +1,0 @@
-{"name":"Local: MC0549 专诸市井被荐","url":"c:\\code\\c++lan\\competition\\2026matiji1\\MC0549 专诸市井被荐.cpp","tests":[{"id":1775658733069,"input":"5 2\n3 5 4 7 6\n4 100\n1 3","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2026matiji1\\MC0549 专诸市井被荐.cpp","group":"local","local":true}
