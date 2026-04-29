@@ -1,9 +1,15 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #define int long long
 #define endl '\n'
+const int INF=0x3f3f3f3f;
+const int INFLL=0x3f3f3f3f3f3f3f3f;
 void solve(){
-    cout << lcm(12,18) << endl;
+    string s;
+    cin >> s;
+    int a,b;
+    cin >> a >>b;
+    cout << s.substr(a,s.length()-a-b) << endl;
 }
 signed main(){
     ios::sync_with_stdio(false);
