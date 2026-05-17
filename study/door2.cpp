@@ -8,11 +8,14 @@ int cf(int x){
     while(x!=0){
         ge=x%10;
         x/=10;
+        a[ge]--;
     }
-    return 
 }
 void solve(){
-
+    for(int i=1;;i++){
+        cf(i);
+        
+    }
 }
 signed main(){
     ios::sync_with_stdio(false);
