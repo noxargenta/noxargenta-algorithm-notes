@@ -7,7 +7,12 @@ void solve() {
     int k;
     cin >> k;
     double ans=0;
-    for(int i=1;ans<=)
+    int nn=0;
+    for(int i=1;ans-k<=0;i++){
+        ans+=1.0/i;
+        nn=i;
+    }
+    cout << nn << endl;
 }
 
 signed main() {
