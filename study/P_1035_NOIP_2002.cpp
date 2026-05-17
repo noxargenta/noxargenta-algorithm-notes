@@ -4,7 +4,10 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
-    
+    int k;
+    cin >> k;
+    double ans=0;
+    for(int i=1;ans<=)
 }
 
 signed main() {
