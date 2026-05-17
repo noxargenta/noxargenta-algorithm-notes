@@ -8,12 +8,13 @@ int cf(int x){
     int ge=0;
     while(x!=0){
         ge=x%10;
-        x/=10;
+        
         if(a[ge]==0){
             ok=1;
             break;
         }
         a[ge]--;
+        x/=10;
         
     }
 }
