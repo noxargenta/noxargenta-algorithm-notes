@@ -4,8 +4,9 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 int ge=0;
+int x,y,z;
 vector<int> a(10,0);
-int cf(int x){
+void cf(int x){
     while(x!=0){
         ge=x%10;
         x=x%10;
@@ -13,7 +14,19 @@ int cf(int x){
     }
 }
 void solve() {
-    
+    for(int i=1;i<=9;i++){
+        for(int j=1;j<=9;j++){
+            for(int k=1;j<=9;j++){
+                x=i+j*10+k*100;
+                y=2*x;
+                z=3*x;
+                cf(x);
+                cf(y);
+                cf(z);
+                
+            }
+        }
+    }
 
 }
 
