@@ -23,7 +23,10 @@ void solve() {
                 cf(x);
                 cf(y);
                 cf(z);
-                
+                bool ok=0;
+                for(int i=1;i<=9;i++){
+                    
+                }
             }
         }
     }
