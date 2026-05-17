@@ -9,7 +9,7 @@ vector<int> a(10,0);
 void cf(int x){
     while(x!=0){
         ge=x%10;
-        x=x%10;
+        x=x/10;
         a[ge]++;
     }
 }
@@ -23,9 +23,14 @@ void solve() {
                 cf(x);
                 cf(y);
                 cf(z);
-                bool ok=0;
+                bool ok=1;
                 for(int i=1;i<=9;i++){
-                    
+                    if(a[i]!=1){
+                        ok=0;
+                    }
+                }
+                if(ok){
+                    cout << x << ' ' << y << ' ' << z << endl;
                 }
             }
         }
