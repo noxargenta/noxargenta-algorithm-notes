@@ -4,7 +4,7 @@
 using namespace std;
 vector<int> a(10,2021);
 int ok=0;
-int cf(int x){
+void cf(int x){
     int ge=0;
     while(x!=0){
         ge=x%10;
