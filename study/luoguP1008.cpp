@@ -16,7 +16,8 @@ void cf(int x){
 void solve() {
     for(int i=1;i<=9;i++){
         for(int j=1;j<=9;j++){
-            for(int k=1;j<=9;j++){
+            for(int k=1;k<=9;k++){
+                
                 x=i+j*10+k*100;
                 y=2*x;
                 z=3*x;
