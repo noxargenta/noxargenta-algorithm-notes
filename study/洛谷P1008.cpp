@@ -3,7 +3,15 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
-
+int ge=0;
+vector<bool> a(10,0);
+int cf(int x){
+    while(x!=0){
+        ge=x%10;
+        x=x%10;
+        
+    }
+}
 void solve() {
     
 
