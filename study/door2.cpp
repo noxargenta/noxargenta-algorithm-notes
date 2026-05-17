@@ -9,17 +9,19 @@ int cf(int x){
     while(x!=0){
         ge=x%10;
         x/=10;
-        a[ge]--;
-        if(a[ge]==-1){
+        if(a[ge]==0){
             ok=1;
+            break;
         }
+        a[ge]--;
+        
     }
 }
 void solve(){
     for(int i=1;;i++){
         cf(i);
         if(ok==1){
-            cout << i << endl;
+            cout << i-1 << endl;
             break;
         }
     }
