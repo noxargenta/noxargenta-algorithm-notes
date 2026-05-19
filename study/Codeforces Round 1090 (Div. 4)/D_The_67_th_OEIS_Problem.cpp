@@ -45,7 +45,7 @@ signed main() {
             now++;
             m++;
         }
-        if(m>90000){
+        if(m>20000){
             break;
         }
     }
