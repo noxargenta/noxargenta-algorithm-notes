@@ -6,9 +6,9 @@ using i64 = long long;
 void solve() {
     int n;
     cin >> n;
-    vector<int> a(3*n);
-    for(int i=1;i<=3*n;i++){
-        
+    vector<int> a(3*n+1);
+    for(int i=n+1,jiou=(n+1)%2,l=1,r=2;i<=3*n;i+=2){
+        a[]
     }
 }
 
