@@ -3,14 +3,21 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
+
+bool isPrime(int x){
+    if(x<2){
+        return 0;
+    }else {
+        for(int i=1;i*i<=x;i++){
+            if()
+        }
+    }
+
+}
 void solve() {
     int n;
     cin >> n;
-    for(int i=1, x=1;i<=n;i++){
-        cout << x << ' ' ;
-        x*=2;
-    }
-    cout << endl;
+
 }
 
 signed main() {
