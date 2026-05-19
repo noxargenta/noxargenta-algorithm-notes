@@ -4,7 +4,12 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
-    
+    int n;
+    cin >> n;
+    vector<int> a(3*n);
+    for(int i=1;i<=3*n;i++){
+        
+    }
 }
 
 signed main() {
@@ -12,7 +17,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
