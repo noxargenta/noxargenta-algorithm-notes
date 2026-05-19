@@ -6,7 +6,11 @@ using i64 = long long;
 void solve() {
     int n;
     cin >> n;
-    
+    for(int i=1, x=1;i<=n;i++){
+        cout << x << ' ' ;
+        x*=2;
+    }
+    cout << endl;
 }
 
 signed main() {
