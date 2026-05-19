@@ -5,8 +5,9 @@ using i64 = long long;
 #define int long long
 int n;
 int m=0;
-int N=
-int p[]
+const int N=1e6+10;
+vector<int> p(N);
+vector<int> a(N);
 bool isPrime(int x){
     if(x<2){
         return 0;
@@ -21,7 +22,13 @@ bool isPrime(int x){
 }
 void solve() {
     cin >> n;
-
+    for(int i=1;i<=n;i++){
+        a[i]=p[i-1]*p[i+1];
+    }
+    for(int i=1;i<=n;i++){
+        cout << a[i] << ' ';
+    }
+    cout << endl;
 }
 
 signed main() {
@@ -30,6 +37,18 @@ signed main() {
     cin.tie(nullptr);
     int _ = 1;
     cin >> _;
+    int now=1;
+    p[0]=1;
+    while(true){
+        if(isPrime(now)){
+            p.push_back(now);
+            now++;
+            m++;
+        }
+        if(m>90000){
+            break;
+        }
+    }
     while(_--) {
         solve();
     }
