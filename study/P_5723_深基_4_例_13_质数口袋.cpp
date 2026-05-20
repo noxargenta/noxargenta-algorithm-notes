@@ -8,13 +8,16 @@ bool isPrime(int x){
         return 0;
     }
     for(int i=2;i*i<=x;i++){
-        
+        if(x%2==0){
+            return 0;
+        }
     }
+    return 1;
 }
 void solve() {
     int L;
     cin >> L;
-
+    
 }
 
 signed main() {
