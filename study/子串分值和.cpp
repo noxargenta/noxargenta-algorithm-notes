@@ -15,7 +15,6 @@ void solve() {
         last[s[i]-'a']=i;
     }
     cout << sum << endl;
-    cout << s.size() << endl << s.length() << endl;
 }
 
 signed main() {
