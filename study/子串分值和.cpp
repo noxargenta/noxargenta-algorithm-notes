@@ -11,10 +11,11 @@ void solve() {
     int sum=0;
     fill(last,last+26,0);
     for(int i=1;i<s.length();i++){
-        sum+=(i-last[s[i]-'a'])*(s.length()-i);
+        sum+=(i-last[s[i]-'a'])*(s.size()-i);
         last[s[i]-'a']=i;
     }
     cout << sum << endl;
+    cout << s.size() << endl << s.length() << endl;
 }
 
 signed main() {
