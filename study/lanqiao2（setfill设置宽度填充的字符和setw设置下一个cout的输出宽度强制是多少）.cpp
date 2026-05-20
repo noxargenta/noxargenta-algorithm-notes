@@ -14,6 +14,8 @@ void solve() {
     n%=60;
     int ss=n;
 
+    // printf 实现: printf("%02d:%02d:%02d\n", 
+    //hours, minutes, ss);
     cout << setfill('0')
     <<setw(2)<< hours << ':' 
     <<setw(2)<< minutes << ':' 
