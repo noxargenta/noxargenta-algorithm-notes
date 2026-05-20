@@ -20,8 +20,10 @@ void solve() {
     cin >> s;
     int maxn=0;
     int minn=10000;
-    for(int i=1;i<s.length();i++){
+    for(int i=0;i<s.length();i++){
         int x=++a[s[i]-'a'];
+    }
+    for(auto x : a){
         minn=min(minn,x);
         maxn=max(maxn,x);
     }
