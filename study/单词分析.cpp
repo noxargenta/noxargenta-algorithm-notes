@@ -6,7 +6,18 @@ using i64 = long long;
 void solve() {
     string s;
     cin >> s;
-    
+    int a[26]={0};
+    int maxx=0;
+    for(int i=0;i<s.length();i++){
+        a[s[i]-'a']++;
+        maxx=max(a[s[i]-'a'],maxx);
+    }
+    for(auto x : s){
+        if(maxx=a[x-'a']){
+            cout << x<< endl<< a[x-'a'] << endl;
+            return;
+        }
+    }
 }
 
 signed main() {
