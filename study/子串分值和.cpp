@@ -8,10 +8,12 @@ void solve() {
     int last[26];
     cin >> s;
     int sum=0;
-    fill(last+1,last+26,0);
+    fill(last,last+26,0);
     for(int i=0;i<s.length();i++){
-        sum+=(i-last[s[i]-'a'])*(s.length()-)
+        sum+=(i-last[s[i]-'a'])*(s.length()-1-i);
+        last[s[i]-'a']=i;
     }
+    cout << sum << endl;
 }
 
 signed main() {
