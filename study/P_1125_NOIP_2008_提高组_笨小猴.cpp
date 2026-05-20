@@ -26,6 +26,8 @@ void solve() {
     for(auto x : a){
         if(x==0){
             continue;
+            //遍历数组的时候注意一下最小值和初始值，初始值是
+            //0那么最小值遍历一遍的话就一定是0，所以会导致出错
         }
         minn=min(minn,x);
         maxn=max(maxn,x);
@@ -36,7 +38,6 @@ void solve() {
     }else {
         cout << "No Answer\n0";
     }
-    //
 }
 
 signed main() {
