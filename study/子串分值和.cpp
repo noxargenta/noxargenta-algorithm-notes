@@ -11,7 +11,7 @@ void solve() {
     int sum=0;
     fill(last,last+26,0);
     for(int i=1;i<s.length();i++){
-        sum+=(i-last[s[i]-'a'])*(s.length()-1-i);
+        sum+=(i-last[s[i]-'a'])*(s.length()-i);
         last[s[i]-'a']=i;
     }
     cout << sum << endl;
