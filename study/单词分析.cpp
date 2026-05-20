@@ -12,10 +12,10 @@ void solve() {
         a[s[i]-'a']++;
         maxx=max(a[s[i]-'a'],maxx);
     }
-    for(auto x : s){
-        if(maxx=a[x-'a']){
-            cout << x<< endl<< a[x-'a'] << endl;
-            return;
+    for(int i=0;i<26;i++){
+        if(a[i]==maxx){
+            cout << (char)('a'+i) << endl << maxx << endl;
+            return ;
         }
     }
 }
