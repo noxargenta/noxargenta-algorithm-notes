@@ -24,6 +24,9 @@ void solve() {
         int x=++a[s[i]-'a'];
     }
     for(auto x : a){
+        if(x==0){
+            continue;
+        }
         minn=min(minn,x);
         maxn=max(maxn,x);
     }
