@@ -7,11 +7,8 @@ void solve() {
     string s;
     cin  >> s;
     for(int i=0;i<s.length();i++){
-        
         if(s[i]<='z' && s[i] >= 'a'){
             s[i]=s[i]+'A'-'a';
-        }else {
-            continue;
         }
     }
     cout << s << endl;
