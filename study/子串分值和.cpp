@@ -10,7 +10,7 @@ void solve() {
     int sum=0;
     fill(last+1,last+26,0);
     for(int i=0;i<s.length();i++){
-        
+        sum+=
     }
 }
 
