@@ -4,7 +4,25 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
-    
+    int n;
+    cin >> n;
+    set<int> s;
+
+    for(int i=1;i<=n;i++){
+        int x;
+        cin >> x;
+        s.insert(x);
+    }
+    vector<int> a;
+    for(auto x : s) {
+        a.push_back(x);
+    }
+    sort(a.begin(),a.end());
+    cout << s.size() << endl;
+    for(auto x : a ){
+        cout << x << ' ' ;
+    }
+    cout << endl;
 }
 
 signed main() {
