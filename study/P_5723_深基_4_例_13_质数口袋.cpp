@@ -8,7 +8,7 @@ bool isPrime(int x){
         return 0;
     }
     for(int i=2;i*i<=x;i++){
-        if(x%2==0){
+        if(x%i==0){
             return 0;
         }
     }
@@ -17,7 +17,25 @@ bool isPrime(int x){
 void solve() {
     int L;
     cin >> L;
-    
+    int sum=0;
+    int n=0;
+    vector<int> a;
+    for(int i=2;;i++){
+        
+        if(isPrime(i)){
+            if(sum+i>L){
+                break;
+            }
+            sum+=i;
+            a.push_back(i);
+            n++;
+        }
+    }
+    for(auto x : a){
+        cout << x  << endl;
+    }
+    cout << n << endl;
+
 }
 
 signed main() {
