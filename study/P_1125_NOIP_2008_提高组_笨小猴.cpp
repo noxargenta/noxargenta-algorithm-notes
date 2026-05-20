@@ -36,6 +36,7 @@ void solve() {
     }else {
         cout << "No Answer\n0";
     }
+    //
 }
 
 signed main() {
