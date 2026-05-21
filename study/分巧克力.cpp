@@ -30,14 +30,35 @@ void solve() {
     };
     int l=1,r=100000;
     while(l<r){
-        int mid=(l+r +1 )/2;
+        int mid=(l+r)/2;
+        if(ok(mid)){
+            l = mid+1;
+        }else {
+            r = mid;
+        } 
+    }
+    /*二分一种写法
+    while(l<r){
+        int mid=(l+r)/2;
+        if(ok(mid)){
+            l = mid+1;
+        }else {
+            r = mid;
+        } 
+    }
+    另一种
+    while(l < r){
+        int mid = (l + r + 1) / 2;
         if(ok(mid)){
             l = mid;
-        }else {
+        } else {
             r = mid - 1;
         } 
     }
-    cout << r << endl;
+    cout << r << endl;  
+    
+    */
+    cout << r-1 << endl;
 }
 
 signed main() {
