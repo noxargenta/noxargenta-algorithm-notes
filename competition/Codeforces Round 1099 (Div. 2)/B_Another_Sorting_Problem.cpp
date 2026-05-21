@@ -45,13 +45,12 @@ void solve() {
             while(b[r]!=0){
                 r++;
             }
-            if(r!=n+1){
-                i=r+1;
-            }
+            i=r;
             if((c[r]-c[l])<=(a[r]-a[l]+1)){
                 continue;
             }else {
                 cout << "NO\n";
+                return;
             }
         }
     }
