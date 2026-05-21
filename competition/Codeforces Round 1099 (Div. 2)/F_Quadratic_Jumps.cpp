@@ -4,16 +4,17 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
-    vector<int> a;
     int n;
     cin  >> n;
+    vector<int> a(n+1,0);
     set<int> s;
     for(int i=1;i<=n;i++){
         for(int j=1;j<=2*n;j++){
             if(s.count(j) || (i>0 && s.count(a[i-1]+j)))continue;
-            a.push_back(j);
+            a[i]=j;
             s.insert(j);
             s.insert(j+a[i-1]);
+            break;
         }
     }
     for(auto x : a){
