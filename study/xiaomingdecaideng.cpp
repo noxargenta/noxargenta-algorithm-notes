@@ -9,7 +9,7 @@ void solve() {
     vector<int> a(n+2,0);
     for(int i=1;i<=n;i++){
         cin >> a[i];
-    }
+    } 
     vector<int> b(n+2,0);
     for(int i=1;i<=n;i++){
         b[i]=a[i]-a[i-1];
