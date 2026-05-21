@@ -7,7 +7,7 @@ void solve() {
     int n;
     cin  >> n;
     vector<int> a(n+2,0);
-    a[n+2]=1000000001;
+    a[n+1]=1000000001;
     vector<bool> b(n+2,0);
     vector<int> c(n+2,0);
     int last=a[1];
@@ -44,6 +44,9 @@ void solve() {
             }
             while(b[r]!=0){
                 r++;
+            }
+            if(r!=n+1){
+                i=r+1;
             }
             if((c[r]-c[l])<=(a[r]-a[l]+1)){
                 continue;
