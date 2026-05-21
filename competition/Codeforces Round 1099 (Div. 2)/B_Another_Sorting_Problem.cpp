@@ -28,9 +28,10 @@ void solve() {
                 cout << "NO\n";
                 return;
             }
-            
+            last=a[i];
         }
     }
+    
 }    
 
 signed main() {
