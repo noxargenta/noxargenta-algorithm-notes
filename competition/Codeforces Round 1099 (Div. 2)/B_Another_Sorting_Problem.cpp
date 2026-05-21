@@ -12,9 +12,8 @@ void solve() {
     for(int i=1;i<=n;i++){
         cin  >> a[i];
         if(i>1){
-            if( a[i]<a[i-1]){
+            if( a[i]<last){
                 b[i]=1;
-                last=a[i-1];
             }
             last=max(last,a[i]);
         }
