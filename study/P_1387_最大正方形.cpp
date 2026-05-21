@@ -13,7 +13,7 @@ void solve() {
             cin >> a[i][j];
             b[i][j]=a[i][j];
             b[i][j]=b[i][j]+b[i-1][j]+b[i][j-1]-b[i-1][j-1];
-        }
+        } 
     }
     int ans=0;
     for(int i=1;i<=n;i++){
