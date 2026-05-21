@@ -48,7 +48,7 @@ void solve() {
                 r++;
             }
             i=r;
-            if((c[r]-c[l])<=(a[r]-a[l]+1)){
+            if((c[r]-c[l])<=(a[r]-a[l]+1) || c[r] == c[l]){
                 continue;
             }else {
                 cout << "NO\n";
