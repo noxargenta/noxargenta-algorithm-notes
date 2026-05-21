@@ -22,7 +22,7 @@ void solve() {
             }else{
                 r=mid;
             }
-        }
+        } 
         if(a[l]==x){
             cout << l << ' ';
         }else {
