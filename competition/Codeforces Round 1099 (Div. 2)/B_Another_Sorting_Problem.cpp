@@ -8,6 +8,7 @@ void solve() {
     cin  >> n;
     vector<int> a(n+1,0);
     vector<bool> b(n+1,0);
+    vector<int> c(n+1,0);
     int last=a[1];
     for(int i=1;i<=n;i++){
         cin  >> a[i];
@@ -30,6 +31,9 @@ void solve() {
             }
             last=a[i];
         }
+    }
+    for(int i=1;i<=n;i++){
+        c[i]+=c[i-1]+b[i];
     }
     
 }    
