@@ -38,6 +38,7 @@ void solve() {
     for(int i=1;i<=n;i++){
         c[i]=c[i-1]+b[i];
     }
+    int k=0;
     for(int i=1;i<=n;i++){
         if(b[i]==1){
             int l=i,r=i;
@@ -49,6 +50,7 @@ void solve() {
             }
             i=r;
             if((c[r]-c[l])<=(a[r]-a[l]+1) || a[r] == a[l]){
+                k=max(k,a[l]-a[l+1]);
                 continue;
             }else {
                 cout << "NO\n";
