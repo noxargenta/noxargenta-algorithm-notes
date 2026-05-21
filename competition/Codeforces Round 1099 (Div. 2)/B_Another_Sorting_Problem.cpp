@@ -7,13 +7,20 @@ void solve() {
     int n;
     cin  >> n;
     vector<int> a(n+1,0);
-    vector<int> b(n+1,0);
+    vector<bool> b(n+1,0);
+    int last=a[1];
     for(int i=1;i<=n;i++){
         cin  >> a[i];
+        if(i>1){
+            if( a[i]<a[i-1]){
+                b[i]=1;
+                last=a[i-1];
+            }
+            last=max(last,a[i]);
+        }
     }
-    int la=a[1];
-    for(int i=2;i<=n;i++){
-        if(a[i])
+    for(int i=1;i<=n;i++){
+        
     }
 }    
 
