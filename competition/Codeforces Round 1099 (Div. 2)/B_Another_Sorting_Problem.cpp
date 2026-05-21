@@ -34,7 +34,7 @@ void solve() {
         }
     }
     for(int i=1;i<=n;i++){
-        c[i]+=c[i-1]+b[i];
+        c[i]=c[i-1]+b[i];
     }
     for(int i=1;i<=n;i++){
         if(b[i]==1){
