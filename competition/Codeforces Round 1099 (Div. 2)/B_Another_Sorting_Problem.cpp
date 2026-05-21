@@ -18,8 +18,18 @@ void solve() {
             last=max(last,a[i]);
         }
     }
+    last=-1;
     for(int i=1;i<=n;i++){
-        
+        if(last==-1 && b[i]==1){
+            last=a[i];
+        }
+        if(b[i]==1){
+            if(a[i]<last){
+                cout << "NO\n";
+                return;
+            }
+            
+        }
     }
 }    
 
