@@ -35,7 +35,23 @@ void solve() {
     for(int i=1;i<=n;i++){
         c[i]+=c[i-1]+b[i];
     }
-    
+    for(int i=1;i<=n;i++){
+        if(b[i]==1){
+            int l=i,r=i;
+            while(b[i]!=0){
+                l--;
+            }
+            while(b[r]!=0){
+                r++;
+            }
+            if((c[r]-c[l])<=(a[r]-a[l]+1)){
+                continue;
+            }else {
+                cout << "YES\n";
+            }
+        }
+    }
+    cout << "YES\n";
 }    
 
 signed main() {
