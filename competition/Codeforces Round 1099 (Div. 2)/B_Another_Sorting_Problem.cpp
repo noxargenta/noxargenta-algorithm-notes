@@ -58,6 +58,22 @@ void solve() {
             }
         }
     }
+    for(int i=1;i<=n;i++){
+        if(b[i]==1){
+            int l=i,r=i;
+            while(b[l]!=0){
+                l--;
+            }
+            while(b[r]!=0){
+                r++;
+            }
+            i=r;
+            if(a[l+1]+k<a[l] || a[r-1]+k>a[r]){
+                cout << "NO\n";
+                return;
+            }
+        }
+    }
     cout << "YES\n";
 }    
 
