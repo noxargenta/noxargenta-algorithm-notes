@@ -8,10 +8,12 @@ void solve() {
     int n;
     cin  >> n;
     set<int> s;
-    
     for(int i=1;i<=n;i++){
         for(int j=1;j<=2*n;j++){
-
+            if(s.count(j) || (i>0 && s.count(a[i-1]+j)))continue;
+            a.push_back(j);
+            s.insert(j);
+            s.insert(j+a[i-1]);
         }
     }
     for(auto x : a){
