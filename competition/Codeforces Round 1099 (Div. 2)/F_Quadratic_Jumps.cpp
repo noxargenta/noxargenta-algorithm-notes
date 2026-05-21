@@ -12,9 +12,11 @@ void solve() {
     int sum=1;
     s.insert(last);
     vector<int> a;
-    while(x*=-1 && sum!=n){
-        int r=2*n-1;
-        int l=1;
+    a.push_back(last);
+    int r=2*n-1;
+    int l=1;
+    while(sum!=n){
+        x*=-1;
         if(x==-1){
             if(!s.count(l) && !s.count(r+last)){
                 s.insert(l);
