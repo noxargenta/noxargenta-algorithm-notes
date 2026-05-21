@@ -6,11 +6,15 @@ using i64 = long long;
 void solve() {
     int n;
     cin  >> n;
-    vector<int> a(n+1);
+    vector<int> a(n+1,0);
+    vector<int> b(n+1,0);
     for(int i=1;i<=n;i++){
         cin  >> a[i];
     }
-    
+    int la=a[1];
+    for(int i=2;i<=n;i++){
+        if(a[i])
+    }
 }    
 
 signed main() {
