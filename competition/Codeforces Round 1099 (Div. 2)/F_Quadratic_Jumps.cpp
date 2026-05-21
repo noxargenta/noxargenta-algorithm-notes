@@ -10,7 +10,7 @@ void solve() {
     set<int> s;
     for(int i=1;i<=n;i++){
         for(int j=1;j<=2*n;j++){
-            if(s.count(j) || (i>0 && s.count(a[i-1]+j)))continue;
+            if(s.count(j) || (s.count(a[i-1]+j)))continue;
             a[i]=j;
             s.insert(j);
             s.insert(j+a[i-1]);
