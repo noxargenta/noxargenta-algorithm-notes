@@ -6,9 +6,10 @@ using i64 = long long;
 void solve() {
     int n;
     cin  >> n;
-    vector<int> a(n+1,0);
-    vector<bool> b(n+1,0);
-    vector<int> c(n+1,0);
+    vector<int> a(n+2,0);
+    a[n+2]=1000000001;
+    vector<bool> b(n+2,0);
+    vector<int> c(n+2,0);
     int last=a[1];
     for(int i=1;i<=n;i++){
         cin  >> a[i];
@@ -38,7 +39,7 @@ void solve() {
     for(int i=1;i<=n;i++){
         if(b[i]==1){
             int l=i,r=i;
-            while(b[i]!=0){
+            while(b[l]!=0){
                 l--;
             }
             while(b[r]!=0){
@@ -47,7 +48,7 @@ void solve() {
             if((c[r]-c[l])<=(a[r]-a[l]+1)){
                 continue;
             }else {
-                cout << "YES\n";
+                cout << "NO\n";
             }
         }
     }
