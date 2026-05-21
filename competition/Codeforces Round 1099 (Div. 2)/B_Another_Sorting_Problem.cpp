@@ -10,10 +10,12 @@ void solve() {
     a[n+1]=1000000001;
     vector<bool> b(n+2,0);
     vector<int> c(n+2,0);
-    int last=a[1];
+    int last;
     for(int i=1;i<=n;i++){
         cin  >> a[i];
-        if(i>1){
+        if(i==1){
+            last=a[1];
+        }else{
             if( a[i]<last){
                 b[i]=1;
             }
