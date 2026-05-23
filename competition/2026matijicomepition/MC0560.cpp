@@ -38,8 +38,8 @@ void solve() {
     for(int i=0;i<N;i++){
         G[i].clear();
     }
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
+    for(int i=0;i<=n+2;i++){
+        for(int j=0;j<=n+2;j++){
             dp[i][j]=0;
         }
     }
