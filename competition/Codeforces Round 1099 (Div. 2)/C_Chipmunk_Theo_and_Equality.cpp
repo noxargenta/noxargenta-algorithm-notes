@@ -9,7 +9,7 @@ unordered_map<int,pair<int,int>> mp;
 void solve() {
     int n;
     cin >> n;
-    vector<int> a(n+1);
+    mp.clear();
     for(int i=1;i<=n;i++){
         int x;
         cin >> x;
@@ -32,10 +32,17 @@ void solve() {
                 x++;
             }
         }
-        mp[1].first++;
-        mp[1].second+=cnt;
+        mp[x].first++;
+        mp[x].second+=cnt;
+    }
+    int minn=INT_MAX;
+    for(auto x : mp){
+        if(x.second.first==n){
+            minn=min(minn,x.second.second);
+        }
     }
     
+    cout << minn << endl;
 }
 
 signed main() {
@@ -43,7 +50,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
