@@ -11,7 +11,7 @@ void solve() {
         cin >> a[i];
     }
     int sum=0;
-    bool fil=1;
+    int fil=1;
     vector<int> b;
     for(int i=n;i>=1;i--){
         if(a[i] * fil>0){
