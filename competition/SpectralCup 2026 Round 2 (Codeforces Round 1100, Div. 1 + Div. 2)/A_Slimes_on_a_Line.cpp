@@ -14,15 +14,8 @@ void solve() {
         minn=min(minn,a[i]);
         maxx=max(maxx,a[i]);
     }
-    int ans=INT_MAX;
-    for(int i=minn;i<=maxx;i++){
-        int sum=0;
-        for(int j=1;j<=n;j++){
-            sum+=abs(a[j]-i);
-        }   
-        ans=min(ans,sum);
-
-    }
+    int ans=();
+    
     cout << ans << endl;
 }
 
