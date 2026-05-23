@@ -18,7 +18,12 @@ void dfs(int u,int fa){
         dfs(v,u);
     }
     for(int i=0;i<n;i++){
-        
+        int a=1,b=1;
+        for(auto v:G[u]){
+            if(v==fa)continue;
+            a=a*dp[v][i+1]%MOD;
+            
+        }
     }
 }
 void solve() {
