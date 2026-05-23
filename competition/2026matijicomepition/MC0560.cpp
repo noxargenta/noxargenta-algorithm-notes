@@ -22,6 +22,9 @@ void dfs(int u,int fa){
         for(auto v:G[u]){
             if(v==fa)continue;
             a=a*dp[v][i+1]%MOD;
+            if(i>0){
+                b=b*dp[v][i-1]%MOD;
+            }
             
         }
     }
