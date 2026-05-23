@@ -7,8 +7,19 @@ const int N=3050;
 vector<int> G[N];
 int dp[N][N];
 const int MOD=998244353;
-int dfs(int u,int fa){
-
+int n;
+void dfs(int u,int fa){
+    if(G[u].size()==1 && fa!=0){
+        dp[u][1]=1;
+        return;
+    }
+    for(auto v : G[u]){
+        if(v==fa)continue;
+        dfs(v,u);
+    }
+    for(int i=0;i<n;i++){
+        
+    }
 }
 void solve() {
     for(int i=0;i<N;i++){
@@ -19,7 +30,6 @@ void solve() {
             dp[i][j]=0;
         }
     }
-    int n;
     cin >> n;
     for(int i=1;i<=n;i++){
         int u,v;
@@ -27,7 +37,12 @@ void solve() {
         G[u].push_back(v);
         G[v].push_back(u);
     }
-
+    if(n==1){
+        cout << 0 << endl;
+    }else {
+        dfs(1,0);
+        cout << dp[1][0];
+    }
 }
 
 signed main() {
