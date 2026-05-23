@@ -10,10 +10,21 @@ void solve() {
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
+    int sum=0;
     bool fil=1;
+    vector<int> b;
     for(int i=n;i>=1;i--){
-        
+        if(a[i] * fil>0){
+            sum++;
+            b.push_back(i);
+            fil*=-1;
+        }
     }
+    cout << sum<< endl;
+    for(auto x : b){
+        cout << x << ' ';
+    }
+    cout << endl;
 }
 
 signed main() {
