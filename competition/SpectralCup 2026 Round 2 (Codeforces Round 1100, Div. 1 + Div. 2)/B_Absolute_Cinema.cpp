@@ -9,7 +9,7 @@ void solve() {
     vector<int> a(n+1);
     vector<int> b(n+1);
     int maxxa=0;
-    int max_min=INT_MAX;
+    int max_min=0;
     for(int i=1;i<=n;i++){
         cin >> a[i];
         maxxa=max(a[i],maxxa);
@@ -24,7 +24,7 @@ void solve() {
         sum+=b[i];
     }
 
-    cout << sum << endl;
+    cout << sum + max_min << endl;
 }
 
 signed main() {
