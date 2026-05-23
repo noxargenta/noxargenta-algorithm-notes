@@ -14,7 +14,7 @@ void solve() {
         cin >> a[i];
         maxxa=max(a[i],maxxa);
     }
-    int sum=maxxa;
+    int sum=0;
     for(int i=1;i<=n;i++){
         cin >> b[i];
         max_min=max(max_min,min(a[i],b[i]));
