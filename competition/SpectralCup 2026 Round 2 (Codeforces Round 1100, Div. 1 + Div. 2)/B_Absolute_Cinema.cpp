@@ -9,6 +9,7 @@ void solve() {
     vector<int> a(n+1);
     vector<int> b(n+1);
     int maxxa=0;
+    int max_min=INT_MAX;
     for(int i=1;i<=n;i++){
         cin >> a[i];
         maxxa=max(a[i],maxxa);
@@ -16,6 +17,7 @@ void solve() {
     int sum=maxxa;
     for(int i=1;i<=n;i++){
         cin >> b[i];
+        max_min=max(max_min,min(a[i],b[i]));
         if(a[i]!=maxxa && a[i]>b[i]){
             b[i]=a[i];
         }
