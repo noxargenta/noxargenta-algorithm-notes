@@ -25,7 +25,11 @@ void dfs(int u,int fa){
             if(i>0){
                 b=b*dp[v][i-1]%MOD;
             }
-            
+        }
+        if(i==0){
+            dp[u][i]+=a%MOD;
+        }else {
+            dp[u][i]+=(a+b)%MOD;
         }
     }
 }
@@ -39,7 +43,7 @@ void solve() {
         }
     }
     cin >> n;
-    for(int i=1;i<=n;i++){
+    for(int i=1;i<n;i++){
         int u,v;
         cin >> u >> v;
         G[u].push_back(v);
@@ -49,7 +53,7 @@ void solve() {
         cout << 0 << endl;
     }else {
         dfs(1,0);
-        cout << dp[1][0];
+        cout << dp[1][0] << endl;
     }
 }
 
