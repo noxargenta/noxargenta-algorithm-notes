@@ -18,10 +18,7 @@ void solve() {
     for(int i=1;i<=n;i++){
         cin >> b[i];
         max_min=max(max_min,min(a[i],b[i]));
-        if(a[i]!=maxxa && a[i]>b[i]){
-            b[i]=a[i];
-        }
-        sum+=b[i];
+        sum+=max(b[i],a[i]);
     }
 
     cout << sum + max_min << endl;
