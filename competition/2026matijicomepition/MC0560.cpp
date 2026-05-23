@@ -27,9 +27,9 @@ void dfs(int u,int fa){
             }
         }
         if(i==0){
-            dp[u][i]+=a%MOD;
+            dp[u][i]=a%MOD;
         }else {
-            dp[u][i]+=(a+b)%MOD;
+            dp[u][i]=(a+b)%MOD;
         }
     }
 }
