@@ -5,72 +5,21 @@ using i64 = long long;
 #define int long long
 void solve() {
     int n;
-    cin  >> n;
-    vector<int> a(n+2,0);
-    a[n+1]=1000000001;
-    vector<bool> b(n+2,0);
-    vector<int> c(n+2,0);
-    int last;
-    for(int i=1;i<=n;i++){
-        cin  >> a[i];
-        if(i==1){
-            last=a[1];
-        }else{
-            if( a[i]<last){
-                b[i]=1;
-            }
-            last=max(last,a[i]);
-        }
-    }
-    last=-1;
-    for(int i=1;i<=n;i++){
-        if(last==-1 && b[i]==1){
-            last=a[i];
-        }
-        if(b[i]==1){
-            if(a[i]<last){
-                cout << "NO\n";
-                return;
-            }
-            last=a[i];
-        }
-    }
-    for(int i=1;i<=n;i++){
-        c[i]=c[i-1]+b[i];
-    }
+    cin >> n;
     int k=0;
+    
+    vector<int> a(n+1);
     for(int i=1;i<=n;i++){
-        if(b[i]==1){
-            int l=i,r=i;
-            while(b[l]!=0){
-                l--;
-            }
-            while(b[r]!=0){
-                r++;
-            }
-            i=r;
-            if((c[r]-c[l])<=(a[r]-a[l]+1) || a[r] == a[l]){
-                k=max(k,a[l]-a[l+1]);
-                continue;
-            }else {
-                cout << "NO\n";
-                return;
-            }
-        }
+        cin >> a[i];
+        k=max(k,a[i-1]-a[i]);
     }
-    for(int i=1;i<=n;i++){
-        if(b[i]==1){
-            int l=i,r=i;
-            while(b[l]!=0){
-                l--;
-            }
-            while(b[r]!=0){
-                r++;
-            }
-            i=r;
-            if(a[l+1]+k<a[l] || a[r-1]+k>a[r]){
+    for(int i=2;i<=n;i++){
+        if(a[i]<a[i-1]){
+            if(a[i]+k<a[i-1]){
                 cout << "NO\n";
                 return;
+            }else {
+                a[i]+=k;
             }
         }
     }
