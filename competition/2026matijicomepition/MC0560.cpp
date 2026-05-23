@@ -34,15 +34,15 @@ void dfs(int u,int fa){
     }
 }
 void solve() {
+    cin >> n;
     for(int i=0;i<N;i++){
         G[i].clear();
     }
-    for(int i=0;i<N;i++){
-        for(int j=0;j<N;j++){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
             dp[i][j]=0;
         }
     }
-    cin >> n;
     for(int i=1;i<n;i++){
         int u,v;
         cin >> u >> v;
