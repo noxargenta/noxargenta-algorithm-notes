@@ -14,7 +14,7 @@ void solve() {
         minn=min(minn,a[i]);
         maxx=max(maxx,a[i]);
     }
-    int ans=();
+    int ans=(maxx-minn+1)/2;
     
     cout << ans << endl;
 }
