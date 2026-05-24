@@ -15,20 +15,10 @@ void solve() {
     for(int i=1;i<=m;i++){
         cin >> b[i];
         for(int j=1;j<=n;j++){
-            int ok=1;
-            if(b[i].length()>a[j].length()){
-                continue;
-            }
-            for(int k=0;k<b[i].length();k++){
-                if(a[j][k]!=b[i][k]){
-                    ok=0;
-                    break;
-                }
-            }
-            if(ok){
-                cnt[j]++;
-            }else {
-                continue;
+            if(a[j].length()>b[i].length()){
+                if(a[j].substr(0,b[i].size())==b[i]){
+                    cnt[j]++;
+                };
             }
         }
     }
