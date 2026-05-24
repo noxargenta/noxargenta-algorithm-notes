@@ -32,14 +32,14 @@ void solve() {
                     ok1=1;
                     break;
                 }
+                if(ll==l && rr==r){
+                    break;
+                }
                 if(ll!=l){
                     ll--;
                 }
                 if(rr!=r){
                     rr++;
-                }
-                if(ll==l && rr==r){
-                    break;
                 }
             }
             if(ok2==1){
