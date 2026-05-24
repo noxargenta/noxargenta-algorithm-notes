@@ -16,7 +16,7 @@ void solve() {
         cin >> b[i];
         for(int j=1;j<=n;j++){
             int ok=1;
-            if(b[i].length()>a[i].length()){
+            if(b[i].length()>a[j].length()){
                 continue;
             }
             for(int k=0;k<b[i].length();k++){
