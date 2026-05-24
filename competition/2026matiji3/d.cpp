@@ -25,6 +25,7 @@ void solve() {
             }else { 
                 las=j;
                 sum=1;
+                j--;
             }
             //cout << sum << endl;
             maxx=max(maxx,sum);
