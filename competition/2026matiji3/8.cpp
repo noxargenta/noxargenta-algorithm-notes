@@ -16,9 +16,8 @@ void solve() {
         int sum=0;
         set<int> st;
         for(int i=1;n-i+1>=x;i++){
-            
             for(int j=i;j<i+x;j++){
-                st.insert(a[i]);
+                st.insert(a[j]);
             }
             sum+=st.size();
             st.clear();
