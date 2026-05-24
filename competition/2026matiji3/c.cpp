@@ -14,7 +14,10 @@ void solve() {
             cin >> g[i][j];
         }
     }
-    
+    int ans=0;
+    for(int i=1;i<=n;i+=t1){
+        for(int j=)
+    }
 
 }
 
