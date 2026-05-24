@@ -17,6 +17,7 @@ void solve() {
             int ll=i,rr=i;
             int okl=0;
             int okr=0;
+            int ok=0;
             while(true){
                 if(a[ll]<a[i]){
                     okl=1;
@@ -26,6 +27,7 @@ void solve() {
                 }
                 if(okl==1 && okr==1){
                     cout << "Yes\n";
+                    ok=1;
                     break;
                 }
                 if(ll!=l){
@@ -38,7 +40,10 @@ void solve() {
                     break;
                 }
             }
-            cout << "No\n";
+            if(ok==0){
+                cout << "No\n";
+            }
+            
         }
     }
     
