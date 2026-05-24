@@ -14,22 +14,20 @@ void solve() {
     for(int i=1;i<=q;i++){
         int l,r;
         cin >> l >>r;
-        int sum=0;
-        int las=-1;
+        int sum=1;
+        int las=l;
         //int ok=0;
         int maxx=0;
         for(int j=l;j<=r;j++){
-            maxx=max(sum,maxx);
-            if(a[i]<=a[i-1] && sum==1){
-                continue;
-            }
-            if(a[i]>a[i-1]){
+            if(j==las)continue;
+            if(a[j]>a[i-1]){
                 sum++;
             }else {
-                j--;
+                las=j;
                 sum=1;
             }
-            maxx=max(sum,maxx);
+            cout << sum << endl;
+            maxx=max(maxx,sum);
         }
         if(maxx>=3){
             cout << "Yes\n";
