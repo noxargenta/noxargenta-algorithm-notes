@@ -20,7 +20,9 @@ void solve() {
         int maxx=0;
         for(int j=l;j<=r;j++){
             maxx=max(sum,maxx);
-            if()
+            if(a[i]<=a[i-1] && sum==1){
+                continue;
+            }
             if(a[i]>a[i-1]){
                 sum++;
             }else {
