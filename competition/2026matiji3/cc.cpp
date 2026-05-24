@@ -16,7 +16,7 @@ void solve() {
     }
     int ans=0;
     for(int i=1;i<=n;i+=t1){
-        for(int j=1;j<=m;i+=t2){
+        for(int j=1;j<=m;j+=t2){
             int sum;
             for(int i1=i;i1<i+t1;i1++){
                 for(int j1=j;j1<j+t2;j1++){
