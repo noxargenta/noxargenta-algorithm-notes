@@ -8,7 +8,6 @@ void solve() {
     cin >> n >> m;
     vector<string> a(n+1);
     vector<int> cnt(n+1);
-    
     vector<string> b(n+1);
     for(int i=1;i<=n;i++){
         cin >> a[i];
@@ -16,8 +15,21 @@ void solve() {
     for(int i=1;i<=n;i++){
         cin >> b[i];
         for(int j=1;j<=n;j++){
-            if(a[i].substr(a.begin(),b[i].size()))
+            int ok=1;
+            for(int k=0;k<b[i].length();k++){
+                if(a[j][k]!=b[i][k]){
+                    ok=0;
+                }
+            }
+            if(ok){
+                cnt[i]++;
+            }else {
+                continue;
+            }
         }
+    }
+    for(int i=1;i<=n;i++){
+        cout << cnt[i] << ' ';
     }
     
 }
