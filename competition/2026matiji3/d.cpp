@@ -10,38 +10,35 @@ void solve() {
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
-    a[0]=-1;
-    for(int i=1;i<=q;i++){
+    while(q--){
         int l,r;
         cin >> l >> r;
-        int sum=1;
-        vector<int> b(n+1,0);
-        //int ok=0; 
-        int maxx=1;
-        for(int j=l+1;j<=r;j++){
-            
-            if(a[j]>a[j-1]){
-                sum++;
-                maxx=max(maxx,sum);    
-            }else {
-                b[j]=a[j];
-                sum=1;
-            }
-            //cout << sum << endl;
-            maxx=max(maxx,sum);
-        }
-        if(maxx>=3){
-            cout << "Yes\n";
-        }else {
-            int las=-1;
-            for(int j=l+1;j<=r;j++){
-                if(las==-1 && a[j]<=a[j-1]){
-                    las=j;
+        for(int i=l;i<=r;i++){
+            int ll=i,rr=i;
+            int okl=0;
+            int okr=0;
+            while(true){
+                if(a[ll]<a[i]){
+                    okl=1;
                 }
-                for(int k=las+1;k<=r;k++){
-                    if(a[k]>las)
+                if(a[rr]>a[i]){
+                    okr=1;
+                }
+                if(okl==1 && okr==1){
+                    cout << "Yes\n";
+                    break;
+                }
+                if(ll!=l){
+                    ll--;
+                }
+                if(rr!=r){
+                    rr++;
+                }
+                if(ll==l && rr==r){
+                    break;
                 }
             }
+            cout << "No\n";
         }
     }
     
