@@ -20,40 +20,42 @@ void solve() {
             int okl=0;
             int okr=0;
             while(true){
-                if(a[ll]<a[i]){
-                    okl=1;
+                //cout << "---";
+                //cout << ll<<' '<<rr << endl;
+                if(ll>=l){
+                    if(a[ll]<a[i]){
+                        okl=1;
+                    }
                 }
-                if(a[rr]>a[i]){
-                    okr=1;
+                
+                if(rr<=r){
+                    if(a[rr]>a[i]){
+                        okr=1;
+                    }
                 }
+                //cout << "--ok--";
+                //cout << okl <<' ' << okr << endl;
+                
                 if(okl==1 && okr==1){
                     cout << "Yes\n";
                     ok2=1;
                     ok1=1;
                     break;
                 }
-                if(ll==l && rr==r){
+                if(ll<l && rr>r){
                     break;
                 }
-                if(ll!=l){
-                    ll--;
-                }
-                if(rr!=r){
-                    rr++;
-                }
-                cout << "---";
-                cout << ll<<' '<<rr << endl;
+                ll--;
+                rr++;
             }
             if(ok2==1){
                 break;
             }
         }
-        if(ok1==1){
-            break;
-        }else {
-
+        if(ok1==0){
             cout << "No\n";
         }
+        
         
     }
     
