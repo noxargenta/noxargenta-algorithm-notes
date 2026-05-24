@@ -4,7 +4,6 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
-    cout << 1 << endl;
     int n,m,t1,t2;
     cin >> n >> m >> t1 >> t2;
     // int ln=n/t1;
@@ -24,6 +23,7 @@ void solve() {
                     if(i1==i && j1==j){
                         sum=g[i1][j1];
                     }else {
+                        sum=(sum^g[i1][j1]);
                     }
                     
                 }
