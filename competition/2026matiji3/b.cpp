@@ -7,7 +7,7 @@ void solve() {
     int n,m;
     cin >> n >> m;
     vector<string> a(n+1);
-    vector<int> cnt(n+1);
+    vector<int> cnt(n+1,0);
     vector<string> b(n+1);
     for(int i=1;i<=n;i++){
         cin >> a[i];
