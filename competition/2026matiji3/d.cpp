@@ -18,8 +18,13 @@ void solve() {
         int las=l;
         //int ok=0;
         int maxx=1;
-        for(int j=l;j<=r;j++){
-            
+        for(int j=l+1;j<=r;j++){
+            if(a[j]>a[j-1]){
+                sum++;
+                maxx=max(maxx,sum);    
+            }else {
+                sum=1;
+            }
             //cout << sum << endl;
             maxx=max(maxx,sum);
         }
