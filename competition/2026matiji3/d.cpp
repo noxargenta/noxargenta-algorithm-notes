@@ -17,16 +17,9 @@ void solve() {
         int sum=1;
         int las=l;
         //int ok=0;
-        int maxx=0;
+        int maxx=1;
         for(int j=l;j<=r;j++){
-            if(j==las)continue;
-            if(a[j]>a[j-1]){
-                sum++;
-            }else { 
-                las=j;
-                sum=1;
-                j--;
-            }
+            
             //cout << sum << endl;
             maxx=max(maxx,sum);
         }
