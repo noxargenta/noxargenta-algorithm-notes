@@ -41,6 +41,8 @@ void solve() {
                 if(rr!=r){
                     rr++;
                 }
+                cout << "---"
+                cout << ll<<' '<<rr << endl;
             }
             if(ok2==1){
                 break;
@@ -48,8 +50,11 @@ void solve() {
         }
         if(ok1==1){
             break;
+        }else {
+
+            cout << "No\n";
         }
-        cout << "No\n";
+        
     }
     
 }
