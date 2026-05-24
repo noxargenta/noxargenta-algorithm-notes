@@ -36,7 +36,10 @@ void solve() {
             int las=-1;
             for(int j=l+1;j<=r;j++){
                 if(las==-1 && a[j]<=a[j-1]){
-                    
+                    las=j;
+                }
+                for(int k=las+1;k<=r;k++){
+                    if(a[k]>las)
                 }
             }
         }
