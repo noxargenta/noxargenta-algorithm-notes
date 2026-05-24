@@ -16,7 +16,7 @@ void solve() {
         cin >> l >>r;
         int sum=0;
         int las=-1;
-        int ok=0;
+        //int ok=0;
         int maxx=0;
         for(int j=l;j<=r;j++){
             maxx=max(sum,maxx);
