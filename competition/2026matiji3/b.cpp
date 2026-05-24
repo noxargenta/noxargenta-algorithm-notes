@@ -8,14 +8,14 @@ void solve() {
     cin >> n >> m;
     vector<string> a(n+1);
     vector<int> cnt(n+1,0);
-    vector<string> b(n+1);
+    vector<string> b(m+1);
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
     for(int i=1;i<=m;i++){
         cin >> b[i];
         for(int j=1;j<=n;j++){
-            if(a[j].length()>b[i].length()){
+            if(a[j].length()>=b[i].length()){
                 if(a[j].substr(0,b[i].size())==b[i]){
                     cnt[j]++;
                 };
