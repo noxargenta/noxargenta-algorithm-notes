@@ -13,10 +13,10 @@ void solve() {
     a[0]=-1;
     for(int i=1;i<=q;i++){
         int l,r;
-        cin >> l >>r;
+        cin >> l >> r;
         int sum=1;
         int las=l;
-        //int ok=0;
+        //int ok=0; 
         int maxx=1;
         for(int j=l+1;j<=r;j++){
             if(a[j]>a[j-1]){
