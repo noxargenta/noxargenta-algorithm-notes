@@ -25,7 +25,7 @@ void solve() {
     for(int i=1;i<=n;i++){
         cout << cnt[i] << ' ';
     }
-    
+    cout << endl;
 }
 
 signed main() {
