@@ -5,8 +5,8 @@ using i64 = long long;
 #define int long long
 void solve() {
     int n,m;
-    int a[n+1];
     cin >> n >> m;
+    int a[n+1];
     for(int i=1;i<=n;i++){
         cin >>a[i];
     }
@@ -14,12 +14,14 @@ void solve() {
         int x;
         cin >> x;
         int sum=0;
+        set<int> st;
         for(int i=1;n-i+1>=x;i++){
-            set<int> st;
+            
             for(int j=i;j<i+x;j++){
                 st.insert(a[i]);
             }
             sum+=st.size();
+            st.clear();
         }
         cout << sum <<endl;
     }
