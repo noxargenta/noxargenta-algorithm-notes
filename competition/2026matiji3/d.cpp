@@ -15,14 +15,16 @@ void solve() {
         int l,r;
         cin >> l >> r;
         int sum=1;
-        int las=l;
+        vector<int> b(n+1,0);
         //int ok=0; 
         int maxx=1;
         for(int j=l+1;j<=r;j++){
+            
             if(a[j]>a[j-1]){
                 sum++;
                 maxx=max(maxx,sum);    
             }else {
+                b[j]=a[j];
                 sum=1;
             }
             //cout << sum << endl;
@@ -31,7 +33,12 @@ void solve() {
         if(maxx>=3){
             cout << "Yes\n";
         }else {
-            cout << "No\n";
+            int las=-1;
+            for(int j=l+1;j<=r;j++){
+                if(las==-1 && a[j]<=a[j-1]){
+                    
+                }
+            }
         }
     }
     
