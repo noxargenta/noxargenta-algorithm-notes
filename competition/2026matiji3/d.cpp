@@ -41,7 +41,7 @@ void solve() {
                 if(rr!=r){
                     rr++;
                 }
-                cout << "---"
+                cout << "---";
                 cout << ll<<' '<<rr << endl;
             }
             if(ok2==1){
