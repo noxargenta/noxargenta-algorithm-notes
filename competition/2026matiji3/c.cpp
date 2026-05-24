@@ -11,17 +11,22 @@ void solve() {
     int g[n+1][m+1];
     for(int i=1;i<=n;i++){
         for(int j=1;j<=m;j++){
-            cin >> g[i][j];
+            cin >> g[i][j]; 
         }
     }
     int ans=0;
     for(int i=1;i<=n;i+=t1){
         for(int j=1;j<=m;i+=t2){
             int sum=0;
-            for()
+            for(int i1=i;i1<i+t1;i1++){
+                for(int j1=j;j1<j+t2;j1++){
+                    sum=(sum^g[i1][j1]);
+                }
+            }
+            ans+=sum;
         }
     }
-
+    cout <<ans << endl;
 }
 
 signed main() {
