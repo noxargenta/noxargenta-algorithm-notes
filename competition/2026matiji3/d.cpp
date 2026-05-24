@@ -13,11 +13,12 @@ void solve() {
     while(q--){
         int l,r;
         cin >> l >> r;
+        int ok1=0;
+        int ok2=0;
         for(int i=l;i<=r;i++){
             int ll=i,rr=i;
             int okl=0;
             int okr=0;
-            int ok=0;
             while(true){
                 if(a[ll]<a[i]){
                     okl=1;
@@ -27,7 +28,8 @@ void solve() {
                 }
                 if(okl==1 && okr==1){
                     cout << "Yes\n";
-                    ok=1;
+                    ok2=1;
+                    ok1=1;
                     break;
                 }
                 if(ll!=l){
@@ -40,11 +42,14 @@ void solve() {
                     break;
                 }
             }
-            if(ok==0){
-                cout << "No\n";
+            if(ok2==1){
+                break;
             }
-            
         }
+        if(ok1==1){
+            break;
+        }
+        cout << "No\n";
     }
     
 }
