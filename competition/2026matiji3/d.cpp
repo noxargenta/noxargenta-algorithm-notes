@@ -22,7 +22,7 @@ void solve() {
             if(j==las)continue;
             if(a[j]>a[j-1]){
                 sum++;
-            }else {
+            }else { 
                 las=j;
                 sum=1;
             }
