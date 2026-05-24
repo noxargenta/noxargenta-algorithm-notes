@@ -16,13 +16,17 @@ void solve() {
         cin >> b[i];
         for(int j=1;j<=n;j++){
             int ok=1;
+            if(b[i].length()>a[i].length()){
+                continue;
+            }
             for(int k=0;k<b[i].length();k++){
                 if(a[j][k]!=b[i][k]){
                     ok=0;
+                    break;
                 }
             }
             if(ok){
-                cnt[i]++;
+                cnt[j]++;
             }else {
                 continue;
             }
