@@ -20,13 +20,13 @@ void solve() {
         int maxx=0;
         for(int j=l;j<=r;j++){
             if(j==las)continue;
-            if(a[j]>a[i-1]){
+            if(a[j]>a[j-1]){
                 sum++;
             }else {
                 las=j;
                 sum=1;
             }
-            cout << sum << endl;
+            //cout << sum << endl;
             maxx=max(maxx,sum);
         }
         if(maxx>=3){
