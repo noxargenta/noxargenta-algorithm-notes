@@ -5,7 +5,8 @@ using i64 = long long;
 #define int long long
 vector<int> a(30);
 int n,cnt;
-int b[200],vis[200];
+int b[200];
+//int vis[200];
 bool isPrime(int x){
     if(x<2){
         return 0;
@@ -30,12 +31,12 @@ void dfs(int k,int u){
         return;
     }
     for(int i=u;i<=n;i++){
-        if(vis[i]==0){
-            vis[i]=1;
+        //if(vis[i]==0){
+            //vis[i]=1;
             b[k]=a[i];
             dfs(k+1,i+1);
-            vis[i]=0;
-        }
+            //vis[i]=0;
+        //}
     }
 };
 
