@@ -20,7 +20,9 @@
         return 1;
     }
     void dfs(int k,int u,int sum){
-        if()
+        if(kk-(k-1) > n-u +1){
+            return;
+        }
         if(k-1==kk){
             // for(int i=1;i<=kk;i++){
             //     sum+=b[i];
