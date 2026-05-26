@@ -20,8 +20,8 @@ bool isPrime(int x){
     return 1;
 }
 void dfs(int k,int u){
+    int sum=0;
     if(k-1==kk){
-        int sum=0;
         for(int i=1;i<=kk;i++){
             sum+=b[i];
         }
