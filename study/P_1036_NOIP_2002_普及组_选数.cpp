@@ -24,12 +24,12 @@ void solve() {
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
-    auto dfs = [&](int u,int fa) -> int{
+    auto dfs = [&](int u) -> int{
         
     };
     int cnt=0;
     for(int i=1;i<=n;i++){
-        cnt+=dfs(i,0);
+        cnt+=dfs(i);
     }
     cout << cnt << endl;
 }
