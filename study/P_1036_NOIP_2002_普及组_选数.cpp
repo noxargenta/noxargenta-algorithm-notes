@@ -5,7 +5,8 @@ using i64 = long long;
 #define int long long
 vector<int> a(30);
 int n,cnt,kk;
-bool c[10000000];
+const int N=100000008;
+bool c[N];
 int b[200];
 //int vis[200];
 bool isPrime(int x){
@@ -43,11 +44,7 @@ void dfs(int k,int u,int sum){
 };
 
 void solve() {
-    for(int i=1;i<=1000006;i++){
-        if(isPrime(i)){
-            c[i]=1;
-        }
-    }
+    
     cin >> n;
     cin >> kk;
     for(int i=1;i<=n;i++){
