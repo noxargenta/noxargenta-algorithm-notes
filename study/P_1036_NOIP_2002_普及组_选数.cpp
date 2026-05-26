@@ -27,7 +27,10 @@ void solve() {
     auto dfs = [&](int u,int fa) -> int{
         
     };
-    int cnt=dfs(1,0);
+    int cnt=0;
+    for(int i=1;i<=n;i++){
+        cnt+=dfs(i,0);
+    }
     cout << cnt << endl;
 }
 
