@@ -3,7 +3,10 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
-int b[200],vis[200];
+vector<int> a(30);
+int n,cnt,kk;
+int b[200];
+//int vis[200];
 bool isPrime(int x){
     if(x<2){
         return 0;
@@ -16,34 +19,35 @@ bool isPrime(int x){
     }
     return 1;
 }
+void dfs(int k,int u,int sum){
+    if(kk-(k-1) > n-u +1){
+        return;
+    }
+    if(k-1==kk){
+        // for(int i=1;i<=kk;i++){
+        //     sum+=b[i];
+        // }
+        if(isPrime(sum)){
+            cnt++;
+        }
+        return;
+    }
+    for(int i=u;i<=n;i++){
+        //if(vis[i]==0){
+            //vis[i]=1;
+            //b[k]=a[i];
+            dfs(k+1,i+1,sum+a[i]);
+        //}
+    }
+};
 
 void solve() {
-    int n;
     cin >> n;
-    int cnt=0;
-    vector<int> a(n+1);
+    cin >> kk;
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
-    auto dfs = [&](int k,int u) -> void{
-        if(k==n){
-            int sum=0;
-            for(int i=1;i<=n;i++){
-                sum+=b[i];
-            }
-            if(isPrime(sum)){
-                cnt++;
-            }
-            return;
-        }
-        for(int i=u;i<=n;i++){
-            if(vis[i]==0){
-                vis[i]=1;
-                b[k]=a[i];
-                dfs(k+1,i+1);
-            }
-        }
-    };
+    dfs(1,1,0);
     
     cout << cnt << endl;
 }
