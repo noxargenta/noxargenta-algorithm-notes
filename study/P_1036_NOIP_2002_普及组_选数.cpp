@@ -19,8 +19,7 @@ bool isPrime(int x){
     }
     return 1;
 }
-void dfs(int k,int u){
-    int sum=0;
+void dfs(int k,int u,int sum){
     if(k-1==kk){
         for(int i=1;i<=kk;i++){
             sum+=b[i];
@@ -33,9 +32,11 @@ void dfs(int k,int u){
     for(int i=u;i<=n;i++){
         //if(vis[i]==0){
             //vis[i]=1;
-            b[k]=a[i];
-            dfs(k+1,i+1);
+            //b[k]=a[i];
+            sum+=a[i];
+            dfs(k+1,i+1,sum);
             //vis[i]=0;
+            sum-=a[i];
         //}
     }
 };
@@ -46,7 +47,7 @@ void solve() {
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
-    dfs(1,1);
+    dfs(1,1,0);
     
     cout << cnt << endl;
 }
