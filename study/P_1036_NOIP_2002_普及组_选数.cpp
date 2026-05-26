@@ -33,7 +33,7 @@ void dfs(int k,int u){
     for(int i=u;i<=n;i++){
         //if(vis[i]==0){
             //vis[i]=1;
-            b[k]=a[i];
+            b[k+1]=a[i];
             dfs(k+1,i+1);
             //vis[i]=0;
         //}
@@ -46,7 +46,7 @@ void solve() {
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
-    dfs(1,1);
+    dfs(0,1);
     
     cout << cnt << endl;
 }
