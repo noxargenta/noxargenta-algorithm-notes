@@ -3,6 +3,7 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
+int b[200],vis[200];
 bool isPrime(int x){
     if(x<2){
         return 0;
@@ -15,9 +16,7 @@ bool isPrime(int x){
     }
     return 1;
 }
-int dfs(int u,int fa){
 
-}
 void solve() {
     int n;
     cin >> n;
@@ -25,7 +24,11 @@ void solve() {
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
-    
+    auto dfs = [&](int u,int fa) -> int{
+        
+    };
+    int cnt=dfs(1,0);
+    cout << cnt << endl;
 }
 
 signed main() {
