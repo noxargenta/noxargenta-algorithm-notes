@@ -32,7 +32,7 @@ void dfs(int k,int u,int sum){
         }
         return;
     }
-    for(int i=u;i<=n;i++){
+    for(int i=u;i<=n - (kk - (k - 1)) + 1;i++){
         //if(vis[i]==0){
             //vis[i]=1;
             //b[k]=a[i];
