@@ -20,6 +20,7 @@
         return 1;
     }
     void dfs(int k,int u,int sum){
+        if()
         if(k-1==kk){
             // for(int i=1;i<=kk;i++){
             //     sum+=b[i];
