@@ -4,7 +4,7 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 vector<int> a(30);
-int n,cnt;
+int n,cnt,kk;
 int b[200];
 //int vis[200];
 bool isPrime(int x){
@@ -20,7 +20,7 @@ bool isPrime(int x){
     return 1;
 }
 void dfs(int k,int u){
-    if(k==n){
+    if(k-1==kk){
         int sum=0;
         for(int i=1;i<=n;i++){
             sum+=b[i];
@@ -42,7 +42,7 @@ void dfs(int k,int u){
 
 void solve() {
     cin >> n;
-    
+    cin >> kk;
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
