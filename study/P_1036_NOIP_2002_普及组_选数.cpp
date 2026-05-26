@@ -3,6 +3,8 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
+vector<int> a(30);
+int n,cnt;
 int b[200],vis[200];
 bool isPrime(int x){
     if(x<2){
@@ -16,28 +18,34 @@ bool isPrime(int x){
     }
     return 1;
 }
+void dfs(int k,int u){
+    if(k==n){
+        int sum=0;
+        for(int i=1;i<=n;i++){
+            sum+=b[i];
+        }
+        if(isPrime(sum)){
+            cnt++;
+        }
+        return;
+    }
+    for(int i=u;i<=n;i++){
+        if(vis[i]==0){
+            vis[i]=1;
+            b[k]=a[i];
+            dfs(k+1,i+1);
+            vis[i]=0;
+        }
+    }
+};
 
 void solve() {
-    int n;
     cin >> n;
-    int cnt=0;
-    vector<int> a(n+1);
+    
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
-    auto dfs = [&](int k,int u) -> void{
-        if(k==n){
-            int sum=0;
-            for(int i=1;i<=n;i++){
-                sum+=b[i];
-            }
-            if(isPrime(sum)){
-                cnt++;
-            }
-            return;
-        }
-        for(int i=)
-    };
+    
     
     cout << cnt << endl;
 }
