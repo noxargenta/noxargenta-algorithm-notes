@@ -20,17 +20,25 @@ bool isPrime(int x){
 void solve() {
     int n;
     cin >> n;
+    int cnt=0;
     vector<int> a(n+1);
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
-    auto dfs = [&](int u) -> int{
-        
+    auto dfs = [&](int k) -> void{
+        if(k==n){
+            int sum=0;
+            for(int i=1;i<=n;i++){
+                sum+=b[i];
+            }
+            if(isPrime(sum)){
+                cnt++;
+            }
+            return;
+        }
+        for(int i=)
     };
-    int cnt=0;
-    for(int i=1;i<=n;i++){
-        cnt+=dfs(i);
-    }
+    
     cout << cnt << endl;
 }
 
