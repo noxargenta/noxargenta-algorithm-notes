@@ -22,7 +22,7 @@ bool isPrime(int x){
 void dfs(int k,int u){
     if(k-1==kk){
         int sum=0;
-        for(int i=1;i<=n;i++){
+        for(int i=1;i<=kk;i++){
             sum+=b[i];
         }
         if(isPrime(sum)){
