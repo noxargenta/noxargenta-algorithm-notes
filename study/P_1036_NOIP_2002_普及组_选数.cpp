@@ -25,7 +25,7 @@ void solve() {
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
-    auto dfs = [&](int k) -> void{
+    auto dfs = [&](int k,int u) -> void{
         if(k==n){
             int sum=0;
             for(int i=1;i<=n;i++){
