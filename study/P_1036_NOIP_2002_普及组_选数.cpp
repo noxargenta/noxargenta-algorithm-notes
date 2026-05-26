@@ -29,7 +29,7 @@
             }
             return;
         }
-        for(int i=u;i<=n -kk + u;i++){
+        for(int i=u;i<=n;i++){
             //if(vis[i]==0){
                 //vis[i]=1;
                 //b[k]=a[i];
