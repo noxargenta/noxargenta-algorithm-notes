@@ -6,7 +6,7 @@ using i64 = long long;
 vector<int> a(30);
 int n,cnt,kk;
 const int N=100000008;
-bool c[N];
+vector<bool> c(N,1);
 int b[200];
 //int vis[200];
 bool isPrime(int x){
@@ -60,6 +60,19 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
+    c[0] = c[1] = 0;
+    vector<int> primes;
+    for(int i=2;i<=N;i++){
+        if(c[i]){
+            primes.push_back(i);
+        }
+        for(auto x : primes){
+            if(x * i>=N)break;
+            c[x * i]=0;
+            if(i % x==0)break;
+        }
+    }
+    
     // cin >> _;
     while(_--) {
         solve();
