@@ -33,10 +33,7 @@ void dfs(int k,int u,int sum){
         //if(vis[i]==0){
             //vis[i]=1;
             //b[k]=a[i];
-            sum+=a[i];
-            dfs(k+1,i+1,sum);
-            //vis[i]=0;
-            sum-=a[i];
+            dfs(k+1,i+1,sum+a[i]);
         //}
     }
 };
