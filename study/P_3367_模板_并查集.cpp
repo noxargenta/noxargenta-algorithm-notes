@@ -21,8 +21,8 @@ void solve() {
         if(z==1){
             int xf=fa(x);
             int yf=fa(y);
-            f[xf]=yf;
-            f[yf]=yf;
+            f(xf)=yf;
+            f(yf)=yf;
         }else {
             if(fa(x)==fa(y))cout << "Y\n";
             else cout << "N\n";
