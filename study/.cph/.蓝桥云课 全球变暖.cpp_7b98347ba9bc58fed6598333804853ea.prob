@@ -1,0 +1,1 @@
+{"name":"Local: 蓝桥云课 全球变暖","url":"c:\\code\\c++lan\\study\\蓝桥云课 全球变暖.cpp","tests":[{"id":1779887444299,"input":"7\n.......\n.##....\n.##....\n....##.\n..####.\n...###.\n.......","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\study\\蓝桥云课 全球变暖.cpp","group":"local","local":true}
