@@ -7,7 +7,7 @@ const int N=2*1e5;
 int M;
 int f[N];
 int fa(int x){
-    return x==f[x] ? x : fa(f[x]);
+    return f[x]==x ? x : f[x]=fa(f[x]);
 }   
 void solve() {
     int n,m;
