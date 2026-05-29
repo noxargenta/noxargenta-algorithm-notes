@@ -4,9 +4,25 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 int n,m,x,y;
+int dx[]={1,2,2,1,-1,-2,-2-1};
+int dy[]={-2,-1,1,2,2,1,-1,-2};
+bool vis[405][405];
+int dis[405][405];
+int g[405][405];
+queue<pair<int,int>> q;
 void solve() {
     cin >> n >> m >> x >>y;
-    
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cin >> g[i][j];
+        }
+    }
+    dis[x][y]=0;
+    vis[x][y]=1;
+    q.push({x,y});
+    while(!q.empty()){
+        
+    }
 }
 
 signed main() {
