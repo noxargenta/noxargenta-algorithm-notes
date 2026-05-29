@@ -108,6 +108,9 @@
 | 知识点 | 你的练习 | 位置 |
 |-------|---------|------|
 | BFS 网格搜索 | `C_幅優先探索.cpp` — **双队列存坐标，经典 BFS 模板** | [competition/20251130ECUT12](./competition/20251130ECUT12) |
+| BFS 马走日 | `P_1443_马的遍历.cpp` — **queue<pair> + memset 初始化 + 8 方向** | [study/](./study) |
+| DFS 洪水填充 (8 方向) | `P_1596_Lake_Counting.cpp` — **Flood Fill 数连通块** | [study/](./study) |
+| DFS 岛屿淹没 | `蓝桥云课 全球变暖.cpp` — **检查四面是否邻水判断是否淹没** | [study/](./study) |
 | Valid BFS 序验证 | `CF_1037_D_Valid_BFS.cpp` — **邻接表按 BFS 序排序后验证** | [study/](./study) |
 | BFS 序 | `K_BFS序.cpp` | [competition/2025.12.29group4](./competition/2025.12.29group4) |
 | DFS 序 | `P_9872_DFS_Order.cpp` — **DFS 遍历树，记录 depth 和子树大小** | [study/](./study) |
@@ -261,6 +264,9 @@
 | Valid BFS | BFS 序验证 | [收藏模板题](./收藏模板题/Valid%20BFS.cpp) |
 | MC0456(DFS)斩断灵根 | DFS 搜索 | [收藏模板题](./收藏模板题/MC0456(DFS)斩断灵根.cpp) |
 | MC0509 快刀乱麻定局 | 回溯搜索 | [收藏模板题](./收藏模板题/MC0509%20快刀乱麻定局.cpp) |
+| P_1443 马的遍历 | BFS queue<pair> + memset | [study/](./study/P_1443_马的遍历.cpp) |
+| P_1596 Lake Counting | DFS Flood Fill 8 方向 | [study/](./study/P_1596_USACO_10_OCT_Lake_Counting_S.cpp) |
+| 蓝桥云课 全球变暖 | DFS 岛屿淹没判定 | [study/](./study/蓝桥云课%20全球变暖.cpp) |
 | P_1886 滑动窗口 | 单调队列（deque） | [study/](./study/P_1886_滑动窗口_模板_单调队列.cpp) |
 | P_5788 单调栈 | 单调栈 NGE | [study/](./study/P_5788_模板_单调栈.cpp) |
 | P_9872 DFS Order | DFS 序 + 子树大小 | [study/](./study/P_9872_DFS_Order.cpp) |
@@ -375,21 +381,29 @@ for(int i = 0; i < n; i++) {
 }
 ```
 
-### 9. BFS 网格 (双队列存坐标)
+### 9. BFS (queue<pair> + memset + 边界 x2/y2)
 
 ```cpp
-queue<int> qx, qy;
-qx.push(sx); qy.push(sy);
-while(qx.size()) {
-    for(int i = 0; i < 4; i++) {
-        int x = qx.front() + dx[i];
-        int y = qy.front() + dy[i];
-        if(合法) {
-            qx.push(x); qy.push(y);
-            dist[x][y] = dist[qx.front()][qy.front()] + 1;
+bool vis[405][405]; int dis[405][405];
+memset(vis, 0, sizeof(vis));
+memset(dis, -1, sizeof(dis));          // -1 表示不可达
+queue<pair<int, int>> q;
+q.push({x, y}); vis[x][y] = 1; dis[x][y] = 0;
+
+while (!q.empty()) {
+    int xx = q.front().first;          // 用 xx/yy 避免和外层重名
+    int yy = q.front().second;
+    q.pop();
+    for (int i = 0; i < 8; i++) {      // 马走日 8 方向；网格用 4 方向
+        int x2 = xx + dx[i];
+        int y2 = yy + dy[i];
+        if (x2 < 0 || x2 >= n || y2 < 0 || y2 >= m) continue;
+        if (!vis[x2][y2]) {
+            vis[x2][y2] = 1;
+            dis[x2][y2] = dis[xx][yy] + 1;
+            q.push({x2, y2});
         }
     }
-    qx.pop(); qy.pop();
 }
 ```
 
@@ -408,3 +422,28 @@ sort(tu[i].begin(), tu[i].end(), [&](int x, int y) {
     return pos[x] < pos[y];
 });
 ```
+
+### 12. DFS Flood Fill（8 方向数连通块）
+
+```cpp
+int dx[8] = {-1, 0, 1, 0, 1, 1, -1, -1};
+int dy[8] = {0, 1, 0, -1, 1, -1, 1, -1};
+
+void dfs(int x, int y) {
+    vis[x][y] = 1;
+    for (int i = 0; i < 8; i++) {
+        int nx = x + dx[i], ny = y + dy[i];
+        if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
+        if (a[nx][ny] == 'W' && !vis[nx][ny]) dfs(nx, ny);
+    }
+}
+// 外部计数：每个未访问的 'W' 触发 dfs，ans++
+```
+
+### 13. 方向数组速查
+
+| 场景 | dx | dy |
+|------|----|----|
+| 4 方向（上下左右） | `{1,-1,0,0}` | `{0,0,1,-1}` |
+| 8 方向（含对角线） | `{-1,0,1,0,1,1,-1,-1}` | `{0,1,0,-1,1,-1,1,-1}` |
+| 马走日 | `{1,2,2,1,-1,-2,-2,-1}` | `{-2,-1,1,2,2,1,-1,-2}` |
