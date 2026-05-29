@@ -14,6 +14,7 @@ void bfs(int x1,int y1){
     while(!q.empty()){
         int x=q.front().first;
         int y=q.front().second;
+        vis[x][y]=1;
         q.pop();
         for(int i=0;i<4;i++){
             int xx=x+dx[i];
@@ -32,6 +33,7 @@ void bfs2(int x1,int y1){
     while(!q.empty()){
         int x=q.front().first;
         int y=q.front().second;
+        vis[x][y]=1;
         G[x][y]=2;
         q.pop();
         for(int i=0;i<4;i++){
