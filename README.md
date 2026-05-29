@@ -154,6 +154,8 @@
 
 | 知识点 | 练习代码 | 位置 |
 |-------|---------|------|
+| 质数判定 O(√n) | `P_1036_..._选数.cpp` — **`isPrime()` 试除模板** | [study/](./study) |
+| 欧拉线性筛 O(N) | `P_1036_..._选数 copy.cpp` — **bitset + 欧拉筛，每次 O(1) 查表** | [study/](./study) |
 | 质因数分解 | `c.cpp` (2025ECPC) — **试除 O(√n) 模板** | [competition/2025ECPC](./competition/2025ECPC) |
 | 位运算 | `x_y_n.cpp` — 移位 `n<<31` | [competition/2026.2.5NEWK2](./competition/2026.2.5NEWK2) |
 | 计数 + 组合数学 | `Card_Game.cpp` — **MOD 阶乘计数** | [competition/2026.2.3NEWK1](./competition/2026.2.3NEWK1) |
@@ -454,3 +456,21 @@ void dfs(int x, int y) {
 | 4 方向（上下左右） | `{1,-1,0,0}` | `{0,0,1,-1}` |
 | 8 方向（含对角线） | `{-1,0,1,0,1,1,-1,-1}` | `{0,1,0,-1,1,-1,1,-1}` |
 | 马走日 | `{1,2,2,1,-1,-2,-2,-1}` | `{-2,-1,1,2,2,1,-1,-2}` |
+
+### 14. 欧拉线性筛 (bitset + 最小质因子)
+
+```cpp
+const int N = 100000008;
+bitset<N> c;
+c.set(); c[0] = c[1] = 0;
+vector<int> primes;
+for (int i = 2; i < N; i++) {
+    if (c[i]) primes.push_back(i);
+    for (auto x : primes) {
+        if (x * i >= N) break;
+        c[x * i] = 0;
+        if (i % x == 0) break;
+    }
+}
+// c[x] == 1 表示 x 是质数，O(1) 查表
+```
