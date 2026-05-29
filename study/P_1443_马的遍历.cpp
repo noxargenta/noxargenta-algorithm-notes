@@ -27,7 +27,10 @@ void solve() {
         for(int i=0;i<8;i++){
             int x2=xx+dx[i];
             int y2=yy+dy[i];
-            
+            if(!vis[x2][y2]){
+                vis[x2][y2]=1;
+                
+            }
         }
     }
 }
