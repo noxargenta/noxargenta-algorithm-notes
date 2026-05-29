@@ -12,11 +12,11 @@ int g[405][405];
 queue<pair<int,int>> q;
 void solve() {
     cin >> n >> m >> x >>y;
-    for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-            cin >> g[i][j];
-        }
-    }
+    // for(int i=0;i<n;i++){
+    //     for(int j=0;j<m;j++){
+    //         cin >> g[i][j];
+    //     }
+    // }
     dis[x][y]=0;
     vis[x][y]=1;
     q.push({x,y});
@@ -30,6 +30,7 @@ void solve() {
             if(!vis[x2][y2]){
                 vis[x2][y2]=1;
                 dis[x2][y2]=dis[xx][yy]+1;
+                
                 q.push({x2,y2});
             }
         }
