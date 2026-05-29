@@ -29,10 +29,22 @@ void solve() {
             int y2=yy+dy[i];
             if(!vis[x2][y2]){
                 vis[x2][y2]=1;
-                
+                dis[x2][y2]=dis[xx][yy]+1;
+                q.push({x2,y2});
             }
         }
     }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(dis[i][j]==0){
+                cout << -1 << ' ';
+            }else {
+                cout << dis[i][j] << " " ;
+            }
+        }
+        cout << endl;
+    }
+    
 }
 
 signed main() {
