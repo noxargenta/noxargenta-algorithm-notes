@@ -17,6 +17,7 @@ void solve() {
     //         cin >> g[i][j];
     //     }
     // }
+    
     dis[x][y]=0;
     vis[x][y]=1;
     q.push({x,y});
@@ -38,11 +39,7 @@ void solve() {
     }
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
-            if(dis[i][j]==0){
-                cout << -1 << ' ';
-            }else {
-                cout << dis[i][j] << " " ;
-            }
+            cout << dis[i][j] << " ";
         }
         cout << endl;
     }
