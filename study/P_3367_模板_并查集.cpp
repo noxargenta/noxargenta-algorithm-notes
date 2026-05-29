@@ -18,11 +18,10 @@ void solve() {
     while(m--){
         int z,x,y;
         cin >> z >> x >>y;
+        x=fa(x);
+        y=fa(y);
         if(z==1){
-            int xf=fa(x);
-            int yf=fa(y);
-            fa[xf]=yf;
-            fa[yf]=yf;
+            f[x]=y;
         }else {
             if(fa(x)==fa(y))cout << "Y\n";
             else cout << "N\n";
