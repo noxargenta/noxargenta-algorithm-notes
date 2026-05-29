@@ -109,6 +109,7 @@
 |-------|---------|------|
 | BFS 网格搜索 | `C_幅優先探索.cpp` — **双队列存坐标，经典 BFS 模板** | [competition/20251130ECUT12](./competition/20251130ECUT12) |
 | BFS 马走日 | `P_1443_马的遍历.cpp` — **queue<pair> + memset 初始化 + 8 方向** | [study/](./study) |
+| BFS 最短路径 | `蓝桥云课 走迷宫.cpp` — **BFS 四方向走迷宫基础模板** | [study/](./study) |
 | DFS 洪水填充 (8 方向) | `P_1596_Lake_Counting.cpp` — **Flood Fill 数连通块** | [study/](./study) |
 | DFS 岛屿淹没 | `蓝桥云课 全球变暖.cpp` — **检查四面是否邻水判断是否淹没** | [study/](./study) |
 | Valid BFS 序验证 | `CF_1037_D_Valid_BFS.cpp` — **邻接表按 BFS 序排序后验证** | [study/](./study) |
@@ -265,6 +266,7 @@
 | MC0456(DFS)斩断灵根 | DFS 搜索 | [收藏模板题](./收藏模板题/MC0456(DFS)斩断灵根.cpp) |
 | MC0509 快刀乱麻定局 | 回溯搜索 | [收藏模板题](./收藏模板题/MC0509%20快刀乱麻定局.cpp) |
 | P_1443 马的遍历 | BFS queue<pair> + memset | [study/](./study/P_1443_马的遍历.cpp) |
+| 蓝桥云课 走迷宫 | BFS 走迷宫完整模板 | [study/](./study/蓝桥云课%20走迷宫.cpp) |
 | P_1596 Lake Counting | DFS Flood Fill 8 方向 | [study/](./study/P_1596_USACO_10_OCT_Lake_Counting_S.cpp) |
 | 蓝桥云课 全球变暖 | DFS 岛屿淹没判定 | [study/](./study/蓝桥云课%20全球变暖.cpp) |
 | P_1886 滑动窗口 | 单调队列（deque） | [study/](./study/P_1886_滑动窗口_模板_单调队列.cpp) |
@@ -381,7 +383,7 @@ for(int i = 0; i < n; i++) {
 }
 ```
 
-### 9. BFS (queue<pair> + memset + 边界 x2/y2)
+### 9. BFS (queue<pair> + 走迷宫三坑：下标/边界/标记)
 
 ```cpp
 bool vis[405][405]; int dis[405][405];
@@ -391,10 +393,10 @@ queue<pair<int, int>> q;
 q.push({x, y}); vis[x][y] = 1; dis[x][y] = 0;
 
 while (!q.empty()) {
-    int xx = q.front().first;          // 用 xx/yy 避免和外层重名
+    int xx = q.front().first;
     int yy = q.front().second;
     q.pop();
-    for (int i = 0; i < 8; i++) {      // 马走日 8 方向；网格用 4 方向
+    for (int i = 0; i < 4; i++) {
         int x2 = xx + dx[i];
         int y2 = yy + dy[i];
         if (x2 < 0 || x2 >= n || y2 < 0 || y2 >= m) continue;
@@ -406,6 +408,11 @@ while (!q.empty()) {
     }
 }
 ```
+
+**三个坑**：
+1. 题目坐标是 1-based，读入后必须 `x1--; y1--; x2--; y2--;`
+2. 扩展前要先判 `x2<0||x2>=n||y2<0||y2>=m`，否则数组越界
+3. `push` 后立刻 `vis=1`，漏了会死循环
 
 ### 10. 常用 INF / 哨兵值
 
