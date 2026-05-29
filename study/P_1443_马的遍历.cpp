@@ -35,7 +35,7 @@ void solve() {
             if(!vis[x2][y2]){
                 vis[x2][y2]=1;
                 dis[x2][y2]=dis[xx][yy]+1;
-
+                
                 q.push({x2,y2});
             }
         }
