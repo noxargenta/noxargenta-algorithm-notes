@@ -21,7 +21,14 @@ void solve() {
     vis[x][y]=1;
     q.push({x,y});
     while(!q.empty()){
-        
+        int xx=q.front().first;
+        int yy=q.front().second;
+        q.pop();
+        for(int i=0;i<8;i++){
+            int x2=xx+dx[i];
+            int y2=yy+dy[i];
+            
+        }
     }
 }
 
