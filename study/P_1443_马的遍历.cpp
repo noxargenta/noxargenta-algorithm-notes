@@ -4,7 +4,7 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 int n,m,x,y;
-int dx[]={1,2,2,1,-1,-2,-2-1};
+int dx[]={1,2,2,1,-1,-2,-2,-1};
 int dy[]={-2,-1,1,2,2,1,-1,-2};
 bool vis[405][405];
 int dis[405][405];
@@ -27,10 +27,11 @@ void solve() {
         for(int i=0;i<8;i++){
             int x2=xx+dx[i];
             int y2=yy+dy[i];
+            if(x2<0 || x2>=n || y2<0 || y2>=m)continue;
             if(!vis[x2][y2]){
                 vis[x2][y2]=1;
                 dis[x2][y2]=dis[xx][yy]+1;
-                
+
                 q.push({x2,y2});
             }
         }
