@@ -17,6 +17,8 @@ void solve() {
     //         cin >> g[i][j];
     //     }
     // }
+    x--;
+    y--;
     memset(vis,0,sizeof(vis));
     memset(dis,-1,sizeof(dis));
     dis[x][y]=0;
