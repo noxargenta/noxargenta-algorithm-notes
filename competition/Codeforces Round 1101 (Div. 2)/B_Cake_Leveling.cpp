@@ -7,7 +7,18 @@ using i64 = long long;
 void solve() {
     int n;
     cin >> n;
-    vector<int> a(n);
+    vector<int> a(n+1);
+    vector<int> b(n+1);
+    vector<int> ans(n+1);
+    int minans=1000000009;
+    for(int i=1;i<=n;i++){
+        cin  >> a[i];
+        b[i]+=b[i-1]+a[i];
+        minans=min(minans,(b[i]/i));
+        ans[i]=minans;
+        cout << ans[i] << " ";
+    }
+    cout << endl;
 
 }
 
