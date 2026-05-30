@@ -13,7 +13,7 @@ void solve() {
     sort(a.begin(),a.end());
     int l=0,r=n-1;
     int ans=0;
-    while(l!=r){
+    while(l<r){
         if(a[l]!=a[r]){
             ans++;
             l++;
