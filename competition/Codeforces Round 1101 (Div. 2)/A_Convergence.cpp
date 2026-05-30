@@ -1,47 +1,38 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
+#include <bits/stdc++.h>
 using namespace std;
-
+using i64 = long long;
+#define endl '\n'
+#define int long long
 void solve() {
     int n;
     cin >> n;
     vector<int> a(n);
-    for (int i = 0; i < n; ++i) {
+    for(int i=0;i<n;i++){
         cin >> a[i];
     }
-    
-    // 1. 排序，方便两端双指针向中间靠拢
-    sort(a.begin(), a.end());
-    
-    int sixseven = 0; // 通话次数
-    int left = 0, right = n - 1;
-    
-    // 2. 双指针模拟
-    while (left < right) {
-        if (a[left] != a[right]) {
-            sixseven++;
-            left++;
-            right--;
-        } else {
-            // 如果最左边和最右边已经相等，说明剩下的所有人都在同一个位置了
+    sort(a.begin(),a.end());
+    int l=0,r=n-1;
+    int ans=0;
+    while(l!=r){
+        if(a[l]!=a[r]){
+            ans++;
+            l++;
+            r--;
+        }else {
             break;
         }
     }
-    
-    cout << sixseven << "\n";
+    cout << ans << endl;
 }
 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
-    int t;
-    cin >> t;
-    while (t--) {
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    cin >> _;
+    while(_--) {
         solve();
     }
-    
     return 0;
 }
