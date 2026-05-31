@@ -32,6 +32,7 @@ void solve() {
         cin >> x >> y;
         q.push({x,y});
         G[x][y]=0;
+        vis[x][y]=1;
     }
     bfs();
     while(b--){
