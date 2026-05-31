@@ -8,8 +8,12 @@ void solve() {
     cin >> n >> a >>b;
     if(3*a<=b){
         cout << n*a << endl;
-    }else if(){
-
+    }else {
+        int ans=0;
+        ans+=n/3*b;
+        n%=3;
+        ans+=min(n*a,b);
+        cout << ans << endl;
     }
 }
 
