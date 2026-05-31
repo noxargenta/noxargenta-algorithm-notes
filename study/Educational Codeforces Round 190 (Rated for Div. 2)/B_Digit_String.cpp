@@ -11,6 +11,7 @@ void solve() {
     for(int i=s.length()-1;i>=0;i--){
         if(s[i]-'0'==4){
             a[4]++;
+            continue;
         }
         if(s[i]-'0'==2 && i2==-1){
             i2=i;
