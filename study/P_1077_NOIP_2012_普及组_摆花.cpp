@@ -6,7 +6,7 @@ using i64 = long long;
 const int N=105,mod=1e6+7;
 int n,m;
 int a[N],dp[N][N][N];
-///////////1、多少种花  2、   3、
+//1、第n种花  2、多少盆   3、所有数字的总和  =方案数
 void solve() {
     cin >> n;
     dp[0][0][0]=1;
@@ -15,7 +15,7 @@ void solve() {
     }
     for(int i=1;i<=n;i++){
         for(int j=1;j<=a[i];j++){
-
+            
         }
     }
 }
