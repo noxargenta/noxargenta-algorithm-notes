@@ -14,10 +14,24 @@ void solve() {
         cin >> a[i];
     }
     for(int i=1;i<=n;i++){
-        for(int j=1;j<=a[i];j++){
-            
+        for(int k=0;k<=m;k++){
+            for(int j=0;j<=min(a[i],k);j++){
+                if(j==0 && k==0)dp[i][j][k]=1;
+                else {
+                    for(int p=0;p<=min(a[i-1],k-j);p++){
+                        dp[i][j][k] += dp[i-1][p][k-j];
+                        dp[i][j][k] %= mod;
+                    }
+                }
+            }
         }
     }
+    int ans=0;
+    for(int i=0;i<=min(m,a[n]);i++){
+        ans+=dp[n][i][m];
+        ans %= mod;
+    }
+    cout<< ans <<  endl;
 }
 
 signed main() {
