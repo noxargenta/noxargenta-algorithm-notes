@@ -27,7 +27,7 @@ void solve() {
         }
         for(int j=i+1;j<n;j++){
             int y=a[j];
-            auto it=lower_bound(b1.begin(),b1.end(),y);
+            auto it=upper_bound(b1.begin(),b1.end(),y,greater<int>());
             if(it==b1.end()){
                 b1.push_back(y);
             }else {
