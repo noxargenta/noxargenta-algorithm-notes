@@ -20,7 +20,7 @@ void solve() {
             int y=a[j];
             auto it=lower_bound(b1.begin(),b1.end(),y);
             if(it==b1.end()){
-                b1.push_back(y);
+                if(*it<a[i])b1.push_back(y);
             }else {
                 *it=y;
             }
