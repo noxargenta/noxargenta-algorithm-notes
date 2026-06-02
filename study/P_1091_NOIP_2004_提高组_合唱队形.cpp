@@ -27,14 +27,18 @@ void solve() {
         }
         for(int j=i+1;j<n;j++){
             int y=a[j];
-            auto it=upper_bound(b1.begin(),b1.end(),y,greater<int>());
-            if(it==b1.end()){
-                b1.push_back(y);
+            auto it=upper_bound(b2.begin(),b2.end(),y,greater<int>());
+            if(it==b2.end()){
+                b2.push_back(y);
             }else {
                 *it=y;
             }
         }
+        ans=max(ans,(int)(n-b1.size()-b2.size()));
+        b1.clear();
+        b2.clear();
     }
+    cout << ans << endl;
 }
 
 signed main() {
