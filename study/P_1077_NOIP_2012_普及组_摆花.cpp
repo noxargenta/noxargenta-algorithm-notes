@@ -8,7 +8,7 @@ int n,m;
 int a[N],dp[N][N][N];
 //1、第n种花  2、多少盆   3、所有数字的总和  =方案数
 void solve() {
-    cin >> n;
+    cin >> n >> m;
     dp[0][0][0]=1;
     for(int i=1;i<=n;i++){
         cin >> a[i];
