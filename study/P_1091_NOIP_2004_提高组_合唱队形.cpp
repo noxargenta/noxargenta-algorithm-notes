@@ -26,10 +26,10 @@ void solve() {
                 *it=y;
             }
         }
-        for(int j=n-1;j>i;j--){
+        for(int j=i+1;j<n;j++){
             int y=a[j];
-            if(y>=a[i])continue;
-            auto it=lower_bound(b2.begin(),b2.end(),y);
+            
+            auto it=lower_bound(b2.begin(),b2.end(),y,greater<int>());
             if(it==b2.end()){
                 b2.push_back(y);
             }else {
