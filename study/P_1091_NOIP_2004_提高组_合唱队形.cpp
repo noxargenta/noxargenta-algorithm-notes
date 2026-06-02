@@ -16,7 +16,7 @@ void solve() {
     int ans=0;
     for(int i=0;i<n;i++){
         int x=a[i];
-        for(int j=0;j<i;j++){
+        for(int j=0;j<=i;j++){
             int y=a[j];
             auto it=lower_bound(b1.begin(),b1.end(),y);
             if(it==b1.end()){
@@ -25,7 +25,7 @@ void solve() {
                 *it=y;
             }
         }
-        for(int j=i+1;j<n;j++){
+        for(int j=i;j<n;j++){
             int y=a[j];
             auto it=upper_bound(b2.begin(),b2.end(),y,greater<int>());
             if(it==b2.end()){
@@ -34,7 +34,7 @@ void solve() {
                 *it=y;
             }
         }
-        ans=max(ans,(int)(n-b1.size()-b2.size()));
+        ans=max(ans,(int)(n-b1.size()-b2.size()-1));
         b1.clear();
         b2.clear();
     }
