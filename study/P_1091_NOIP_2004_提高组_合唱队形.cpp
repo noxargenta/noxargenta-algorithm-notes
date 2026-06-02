@@ -16,17 +16,19 @@ void solve() {
     int ans=0;
     for(int i=0;i<n;i++){
         int x=a[i];
-        for(int j=0;j<=i;j++){
+        for(int j=0;j<i;j++){
             int y=a[j];
+            if(y>=a[i])continue;
             auto it=lower_bound(b1.begin(),b1.end(),y);
             if(it==b1.end()){
-                if(*it<a[i])b1.push_back(y);
+                b1.push_back(y);
             }else {
                 *it=y;
             }
         }
-        for(int j=i;j<n;j++){
+        for(int j=i+1;j<n;j++){
             int y=a[j];
+            if(y>=a[i])continue;
             auto it=upper_bound(b2.begin(),b2.end(),y,greater<int>());
             if(it==b2.end()){
                 b2.push_back(y);
@@ -34,7 +36,7 @@ void solve() {
                 *it=y;
             }
         }
-        ans=max(ans,(int)(b1.size()+b2.size()-1));
+        ans=max(ans,(int)(b1.size()+b2.size()+1));
         b1.clear();
         b2.clear();
     }
