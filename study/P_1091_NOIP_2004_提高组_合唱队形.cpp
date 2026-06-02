@@ -34,11 +34,11 @@ void solve() {
                 *it=y;
             }
         }
-        ans=max(ans,(int)(n-b1.size()-b2.size()-1));
+        ans=max(ans,(int)(b1.size()+b2.size()-1));
         b1.clear();
         b2.clear();
     }
-    cout << ans << endl;
+    cout << n-ans << endl;
 }
 
 signed main() {
