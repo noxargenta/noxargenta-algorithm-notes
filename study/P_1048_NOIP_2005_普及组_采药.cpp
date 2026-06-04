@@ -6,7 +6,8 @@ using i64 = long long;
 int N,M;
 void solve() {
     cin >> N >> M;
-    while(M--){
+    int n=M;
+    while(n--){
         int x,y;
         cin >> x >>y;
         
