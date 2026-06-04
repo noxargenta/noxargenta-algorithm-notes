@@ -3,15 +3,16 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
-int N,M;
+int T,M;
+int dp[105][1005];
+int w[500],v[500];
 void solve() {
-    cin >> N >> M;
-    int n=M;
-    while(n--){
-        int x,y;
-        cin >> x >>y;
-        
+    cin >> T >> M;
+    //T为背包容量大小
+    for(int i=0;i<M;i++){
+        cin >> w[i] >> v[i];
     }
+    
 }
 
 signed main() {
