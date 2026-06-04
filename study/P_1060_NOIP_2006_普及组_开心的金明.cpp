@@ -6,7 +6,7 @@ using i64 = long long;
 int n,m;
 void solve() {
     cin >> n >> m;
-    int dp[m][n];
+    int dp[m+2][n+2];
     int v[m+2],w[m+2];
     for(int i=1;i<=m;i++){
         cin >> v[i] >> w[i];
@@ -15,6 +15,7 @@ void solve() {
         for(int j=0;j<=n;j++){
             if(i==0 || j==0){
                 dp[i][j]=0;
+                continue;
             }else {
                 if(j>=v[i]){
                     dp[i][j]=max(dp[i-1][j],dp[i-1][j-v[i]]+v[i]*w[i]);
