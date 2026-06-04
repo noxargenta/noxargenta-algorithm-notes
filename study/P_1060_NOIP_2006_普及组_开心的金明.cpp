@@ -7,7 +7,12 @@ int n,m;
 
 void solve() {
     cin >> n >> m;
-        
+    int dp[m][n];
+    int v[m+2],w[m+2];
+    for(int i=1;i<=m;i++){
+        cin >> v[i] >> w[i];
+    }    
+    
 }
 
 signed main() {
