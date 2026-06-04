@@ -9,10 +9,24 @@ int w[500],v[500];
 void solve() {
     cin >> T >> M;
     //T为背包容量大小
-    for(int i=0;i<M;i++){
+    for(int i=1;i<=M;i++){
         cin >> w[i] >> v[i];
     }
-    
+    for(int i=0;i<=M;i++){
+        for(int j=0;j<=T;j++){
+            if(i==0 || j==0){
+                dp[i][j]=0;
+                continue;
+            }else {
+                if(j>=w[i]){
+                    dp[i][j]=max(dp[i-1][j],dp[i-1][j-w[i]]+v[i]);
+                }else {
+                    dp[i][j]=dp[i-1][j];
+                }
+            }
+        }
+    }
+    cout << dp[M][T] << endl;
 }
 
 signed main() {
