@@ -117,6 +117,8 @@
 | DFS 序 | `P_9872_DFS_Order.cpp` — **DFS 遍历树，记录 depth 和子树大小** | [study/](./study) |
 | DFS 搜索 | `MC0456(DFS)斩断灵根.cpp` | [收藏模板题](./收藏模板题) |
 | 回溯搜索 | `MC0509 快刀乱麻定局.cpp` | [收藏模板题](./收藏模板题) |
+| BFS 闭合圈染色 | `P_1162_填涂颜色.cpp` — **边界 BFS 标记外圈，再 BFS 填充内圈** | [study/](./study) |
+| 多源 BFS | `P_1332_血色先锋队.cpp` — **多个起点同时入队，一次 BFS 计算最近距离** | [study/](./study) |
 
 </details>
 
@@ -142,6 +144,8 @@
 
 | 知识点 | 练习代码 | 位置 |
 |-------|---------|------|
+| DSU 基础模板 | `P_3367_模板_并查集.cpp` — **路径压缩 + 合并 + 查询** | [study/](./study) |
+| DSU 亲戚关系 | `P_1551_亲戚.cpp` — **基础并查集应用** | [study/](./study) |
 | DSU 判环 | `F_Cow_and_Snacks.cpp` — **路径压缩 `f[x]==x? x:f[x]=find(f[x])`** | [competition/20251130ECUT12](./competition/20251130ECUT12) |
 | 扩展域 DSU（敌人关系） | `K_团伙.cpp` — **`merge(x+n,y)` 处理敌人的敌人是朋友** | [competition/20251207ECUT9](./competition/20251207ECUT9) |
 
@@ -168,14 +172,18 @@
 ### 阶段十一：动态规划
 
 <details>
-<summary>线性 DP、背包 DP、树形 DP</summary>
+<summary>背包 DP、线性 DP、LIS、树形 DP</summary>
 
 | 知识点 | 练习代码 | 位置 |
 |-------|---------|------|
-| 线性 DP | 各比赛中级题目 | 各比赛 |
-| 背包 DP | ECUT 训练赛题目 | 各比赛 |
+| 01 背包（二维） | `P_1048_..._采药.cpp` — **经典 `dp[i][j]=max(dp[i-1][j], dp[i-1][j-w]+v)`** | [study/](./study) |
+| 01 背包（价值变形） | `P_1060_..._开心的金明.cpp` — **价值 = 价格 × 重要度** | [study/](./study) |
+| 完全背包（一维正序） | `P_1616_疯狂的采药.cpp` — **`for(i=w;i<=t;i++)` 正序，边读边算** | [study/](./study) |
+| 网格路径 DP | `P_1002_..._过河卒.cpp` — **马挡路，`dp[i][j]=dp[i-1][j]+dp[i][j-1]`** | [study/](./study) |
+| 双向 LIS | `P_1091_..._合唱队形DP解决.cpp` — **正向+反向 LIS，`dp1[i]+dp2[i]-1`** | [study/](./study) |
+| LIS 贪心 + 二分 | `P_1020_..._导弹拦截.cpp` — **`lower_bound` + `greater`，Dilworth 定理** | [study/](./study) |
+| 计数 DP | `P_1077_..._摆花.cpp` — **三维 DP，`dp[i][j][k]` 前 i 种花 j 盆和为 k** | [study/](./study) |
 | 树形 DP | DSU on tree、树上 DFS 类 | 各比赛 |
-| 计数 DP | 计数类题目 | 各比赛 |
 
 </details>
 
@@ -247,6 +255,8 @@
 | 2026.03 | 天梯赛训练 | [tiantisai](./tiantisai) |
 | — | AtCoder ABC | [competition/ATC436](./competition/ATC436) |
 | — | CF Round 1090 (Div. 4) | [study/Codeforces Round 1090 (Div. 4)](./study/Codeforces%20Round%201090%20(Div.%204)) |
+| — | CF Round 1101 (Div. 2) | [competition/Codeforces Round 1101 (Div. 2)](./competition/Codeforces%20Round%201101%20(Div.%202)) |
+| — | CF Edu Round 190 | [study/Educational Codeforces Round 190 (Rated for Div. 2)](./study/Educational%20Codeforces%20Round%20190%20(Rated%20for%20Div.%202)) |
 | — | 牛客周赛 | [competition/牛客周赛 Round 114](./competition/牛客周赛%20Round%20114) |
 | — | 传智杯 | [competition/传智杯](./competition/传智杯) |
 
@@ -276,6 +286,14 @@
 | P_9872 DFS Order | DFS 序 + 子树大小 | [study/](./study/P_9872_DFS_Order.cpp) |
 | C_幅優先探索 | BFS 网格搜索 | [competition/20251130ECUT12](./competition/20251130ECUT12/C_幅優先探索.cpp) |
 | C_Minimum_Steiner_Tree | 树上 DFS 标记 + 剪枝 | [competition/20251130ECUT11](./competition/20251130ECUT11/C_Minimum_Steiner_Tree.cpp) |
+| P_1048 采药 | 01 背包二维 DP | [study/](./study/P_1048_NOIP_2005_普及组_采药.cpp) |
+| P_1616 疯狂的采药 | 完全背包一维 DP | [study/](./study/P_1616_疯狂的采药.cpp) |
+| P_1002 过河卒 | 网格路径 DP | [study/](./study/P_1002_NOIP_2002_普及组_过河卒.cpp) |
+| P_1091 合唱队形 | 双向 LIS | [study/](./study/P_1091_NOIP_2004_提高组_合唱队形DP解决.cpp) |
+| P_1020 导弹拦截 | LIS 贪心 + 二分 | [study/](./study/P_1020_NOIP_1999_提高组_导弹拦截.cpp) |
+| P_3367 模板_并查集 | 并查集路径压缩 | [study/](./study/P_3367_模板_并查集.cpp) |
+| P_1162 填涂颜色 | BFS 闭合圈染色 | [study/](./study/P_1162_填涂颜色.cpp) |
+| P_1332 血色先锋队 | 多源 BFS | [study/](./study/P_1332_血色先锋队.cpp) |
 
 ---
 
@@ -473,4 +491,59 @@ for (int i = 2; i < N; i++) {
     }
 }
 // c[x] == 1 表示 x 是质数，O(1) 查表
+```
+
+### 15. 01 背包（一维倒序）
+
+```cpp
+int dp[1005];
+for (int i = 1; i <= M; i++) {
+    for (int j = T; j >= w[i]; j--) {
+        dp[j] = max(dp[j], dp[j - w[i]] + v[i]);
+    }
+}
+```
+
+### 16. 完全背包（一维正序，边读边算）
+
+```cpp
+int dp[10000007];
+while (m--) {
+    int w, v; cin >> w >> v;
+    for (int i = w; i <= t; i++)
+        dp[i] = max(dp[i], dp[i - w] + v);
+}
+```
+
+### 17. LIS 贪心 + 二分 O(n log n)
+
+```cpp
+// 最长上升子序列
+vector<int> f;
+for (auto x : a) {
+    auto it = lower_bound(f.begin(), f.end(), x);
+    if (it == f.end()) f.push_back(x);
+    else *it = x;
+}
+
+// 最长不升子序列
+vector<int> f;
+for (auto x : a) {
+    auto it = upper_bound(f.begin(), f.end(), x, greater<int>());
+    if (it == f.end()) f.push_back(x);
+    else *it = x;
+}
+```
+
+### 18. 网格路径 DP（过河卒）
+
+```cpp
+dp[0][0] = 1;
+for (int i = 0; i <= n; i++) {
+    for (int j = 0; j <= m; j++) {
+        if (block[i][j]) { dp[i][j] = 0; continue; }
+        if (i > 0) dp[i][j] += dp[i-1][j];
+        if (j > 0) dp[i][j] += dp[i][j-1];
+    }
+}
 ```
