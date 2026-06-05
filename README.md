@@ -58,6 +58,7 @@
 | 二分答案 + 区间可行性 | `D_Jumping_Through_Segments.cpp` — 二分移动次数，check 里维护可达区间 | [competition/20251120ECUT计协第六次训练赛](./competition/20251120ECUT计协第六次训练赛) |
 | 二分 + 差分 | `C_租借教室.cpp` — 二分订单数，差分判断 | [competition/20251123ECUT计协第七次训练赛](./competition/20251123ECUT计协第七次训练赛) |
 | 二分 + 贪心 | `D_劫富济贫.cpp` — 中位数 + 平均数的二分思路 | [competition/20251123ECUT计协第七次训练赛](./competition/20251123ECUT计协第七次训练赛) |
+| `lower_bound` / `upper_bound` 用法 | [笔记13](./笔记/13-lower_bound-upper_bound用法.md) — LIS 贪心二分 / 降序 greater / 坐标压缩 / set 二分，含导弹拦截完整示例 | P_1020 + 6 个源码用例 |
 
 </details>
 
@@ -181,7 +182,7 @@
 | 完全背包（一维正序） | `P_1616_疯狂的采药.cpp` — **`for(i=w;i<=t;i++)` 正序，边读边算** | [study/](./study/P_1616_疯狂的采药.cpp) |
 | 网格路径 DP | `P_1002_NOIP_2002_普及组_过河卒.cpp` — **马挡路，`dp[i][j]=dp[i-1][j]+dp[i][j-1]`** | [study/](./study/P_1002_NOIP_2002_普及组_过河卒.cpp) |
 | 双向 LIS | `P_1091_NOIP_2004_提高组_合唱队形DP解决.cpp` — **正向+反向 LIS，`dp1[i]+dp2[i]-1`** | [study/](./study/P_1091_NOIP_2004_提高组_合唱队形DP解决.cpp) |
-| LIS 贪心 + 二分 | `P_1020_NOIP_1999_提高组_导弹拦截.cpp` — **`lower_bound` + `greater`，Dilworth 定理** | [study/](./study/P_1020_NOIP_1999_提高组_导弹拦截.cpp) |
+| LIS 贪心 + 二分 | `P_1020_NOIP_1999_提高组_导弹拦截.cpp` — **详解见[笔记13](./笔记/13-lower_bound-upper_bound用法.md)** | [study/](./study/P_1020_NOIP_1999_提高组_导弹拦截.cpp) |
 | 计数 DP | `P_1077_NOIP_2012_普及组_摆花.cpp` — **三维 DP，`dp[i][j][k]` 前 i 种花 j 盆和为 k** | [study/](./study/P_1077_NOIP_2012_普及组_摆花.cpp) |
 | 树形 DP | DSU on tree、树上 DFS 类 | 各比赛 |
 
