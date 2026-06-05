@@ -30,8 +30,8 @@
 | 基本输入输出 | `A_.../B_.../C_...` | [study/10.1](./study/10.1)、[study/10.2](./study/10.2) |
 | 条件判断、循环 | `a.cpp` ~ `f.cpp` | [study/10.4](./study/10.4) |
 | 数组操作 | `a.cpp` ~ `f.cpp` | [study/10.5](./study/10.5)、[study/10.7](./study/10.7) |
-| String 处理 | `B_4012_语言月赛_202407_rules.cpp` | [study/](./study) |
-| 暴力枚举 | `P_1428_小鱼比可爱.cpp`、`luoguP1008.cpp` | [study/](./study) |
+| String 处理 | `B_4012_语言月赛_202407_rules.cpp` | [study/](./study/B_4012_语言月赛_202407_rules.cpp) |
+| 暴力枚举 | `P_1428_小鱼比可爱.cpp`、`luoguP1008.cpp` | [study/](./study/P_1428_小鱼比可爱.cpp) |
 
 </details>
 
@@ -69,7 +69,7 @@
 | 知识点 | 练习代码 | 位置 |
 |-------|---------|------|
 | 双指针维护合法区间 | `d.cpp` — 累加 sum 超出 r 时收缩左指针，经典滑窗计数 | [competition/20251110ECUT计协第四次训练赛](./competition/20251110ECUT计协第四次训练赛) |
-| 滑动窗口最小值/最大值 | `P_1886_滑动窗口_模板_单调队列.cpp` — **deque 维护下标，O(n) 经典模板** | [study/](./study) |
+| 滑动窗口最小值/最大值 | `P_1886_滑动窗口_模板_单调队列.cpp` — **deque 维护下标，O(n) 经典模板** | [study/](./study/P_1886_滑动窗口_模板_单调队列.cpp) |
 | 双指针去重统计 | `J_Range_Replace.cpp` — 排序后滑窗计数贡献 | [competition/20251214ECUT10](./competition/20251214ECUT10) |
 
 </details>
@@ -81,7 +81,7 @@
 
 | 知识点 | 练习代码 | 位置 |
 |-------|---------|------|
-| 单调栈模板 | `P_5788_模板_单调栈.cpp` — **逆序遍历，单调递减栈 O(n)** | [study/](./study) |
+| 单调栈模板 | `P_5788_模板_单调栈.cpp` — **逆序遍历，单调递减栈 O(n)** | [study/](./study/P_5788_模板_单调栈.cpp) |
 | 单调栈应用 | 各种涉及"右边第一个大于/小于"的题目 | 各比赛 |
 
 </details>
@@ -108,17 +108,17 @@
 | 知识点 | 练习代码 | 位置 |
 |-------|---------|------|
 | BFS 网格搜索 | `C_幅優先探索.cpp` — **双队列存坐标，经典 BFS 模板** | [competition/20251130ECUT12](./competition/20251130ECUT12) |
-| BFS 马走日 | `P_1443_马的遍历.cpp` — **queue<pair> + memset 初始化 + 8 方向** | [study/](./study) |
-| BFS 最短路径 | `蓝桥云课 走迷宫.cpp` — **BFS 四方向走迷宫基础模板** | [study/](./study) |
-| DFS 洪水填充 (8 方向) | `P_1596_Lake_Counting.cpp` — **Flood Fill 数连通块** | [study/](./study) |
-| DFS 岛屿淹没 | `蓝桥云课 全球变暖.cpp` — **检查四面是否邻水判断是否淹没** | [study/](./study) |
-| Valid BFS 序验证 | `CF_1037_D_Valid_BFS.cpp` — **邻接表按 BFS 序排序后验证** | [study/](./study) |
+| BFS 马走日 | `P_1443_马的遍历.cpp` — **queue<pair> + memset 初始化 + 8 方向** | [study/](./study/P_1443_马的遍历.cpp) |
+| BFS 最短路径 | `蓝桥云课 走迷宫.cpp` — **BFS 四方向走迷宫基础模板** | [study/](./study/蓝桥云课%20走迷宫.cpp) |
+| DFS 洪水填充 (8 方向) | `P_1596_USACO_10_OCT_Lake_Counting_S.cpp` — **Flood Fill 数连通块** | [study/](./study/P_1596_USACO_10_OCT_Lake_Counting_S.cpp) |
+| DFS 岛屿淹没 | `蓝桥云课 全球变暖.cpp` — **检查四面是否邻水判断是否淹没** | [study/](./study/蓝桥云课%20全球变暖.cpp) |
+| Valid BFS 序验证 | `CF_1037_D_Valid_BFS.cpp` — **邻接表按 BFS 序排序后验证** | [study/](./study/CF_1037_D_Valid_BFS.cpp) |
 | BFS 序 | `K_BFS序.cpp` | [competition/2025.12.29group4](./competition/2025.12.29group4) |
-| DFS 序 | `P_9872_DFS_Order.cpp` — **DFS 遍历树，记录 depth 和子树大小** | [study/](./study) |
+| DFS 序 | `P_9872_DFS_Order.cpp` — **DFS 遍历树，记录 depth 和子树大小** | [study/](./study/P_9872_DFS_Order.cpp) |
 | DFS 搜索 | `MC0456(DFS)斩断灵根.cpp` | [收藏模板题](./收藏模板题) |
 | 回溯搜索 | `MC0509 快刀乱麻定局.cpp` | [收藏模板题](./收藏模板题) |
-| BFS 闭合圈染色 | `P_1162_填涂颜色.cpp` — **边界 BFS 标记外圈，再 BFS 填充内圈** | [study/](./study) |
-| 多源 BFS | `P_1332_血色先锋队.cpp` — **多个起点同时入队，一次 BFS 计算最近距离** | [study/](./study) |
+| BFS 闭合圈染色 | `P_1162_填涂颜色.cpp` — **边界 BFS 标记外圈，再 BFS 填充内圈** | [study/](./study/P_1162_填涂颜色.cpp) |
+| 多源 BFS | `P_1332_血色先锋队.cpp` — **多个起点同时入队，一次 BFS 计算最近距离** | [study/](./study/P_1332_血色先锋队.cpp) |
 
 </details>
 
@@ -144,8 +144,8 @@
 
 | 知识点 | 练习代码 | 位置 |
 |-------|---------|------|
-| DSU 基础模板 | `P_3367_模板_并查集.cpp` — **路径压缩 + 合并 + 查询** | [study/](./study) |
-| DSU 亲戚关系 | `P_1551_亲戚.cpp` — **基础并查集应用** | [study/](./study) |
+| DSU 基础模板 | `P_3367_模板_并查集.cpp` — **路径压缩 + 合并 + 查询** | [study/](./study/P_3367_模板_并查集.cpp) |
+| DSU 亲戚关系 | `P_1551_亲戚.cpp` — **基础并查集应用** | [study/](./study/P_1551_亲戚.cpp) |
 | DSU 判环 | `F_Cow_and_Snacks.cpp` — **路径压缩 `f[x]==x? x:f[x]=find(f[x])`** | [competition/20251130ECUT12](./competition/20251130ECUT12) |
 | 扩展域 DSU（敌人关系） | `K_团伙.cpp` — **`merge(x+n,y)` 处理敌人的敌人是朋友** | [competition/20251207ECUT9](./competition/20251207ECUT9) |
 
@@ -158,8 +158,8 @@
 
 | 知识点 | 练习代码 | 位置 |
 |-------|---------|------|
-| 质数判定 O(√n) | `P_1036_..._选数.cpp` — **`isPrime()` 试除模板** | [study/](./study) |
-| 欧拉线性筛 O(N) | `P_1036_..._选数 copy.cpp` — **bitset + 欧拉筛，每次 O(1) 查表** | [study/](./study) |
+| 质数判定 O(√n) | `P_1036_NOIP_2002_普及组_选数.cpp` — **`isPrime()` 试除模板** | [study/](./study/P_1036_NOIP_2002_普及组_选数.cpp) |
+| 欧拉线性筛 O(N) | `P_1036_NOIP_2002_普及组_选数 copy.cpp` — **bitset + 欧拉筛，每次 O(1) 查表** | [study/](./study/P_1036_NOIP_2002_普及组_选数%20copy.cpp) |
 | 质因数分解 | `c.cpp` (2025ECPC) — **试除 O(√n) 模板** | [competition/2025ECPC](./competition/2025ECPC) |
 | 位运算 | `x_y_n.cpp` — 移位 `n<<31` | [competition/2026.2.5NEWK2](./competition/2026.2.5NEWK2) |
 | 计数 + 组合数学 | `Card_Game.cpp` — **MOD 阶乘计数** | [competition/2026.2.3NEWK1](./competition/2026.2.3NEWK1) |
@@ -176,13 +176,13 @@
 
 | 知识点 | 练习代码 | 位置 |
 |-------|---------|------|
-| 01 背包（二维） | `P_1048_..._采药.cpp` — **经典 `dp[i][j]=max(dp[i-1][j], dp[i-1][j-w]+v)`** | [study/](./study) |
-| 01 背包（价值变形） | `P_1060_..._开心的金明.cpp` — **价值 = 价格 × 重要度** | [study/](./study) |
-| 完全背包（一维正序） | `P_1616_疯狂的采药.cpp` — **`for(i=w;i<=t;i++)` 正序，边读边算** | [study/](./study) |
-| 网格路径 DP | `P_1002_..._过河卒.cpp` — **马挡路，`dp[i][j]=dp[i-1][j]+dp[i][j-1]`** | [study/](./study) |
-| 双向 LIS | `P_1091_..._合唱队形DP解决.cpp` — **正向+反向 LIS，`dp1[i]+dp2[i]-1`** | [study/](./study) |
-| LIS 贪心 + 二分 | `P_1020_..._导弹拦截.cpp` — **`lower_bound` + `greater`，Dilworth 定理** | [study/](./study) |
-| 计数 DP | `P_1077_..._摆花.cpp` — **三维 DP，`dp[i][j][k]` 前 i 种花 j 盆和为 k** | [study/](./study) |
+| 01 背包（二维） | `P_1048_NOIP_2005_普及组_采药.cpp` — **经典 `dp[i][j]=max(dp[i-1][j], dp[i-1][j-w]+v)`** | [study/](./study/P_1048_NOIP_2005_普及组_采药.cpp) |
+| 01 背包（价值变形） | `P_1060_NOIP_2006_普及组_开心的金明.cpp` — **价值 = 价格 × 重要度** | [study/](./study/P_1060_NOIP_2006_普及组_开心的金明.cpp) |
+| 完全背包（一维正序） | `P_1616_疯狂的采药.cpp` — **`for(i=w;i<=t;i++)` 正序，边读边算** | [study/](./study/P_1616_疯狂的采药.cpp) |
+| 网格路径 DP | `P_1002_NOIP_2002_普及组_过河卒.cpp` — **马挡路，`dp[i][j]=dp[i-1][j]+dp[i][j-1]`** | [study/](./study/P_1002_NOIP_2002_普及组_过河卒.cpp) |
+| 双向 LIS | `P_1091_NOIP_2004_提高组_合唱队形DP解决.cpp` — **正向+反向 LIS，`dp1[i]+dp2[i]-1`** | [study/](./study/P_1091_NOIP_2004_提高组_合唱队形DP解决.cpp) |
+| LIS 贪心 + 二分 | `P_1020_NOIP_1999_提高组_导弹拦截.cpp` — **`lower_bound` + `greater`，Dilworth 定理** | [study/](./study/P_1020_NOIP_1999_提高组_导弹拦截.cpp) |
+| 计数 DP | `P_1077_NOIP_2012_普及组_摆花.cpp` — **三维 DP，`dp[i][j][k]` 前 i 种花 j 盆和为 k** | [study/](./study/P_1077_NOIP_2012_普及组_摆花.cpp) |
 | 树形 DP | DSU on tree、树上 DFS 类 | 各比赛 |
 
 </details>
@@ -219,52 +219,52 @@
 
 | 时间 | 赛事 | 链接 |
 |------|------|------|
-| 2025.10 | 记协第一次训练赛 | [competition/记协第一次训练赛](./competition/记协第一次训练赛) |
-| 2025.10 | 计算机协会第二次 | [competition/计算机协会第二次](./competition/计算机协会第二次) |
-| 2025.11 | ECUT 计协第四次训练赛 | [competition/20251110ECUT计协第四次训练赛](./competition/20251110ECUT计协第四次训练赛) |
-| 2025.11 | ECUT 计协第五次训练赛 | [competition/20251115ECUT计协第五次训练赛](./competition/20251115ECUT计协第五次训练赛) |
-| 2025.11 | ECUT 计协第六次训练赛 | [competition/20251120ECUT计协第六次训练赛](./competition/20251120ECUT计协第六次训练赛) |
-| 2025.11 | ECUT 计协第七次训练赛 | [competition/20251123ECUT计协第七次训练赛](./competition/20251123ECUT计协第七次训练赛) |
-| 2025.11 | ECUT 计协第八次训练赛 | [competition/20251130ECUT计协第八次训练赛](./competition/20251130ECUT计协第八次训练赛) |
-| 2025.11 | ECUT 训练赛 11 | [competition/20251130ECUT11](./competition/20251130ECUT11) |
-| 2025.11 | ECUT 训练赛 12 | [competition/20251130ECUT12](./competition/20251130ECUT12) |
-| 2025.12 | ECUT 训练赛 9 | [competition/20251207ECUT9](./competition/20251207ECUT9) |
-| 2025.12 | ECUT 训练赛 10 | [competition/20251214ECUT10](./competition/20251214ECUT10) |
+| 2025-10-22 | 记协第一次训练赛 | [competition/记协第一次训练赛](./competition/记协第一次训练赛) |
+| 2025-10-30 | 计算机协会第二次 | [competition/计算机协会第二次](./competition/计算机协会第二次) |
+| 2025-11-10 | ECUT 计协第四次训练赛 | [competition/20251110ECUT计协第四次训练赛](./competition/20251110ECUT计协第四次训练赛) |
+| 2025-11-16 | ECUT 计协第五次训练赛 | [competition/20251115ECUT计协第五次训练赛](./competition/20251115ECUT计协第五次训练赛) |
+| 2025-11-20 | ECUT 计协第六次训练赛 | [competition/20251120ECUT计协第六次训练赛](./competition/20251120ECUT计协第六次训练赛) |
+| 2025-11-23 | ECUT 计协第七次训练赛 | [competition/20251123ECUT计协第七次训练赛](./competition/20251123ECUT计协第七次训练赛) |
+| 2025-11-30 | ECUT 计协第八次训练赛 | [competition/20251130ECUT计协第八次训练赛](./competition/20251130ECUT计协第八次训练赛) |
+| 2025-12-21 | ECUT 训练赛 11 | [competition/20251130ECUT11](./competition/20251130ECUT11) |
+| 2025-12-29 | ECUT 训练赛 12 | [competition/20251130ECUT12](./competition/20251130ECUT12) |
+| 2025-12-07 | ECUT 训练赛 9 | [competition/20251207ECUT9](./competition/20251207ECUT9) |
+| 2025-12-14 | ECUT 训练赛 10 | [competition/20251214ECUT10](./competition/20251214ECUT10) |
 
 ### 校外比赛与训练
 
 | 时间 | 赛事 | 链接 |
 |------|------|------|
-| 2024 | ECUT 新生赛 | [competition/2024ECUT](./competition/2024ECUT) |
-| 2025.10 | NCHU 训练赛 | [competition/2025.10.15NCHU](./competition/2025.10.15NCHU) |
-| 2025.10 | 牛客训练 | [competition/niuke2025.10.12](./competition/niuke2025.10.12) |
-| 2025.11 | 第三次训练赛 | [competition/2025.11.2第三次训练赛](./competition/2025.11.2第三次训练赛) |
-| 2025.11 | CF 1066(div1+2) 补题 | [study/CF 1066(div1+2)](./study/CF%201066(div1+2)) |
-| 2025.11 | Pinely Round 5 补题 | [study/Pinely Round 5 (Div. 1 + Div. 2)](./study/Pinely%20Round%205%20(Div.%201%20+%20Div.%202)) |
-| 2025.11 | 组队训练 | [competition/2025.11.11](./competition/2025.11.11) |
-| 2025.12 | 组队训练 group4 | [competition/2025.12.29group4](./competition/2025.12.29group4) |
-| 2025.12 | 组队训练 12.16 | [competition/group4 2025.12.16](./competition/group4%202025.12.16) |
-| 2025 | 江西省赛 ECPC | [competition/2025ECPC](./competition/2025ECPC) |
-| 2025 | 码蹄集训练 | [competition/2025matiji111](./competition/2025matiji111) |
-| 2026.02 | NewCode K1 | [competition/2026.2.3NEWK1](./competition/2026.2.3NEWK1) |
-| 2026.02 | NewCode K2 | [competition/2026.2.5NEWK2](./competition/2026.2.5NEWK2) |
-| 2026.02 | NewCode K3 | [competition/2026.2.7NEWK3](./competition/2026.2.7NEWK3) |
-| 2026.02 | NewCode K4 | [competition/2026.2.9NEWK4](./competition/2026.2.9NEWK4) |
-| 2026 | 码蹄集（第二阶段） | [competition/2026matiji](./competition/2026matiji) |
-| 2026 | 码蹄集比赛 | [competition/2026matijicomepition](./competition/2026matijicomepition) |
-| 2026.03 | 天梯赛训练 | [tiantisai](./tiantisai) |
-| — | AtCoder ABC | [competition/ATC436](./competition/ATC436) |
-| — | CF Round 1090 (Div. 4) | [study/Codeforces Round 1090 (Div. 4)](./study/Codeforces%20Round%201090%20(Div.%204)) |
-| — | CF Round 1101 (Div. 2) | [competition/Codeforces Round 1101 (Div. 2)](./competition/Codeforces%20Round%201101%20(Div.%202)) |
-| — | CF Edu Round 190 | [study/Educational Codeforces Round 190 (Rated for Div. 2)](./study/Educational%20Codeforces%20Round%20190%20(Rated%20for%20Div.%202)) |
-| — | 牛客周赛 | [competition/牛客周赛 Round 114](./competition/牛客周赛%20Round%20114) |
-| — | 传智杯 | [competition/传智杯](./competition/传智杯) |
+| 2025-12-23 | ECUT 新生赛 | [competition/2024ECUT](./competition/2024ECUT) |
+| 2025-10-15 | NCHU 训练赛 | [competition/2025.10.15NCHU](./competition/2025.10.15NCHU) |
+| 2025-10-12 | 牛客训练 | [competition/niuke2025.10.12](./competition/niuke2025.10.12) |
+| 2025-11-02 | 第三次训练赛 | [competition/2025.11.2第三次训练赛](./competition/2025.11.2第三次训练赛) |
+| 2025-11-30 | CF 1066(div1+2) 补题 | [study/CF 1066(div1+2)](./study/CF%201066(div1+2)) |
+| 2025-12-06 | Pinely Round 5 补题 | [study/Pinely Round 5 (Div. 1 + Div. 2)](./study/Pinely%20Round%205%20(Div.%201%20+%20Div.%202)) |
+| 2025-11-11 | 组队训练 | [competition/2025.11.11](./competition/2025.11.11) |
+| 2025-12-29 | 组队训练 group4 | [competition/2025.12.29group4](./competition/2025.12.29group4) |
+| 2025-12-16 | 组队训练 12.16 | [competition/group4 2025.12.16](./competition/group4%202025.12.16) |
+| 2026-02-09 | 江西省赛 ECPC | [competition/2025ECPC](./competition/2025ECPC) |
+| 2026-03-18 | 码蹄集训练 | [competition/2025matiji111](./competition/2025matiji111) |
+| 2026-02-09 | NewCode K1 | [competition/2026.2.3NEWK1](./competition/2026.2.3NEWK1) |
+| 2026-02-09 | NewCode K2 | [competition/2026.2.5NEWK2](./competition/2026.2.5NEWK2) |
+| 2026-02-09 | NewCode K3 | [competition/2026.2.7NEWK3](./competition/2026.2.7NEWK3) |
+| 2026-02-09 | NewCode K4 | [competition/2026.2.9NEWK4](./competition/2026.2.9NEWK4) |
+| 2026-04-02 | 码蹄集（第二阶段） | [competition/2026matiji](./competition/2026matiji) |
+| 2026-04-26 | 码蹄集比赛 | [competition/2026matijicomepition](./competition/2026matijicomepition) |
+| 2026-03-14 | 天梯赛训练 | [tiantisai](./tiantisai) |
+| 2025-12-14 | AtCoder ABC | [competition/ATC436](./competition/ATC436) |
+| 2026-05-19 | CF Round 1090 (Div. 4) | [study/Codeforces Round 1090 (Div. 4)](./study/Codeforces%20Round%201090%20(Div.%204)) |
+| 2026-05-31 | CF Round 1101 (Div. 2) | [competition/Codeforces Round 1101 (Div. 2)](./competition/Codeforces%20Round%201101%20(Div.%202)) |
+| 2026-05-31 | CF Edu Round 190 | [study/Educational Codeforces Round 190 (Rated for Div. 2)](./study/Educational%20Codeforces%20Round%20190%20(Rated%20for%20Div.%202)) |
+| 2025-10-19 | 牛客周赛 | [competition/牛客周赛 Round 114](./competition/牛客周赛%20Round%20114) |
+| 2025-11-22 | 传智杯 | [competition/传智杯](./competition/传智杯) |
 
 ### STL 专题混战
 
-| 专题 | 链接 |
-|------|------|
-| STL 综合应用 | [competition/stl-hunzhan](./competition/stl-hunzhan) |
+| 时间 | 专题 | 链接 |
+|------|------|------|
+| 2025-10-14 | STL 综合应用 | [competition/stl-hunzhan](./competition/stl-hunzhan) |
 
 ---
 
