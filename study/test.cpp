@@ -3,6 +3,9 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
+int find(int x){
+    return fa[x]==x ? x : fa[x]=find(fa[x]);
+}
 void solve() {
     
 }
