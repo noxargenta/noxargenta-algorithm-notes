@@ -14,7 +14,7 @@ for(int i=2;i<N;i++){
         for(auto x : prime){
             if(x*i>=N)break;
             c[x*i]=0;
-            if()
+            if(i%x==0)break;
         }
     }
 }
