@@ -534,6 +534,8 @@ for (auto x : a) {
     if (it == f.end()) f.push_back(x);
     else *it = x;
 }
+//lower_bound：查找第一个大于或等于（\(\ge \)）目标值的元素。
+//upper_bound：查找第一个严格大于（\(>\)）目标值的元素。
 ```
 
 ### 18. 网格路径 DP（过河卒）
