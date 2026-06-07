@@ -8,7 +8,9 @@ int rev(int p,bool odd){
     string s2=s;
     reverse(s2.begin(),s2.end());
     if(odd){
-        return stoll(s+)
+        return stoll(s+s2.substr(1));
+    }else {
+        return stoll(s+s2);
     }
 }
 void solve() {
