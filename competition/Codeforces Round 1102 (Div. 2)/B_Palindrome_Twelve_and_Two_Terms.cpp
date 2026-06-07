@@ -37,7 +37,7 @@ void solve() {
     int p=stoll(s.substr(0,mid));
     bool odd=(L%2!=0);
     vector<int> a;
-    for(int i=0;i<=100;i++){
+    for(int i=0;i<=100000;i++){
         if(p-i>=0){
             a.push_back(rev(p-i,odd));
         }
