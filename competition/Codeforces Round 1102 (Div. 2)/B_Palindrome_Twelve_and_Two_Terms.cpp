@@ -42,6 +42,9 @@ void solve() {
             a.push_back(rev(p-i,odd));
         }
     }
+    if(L>1){
+        a.push_back(stoll(string(L-1,'9')));
+    }
     for(auto x : a){
         if(x<=n && (n-x)%12==0){
             cout << x << " " << n-x << endl;
