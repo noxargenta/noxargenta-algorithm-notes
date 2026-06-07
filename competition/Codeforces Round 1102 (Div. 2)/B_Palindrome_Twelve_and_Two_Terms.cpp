@@ -16,7 +16,39 @@ int rev(int p,bool odd){
 void solve() {
     int n;
     cin >> n;
-    
+    if(n<20){
+        for(int a=n;a>=0;a--){
+            if((n-a)%12==0){
+                string s=to_string(a);
+                string r=s;
+                reverse(r.begin(),r.end());
+                if(r==s){
+                    cout << a << ' ' << n-a << endl;
+                    return;
+                }
+            }
+        }
+        cout << -1 << endl ;
+        return;
+    }
+    string s=to_string(n);
+    int L=s.length();
+    int mid=(L+1)/2;
+    int p=stoll(s.substr(0,mid));
+    bool odd=(L%2!=0);
+    vector<int> a;
+    for(int i=0;i<=100;i++){
+        if(p-i>=0){
+            a.push_back(rev(p-i,odd));
+        }
+    }
+    for(auto x : a){
+        if(x<=n && (n-x)%12==0){
+            cout << x << " " << n-x << endl;
+            return;
+        }
+    }
+    cout << -1 << endl;
 }
 
 signed main() {
