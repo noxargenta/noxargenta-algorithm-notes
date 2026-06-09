@@ -6,7 +6,7 @@ using i64 = long long;
 void solve() {
     int n;
     cin >> n;
-    int limm=min(n,100LL);
+    int limm=min(n,100000LL);
     for(int a=0; a<=limm;a++){
         if((n-a)%12==0){
             string s=to_string(a);
