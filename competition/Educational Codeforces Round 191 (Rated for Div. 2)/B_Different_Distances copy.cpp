@@ -10,8 +10,12 @@ void solve() {
         cout << "1 2 1 1 2 2 1 2\n";
     }else {
         for(int i=1;i<=n;i++){
-            
+            cout << i << " ";
         }
+        for(int i=1;i<=n;i++){
+            cout << i << " ";
+        }
+        
     }
 
 
