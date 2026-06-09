@@ -4,7 +4,8 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
-    int n,x,y,z;
+    double n;
+    int x,y,z;
     cin >> n >> x >> y >> z;
 //     //四个整数 n
 //  、 x
@@ -12,8 +13,11 @@ void solve() {
 //  和 z
 //  ( 1≤n,x,y,z≤10000
 //  )，分别是项目中的行数、Maxim 的速度、Nikita 在没有 AI 的情况下的速度以及 AI 设置时间。
-    
-    cout << min((n+1)/(x+y),z + (n-z*x+1)/(10*y + x)) << endl;
+    if(z + (n-z*x)/(10*y + x)>0){
+        cout << min((n)/(x+y),z + (n-z*x)/(10*y + x)) << endl;
+    }else {
+        cout << ceil((n*1.0)/(x+y)) << endl;
+    }
 
 
 }
