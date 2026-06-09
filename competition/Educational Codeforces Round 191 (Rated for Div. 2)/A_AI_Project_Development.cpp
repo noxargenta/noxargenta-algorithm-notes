@@ -17,7 +17,7 @@ void solve() {
     if(z + (n-z*x)/(10*y + x)>0){
         ans=min((n)/(x+y),z + (n-z*x)/(10*y + x));
     }else {
-        ans=ceil((n*1.0)/(x+y));
+        ans=((n*1.0)/(x+y));
     }
     if((ans-(int)ans<1e-9)){
         cout << ans << endl;
