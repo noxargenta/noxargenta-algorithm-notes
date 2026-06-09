@@ -16,11 +16,12 @@ void solve() {
             cout << i << " ";
         }
         for(int i=1;i<=n;i++){
-            cout << (i+1)%n << " ";
+            cout << (i+1)%n+1 << " ";
+        }
+        for(int i=1;i<=n;i++){
+            cout << (i+2)%n+1 << " ";
         }
     }
-
-
 }
 
 signed main() {
