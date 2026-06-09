@@ -22,6 +22,7 @@ void solve() {
             cout << (i+2)%n+1 << " ";
         }
     }
+    cout << endl;
 }
 
 signed main() {
