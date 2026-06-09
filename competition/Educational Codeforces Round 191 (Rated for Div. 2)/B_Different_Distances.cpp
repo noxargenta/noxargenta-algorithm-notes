@@ -4,7 +4,7 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
-    vector<int> a={1,1,2,1,2,3,1,2,2,3,3,}
+    vector<int> a={1,1,2,1,2,3,1,2,2,3,3,4,3,4,4,5,5,4,5,}
 }
 
 signed main() {
