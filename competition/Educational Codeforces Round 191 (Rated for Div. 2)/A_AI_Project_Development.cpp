@@ -13,11 +13,18 @@ void solve() {
 //  和 z
 //  ( 1≤n,x,y,z≤10000
 //  )，分别是项目中的行数、Maxim 的速度、Nikita 在没有 AI 的情况下的速度以及 AI 设置时间。
+    double ans;
     if(z + (n-z*x)/(10*y + x)>0){
-        cout << min((n)/(x+y),z + (n-z*x)/(10*y + x)) << endl;
+        ans=min((n)/(x+y),z + (n-z*x)/(10*y + x));
     }else {
-        cout << ceil((n*1.0)/(x+y)) << endl;
+        ans=ceil((n*1.0)/(x+y));
     }
+    if((ans-(int)ans<1e-9)){
+        cout << ans << endl;
+    }else {
+        cout << (int)ans+1 << endl;
+    }
+
 
 
 }
