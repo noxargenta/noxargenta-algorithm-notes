@@ -12,7 +12,7 @@ void solve() {
     }
     vector<int> p1(n+1);
     vector<int> p2(n+1);
-    int cp1,cp2;
+    int cp1=0,cp2=0;
     for(int i=1;i<=n;i++){
         int x=a[i];
         if(x==1){
@@ -29,10 +29,10 @@ void solve() {
         p2[i]=cp2;
     }
     int maxjj=-999999999;
-    for(int i=n-2;i>=0;i--){
+    for(int i=n-2;i>=1;i--){
         int j=i+1;
         maxjj=max(maxjj,p2[j]);
-        if(p1[i]>=0 || maxjj-p2[j]>=0){
+        if(p1[i]>=0  &&  maxjj-p2[i]>=0){
             cout << "YES\n";
             return;
         }
