@@ -27,7 +27,10 @@ void solve() {
         p1[i]=cp1;
         p2[i]=cp2;
     }
-    for(int i=n-2)
+    for(int i=n-2;i>=0;i--){
+        int j=i+1;
+        
+    }
 }
 
 signed main() {
