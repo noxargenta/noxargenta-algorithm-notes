@@ -24,7 +24,10 @@ void solve() {
             cp1--;
             cp2--;
         }
+        p1[i]=cp1;
+        p2[i]=cp2;
     }
+    for(int i=n-2)
 }
 
 signed main() {
