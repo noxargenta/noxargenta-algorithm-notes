@@ -5,6 +5,7 @@ using i64 = long long;
 #define int long long
 void solve() {
     int n;
+    cin >> n;
     int a[n+1];
     for(int i=1;i<=n;i++){
         cin >> a[i];
@@ -27,10 +28,16 @@ void solve() {
         p1[i]=cp1;
         p2[i]=cp2;
     }
+    int maxjj=-999999999;
     for(int i=n-2;i>=0;i--){
         int j=i+1;
-        
+        maxjj=max(maxjj,p2[j]);
+        if(p1[i]>=0 || maxjj-p2[j]>=0){
+            cout << "YES\n";
+            return;
+        }
     }
+    cout << "NO\n";
 }
 
 signed main() {
