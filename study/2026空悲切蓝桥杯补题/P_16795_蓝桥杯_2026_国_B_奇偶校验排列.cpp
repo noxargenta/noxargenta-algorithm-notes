@@ -21,7 +21,7 @@ void solve() {
             zero=0;
             int val=0;
             for(int j=i;j<n && j<i+6;j++){
-                val= val * 10 + (s[j]-'0');
+                val=stoi(s.substr(i,j-i+1));
                 if(val>100000){
                     break;
                 }
