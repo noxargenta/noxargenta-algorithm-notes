@@ -19,7 +19,9 @@ void solve() {
             cnt[0]+=nowz;
             int ways=zero +1;
             zero=0;
-            for(int j=i;j<n && j<i+6;j++)
+            for(int j=i;j<n && j<i+6;j++){
+                
+            }
         }
     }
 }
