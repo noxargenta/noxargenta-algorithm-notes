@@ -4,7 +4,19 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
-    
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    int zero=0;
+    for(auto x : s) {
+        if(x-'0'==0){
+            zero++;
+        }else {
+            int nowz=(zero+1)*zero/2;
+            
+        }
+    }
 }
 
 signed main() {
