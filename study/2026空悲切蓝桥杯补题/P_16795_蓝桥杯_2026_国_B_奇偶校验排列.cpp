@@ -9,8 +9,8 @@ void solve() {
     string s;
     cin >> s;
     int zero=0;
-    vector<int> cnt(n+1,0);
-    vector<int> pre(n+1,0);
+    vector<int> cnt(100000+1,0);
+    vector<int> pre(100000+1,0);
     for(int i=0;i<n;i++) {
         if(s[i]-'0'==0){
             zero++;
@@ -25,12 +25,24 @@ void solve() {
                 if(val>100000){
                     break;
                 }
-                pre[val]+=ways;
+                cnt[val]+=ways;
             }
         }
     }
     cnt[0] += zero * (zero + 1) / 2;
     pre[0] = cnt[0];
+    for(int i=1;i<=100000;i++){
+        pre[i]=pre[i-1] + cnt[i];
+    }
+    while(m--){
+        int l,r;
+        cin >> l >> r;
+        if(l==0){
+            cout << pre[r] << endl;
+        }else {
+            cout << pre[r]-pre[l-1] << endl;
+        }
+    }
 }
 
 signed main() {
