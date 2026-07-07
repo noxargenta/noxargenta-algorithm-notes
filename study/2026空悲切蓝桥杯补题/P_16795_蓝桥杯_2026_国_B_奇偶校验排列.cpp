@@ -25,7 +25,8 @@ void solve() {
                 if(val>100000){
                     break;
                 }
-                pre[val]+=
+                pre[val]+=ways;
+                
             }
         }
     }
