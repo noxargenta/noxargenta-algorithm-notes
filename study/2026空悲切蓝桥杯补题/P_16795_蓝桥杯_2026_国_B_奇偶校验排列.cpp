@@ -26,10 +26,11 @@ void solve() {
                     break;
                 }
                 pre[val]+=ways;
-                
             }
         }
     }
+    cnt[0] += zero * (zero + 1) / 2;
+    pre[0] = cnt[0];
 }
 
 signed main() {
