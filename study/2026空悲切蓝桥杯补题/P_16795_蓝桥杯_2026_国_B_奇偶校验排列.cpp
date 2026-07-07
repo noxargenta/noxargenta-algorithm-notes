@@ -22,7 +22,10 @@ void solve() {
             int val=0;
             for(int j=i;j<n && j<i+6;j++){
                 val= val * 10 + (s[j]-'0');
-                if()
+                if(val>100000){
+                    break;
+                }
+                
             }
         }
     }
