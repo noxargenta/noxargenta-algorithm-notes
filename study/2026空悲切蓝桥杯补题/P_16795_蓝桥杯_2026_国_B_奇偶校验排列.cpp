@@ -9,11 +9,14 @@ void solve() {
     string s;
     cin >> s;
     int zero=0;
+    vector<int> cnt(n+1,0);
     for(auto x : s) {
         if(x-'0'==0){
             zero++;
         }else {
             int nowz=(zero+1)*zero/2;
+            cnt[0]+=nowz;
+            int ways=zero +1;
             
         }
     }
