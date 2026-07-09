@@ -5,7 +5,7 @@ using i64 = long long;
 #define int long long
 const int a2=20260606,a1=20000000;
 void solve() {
-    set<int> st;
+    unordered_set<int> st;
     string s;
     for(int i=a1;i<=a2;i++){
         s=to_string(i);
@@ -14,7 +14,7 @@ void solve() {
                 if(c=='0' && pos==0)continue;
                 string t=s;
                 t.insert(t.begin()+pos,c);
-                if(t[0]==1 || t[1]==1)continue;
+                if(t[0]=='1' || t[1]=='1')continue;
                 st.insert(stoll(t));
             }
         }
