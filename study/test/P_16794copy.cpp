@@ -5,9 +5,8 @@ using i64 = long long;
 #define int long long
 const int a2=20260606,a1=20000000;
 void solve() {
-    unordered_set<int> st;
+    set<int> st;
     string s;
-    st.reserve(20000000);
     for(int i=a1;i<=a2;i++){
         s=to_string(i);
         for(int pos=0;pos<=(int)s.size();pos++){
