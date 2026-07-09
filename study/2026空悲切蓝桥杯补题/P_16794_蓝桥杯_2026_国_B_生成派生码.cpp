@@ -5,9 +5,21 @@ using i64 = long long;
 #define int long long
 const int a2=20260606,a1=20000000;
 void solve() {
-    set<int> se;
+    set<int> st;
     string s;
-    for(int i=)
+    for(int i=a1;i<=a2;i++){
+        s=to_string(i);
+        for(int pos=0;pos<(int)s.size();pos++){
+            for(char c='0';c<='9';c++){
+                if(c=='0' && pos==0)continue;
+                string t=s;
+                t.insert(t.begin()+pos,c);
+                if(t[0]==1 || t[1]==1)continue;
+                st.insert(stoll(t));
+            }
+        }
+    }
+    cout << 99999990 + 180000000 + st.size() <<endl;
 }   
 
 signed main() {
