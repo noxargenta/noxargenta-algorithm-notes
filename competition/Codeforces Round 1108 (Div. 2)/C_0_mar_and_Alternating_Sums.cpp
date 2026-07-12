@@ -20,6 +20,7 @@ void solve() {
     int n;
     cin >> n;
     int m=0;//-1num;
+    int k=0;//different
     vector<pair<int ,int>> cnt;
     for(int i=0;i<n;i++){
         int x;
@@ -27,9 +28,21 @@ void solve() {
         if(x==-1){
             m++;
         }else {
-            if(cnt.empty() || )
+            if(cnt.empty()){
+                cnt.push_back({x,1});
+            }else if(cnt.back().first!=x){
+                cnt.push_back({x,1});
+                k++;
+            }else {
+                cnt.back().second++;
+            }
         }
     }
+    int doub=1;
+    for(auto x : cnt){
+        doub = doub * ksm(2,x.second-1) %mod;
+    }
+    
 }
 
 signed main() {
