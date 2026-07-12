@@ -11,7 +11,7 @@ int ksm(int x,int n){
         if(n%2==1){
             ans=ans*x%mod;
         }
-        ans=ans*ans%mod;
+        x=x*x%mod;
         n/=2;
     }
     return ans;
@@ -27,7 +27,7 @@ void solve() {
         cin >> x;
         if(x==-1){
             m++;
-        }else {
+        }else { 
             if(cnt.empty()){
                 cnt.push_back({x,1});
             }else if(cnt.back().first!=x){
@@ -47,8 +47,10 @@ void solve() {
     if(m==0){
         cout  << doub << endl;
     }else {
-        int ans=ksm(2,m-1)*doub%mod*
+        int ans=ksm(2,m-1)*doub%mod*(1+k)%mod;
+        cout << ans << endl;
     }
+
 }
 
 signed main() {
