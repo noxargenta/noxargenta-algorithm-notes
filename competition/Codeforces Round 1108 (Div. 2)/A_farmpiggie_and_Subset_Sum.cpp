@@ -7,8 +7,9 @@ void solve() {
     int n;
     cin >> n;
     for(int i=1;i<=n;i+=2){
-        cout << 
+        cout << i+1 << " " << i  <<" ";
     }
+    cout << endl;
 }
 
 signed main() {
