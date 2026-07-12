@@ -8,14 +8,18 @@ void solve() {
     cin >> n;
     vector<int> a;
     a.push_back(0);
+    a.push_back(1);
     a.push_back(2);
-    a.push_back(4);
-    int sum=2+4;
-    if(n<=2){
+    int sum=a[1]+a[2];
+    if(n<2){
         for(int i=1;i<=n;i++){
             cout << a[i] << " ";
         }
         cout << endl;
+        return;
+    }
+    if(n==2){
+        cout << -1 << endl;
         return;
     }
     for(int i=3;i<=n;i++){
