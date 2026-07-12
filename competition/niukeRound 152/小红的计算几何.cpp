@@ -9,7 +9,7 @@ void solve() {
     int a,b,c,d;
     cin >> a   >> b  >> c >> d;
     int S=k*k;
-    
+    int xx=max()
 }
 
 signed main() {
