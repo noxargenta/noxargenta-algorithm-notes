@@ -8,7 +8,7 @@ void solve() {
     cin >> x;
     string s=to_string(x);
     cout << 1;
-    string ans((s.length()-1)*2,'0');
+    string ans((s.length()-1),'0');
     cout << ans;
     cout << 1 << endl;
 }
