@@ -47,7 +47,7 @@ void solve() {
     if(m==0){
         cout  << doub << endl;
     }else {
-        
+        int ans=ksm(2,m-1)*doub%mod*
     }
 }
 
