@@ -11,7 +11,28 @@ void solve() {
         return;
     }
     int sum=0;
-    for()
+    for(int i=1;i<=7;i++){
+        for(int j=1;j<=6;j++){
+            if(i%2==1 && sum<n){
+                if(j%2==1){
+                    cout << 1;
+                    sum++;
+                }else {
+                    cout <<0;
+                }
+            }else if(i%2!=1 && sum<n){
+                if(j%2!=1){
+                    cout << 1;
+                    sum++;
+                }else {
+                    cout <<0;
+                }
+            }else {
+                cout << 0;
+            }
+        }
+        cout << endl;
+    }
 }
 
 signed main() {
