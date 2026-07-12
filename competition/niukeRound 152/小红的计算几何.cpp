@@ -4,12 +4,15 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
-    int k;
+    double k;
     cin >> k;
-    int a,b,c,d;
+    double a,b,c,d;
     cin >> a   >> b  >> c >> d;
-    int S=k*k;
-    int xx=max()
+    double S=k*k;
+    double xx=fabs(a-c)+k;
+    double yy=fabs(b-d)+k;
+    cout << fixed << setprecision(5);
+    cout << S+(xx*yy/2.0) << endl;
 }
 
 signed main() {
