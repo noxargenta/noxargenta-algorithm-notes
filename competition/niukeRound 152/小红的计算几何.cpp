@@ -9,10 +9,10 @@ void solve() {
     double a,b,c,d;
     cin >> a   >> b  >> c >> d;
     double S=k*k;
-    double xx=fabs(a-c)+k;
-    double yy=fabs(b-d)+k;
+    double xx=fabs(a-c);
+    double yy=fabs(b-d);
     cout << fixed << setprecision(5);
-    cout << S+(xx*yy/2.0) << endl;
+    cout << S+k*yy +k*xx << endl;
 }
 
 signed main() {
