@@ -31,8 +31,10 @@ void solve() {
             if(cnt.empty()){
                 cnt.push_back({x,1});
             }else if(cnt.back().first!=x){
+                if(x-cnt.back().first==1){
+                    k++;
+                }
                 cnt.push_back({x,1});
-                k++;
             }else {
                 cnt.back().second++;
             }
@@ -42,7 +44,11 @@ void solve() {
     for(auto x : cnt){
         doub = doub * ksm(2,x.second-1) %mod;
     }
-    
+    if(m==0){
+        cout  << doub << endl;
+    }else {
+        
+    }
 }
 
 signed main() {
