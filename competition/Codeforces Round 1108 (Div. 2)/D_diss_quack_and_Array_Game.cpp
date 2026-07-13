@@ -22,7 +22,11 @@ void solve() {
     int ans=LLONG_MAX;
     for(int v=0;(1<<v)<=1e5;v++){
         int cur=0,step=(1LL<<v);
-        
+        for(int i=1;i<=n;i++){
+            int mn=LLONG_MAX;
+            int x=((a[i]+step-1)/step)*step;
+            if(x==0) x=step;
+        }
     }
 }
 
