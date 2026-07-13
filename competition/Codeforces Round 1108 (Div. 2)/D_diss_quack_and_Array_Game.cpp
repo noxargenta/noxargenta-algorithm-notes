@@ -26,6 +26,7 @@ void solve() {
             int mn=LLONG_MAX;
             int x=((a[i]+step-1)/step)*step;
             if(x==0) x=step;
+            
         }
     }
 }
