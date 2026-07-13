@@ -31,8 +31,10 @@ void solve() {
             }
             cur+=mn;
         }
-        
+        cur-=(n-1)*v;
+        ans=min(ans,cur);
     }
+    cout << ans << endl;
 }
 
 signed main() {
