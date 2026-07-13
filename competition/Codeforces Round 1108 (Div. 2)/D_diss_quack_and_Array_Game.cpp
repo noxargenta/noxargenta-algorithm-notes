@@ -19,7 +19,10 @@ void solve() {
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
-    
+    int ans=LLONG_MAX;
+    for(int v=0;v<=17;v++){
+        
+    }
 }
 
 signed main() {
