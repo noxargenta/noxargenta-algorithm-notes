@@ -11,8 +11,7 @@ void solve() {
 
     // f(x): 单独把数字 x 变成 0 需要的步数 (二进制1的个数 + 二进制长度 - 1)
     auto f = [&](i64 x) -> i64 {
-        if(!x) return 0;
-        return __builtin_popcountll(x) + 63 - __builtin_clzll(x);
+        
     };
 
     i64 ans = 2e18;
