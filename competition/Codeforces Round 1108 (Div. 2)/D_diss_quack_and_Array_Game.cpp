@@ -20,7 +20,8 @@ void solve() {
         cin >> a[i];
     }
     int ans=LLONG_MAX;
-    for(int v=0;v<=17;v++){
+    for(int v=0;(1<<v)<=1e5;v++){
+        int cur=0,step=(1LL<<v);
         
     }
 }
