@@ -4,8 +4,13 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 int f(int x){
-    if(!x) return 0;
-    return __builtin_popcountll(x) + 63 - __builtin_clzll(x);
+    int ans=0;
+    while(x>0){
+        if(x&1)ans++;
+        if(x>1)ans++;
+        x>>=1;
+    }
+    return ans;
 }
 void solve() {
     int n;
