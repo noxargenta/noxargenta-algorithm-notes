@@ -15,13 +15,10 @@ void solve() {
     }
     int sum=0;
     for(int i=1;i<=n;i++){
-        if(a[i]<b[i]){
-            sum+=(b[i]-a[i]);
-        }else if(a[i]>b[i]){
-            if(sum<abs(a[i]-b[i])){
-                cout << "NO\n";
-                return;
-            }
+        sum=sum+(b[i]-a[i]);
+        if(sum<0){
+            cout << "NO\n";
+            return;    
         }
     }
     cout << "YES\n";
