@@ -18,7 +18,7 @@ void solve() {
     }
     vector<vector<int>> dp(n+2,vector<int>(2,0));
     dp[n+1][0]=0;
-    dp[n+1][1]=-1000000009;
+    dp[n+1][1]=-1e15;
     for(int i=n;i>=1;i--){
         if(b[i]==1){
             dp[i][0]=max(dp[i+1][0],dp[i+1][1]) + a[i];
