@@ -6,6 +6,7 @@ using i64 = long long;
 void solve() {
     int n,x,y;
     cin >> n >> x >>y;
+    // cout << "Debug: " << n << " " << x << " " << y << endl;
     vector<int> a(n+1);
     int g=gcd(x,y);
     for(int i=1;i<=n;i++){
@@ -21,6 +22,7 @@ void solve() {
             return;
         }
     }
+    cout << "YES\n";
 }
 
 signed main() {
@@ -32,6 +34,7 @@ signed main() {
     //int x=1;
     while(_--) {
         solve();
+        
         // cout << x << endl;
         // x++;
     }
