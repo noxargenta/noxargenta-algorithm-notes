@@ -16,6 +16,7 @@ void solve() {
         }
         maxx=max(maxx,sum);
     }
+    cout << "maxx" << maxx << endl; 
     cout << (maxx+2-1)/2 << endl;
 
 }
