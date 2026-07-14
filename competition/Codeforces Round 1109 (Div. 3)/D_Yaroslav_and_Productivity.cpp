@@ -7,14 +7,17 @@ void solve() {
     int n,m;
     cin >>n >> m;
     vector<int> a(n+1);
-    vector<int> b(m+1);
+    vector<bool> b(n+1,0);
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
     for(int i=1;i<=m;i++){
-        cin >> b[i];
+        int x;
+        cin >> x;
+        b[x]=1;
     }
     
+
 }
 
 signed main() {
