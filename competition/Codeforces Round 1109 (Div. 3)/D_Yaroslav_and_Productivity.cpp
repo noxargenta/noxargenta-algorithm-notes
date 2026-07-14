@@ -16,12 +16,12 @@ void solve() {
         cin >> x;
         b[x]=1;
     }
-    int dp0=0;
+    int dp0=0;//后缀
     int dp1=-LLONG_MAX;
     for(int i=n;i>0;i--){
-        int n0,n1;
+        int n0,n1;//下一个更新后缀
         if(b[i]==1){
-            n0=
+            n0=max(dp0,dp1) + a[]
         }
     }
 
