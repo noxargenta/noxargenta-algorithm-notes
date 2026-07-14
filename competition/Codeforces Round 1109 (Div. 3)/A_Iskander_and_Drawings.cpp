@@ -4,6 +4,8 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
+    int n;
+    cin >> n;
     string s;
     cin >> s;
     int sum=0;
@@ -16,7 +18,7 @@ void solve() {
         }
         maxx=max(maxx,sum);
     }
-    cout << "maxx" << maxx << endl; 
+    //cout << "maxx" << maxx << endl; 
     cout << (maxx+2-1)/2 << endl;
 
 }
