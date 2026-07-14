@@ -21,7 +21,10 @@ void solve() {
     for(int i=n;i>0;i--){
         int n0,n1;//下一个更新后缀
         if(b[i]==1){
-            n0=max(dp0,dp1) + a[]
+            n0=max(dp0,dp1) + a[i];
+            n1=max(dp0,dp1) - a[i];
+        }else {
+            
         }
     }
 
