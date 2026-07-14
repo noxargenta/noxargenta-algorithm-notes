@@ -8,11 +8,18 @@ void solve() {
     cin >> n >> x >>y;
     vector<int> a(n+1);
     int g=gcd(x,y);
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+    }
     if(g==1){
         cout << "YES\n";
+        return;
     }
     for(int i=1;i<=n;i++){
-        
+        if(a[i]%g!=(i+1)%g){
+            cout << "NO\n";
+            return;
+        }
     }
 }
 
@@ -21,7 +28,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
