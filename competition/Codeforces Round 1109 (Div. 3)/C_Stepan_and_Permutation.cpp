@@ -29,8 +29,11 @@ signed main() {
     cin.tie(nullptr);
     int _ = 1;
     cin >> _;
+    int x=1;
     while(_--) {
         solve();
+        cout << x << endl;
+        x++;
     }
     return 0;
 }
