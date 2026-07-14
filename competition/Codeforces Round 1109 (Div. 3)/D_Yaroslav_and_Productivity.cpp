@@ -16,18 +16,19 @@ void solve() {
         cin >> x;
         b[x]=1;
     }
-    int dp0=0;//后缀
-    int dp1=-LLONG_MAX;
-    for(int i=n;i>0;i--){
-        int n0,n1;//下一个更新后缀
+    vector<vector<int>> dp(n+2,vector<int>(2,0));
+    dp[n+1][0]=0;
+    dp[n+1][1]=-LLONG_MAX;
+    for(int i=n;i>=1;i--){
         if(b[i]==1){
-            n0=max(dp0,dp1) + a[i];
-            n1=max(dp0,dp1) - a[i];
+            dp[i][0]=max(dp[i+1][0],dp[i+1][1]) + a[i];
+            dp[i][1]=max(dp[i+1][0],dp[i+1][1]) - a[i];
         }else {
-            
+            dp[i][0]=dp[i+1][0] + a[i];
+            dp[i][1]=dp[i+1][1] - a[i];
         }
     }
-
+    cout << max(dp[1][0],dp[1][1]) << endl;
 }
 
 signed main() {
