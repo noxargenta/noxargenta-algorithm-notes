@@ -1,31 +1,29 @@
-  #include <iostream>
-  #include <numeric>
-  using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+void solve() {
+    int n,x,y;
+    cin >> n >> x >>y;
+    vector<int> a(n+1);
+    int g=gcd(x,y);
+    if(g==1){
+        cout << "YES\n";
+    }
+    for(int i=1;i<=n;i++){
+        
+    }
+}
 
-  int main() {
-      ios::sync_with_stdio(false);
-      cin.tie(nullptr);
-
-      int t;
-      cin >> t;
-
-      while (t--) {
-          int n, x, y;
-          cin >> n >> x >> y;
-
-          int g = gcd(x, y);
-          bool ok = true;
-
-          for (int i = 1; i <= n; ++i) {
-              int p;
-              cin >> p;
-              if (p % g != i % g) {
-                  ok = false;
-              }
-          }
-
-          cout << (ok ? "YES" : "NO") << '\n';
-      }
-
-      return 0;
-  }
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+}
