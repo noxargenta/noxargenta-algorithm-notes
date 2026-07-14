@@ -5,17 +5,26 @@ using i64 = long long;
 #define int long long
 void solve() {
     int n;
+    cin >> n;
     vector<int> a(n+1),b(n+1);
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
-    for(int i=-1;i<=n;i++){
+    for(int i=1;i<=n;i++){
         cin  >> b[i];
     }
     int sum=0;
     for(int i=1;i<=n;i++){
-        
+        if(a[i]<=b[i]){
+            sum+=(b[i]-a[i]);
+        }else {
+            if(sum<abs(a[i]-b[i])){
+                cout << "NO\n";
+                return;
+            }
+        }
     }
+    cout << "YES\n";
 }
 
 signed main() {
