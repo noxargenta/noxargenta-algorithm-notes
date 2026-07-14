@@ -16,7 +16,7 @@ void solve() {
         return;
     }
     for(int i=1;i<=n;i++){
-        if(a[i]%g!=(i)%g){
+        if(a[i]%g!=i%g){
             cout << "NO\n";
             return;
         }
