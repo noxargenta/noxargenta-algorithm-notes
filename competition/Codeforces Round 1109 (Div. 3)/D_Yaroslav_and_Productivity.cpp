@@ -16,8 +16,13 @@ void solve() {
         cin >> x;
         b[x]=1;
     }
+    int dp0=0;
+    int dp1=-LLONG_MAX;
     for(int i=n;i>0;i--){
-        
+        int n0,n1;
+        if(b[i]==1){
+            n0=
+        }
     }
 
 }
