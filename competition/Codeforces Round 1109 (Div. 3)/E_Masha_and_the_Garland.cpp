@@ -12,9 +12,11 @@ void solve() {
     vector<int> pre(n+3,0);///100010
     pre[1]=0;
     for(int i=1;i<n;i++){
+        pre[i+1]=pre[i];
         if(s[i]==s[i+1]){
             pre[i+1]++;
-            pre[i+1]+=pre[i];
+        }else{
+            
         }
     }
     while(q--){
