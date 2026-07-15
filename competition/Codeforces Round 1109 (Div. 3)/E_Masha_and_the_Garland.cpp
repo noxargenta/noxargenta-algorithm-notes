@@ -9,7 +9,7 @@ void solve() {
     string tem;
     cin >> n >> q>> tem;
     s+=tem;
-    vector<int> pre(n+3,0);///10010
+    vector<int> pre(n+3,0);///100010
     pre[1]=0;
     for(int i=1;i<n;i++){
         if(s[i]==s[i+1]){
