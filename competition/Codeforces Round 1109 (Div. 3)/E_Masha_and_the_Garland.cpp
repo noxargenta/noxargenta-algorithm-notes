@@ -5,15 +5,28 @@ using i64 = long long;
 #define int long long
 void solve() {
     int n,q,l,r,k;
-    string s;
-    cin >> n >> q >> s;
-    vector<int> dp(n+1,0);///10010
-    for(int i=0;i<n-1;i++){
-        
+    string s="0";
+    string tem;
+    cin >> n >> q>> tem;
+    s+=tem;
+    vector<int> pre(n+3,0);///10010
+    pre[1]=0;
+    for(int i=1;i<n;i++){
+        if(s[i]==s[i+1]){
+            pre[i+1]++;
+            pre[i+1]+=pre[i];
+        }
     }
     while(q--){
         cin >> l,r,k;
-
+        if(l==r) {
+            cout << "YES\n";
+            continue;
+        }
+        int cha=pre[r]-pre[l];
+        if((cha+1)/2<=k){
+            
+        }
     }
 }
 
