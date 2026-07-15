@@ -24,7 +24,8 @@ void solve() {
             dp[i][0]==max(dp[i-1][0],dp[i-1][1]);
             dp[i][0]=-INF;
         }else {
-            int f0=dp[]
+            int f0=dp[i-1][0] + (k/2)*x;
+            int f1=dp[i-1][1] + ()
         }
     }
 }
