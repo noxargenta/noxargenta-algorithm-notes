@@ -18,7 +18,7 @@ void solve() {
         }
     }
     while(q--){
-        cin >> l,r,k;
+        cin >> l >> r >> k;
         if(l==r) {
             cout << "YES\n";
             continue;
