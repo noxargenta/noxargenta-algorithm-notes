@@ -25,8 +25,11 @@ void solve() {
         }
         int cha=pre[r]-pre[l];
         if((cha+1)/2<=k){
-            
+            cout << "YES\n";
+        }else {
+            cout << "NO\n";
         }
+
     }
 }
 
