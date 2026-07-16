@@ -26,7 +26,12 @@ void solve() {
     string s;
     int sum=0;
     for(int i=n;i>=1;i--){
-        
+        char c;
+        bool ok=0;
+        for(int j=26;j>=1;j--){
+            if()
+        }
+
     }
 
 }
