@@ -6,12 +6,13 @@ using i64 = long long;
 void solve() {
     int n,m;
     cin >> n  >> m;
-    vector<int> a(n+1);
+    vector<int> a(n+1,0);
     for(int j=1;j<=m;j++){
         int l,r;
         cin >> l >> r;
-
-        int inc=min(i-)
+        for(int i=1;i<=n;i++){
+            int inc=
+        }
     }
 }
 
