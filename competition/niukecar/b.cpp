@@ -10,7 +10,6 @@ void solve() {
     int ssum=0;
     for(int i=n;i>=1;i--){
         tsum+=(i*26);
-        ssum+=(i);
         if(tsum>=x){
             break;
         }
@@ -18,6 +17,13 @@ void solve() {
             cout << -1 << endl;
         }
     }
+    for(int i=n;i>=1;i--){
+        ssum+=(i);
+        if(n==1 && ssum>x){
+            cout << -1 << endl;
+        }
+    }
+    
 
 }
 
