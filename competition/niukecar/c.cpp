@@ -10,8 +10,10 @@ void solve() {
     for(int j=1;j<=m;j++){
         int l,r;
         cin >> l >> r;
-        for(int i=1;i<=n;i++){
-            int inc=
+        for(int i=l;i<=r;i++){
+            int inc=min(i-l+1,r-i+1);
+            a[i]+=inc;
+            
         }
     }
 }
