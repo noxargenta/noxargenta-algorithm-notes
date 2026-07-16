@@ -12,17 +12,23 @@ void solve() {
     }
     vector<int> b(n+5,0);
     vector<int> cs(n+5,0);
+    vector<int> d(n+5,0);
     for(int i=1;i<=n;i++){
         if(b[a[i]]==0){
             cs[a[i]]=i;
         }
+        d[a[i]]=i;
         b[a[i]]++;
     }
 
     while(m--){
         int x;
         cin >> x;
-
+        if(b[x]==0){
+            cout << 0 << endl;
+        }else{
+            cout << b[x] << " " << cs[x] << " " << d[x] << endl;
+        }
     }
 }
 
