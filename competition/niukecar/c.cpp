@@ -13,9 +13,23 @@ void solve() {
         for(int i=l;i<=r;i++){
             int inc=min(i-l+1,r-i+1);
             a[i]+=inc;
-            for()
+            int xx=1;
+            for(int i=l;i<=(l+r)/2;i++){
+                a[i]+=xx;
+                xx++;
+            }
+            xx=1;
+            for(int i=r;i>(l+r)/2;i--){
+                a[i]+=xx;
+                xx++;
+            }
         }
+
     }
+    for(int i=1;i<=n;i++){
+        cout << a[i] << " ";
+    }
+    cout << endl;
 }
 
 signed main() {
