@@ -7,10 +7,11 @@ void solve() {
     int n,m;
     cin >> n  >> m;
     vector<int> a(n+1);
-    while(m--){
-        int r,l;
+    for(int j=1;j<=m;j++){
+        int l,r;
         cin >> l >> r;
-        
+
+        int inc=min(i-)
     }
 }
 
