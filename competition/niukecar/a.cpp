@@ -10,10 +10,16 @@ void solve() {
     for(int i=1;i<=n;i++){
         cin >> a[i];
     }
+    vector<int> b(n+5,0);
+    for(int i=1;i<=n;i++){
+        b[a[i]]++;
+        
+    }
+
     while(m--){
         int x;
         cin >> x;
-        
+
     }
 }
 
