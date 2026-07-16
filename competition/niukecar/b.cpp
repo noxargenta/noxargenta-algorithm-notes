@@ -15,9 +15,13 @@ void solve() {
         }
         if(n==1 && tsum<x){
             cout << -1 << endl;
+            return;
         }
     }
-    if()
+    if((n+1)*n/2>x){
+        cout << -1 << endl;
+        return;
+    }
     string s;
     int sum=0;
     for(int i=n;i>=1;i--){
