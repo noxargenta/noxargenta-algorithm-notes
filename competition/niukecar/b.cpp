@@ -23,7 +23,11 @@ void solve() {
             cout << -1 << endl;
         }
     }
-    
+    string s;
+    int sum=0;
+    for(int i=n;i>=1;i--){
+        
+    }
 
 }
 
