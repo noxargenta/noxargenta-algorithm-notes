@@ -17,23 +17,27 @@ void solve() {
             cout << -1 << endl;
         }
     }
-    for(int i=n;i>=1;i--){
-        ssum+=(i);
-        if(n==1 && ssum>x){
-            cout << -1 << endl;
-        }
-    }
+    if()
     string s;
     int sum=0;
     for(int i=n;i>=1;i--){
         char c;
         bool ok=0;
         for(int j=26;j>=1;j--){
-            if()
+            if((sum+j*i+((i-1)+(1))*(i-1)/2)<=x){
+                c='a'+j-1;
+                s+=c;
+                sum+=j*i;
+                break;
+                ok=1;
+            }
         }
 
     }
-
+    for(int i=s.length()-1;i>=0;i--){
+        cout << s[i]; 
+    }
+    cout << endl;
 }
 
 signed main() {
