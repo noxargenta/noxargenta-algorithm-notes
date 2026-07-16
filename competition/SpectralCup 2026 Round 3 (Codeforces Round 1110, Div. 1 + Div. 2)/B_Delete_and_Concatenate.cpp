@@ -6,7 +6,7 @@ using i64 = long long;
 void solve() {
     int n,c;
     cin >> n >> c;
-    vector<int> a(n+1);
+    vector<int> a(n,0);
     
     int sum=0;
     for(int i=0;i<n;i++){
@@ -15,7 +15,7 @@ void solve() {
     }
     sort(a.begin(),a.end());
     int ans=sum;
-    for(int i=0;i<n/2;i++){
+    for(int i=0;i<(n/2);i++){
         int d=c-a[i];
         if(d>0){
             ans+=d;
