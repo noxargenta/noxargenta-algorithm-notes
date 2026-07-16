@@ -11,9 +11,12 @@ void solve() {
         cin >> a[i];
     }
     vector<int> b(n+5,0);
+    vector<int> cs(n+5,0);
     for(int i=1;i<=n;i++){
+        if(b[a[i]]==0){
+            cs[a[i]]=i;
+        }
         b[a[i]]++;
-        
     }
 
     while(m--){
