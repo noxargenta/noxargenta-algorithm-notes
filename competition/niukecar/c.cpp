@@ -13,7 +13,7 @@ void solve() {
         for(int i=l;i<=r;i++){
             int inc=min(i-l+1,r-i+1);
             a[i]+=inc;
-            
+            for()
         }
     }
 }
