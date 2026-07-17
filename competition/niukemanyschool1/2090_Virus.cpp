@@ -25,7 +25,9 @@ void solve() {
             cout << "Well-Being\n";
             return; 
         }
+    
     }
+
     cout << "Suspected Virus\n";
 }
 
