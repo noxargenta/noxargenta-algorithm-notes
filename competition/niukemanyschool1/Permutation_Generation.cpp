@@ -51,7 +51,13 @@ void solve() {
     
     bool ok=0;
     for(int i=0;i<n;i++){
-
+        if(i==k)continue;
+        for(int j=i+1;j<n && j<i+500;j++){
+            int change=2*(b[i]-b[j])*(j-i)%n;
+            if(change==(f1-f2)){
+                ok=1;
+            }
+        }
     }
 
 }
