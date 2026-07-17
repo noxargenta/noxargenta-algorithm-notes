@@ -14,6 +14,7 @@ void solve() {
     cin >> s;
     if(s.length()!=8){
         cout << "Well-Being\n";
+        return;
     }
     for(int i=0;i<s.length();i++){
         int j=i+1;
