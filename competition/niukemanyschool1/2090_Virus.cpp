@@ -12,6 +12,9 @@ int check(char x){
 void solve() {
     string s;
     cin >> s;
+    if(s.length()!=8){
+        cout << "Well-Being\n";
+    }
     for(int i=0;i<s.length();i++){
         int j=i+1;
         if(j%2==1 && check(s[i])==1){
