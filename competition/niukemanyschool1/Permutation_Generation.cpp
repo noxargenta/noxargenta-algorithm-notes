@@ -3,7 +3,6 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
-
 int sum(vector<int> x,int mod){
     int summ=0;
     for(int i=0;i<x.size();i++){
@@ -54,12 +53,23 @@ void solve() {
         if(i==k)continue;
         for(int j=i+1;j<n && j<i+500;j++){
             int change=2*(b[i]-b[j])*(j-i)%n;
+            swap(b[i],b[i]);
             if(change==(f1-f2)){
                 ok=1;
+                break;
             }
         }
+        if(ok==1){
+            break;
+        }
     }
-
+    if(ok==1){
+        for(int i=0;i<n;i++){
+            cout << b[i] <<  " " ; 
+        }
+    }else {
+        cout << -1 << endl;
+    }
 }
 
 signed main() {
