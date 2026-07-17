@@ -49,6 +49,10 @@ void solve() {
         cout << endl;
     }
     
+    bool ok=0;
+    for(int i=0;i<n;i++){
+
+    }
 
 }
 
