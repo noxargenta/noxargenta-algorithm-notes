@@ -29,26 +29,26 @@ void solve() {
         }
     }
     vector<int> b(n);
+    deque<int> dq(VAL.begin(),VAL.end());
     b[k]=x;
     for(int i=0;i<n;i++){
-        if(i==k){
-            continue;
+        int j=I[i];
+        if(i%2==0){
+            b[j]=dq.front();
+            dq.pop_front();
+        }else {
+            b[j]=dq.back();
+            dq.pop_back();
         }
-        x=i;
-        if(i>k){
-            x=i+1;
-        }
-        if(x%2==0){
-            
-        }
-
     }
-    if(sum(a,n)==n){
+    int f2=sum(b,n);
+    if(((f1+n)%n)==((f2+n)%n)){
         for(auto x : a){
             cout << x << " ";
         }
         cout << endl;
     }
+    
 
 }
 
