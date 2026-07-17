@@ -3,14 +3,23 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
+
+int sum(vector<int> x,int mod){
+    int summ=0;
+    for(int i=0;i<x.size();i++){
+        summ+=x[i]*(2*i+1)%mod;
+    }
+    return summ;
+}
 void solve() {
     int n,k,x;
     cin >> n  >> k >> x;
-    vector<int> a(n+1);
-    for(int i=1;i<=n;i++){
+    vector<int> a(n);
+    for(int i=0;i<n;i++){
         cin >> a[i];
     }
     
+
 }
 
 signed main() {
