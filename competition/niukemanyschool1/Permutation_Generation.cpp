@@ -46,14 +46,15 @@ void solve() {
             cout << x << " ";
         }
         cout << endl;
+        return;
     }
     
     bool ok=0;
-    for(int i=0;i<n;i++){
+    for(int i=0;i<I.size();i++){
         if(i==k)continue;
         for(int j=i+1;j<n && j<i+500;j++){
-            int change=2*(b[i]-b[j])*(j-i)%n;
-            swap(b[i],b[i]);
+            int change=2*((b[i]-b[j])%n)*((j-i)%n)%n;
+            swap(b[i],b[j]);
             if(change==(f1-f2)){
                 ok=1;
                 break;
