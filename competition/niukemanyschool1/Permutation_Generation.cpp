@@ -31,7 +31,11 @@ void solve() {
     vector<int> b(n);
     b[k]=x;
     for(int i=0;i<n;i++){
+        if(i==k){
+            continue;
+        }
         
+
     }
     if(sum(a,n)==n){
         for(auto x : a){
