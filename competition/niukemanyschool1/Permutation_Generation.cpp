@@ -19,7 +19,20 @@ void solve() {
         cin >> a[i];
     }
     int f1=sum(a,n);
-    
+    vector<int> I,VAL;
+    for(int i=0;i<n;i++){
+        if(i!=k){
+            I.push_back(i);
+        }
+        if(i!=x){
+            VAL.push_back(i);
+        }
+    }
+    vector<int> b(n);
+    b[k]=x;
+    for(int i=0;i<n;i++){
+        
+    }
     if(sum(a,n)==n){
         for(auto x : a){
             cout << x << " ";
