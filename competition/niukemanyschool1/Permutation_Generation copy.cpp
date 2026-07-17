@@ -25,21 +25,53 @@ int main(){
         cin>>a[i];
     }
     ll w1=pre_sum(a);
+    w1%=n;
     cout<<w1<<endl;
     vector<ll> b(n,0);
     b[k]=x;
     vector<ll> cub(n,0);
     ll now=(slope(k)-line(k))*x;
+    now%=n;
     for(ll i=0;i<n;i++){
         cub[i]=(slope(i)-line(i));
     }
     for(ll i=0;i<n;i++){
         cout<<cub[i]<<" ";
     }
+    cout<<endl;
     ll rl=(n-2)/2;
-    if(k>rl){
+    ll dis=(w1+n-now)%n;
+    if(k<=rl){
         for(ll i=n-1;i>rl;i--){
-            ll t=
+            if(i==k) continue;
+            ll t=dis/cub[i];
+            b[i]=t;
+            dis-=(t*cub[i]);
+        }
+        if(dis!=0) cout<<-1<<endl;
+        else{
+            for(ll i=0;i<n;i++){
+                cout<<b[i];
+                if(i!=n-1) cout<<" ";
+            }
+            cout<<endl;
+        }
+    }
+    else{
+        ll dis=(now-(w1-n))%n;
+        for(ll i=0;i<=rl;i++){
+            if(i==k) continue;
+            ll t=(dis/cub[i]);
+            b[i]=t;
+            dis-=(t*cub[i]);
+        }
+        if(dis!=0) cout<<-1<<endl;
+        else{
+            for(ll i=0;i<n;i++){
+                cout<<b[i];
+                if(i!=n) cout<<" ";
+            }
+            cout<<endl;
         }
     }
     cout<<endl;
