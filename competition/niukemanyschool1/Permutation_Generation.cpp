@@ -18,7 +18,12 @@ void solve() {
     for(int i=0;i<n;i++){
         cin >> a[i];
     }
-    
+    if(sum(a,n)==n){
+        for(auto x : a){
+            cout << x << " ";
+        }
+        cout << endl;
+    }
 
 }
 
