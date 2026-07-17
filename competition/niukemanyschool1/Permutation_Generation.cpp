@@ -41,7 +41,7 @@ void solve() {
         }
     }
     int f2=sum(b,n);
-    if(((f1+n)%n)==((f2+n)%n)){
+    if(((f1%n+n)%n)==((f2%n+n)%n)){
         for(auto x : a){
             cout << x << " ";
         }
