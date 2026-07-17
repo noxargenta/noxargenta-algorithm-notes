@@ -34,7 +34,13 @@ void solve() {
         if(i==k){
             continue;
         }
-        
+        x=i;
+        if(i>k){
+            x=i+1;
+        }
+        if(x%2==0){
+            
+        }
 
     }
     if(sum(a,n)==n){
