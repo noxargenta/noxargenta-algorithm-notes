@@ -53,7 +53,7 @@ void solve() {
     for(int i=0;i<n;i++){
         if(i==k)continue;
         for(int j=i+1;j<n && j<i+500;j++){
-            int change=2*((b[i]-b[j])%n)*((j-i)%n)%n;
+            int change=2*(b[i]-b[j])*(j-i)%n;
             if((change%n+n)%n==((f1-f2)%n+n)%n){
                 swap(b[i],b[j]);
                 ok=1;
