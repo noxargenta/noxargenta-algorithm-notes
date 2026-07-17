@@ -6,7 +6,7 @@ using i64 = long long;
 int sum(vector<int> x,int mod){
     int summ=0;
     for(int i=0;i<x.size();i++){
-        summ+=x[i]*(2*i+1)%mod;
+        summ+=x[i]*(2*i+1-mod);
     }
     return summ;
 }
