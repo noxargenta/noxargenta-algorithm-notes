@@ -72,7 +72,7 @@ void solve() {
     }else {
         cout << -1 << endl;
     }
-    cout << f1 << " " << f2 <<endl;
+    //cout << f1 << " " << f2 <<endl;
 }
 
 signed main() {
