@@ -20,8 +20,32 @@ void solve() {
         cout << 0 << endl;
         return;
     }
+    int ans=0;
     for(int i=0;i<n;i++){
-        
+        if(a[i]!=b[i]){
+            int sum=a[i];
+            int dif=1;
+            int j;
+            for( j=i+1;j<n;j++){
+                if(a[j]!=b[j]){
+                    sum+=a[j];
+                    dif++;
+                }else {
+                    break;
+                }
+            }
+            i=j-1;
+            if(sum==0){
+                cout << "-1\n";
+                return;
+            }
+            if(sum%2==1){
+                ans++;
+            }else {
+                
+            }
+
+        }
     }
 }
 
