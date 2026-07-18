@@ -12,20 +12,16 @@ void solve() {
     for(int i=1;i<=n;i++){
         cin >> a[i];
         sum+=a[i];
-        if(a[i]==a[i-1] && a[i]!=1){
-            if(a[i]==1){
-                b1++;
-            }else {
-                b2++;
-            }
-        }
+    }
+    for(int i=1;i<=n;i++){
+        
     }
     int ch=max(b1,b2);
     if(sum==0){
         cout << "YES\n";
         return;
     }
-    if(ch*2>=(abs(sum)+2) && abs(sum)%2==0){
+    if(ch*2>=(abs(sum)) && abs(sum)%2==0){
         cout << "YES\n";
     }else {
         cout << "NO\n";
