@@ -24,7 +24,7 @@ void solve() {
                 break;
             }
         }
-        i=j;
+        i=j-1;
         if(x==1){
             b1+=(t/2);
         }else {
@@ -36,7 +36,7 @@ void solve() {
         cout << "YES\n";
         return;
     }
-    if(ch*2>=(abs(sum)) && abs(sum)%2==0){
+    if(ch*2>=(abs(sum)) && abs(sum)%4==0){
         cout << "YES\n";
     }else {
         cout << "NO\n";
