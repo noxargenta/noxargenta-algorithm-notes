@@ -42,11 +42,12 @@ void solve() {
             if(sum%2==1){
                 ans++;
             }else {
-                
+                ans+=2;
             }
 
         }
     }
+    cout << ans  << endl;
 }
 
 signed main() {
