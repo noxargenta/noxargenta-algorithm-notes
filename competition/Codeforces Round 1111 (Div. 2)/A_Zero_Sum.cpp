@@ -13,8 +13,23 @@ void solve() {
         cin >> a[i];
         sum+=a[i];
     }
-    for(int i=1;i<=n;i++){
-        
+    for(int i=1;i<n;i++){
+        int x=a[i];
+        int t=1;
+        int j;
+        for(j=i+1;j<=n;j++){
+            if(a[j]==x){
+                t++;
+            }else {
+                break;
+            }
+        }
+        i=j;
+        if(x==1){
+            b1+=(t/2);
+        }else {
+            b2+=(t/2);
+        }
     }
     int ch=max(b1,b2);
     if(sum==0){
