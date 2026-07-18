@@ -21,6 +21,10 @@ void solve() {
         }
     }
     int ch=max(b1,b2);
+    if(sum==0){
+        cout << "YES\n";
+        return;
+    }
     if(ch*2>=abs(sum) && abs(sum)%2==0){
         cout << "YES\n";
     }else {
