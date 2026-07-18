@@ -8,6 +8,7 @@ void solve() {
     cin >> n >> k >> m;
     if(k>m){
         cout << "NO\n";
+        return;
     }
     cout << "YES\n";
     for(int i=1;i<=n;i++){
