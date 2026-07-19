@@ -12,12 +12,12 @@ void solve() {
     for(int i=0;i<n;i++){
         double x=(i%10)*d;
         double y=(i/10)*d;
-        cout << fixed << setprecision(9) << x << " " << 0.0 << endl;
+        cout << fixed << setprecision(9) << x << " " << y <<" "<<   0.0 << endl;
     }
     for(int i=0;i<n;i++){
         double x=(i%10)*d;
         double y=(i/10)*d;
-        cout << fixed << setprecision(9) << x << " " << 1.0 << endl;
+        cout << fixed << setprecision(9) << x << " " << y << " " << 1.0 << endl;
     }
 }
 
