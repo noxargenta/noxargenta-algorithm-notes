@@ -18,7 +18,7 @@ void solve() {
         if(s[i]=='0' && s[i]!=t[i]){
             sum++;
             a.push_back(i);
-        }else if(a[i]!=t[i] && s[i]=='1'){
+        }else if(s[i]!=t[i] && s[i]=='1'){
             b.push_back(i);
         }
         
