@@ -17,9 +17,9 @@ void solve() {
     for(int i=0;i<n;i++){
         if(s[i]=='0' && s[i]!=t[i]){
             sum++;
-            a.push_back(i);
+            a.push_back(i+1);
         }else if(s[i]!=t[i] && s[i]=='1'){
-            b.push_back(i);
+            b.push_back(i+1);
         }
         
     }
