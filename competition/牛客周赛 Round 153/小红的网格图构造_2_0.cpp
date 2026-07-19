@@ -36,11 +36,11 @@ void solve() {
         }
     }
     int ok=0;
-    if(k==0)
+    if(k==0)ok=1;
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
-            if(s[i][j]=='0' && k!=0){
-                s[i][j]='1';
+            if(s[i][j]==a && k!=0){
+                s[i][j]=b;
                 k--;
             }
             if(k==0){
