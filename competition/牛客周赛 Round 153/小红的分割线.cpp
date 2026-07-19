@@ -16,7 +16,7 @@ void solve() {
             int l=0,r=0;
             for(int k=0;k<n;k++){
                 if(k==i || k==j)continue;
-                int cc=
+                int cc=(a[j].first-a[i].first)*(a[k].second-a[i].second)-(a[k].first-a[i].first)*(a[j].second-a[i].first);
             }
         }
     }
