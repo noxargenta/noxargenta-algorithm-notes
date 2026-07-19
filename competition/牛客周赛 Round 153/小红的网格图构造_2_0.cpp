@@ -11,6 +11,7 @@ void solve() {
         cout << "No\n";
         return;
     }
+    vector<string> a(n,string('0',m));
     
 }
 
