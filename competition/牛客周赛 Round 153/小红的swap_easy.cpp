@@ -12,7 +12,13 @@ void solve() {
         cout << "0\n";
         return;
     }
-    
+    int sum=0;
+    for(int i=0;i<n;i++){
+        if(s[i]=='0' && s[i]!=t[i]){
+            sum++;
+        }
+    }
+    cout << sum*3 << endl;
 }
 
 signed main() {
