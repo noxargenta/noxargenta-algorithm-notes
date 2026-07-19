@@ -39,7 +39,7 @@ void solve() {
     if(k==0)ok=1;
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
-            if(s[i][j]==a && k!=0){
+            if(s[i][j]==a && k!=0 && (i%2!=0 && j%2!=0)){
                 s[i][j]=b;
                 k--;
             }
