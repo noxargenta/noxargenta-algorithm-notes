@@ -9,7 +9,16 @@ void solve() {
     int m=2*n;
     cout << m << endl;
     double d=0.0101;
-    
+    for(int i=0;i<n;i++){
+        double x=(i%10)*d;
+        double y=(i/10)*d;
+        cout << fixed << setprecision(9) << x << " " << 0.0 << endl;
+    }
+    for(int i=0;i<n;i++){
+        double x=(i%10)*d;
+        double y=(i/10)*d;
+        cout << fixed << setprecision(9) << x << " " << 1.0 << endl;
+    }
 }
 
 signed main() {
