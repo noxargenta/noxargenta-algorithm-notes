@@ -12,12 +12,12 @@ void solve() {
     }
     int ans=0;
     for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
+        for(int j=i+1;j<n;j++){
             int l=0,r=0;
             
             for(int k=0;k<n;k++){
                 if(k==i || k==j)continue;
-                int cc=(a[j].first-a[i].first)*(a[k].second-a[i].second)-(a[k].first-a[i].first)*(a[j].second-a[i].first);
+                int cc=(a[j].first-a[i].first)*(a[k].second-a[i].second)-(a[k].first-a[i].first)*(a[j].second-a[i].second);
                 if(cc>0){
                     l++;
                 }
