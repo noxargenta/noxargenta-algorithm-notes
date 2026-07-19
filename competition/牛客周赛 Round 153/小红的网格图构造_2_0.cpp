@@ -12,21 +12,35 @@ void solve() {
         return;
     }
     cout << "Yes\n";
-    vector<string> a(n,string('0',m));
+    bool inv=0;
+    if(k>n*m/2){
+        inv=1;
+        k=n*m-k;
+    }
+    char a,b;
+    if(inv){
+        a='1';
+        b='0';
+    }else{
+        a='0';
+        b='1';
+    }
+    vector<string> s(n,string(m,a));
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
             if(i%2==1 && j%2==1){
-                a[i][j]='1';
+                s[i][j]=b;
                 k--;    
             }
 
         }
     }
     int ok=0;
+    if(k==0)
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
-            if(a[i][j]=='0' && k!=0){
-                a[i][j]='1';
+            if(s[i][j]=='0' && k!=0){
+                s[i][j]='1';
                 k--;
             }
             if(k==0){
@@ -37,7 +51,7 @@ void solve() {
         if(ok==1)break;
     }
     for(int i=0;i<n;i++){
-        cout << a[i] << endl;
+        cout << s[i] << endl;
     }
 }
 
