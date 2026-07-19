@@ -8,7 +8,7 @@ void solve() {
     cin >> n;
     int m=2*n;
     cout << m << endl;
-    double d=0.0101;
+    double d=0.010001;
     for(int i=0;i<n;i++){
         double x=(i%10)*d;
         double y=(i/10)*d;
