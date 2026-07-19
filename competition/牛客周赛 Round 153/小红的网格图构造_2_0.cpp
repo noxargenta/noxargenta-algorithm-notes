@@ -7,7 +7,7 @@ void solve() {
     int n,m,k;
     cin >> n >> m >> k;
     int nn=n/2,mm=m/2;
-    if(nn*mm>k){
+    if(nn*mm>k || k>n*m-nn*mm){
         cout << "No\n";
         return;
     }
