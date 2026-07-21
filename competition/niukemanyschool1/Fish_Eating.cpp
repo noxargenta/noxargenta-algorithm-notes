@@ -28,7 +28,20 @@ void solve() {
             int x=xp^last;
             int y=yp^last;
             int id=(x-1)*m+y;
-            
+            siz[id]=v;
+            for(int i=0;i<4;i++){
+                int nx=x+dx[i];
+                int ny=y+dy[i];
+                if(nx<1 || nx > n || ny<1 || ny>m)continue;
+                int nid=(nx-1)*m+ny;
+                if(siz[nid]!=-1){
+                    int rnid=find(nid);
+                    int rnow=find(id);
+                    if(rnid!=rnow){
+                        merge(rnow,rnid,v);
+                    }
+                }
+            }
         }
     }
 }
