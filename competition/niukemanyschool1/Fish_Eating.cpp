@@ -15,6 +15,13 @@ int find(int x){
         fa[x]=rt;
         mx[x]=max(mx[x],mx[pre]);
     }
+    return fa[x];
+}
+void merge(int a,int b,int v){
+    //a>b;
+    int ra=find(a),rb=find(b);
+    if(ra==rb)return;
+    mx[rb]=max(mx[rb],)
 }
 void solve() {
     int n,m,q;
