@@ -22,7 +22,9 @@ void merge(int a,int b,int v){
     int ra=find(a),rb=find(b);
     if(ra==rb)return;
     mx[rb]=max(mx[rb],v-sz[rb]+1);
-    
+    sz[ra]+=sz[rb];
+    fa[rb]=ra;
+    return;
 }
 void solve() {
     int n,m,q;
@@ -54,7 +56,7 @@ void solve() {
                     int rnid=find(nid);
                     int rnow=find(id);
                     if(rnid!=rnow){
-                        merge(rnow,rnid,v);
+                        merge(rnid,rnow,v);
                     }
                 }
             }
@@ -68,7 +70,7 @@ void solve() {
             int y=ny^last;
             int id=(x-1)*m+y;
             find(id);
-            last=max(0,sz[id]-siz[id]);
+            last=max(0LL,sz[id]-siz[id]);
             cout << last << endl;
         }
     }
