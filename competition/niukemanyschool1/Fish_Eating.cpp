@@ -52,7 +52,8 @@ void solve() {
             int y=ny^last;
             int id=(x-1)*m+y;
             int v0=siz[id];
-            
+            find(id);
+            last=max(0,)
         }
     }
 }
