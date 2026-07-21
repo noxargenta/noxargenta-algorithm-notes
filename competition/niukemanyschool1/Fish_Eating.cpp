@@ -17,6 +17,20 @@ void solve() {
         sz[i]=1;
         mx[i]=0;
     }
+    vector<int> siz(sum+5,-1);//初始鱼大小;
+    int last=0;
+    while(q--){
+        int op;
+        cin >> op;
+        if(op==1){
+            int xp,yp,v;
+            cin >> xp >> yp >> v;
+            int x=xp^last;
+            int y=yp^last;
+            int id=(x-1)*m+y;
+            
+        }
+    }
 }
 
 signed main() {
