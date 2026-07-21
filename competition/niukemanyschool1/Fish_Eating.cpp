@@ -56,7 +56,7 @@ void solve() {
                     int rnid=find(nid);
                     int rnow=find(id);
                     if(rnid!=rnow){
-                        merge(rnid,rnow,v);
+                        merge(rnow,rnid,v);
                     }
                 }
             }
@@ -70,7 +70,7 @@ void solve() {
             int y=ny^last;
             int id=(x-1)*m+y;
             find(id);
-            last=max(0LL,sz[id]-siz[id]);
+            last=max(0LL,mx[id]-siz[id]);
             cout << last << endl;
         }
     }
