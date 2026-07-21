@@ -10,9 +10,10 @@ int mx[N];
 int dx[4]={1,-1,0,0},dy[4]={0,0,1,-1};
 int find(int x){
     if(fa[x]!=x){
+        int pre=fa[x];
         int rt=find(fa[x]);
         fa[x]=rt;
-        mx[x]=max(mx[x],mx[fa[x]]);
+        mx[x]=max(mx[x],mx[pre]);
     }
 }
 void solve() {
