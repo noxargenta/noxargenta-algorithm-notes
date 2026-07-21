@@ -15,8 +15,10 @@ void solve() {
     sort(ls.begin(),ls.end());
     ls.erase(unique(ls.begin(),ls.end()),ls.end());
     for(int i=0;i<n;i++){
-        int idx = lower_bound(ls.begin(), ls.end(), val) - ls.begin() + 1;
+        int idx = lower_bound(ls.begin(), ls.end(), a[i]) - ls.begin() + 1;
+        cout << idx << " ";
     }
+    cout << endl;
 }
 
 signed main() {
