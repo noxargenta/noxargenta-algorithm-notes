@@ -11,7 +11,10 @@ void solve() {
     }
     sort(a.begin(),a.end());
     a.erase(unique(a.begin(),a.end()),a.end());
-    
+    for(auto x : a){
+        cout << x << " ";  
+    }
+    cout << endl;
 
 }
 
