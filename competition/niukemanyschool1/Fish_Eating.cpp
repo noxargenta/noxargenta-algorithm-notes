@@ -21,7 +21,8 @@ void merge(int a,int b,int v){
     //a>b;
     int ra=find(a),rb=find(b);
     if(ra==rb)return;
-    mx[rb]=max(mx[rb],v-sz[])
+    mx[rb]=max(mx[rb],v-sz[rb]+1);
+    
 }
 void solve() {
     int n,m,q;
