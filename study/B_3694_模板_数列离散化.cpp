@@ -12,10 +12,10 @@ void solve() {
     sort(a.begin(),a.end());
     a.erase(unique(a.begin(),a.end()),a.end());
     for(auto x : a){
-        cout << x << " ";  
+        int idx = lower_bound(a.begin(), a.end(), x) - a.begin() + 1;
+        cout << idx << " ";
     }
     cout << endl;
-
 }
 
 signed main() {
