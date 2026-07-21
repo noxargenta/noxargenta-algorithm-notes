@@ -3,6 +3,11 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
+const int N=250005;
+int fa[N];
+int sz[N];
+int mx[N];
+int dx[4]={1,-1,0,0},dy[4]={0,0,1,-1};
 void solve() {
     int n,m,q;
     cin >> n >> m >> q;
