@@ -8,6 +8,13 @@ int fa[N];
 int sz[N];
 int mx[N];
 int dx[4]={1,-1,0,0},dy[4]={0,0,1,-1};
+int find(int x){
+    if(fa[x]!=x){
+        int rt=find(fa[x]);
+        fa[x]=rt;
+        mx[x]=max(mx[x],mx[fa[x]]);
+    }
+}
 void solve() {
     int n,m,q;
     cin >> n >> m >> q;
@@ -51,9 +58,9 @@ void solve() {
             int x=nx^last;
             int y=ny^last;
             int id=(x-1)*m+y;
-            int v0=siz[id];
             find(id);
-            last=max(0,)
+            last=max(0,sz[id]-siz[id]);
+            cout << last << endl;
         }
     }
 }
