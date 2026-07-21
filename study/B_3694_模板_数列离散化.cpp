@@ -10,13 +10,13 @@ void solve() {
     for(int i=0;i<n;i++){
         cin >> a[i];
     }
-    sort(a.begin(),a.end());
-    a.erase(unique(a.begin(),a.end()),a.end());
-    for(auto x : a){
-        int idx = lower_bound(a.begin(), a.end(), x) - a.begin() + 1;
-        cout << idx << " ";
+    vector<int> ls=a;
+
+    sort(ls.begin(),ls.end());
+    ls.erase(unique(ls.begin(),ls.end()),ls.end());
+    for(int i=0;i<n;i++){
+        int idx = lower_bound(ls.begin(), ls.end(), val) - ls.begin() + 1;
     }
-    cout << endl;
 }
 
 signed main() {
