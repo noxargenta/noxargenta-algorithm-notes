@@ -42,6 +42,17 @@ void solve() {
                     }
                 }
             }
+            int rt=find(id);
+            last=sz[rt]-1;
+            cout << last << endl;
+        }else {
+            int nx,ny;
+            cin >> nx >> ny;
+            int x=nx^last;
+            int y=ny^last;
+            int id=(x-1)*m+y;
+            int v0=siz[id];
+            
         }
     }
 }
