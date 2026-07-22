@@ -24,7 +24,7 @@ void solve() {
         }
 
     }else {
-
+        int m=()
     }
     cout << maxc + pre[n] << endl;
 }
