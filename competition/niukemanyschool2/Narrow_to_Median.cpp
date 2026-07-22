@@ -11,7 +11,7 @@ void solve() {
     for(int i=1;i<=n;i++){
         cin >>a[i];
     }   
-    int maxc=-INT_MAX;
+    int maxc=-LLONG_MAX;
     sort(a.begin()+1,a.end());
     for(int i=1;i<=n;i++){
         pre[i]=pre[i-1]+a[i];
