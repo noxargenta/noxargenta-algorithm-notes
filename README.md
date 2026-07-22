@@ -297,6 +297,7 @@
 | P_3367 模板_并查集 | 并查集路径压缩 | [study/](./study/P_3367_模板_并查集.cpp) |
 | P_1162 填涂颜色 | BFS 闭合圈染色 | [study/](./study/P_1162_填涂颜色.cpp) |
 | P_1332 血色先锋队 | 多源 BFS | [study/](./study/P_1332_血色先锋队.cpp) |
+| Bitwise_Maximization | 线性基 — 拆成两集合最大化 XOR 和 S + 2×max_xor，详见[笔记14](./笔记/14-线性基.md) | [收藏模板题](./收藏模板题/Bitwise_Maximization.cpp) |
 
 ---
 
