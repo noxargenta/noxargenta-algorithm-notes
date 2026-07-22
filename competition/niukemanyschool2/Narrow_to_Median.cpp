@@ -18,10 +18,15 @@ void solve() {
         int m=(k-1)/2;
         int sum1=pre[m]-pre[0];
         for(int i=m+1;i<=n-m;i++){
-            int sum2=pre[]
+            int sum2=pre[i+m]-pre[i];
+            int now=(k-1)*a[i]-sum1-sum2;
+            maxc=max(maxc,now);
         }
-    }
 
+    }else {
+
+    }
+    cout << maxc + pre[n] << endl;
 }
 
 signed main() {
