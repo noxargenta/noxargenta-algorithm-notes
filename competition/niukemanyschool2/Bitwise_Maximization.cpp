@@ -5,6 +5,7 @@ using i64 = long long;
 #define int long long
 void solve() {
     int n;
+    cin >> n;
     int a[n];
     for(int i=0;i<n;i++){
         cin >>  a[i];
@@ -12,8 +13,16 @@ void solve() {
     int ans=0;
     int ans2=0;
     for(int i=0;i<n;i++){
-        if()
+        int t=ans^a[i];
+        int t2=ans2^a[i];
+        if(t>t2){
+            ans=t;
+        }else {
+            ans2=t2;
+        }
     }
+    cout << ans+ ans2;
+    cout <<endl;
 }
 
 signed main() {
