@@ -165,6 +165,7 @@
 | 位运算 | `x_y_n.cpp` — 移位 `n<<31` | [competition/2026.2.5NEWK2](./competition/2026.2.5NEWK2) |
 | 计数 + 组合数学 | `Card_Game.cpp` — **MOD 阶乘计数** | [competition/2026.2.3NEWK1](./competition/2026.2.3NEWK1) |
 | 数学结论 | `Jumps.cpp` — **等差数列求和 + 修正** | [competition/20251130ECUT计协第八次训练赛](./competition/20251130ECUT计协第八次训练赛) |
+| 线性基（XOR Basis） | `Bitwise_Maximization.cpp` — **拆成两集合最大化 XOR 和，S + 2 × max_xor** 详见[笔记14](./笔记/14-线性基.md) | [competition/niukemanyschool2](./competition/niukemanyschool2/Bitwise_Maximization.cpp) |
 | 位运算 + 构造 | `NCPC.cpp` — bit 计数判胜负 | [competition/2026.2.5NEWK2](./competition/2026.2.5NEWK2) |
 | 三分/几何 | `E_Closest_Moment` | 各比赛 |
 
@@ -257,6 +258,7 @@
 | 2025-12-14 | AtCoder ABC | [competition/ATC436](./competition/ATC436) |
 | 2026-05-19 | CF Round 1090 (Div. 4) | [study/Codeforces Round 1090 (Div. 4)](./study/Codeforces%20Round%201090%20(Div.%204)) |
 | 2026-05-31 | CF Round 1101 (Div. 2) | [competition/Codeforces Round 1101 (Div. 2)](./competition/Codeforces%20Round%201101%20(Div.%202)) |
+| 2026-07-22 | 2025牛客多校第二场 | [competition/niukemanyschool2](./competition/niukemanyschool2) |
 | 2026-05-31 | CF Edu Round 190 | [study/Educational Codeforces Round 190 (Rated for Div. 2)](./study/Educational%20Codeforces%20Round%20190%20(Rated%20for%20Div.%202)) |
 | 2025-10-19 | 牛客周赛 | [competition/牛客周赛 Round 114](./competition/牛客周赛%20Round%20114) |
 | 2025-11-22 | 传智杯 | [competition/传智杯](./competition/传智杯) |

@@ -17,3 +17,4 @@
 | 11 | [背包DP](./11-背包DP.md) — 01背包(倒序) vs 完全背包(正序) / 一维优化 | P_1048 / P_1060 / P_1616 |
 | 12 | [线性DP：LIS与网格路径](./12-线性DP-LIS与网格路径.md) — LIS二重循环/贪心二分/Dilworth/过河卒 | P_1091 / P_1020 / P_1002 |
 | 13 | [lower_bound / upper_bound 用法](./13-lower_bound-upper_bound用法.md) — LIS变体/降序greater/坐标压缩/set二分 | P_1020 + 各文件 |
+| 14 | [线性基 Linear Basis](./14-线性基.md) — 插入/求最大XOR/两集合XOR和最大化 | Bitwise_Maximization (2025牛客多校2 B) |
