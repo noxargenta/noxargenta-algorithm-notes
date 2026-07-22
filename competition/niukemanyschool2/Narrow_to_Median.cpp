@@ -30,7 +30,7 @@ void solve() {
         int sum1=pre[m-1];
         for(int i=m+1;i<=n-m+1;i++){
             int sum2=pre[i+m-1]-pre[i];
-            int now=(m-1)*2*(a[i]+a[i-1])/2-sum1-sum2;
+            int now=(m-1)*(a[i]+a[i-1])-sum1-sum2;
             maxc=max(maxc,now);
         }
     }
