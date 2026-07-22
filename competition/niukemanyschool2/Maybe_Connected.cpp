@@ -6,7 +6,12 @@ using i64 = long long;
 void solve() {
     int n,m;
     cin >>n >> m;
-    
+    if(n<=m+1){
+        cout << (n*(n-1))/2-m << endl;
+
+    }else {
+        cout << (m+1)*m/2 -m << endl;
+    }
 }
 
 signed main() {
