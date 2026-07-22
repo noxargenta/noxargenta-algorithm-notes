@@ -24,7 +24,8 @@ void solve() {
         }
 
     }else {
-        int m=()
+        int m=k/2;
+        int sum1=pre[]
     }
     cout << maxc + pre[n] << endl;
 }
