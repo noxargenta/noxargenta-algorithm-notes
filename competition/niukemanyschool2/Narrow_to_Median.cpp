@@ -17,7 +17,9 @@ void solve() {
     if(k%2==1){
         int m=(k-1)/2;
         int sum1=pre[m]-pre[0];
-        for(int i=)
+        for(int i=m+1;i<=n-m;i++){
+            int sum2=pre[]
+        }
     }
 
 }
