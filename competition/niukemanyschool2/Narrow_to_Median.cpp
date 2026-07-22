@@ -10,10 +10,12 @@ void solve() {
     vector<int> pre(n+1,0);
     for(int i=1;i<=n;i++){
         cin >>a[i];
-        pre[i]=pre[i-1]+a[i];
     }   
     int maxc=-INT_MAX;
     sort(a.begin()+1,a.end());
+    for(int i=1;i<=n;i++){
+        pre[i]=pre[i-1]+a[i];
+    }
     if(k%2==1){
         int m=(k-1)/2;
         int sum1=pre[m]-pre[0];
