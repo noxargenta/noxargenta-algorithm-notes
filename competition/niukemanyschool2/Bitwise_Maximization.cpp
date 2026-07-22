@@ -16,9 +16,23 @@ void solve() {
     vector<int> xxj(63,0);
     for(int i=0;i<n;i++){
         int x=a[i]&mask;
-        
+        for(int j=30;j>=0;j--){
+            if((x>>j)&1){
+                if(xxj[j]==0){
+                    xxj[j]=x;
+                    break;
+                }else {
+                    x^=xxj[j];
+                }
+            }
+        }
     }
-
+    int sum=0;
+    for(int i=30;i>=0;i--){
+        sum=max(sum,xxj[i]^sum);
+    }
+    int ans=S+2LL*sum;
+    cout << ans <<endl;
 }
 
 signed main() {
