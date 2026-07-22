@@ -7,12 +7,17 @@ void solve() {
     int n;
     cin >> n;
     int a[n];
-    int ini=0;
+    int S=0;
     for(int i=0;i<n;i++){
         cin >>  a[i];
-        ini^=a[i];
+        S^=a[i];
     }//ini + 2*(A & B);
-    
+    int mask= ~S;
+    vector<int> xxj(63,0);
+    for(int i=0;i<n;i++){
+        int x=a[i]&mask;
+        
+    }
 
 }
 
