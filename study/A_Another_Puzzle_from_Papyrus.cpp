@@ -23,7 +23,15 @@ void solve() {
     int ans=c;
     sort(a.begin(),a.end());
     sort(b.begin(),b.end());
-    
+    for(int i=0;i<n;i++){
+        if(a[i]-b[i]>=0){
+            ans+=a[i]-b[i];
+        }else {
+            cout << -1 <<endl;
+            return;
+        }
+    }
+    cout << min(ans,sum)<<endl;
 }
 
 signed main() {
