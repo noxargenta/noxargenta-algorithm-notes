@@ -186,6 +186,7 @@
 | LIS 贪心 + 二分 | `P_1020_NOIP_1999_提高组_导弹拦截.cpp` — **详解见[笔记13](./笔记/13-lower_bound-upper_bound用法.md)** | [study/](./study/P_1020_NOIP_1999_提高组_导弹拦截.cpp) |
 | 计数 DP | `P_1077_NOIP_2012_普及组_摆花.cpp` — **三维 DP，`dp[i][j][k]` 前 i 种花 j 盆和为 k** | [study/](./study/P_1077_NOIP_2012_普及组_摆花.cpp) |
 | 树形 DP | DSU on tree、树上 DFS 类 | 各比赛 |
+| 状压 DP — 排列计数（偏序约束） | `Lazy_Shuffling.cpp` — **DP over subsets 统计满足前置约束的排列数，见[笔记15](./笔记/15-状压DP-排列计数.md)** | [competition/niukemanyschool2](./competition/niukemanyschool2/Lazy_Shuffling.cpp) |
 
 </details>
 
@@ -298,6 +299,7 @@
 | P_1162 填涂颜色 | BFS 闭合圈染色 | [study/](./study/P_1162_填涂颜色.cpp) |
 | P_1332 血色先锋队 | 多源 BFS | [study/](./study/P_1332_血色先锋队.cpp) |
 | Bitwise_Maximization | 线性基 — 拆成两集合最大化 XOR 和 S + 2×max_xor，详见[笔记14](./笔记/14-线性基.md) | [收藏模板题](./收藏模板题/Bitwise_Maximization.cpp) |
+| Lazy_Shuffling | 状压 DP 排列计数 — 满足偏序约束，详见[笔记15](./笔记/15-状压DP-排列计数.md) | [收藏模板题](./收藏模板题/Lazy_Shuffling.cpp) |
 
 ---
 
@@ -552,4 +554,25 @@ for (int i = 0; i <= n; i++) {
         if (j > 0) dp[i][j] += dp[i][j-1];
     }
 }
+```
+
+### 19. 状压 DP — 排列计数（满足偏序约束）
+
+```cpp
+// DP over subsets：统计满足前置约束的排列数
+// pre[u] = 必须在 u 之前放置的元素集合（位掩码）
+dp[0] = 1;
+for (int s = 1; s < (1 << n); s++) {
+    int sum = 0;
+    for (int u = 0; u < n; u++) {
+        if (s & (1 << u)) {
+            if ((pre[u] & s) == 0) {     // u 的所有前置元素都已放置
+                sum += dp[s ^ (1 << u)];
+            }
+        }
+    }
+    dp[s] = sum;
+}
+// dp[(1<<n)-1] = 满足约束的排列数
+// 例题：Lazy_Shuffling (2025牛客多校2 L)，答案 = 2 × dp[(1<<n)-1]
 ```
