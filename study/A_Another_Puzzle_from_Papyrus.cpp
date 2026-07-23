@@ -4,8 +4,8 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
-    int n;
-    cin >> n;
+    int n,c;
+    cin >> n >> c;
     vector<int> a(n),b(n);
     for(int i=0;i<n;i++){
         cin >> a[i];
@@ -21,7 +21,11 @@ void solve() {
         }
     }
     int ans=c;
-    sort(a.begin())
+    sort(a.begin(),a.end());
+    sort(b.begin(),b.end());
+    while(1){
+        sort(b.begin(),b.end());
+    }
 }
 
 signed main() {
