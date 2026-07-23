@@ -37,7 +37,7 @@ void solve() {
         for(int u=0;u<n;u++){
             if(s & (1 << u)){
                 if((scin[u] & s)==0){
-                    
+                    sum=(sum+dp[])
                 }
             }
         }
