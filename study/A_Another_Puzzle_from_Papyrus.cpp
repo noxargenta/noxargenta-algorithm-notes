@@ -6,20 +6,29 @@ using i64 = long long;
 void solve() {
     int n,c;
     cin >> n >> c;
+    
+    int suma=0;
+    int sumb=0;
     vector<int> a(n),b(n);
     for(int i=0;i<n;i++){
         cin >> a[i];
+        suma+=a[i];
     }
-    int sum=0;
     for(int i=0;i<n;i++){
         cin >> b[i];
-        if(a[i]>b[i]){
-            sum+=a[i]-b[i];
-        }else if(a[i]<b[i]){
-            sum=LLONG_MAX;
-            break;
+        sumb+=b[i];
+    }
+    bool ok=1;
+    for(int i=0;i<n;i++){
+        if(a[i]<b[i]){
+            ok=0;
         }
     }
+    if(ok==1){
+        cout << suma - sumb <<endl;
+        return;
+    }
+
     int ans=c;
     sort(a.begin(),a.end());
     sort(b.begin(),b.end());
@@ -31,7 +40,7 @@ void solve() {
             return;
         }
     }
-    cout << min(ans,sum)<<endl;
+    cout << ans <<endl;
 }
 
 signed main() {
