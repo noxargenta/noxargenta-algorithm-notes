@@ -37,11 +37,15 @@ void solve() {
         for(int u=0;u<n;u++){
             if(s & (1 << u)){
                 if((scin[u] & s)==0){
-                    sum=(sum+dp[])
+                    sum=(sum+dp[s ^ (1 << u)])%MOD;
                 }
             }
         }
+        dp[s]=sum;
     }
+
+    cout << 2LL * (dp[(1 << n)-1]) % MOD;
+    cout << endl; 
 }
 
 signed main() {
