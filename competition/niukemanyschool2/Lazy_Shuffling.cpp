@@ -5,7 +5,7 @@ using i64 = long long;
 #define int long long
 const int MOD=998244353;
 int dp[1 << 22];
-int cnin[25];
+int scin[25];
 void solve() {
     int n;
     cin >> n;
@@ -19,7 +19,7 @@ void solve() {
         for(int j=i+1;j<n;j++){
             if(p[i]>p[j]){
                 inv++;
-                cnin[p[j]] |= (1 << p[i]);
+                scin[p[j]] |= (1 << p[i]);
             }
         }
     }
@@ -35,7 +35,11 @@ void solve() {
     for(int s=1;s<(1 << n);s++){
         int sum=0;
         for(int u=0;u<n;u++){
-            
+            if(s & (1 << u)){
+                if((scin[u] & s)==0){
+                    
+                }
+            }
         }
     }
 }
