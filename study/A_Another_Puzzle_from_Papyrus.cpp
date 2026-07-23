@@ -23,9 +23,7 @@ void solve() {
     int ans=c;
     sort(a.begin(),a.end());
     sort(b.begin(),b.end());
-    while(1){
-        sort(b.begin(),b.end());
-    }
+    
 }
 
 signed main() {
