@@ -17,7 +17,7 @@ void solve() {
         for(int j=i+1;j<n;j++){
             if(p[i]>p[j]){
                 inv++;
-                cnin[]
+                cnin[p[j]] |= (1 << )
             }
         }
     }
