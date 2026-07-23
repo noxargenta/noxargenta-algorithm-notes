@@ -3,6 +3,8 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
+const int MOD=998244353;
+int dp[1 << 22+1];
 int cnin[25];
 void solve() {
     int n;
@@ -17,10 +19,20 @@ void solve() {
         for(int j=i+1;j<n;j++){
             if(p[i]>p[j]){
                 inv++;
-                cnin[p[j]] |= (1 << )
+                cnin[p[j]] |= (1 << p[i]);
             }
         }
     }
+    if(inv==0){
+        int ans=1;
+        for(int i=1;i<=n;i++){
+            ans=i*ans%MOD;
+        }
+        cout << ans <<endl;
+        return;
+    }   
+    dp[0]=1;
+    
 }
 
 signed main() {
