@@ -32,7 +32,9 @@ void solve() {
         return;
     }   
     dp[0]=1;
-    
+    for(int i=1;i<(1 << n);i++){
+        
+    }
 }
 
 signed main() {
