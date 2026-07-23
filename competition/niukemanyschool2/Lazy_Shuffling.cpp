@@ -4,7 +4,7 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 const int MOD=998244353;
-int dp[1 << 22+1];
+int dp[1 << 22];
 int cnin[25];
 void solve() {
     int n;
@@ -32,8 +32,11 @@ void solve() {
         return;
     }   
     dp[0]=1;
-    for(int i=1;i<(1 << n);i++){
-        
+    for(int s=1;s<(1 << n);s++){
+        int sum=0;
+        for(int u=0;u<n;u++){
+            
+        }
     }
 }
 
