@@ -3,7 +3,7 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
-int cnin
+int cnin[25];
 void solve() {
     int n;
     cin >> n;
@@ -17,7 +17,7 @@ void solve() {
         for(int j=i+1;j<n;j++){
             if(p[i]>p[j]){
                 inv++;
-
+                cnin[]
             }
         }
     }
