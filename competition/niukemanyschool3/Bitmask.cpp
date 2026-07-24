@@ -1,46 +1,41 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-using ll=long long;
-
-int main(){
-    ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
-    ll n;
-    cin>>n;
-    vector<bitset<35>> vb;
-    for(ll i=0;i<n;i++){
-        ll t;cin>>t;
-        vb.emplace_back(t);
+using i64 = long long;
+#define endl '\n'
+#define int long long
+int dp[30][4];
+int cnt[30][4];
+void solve() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for(int i=0;i<n;i++){
+        cin >>a[i];
     }
-    ll m;cin>>m;
-    for(ll i=0;i<m;i++){
-        ll op,t;cin>>op>>t;
-        bitset<35> tt(t);
-        if(op==1){
-            for(auto & x:vb){
-                x&=tt;
-            }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<30;j++){
+            int x=(a[i] >> j)
         }
-        else if(op==2){
-            for(auto & x:vb){
-                x|=tt;
-            }
-        }
-        else{
-            for(auto & x:vb){
-                x^=tt;
-            }
-        }
-        ll sum=0;
-        for(ll i=0;i<n;i++){
-            vector<ll> pre(36,0);
-            pre[0]=vb[i][0];
-            for(ll j=1;j<35;j++){
-                pre[j]=vb[i][j]-vb[i][j-1];
-            }
-            ll t=count(pre.begin(),pre.end(),1);
-            sum+=t;
-        }
-        cout<<sum<<endl;
+    }
+
+    int m;
+    cin >> m;
+    while(m--){
+        int op,x;
+        cin >> op >> x;
+
+
+    }
+}
+
+signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
     }
     return 0;
 }
