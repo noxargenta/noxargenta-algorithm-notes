@@ -29,8 +29,9 @@ void solve() {
             if(nx >= n || nx<0 || ny >= m || ny < 0)continue;
             else {
                 int idx=nx*m+ny;
-                if(h[id]<h[idx] && dp[id]==0){
-                    
+                if(h[id]<h[idx] && dp[idx]==0){
+                    dp[id]=1;
+                    break;
                 }
             }
         }
