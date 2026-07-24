@@ -12,7 +12,13 @@ void solve() {
             cin >> g[i][j];
         }
     }
-    
+    int q;
+    cin >> q;
+    while(q){
+        int x,y;
+        cin >> x >> y;
+        
+    }
 }
 
 signed main() {
