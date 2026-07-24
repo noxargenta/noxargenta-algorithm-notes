@@ -18,7 +18,7 @@ void solve() {
     sort(idd.begin(),idd.end(),[&](int a,int b){
         return h[a]>h[b];
     });
-    vector<int> dp(n*m,0);//0 Second
+    vector<int> dp(n*m,0);//0 Second 1First
     for(int i=0;i<n*m;i++){
         int id=idd[i];
         int x=id/m;
