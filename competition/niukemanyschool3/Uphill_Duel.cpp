@@ -3,10 +3,16 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
+struct P{
+    int h;
+    int x;
+    int y;
+};
 void solve() {
     int n,m;
     cin >> n >> m;
     int g[n][m];
+    
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
             cin >> g[i][j];
@@ -17,7 +23,7 @@ void solve() {
     while(q){
         int x,y;
         cin >> x >> y;
-        
+
     }
 }
 
