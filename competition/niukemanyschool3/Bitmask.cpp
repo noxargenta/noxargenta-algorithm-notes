@@ -23,7 +23,6 @@ void solve() {
             }
             int y=(x1 << 1) | (x2 << 0);
             cnt[j][y]++;
-
         }
     }
     for(int i=0;i<30;i++){
