@@ -12,10 +12,11 @@ void solve() {
     int n,m;
     cin >> n >> m;
     int g[n][m];
-    
+    vector<int> a(n*m);
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
             cin >> g[i][j];
+            
         }
     }
     int q;
