@@ -14,7 +14,21 @@ void solve() {
     }
     for(int i=0;i<n;i++){
         for(int j=0;j<30;j++){
-            int x=(a[i] >> j)
+            int x1=(a[i] >> j)&1;
+            int x2;
+            if(j==0){
+                x2=0;
+            }else {
+                x2=(a[i] >> (j-1)) & 1;
+            }
+            int y=(x1 << 1) | (x2 << 0);
+            cnt[j][y]++;
+
+        }
+    }
+    for(int i=0;i<30;i++){
+        for(int j=0;j<4;j++){
+            dp[i][j]=j;
         }
     }
 
@@ -23,8 +37,18 @@ void solve() {
     while(m--){
         int op,x;
         cin >> op >> x;
-
-
+        int sum=0;
+        for(int i=0;i<30;i++){
+            int x1=(x >> i)&1;
+            int x2;
+            if(i==0){
+                x2=0;
+            }else {
+                x2=(x >> (i-1)) & 1;
+            }
+            int y=(x1 << 1) | (x2);
+            
+        }
     }
 }
 
