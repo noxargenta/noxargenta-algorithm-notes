@@ -41,7 +41,13 @@ void solve() {
     while(q){
         int x,y;
         cin >> x >> y;
-
+        x--;
+        y--;
+        if(dp[x*m+y]==1){
+            cout << "First\n";
+        }else {
+            cout << "Second\n";
+        }
     }
 }
 
