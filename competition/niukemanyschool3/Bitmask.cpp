@@ -47,10 +47,24 @@ void solve() {
                 x2=(x >> (i-1)) & 1;
             }
             int y=(x1 << 1) | (x2);
-            if(op==1){
-                dp[]
+            for(int j=0;j<4;j++){
+                if(op==1){
+                    dp[i][j]&=y;
+                }else if(op==2){
+                    dp[i][j]|=y;
+                }else if(op==3){
+                    dp[i][j]^=y;
+                }
             }
         }
+        for(int i=0;i<30;i++){
+            for(int j=0;j<4;j++){
+                if(dp[i][j]==2){
+                    sum+=cnt[i][j];
+                }
+            }
+        }
+        cout << sum << endl;
     }
 }
 
