@@ -3,21 +3,34 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
-struct P{
-    int h;
-    int x;
-    int y;
-};
+const int dx[]={-1, 1, 0, 0};
+const int dy[]={0, 0, -1, 1};
 void solve() {
     int n,m;
     cin >> n >> m;
-    int g[n][m];
-    vector<int> a(n*m);
-    for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-            cin >> g[i][j];
-            int id=i*m+j;
-            a
+    //int g[n][m];
+    vector<int> h(n*m);
+    vector<int> idd(n*m);
+    for(int i=0;i<n*m;i++){
+        cin >> h[i];
+        idd[i]=i;
+    }
+    sort(idd.begin(),idd.end(),[&](int a,int b){
+        return h[a]>h[b];
+    });
+    vector<int> dp(n*m,0);//0 Second
+    for(int i=0;i<n*m;i++){
+        int id=idd[i];
+        int x=id/m;
+        int y=id%m;
+        for(int i=0;i<4;i++){
+            int nx=x+dx[i];
+            int ny=y+dy[i];
+            if(nx >= n || nx<0 || ny >= m || ny < 0)continue;
+            else {
+                int idx=nx*m+ny;
+                
+            }
         }
     }
     int q;
