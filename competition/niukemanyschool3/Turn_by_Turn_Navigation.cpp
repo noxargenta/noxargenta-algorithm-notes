@@ -10,15 +10,22 @@ void solve() {
     cin >> n;
     for(int i=0;i<n;i++){
         cin >> x[i] >> y[i];
-
     }
-    for(int i=1;i<n;i++){
+    for(int i=1;i<n-1;i++){
         int dx=x[i]-x[i-1];
         int dy=y[i]-y[i-1];
         int nx=x[i+1]-x[i];
         int ny=y[i+1]-y[i];
-        int chaji=nx*ny-
+        int chaji=dx*ny-dy*nx;
+        if(chaji>0){
+            cout << "LEFT ";
+        }else if(chaji==0){
+            cout << "STRAIGHT ";
+        }else if(chaji<0){
+            cout << "RIGHT ";
+        }
     }
+    cout << endl;
 }
 
 signed main() {
@@ -26,7 +33,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
