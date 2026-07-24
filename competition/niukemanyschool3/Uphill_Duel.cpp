@@ -38,7 +38,7 @@ void solve() {
     }
     int q;
     cin >> q;
-    while(q){
+    while(q--){
         int x,y;
         cin >> x >> y;
         x--;
