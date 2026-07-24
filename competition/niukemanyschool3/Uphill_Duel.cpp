@@ -3,8 +3,8 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define int long long
-const int dx[]={-1, 1, 0, 0};
-const int dy[]={0, 0, -1, 1};
+const int dx[]={-1,1,0,0};
+const int dy[]={0,0,-1,1};
 void solve() {
     int n,m;
     cin >> n >> m;
