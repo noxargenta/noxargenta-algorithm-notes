@@ -14,11 +14,17 @@ void solve() {
             ball++;
             if(cnt>0){
                 ans+=cnt;
-                ball--;
                 cnt--;
+            }
+        }else {
+            ball--;
+            if(ball<0){
+                cnt++;
+                ball=0;
             }
         }
     }
+    cout << ans < <endl;
 }
 
 signed main() {
