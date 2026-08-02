@@ -6,8 +6,8 @@ using i64 = long long;
 void solve() {
     string s;
     cin >> s;
-    s.reserve(s.begin(),s.end());
     
+
 }
 
 signed main() {
