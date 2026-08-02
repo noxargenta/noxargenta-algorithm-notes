@@ -4,7 +4,17 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
-    
+    int n,k;
+    cin >> n >> k;
+    int a[n+1];
+    for(int i=1;i<=n;i++){
+        cin >>a[i];
+    }
+    int ans=0;
+    for(int i=k;i<=n;i+=k){
+        ans+=a[i];
+    }   
+    cout <<ans<<endl;
 }
 
 signed main() {

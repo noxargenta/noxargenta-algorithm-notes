@@ -4,7 +4,18 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
-    
+    int n,x;
+    cin >> n >> x;
+    // vector<int> a(1,0);
+    // for(int i=1;i<=n;i++){
+    //     a.push_back(i);
+    // }
+    int nn=(x-1)/2;
+    cout << n-nn<<endl;
+    for(int i=nn+1;i<=n;i++){
+        cout << i << " ";
+    }
+    cout <<endl;
 }
 
 signed main() {
@@ -12,7 +23,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }

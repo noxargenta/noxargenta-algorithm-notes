@@ -4,7 +4,21 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
-    
+    string s;
+    cin >> s;
+    bool o1=0,o2=0;
+    for(auto x:s){
+        if(x-'A'>=0  && x-'A'<26){
+            o1=1;
+        }else {
+            o2=1;
+        }
+    }
+    if(o1+o2==1){
+        cout << "Yes\n";
+    }else {
+        cout << "No\n";
+    }
 }
 
 signed main() {
