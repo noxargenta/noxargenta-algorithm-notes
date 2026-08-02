@@ -24,7 +24,7 @@ void solve() {
             }
         }
     }
-    cout << ans < <endl;
+    cout << ans <<endl;
 }
 
 signed main() {
