@@ -4,6 +4,9 @@ using i64 = long long;
 #define endl '\n'
 #define int long long
 void solve() {
+    string s;
+    cin >> s;
+    s.reserve(s.begin(),s.end());
     
 }
 
