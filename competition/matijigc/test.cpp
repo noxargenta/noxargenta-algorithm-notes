@@ -6,9 +6,19 @@ using i64 = long long;
 void solve() {
     string s;
     cin >> s;
-    reverse(s.begin(),s.end());
-    cout << s << endl;
-    
+    int cnt=0;
+    int ball=0;
+    int ans=0;
+    for(auto x:s){
+        if(x=='('){
+            ball++;
+            if(cnt>0){
+                ans+=cnt;
+                ball--;
+                cnt--;
+            }
+        }
+    }
 }
 
 signed main() {
@@ -16,7 +26,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
