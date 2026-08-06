@@ -24,9 +24,10 @@ void solve() {
     do{
         bool ok=1;
         for(int i=0;i<n;i++){
-            ll dif=abs(a[i]-a[i%(n-1)]);
+            ll dif=abs(a[i]-a[(i+1)%n]);
             if(isPrime(dif)){
                 ok=0;
+                break;
             }
             if(ok==0){
                 cout << "-1" <<endl;
@@ -41,6 +42,7 @@ void solve() {
             return;
         }
     }while(next_permutation(a.begin(),a.end()));
+    cout << -1 <<endl;
 }
 
 signed main() {
