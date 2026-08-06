@@ -4,28 +4,22 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
-    ll n ;
+    ll n;
     cin >> n;
-    map<ll,ll> mp;
-    ll sum=0;
-    ll maxx=0;
-    ll val=-1;
-    for(int i=0;i<n;i++){
-        ll x;
-        cin >> x;
-        mp[x]++;
-        sum+=x;
-        if(mp[x]>maxx){
-            maxx=mp[x];
-            val=x;  
-        }
-    }
-    if(maxx*2<=n+1){
-        cout << sum <<endl;
-    }else {
-        cout << sum-(2*maxx-n-2)*val <<endl;
-    }
+    string s;
+    cin >> s;
+    ll n0=0;
+    ll n1=0;
+    for(auto x : s){
+        if(x=='0'){
+            n0++;
+        }else n1++;
 
+    }
+    if(abs(n1-n0)>=3){
+        cout << -1<<endl;
+    }
+    
 }
 
 signed main() {
@@ -33,7 +27,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    cin >> _;
+    // cin >> _;
     while(_--) {
         solve();
     }
