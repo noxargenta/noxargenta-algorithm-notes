@@ -21,7 +21,26 @@ void solve() {
     for(ll i=1;i<=n;i++){
         a.push_back(i);
     }
-    
+    do{
+        bool ok=1;
+        for(int i=1;i<=n;i++){
+            ll dif=abs(a[i]-a[i%n+1]);
+            if(isPrime(dif)){
+                ok=0;
+            }
+            if(ok==0){
+                cout << "-1" <<endl;
+                return;
+            }
+        }
+        if(ok){
+            cout << "n:" << n << endl;
+            for(auto x : a){
+                cout << x << " ";
+            }cout << endl;
+            return;
+        }
+    }while(next_permutation(a.begin(),a.end()));
 }
 
 signed main() {
@@ -29,8 +48,8 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
-    while(_--) {
+    //cin >> _;
+    while(1) {
         solve();
     }
     return 0;
