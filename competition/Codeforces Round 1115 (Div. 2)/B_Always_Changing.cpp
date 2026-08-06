@@ -3,8 +3,11 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
-ll n;string s;ll n0=0;
-    ll n1=0;string ss;
+ll n;
+string s;
+ll n0 = 0;
+ll n1 = 0;
+string ss;
 ll get_len(char x,char y){
     int ans=ss.length();
     if(x!=ss.front()){
@@ -16,6 +19,9 @@ ll get_len(char x,char y){
     return ans;
 }
 void solve() {
+    n0 = 0;
+    n1 = 0;
+    ss = "";
     cin >> n;
     cin >> s;
     for(auto x : s){
@@ -30,22 +36,22 @@ void solve() {
         cout << -1<<endl;
         return;
     }
-    ll D=abs(n0-n1);
+    ll D=n0-n1;
     ll maxl=-1;/////d=0-1
     for(ll d=-1;d<2;d++){
         if(abs(D-d)<=1){
             if(d==0){
                 maxl=max(maxl,0LL);
-                maxl=max(maxl,get_len(0,1));
-                maxl=max(maxl,get_len(1,0));
+                maxl=max(maxl,get_len('0','1'));
+                maxl=max(maxl,get_len('1','0'));
             }else if(d==1){
-                maxl=max(maxl,get_len(0,0));
+                maxl=max(maxl,get_len('0','0'));
             }else {
-                maxl=max(maxl,get_len(1,1));
+                maxl=max(maxl,get_len('1','1'));
             }
         }
     }
-    if(maxl=-1){
+    if(maxl==-1){
         cout << -1<<endl;
     }else {
         cout << n-maxl<<endl;
