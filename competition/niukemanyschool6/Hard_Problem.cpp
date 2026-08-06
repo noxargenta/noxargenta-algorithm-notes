@@ -18,9 +18,15 @@ void solve() {
     ll n;
     cin >> n;
     if(isPrime(n-1)){
-        if(n-3-1!=2){
+        if(n-3-1==2 || n==4 || n==3){
+            cout << -1 << endl;
+        }else {
+            for(int i=1;i<=n-4;i++){
+                cout << i<<' ';
+            }
             
         }
+
     }else {
         for(int i=1;i<=n;i++){
             cout << i <<  " ";
