@@ -6,19 +6,21 @@ using i64 = long long;
 void solve() {
     ll n ;
     cin >> n;
-    vector<ll> a(n);
-    int cnt[1200];
+    map<ll,ll> mp;
+    ll sum=0;
+    ll maxx=0;
+    ll maxv=-1;
     for(int i=0;i<n;i++){
-        cin >> a[i];
-        a[i]++;
-        cnt[a[i]]++;
-    }
-    ll ans=0;
-    for(int i=0;i<n;i++){
-        if(cnt[a[i]]==1){
-            ans+=a[i];
+        ll x;
+        cin >> x;
+        mp[x]++;
+        sum+=x;
+        if(x>maxx){
+            maxx=x;
+            maxv=i
         }
     }
+
 }
 
 signed main() {
