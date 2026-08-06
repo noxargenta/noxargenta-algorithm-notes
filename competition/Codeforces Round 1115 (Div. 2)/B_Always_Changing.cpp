@@ -13,14 +13,11 @@ ll get_len(char x,char y){
     if(y!=ss.back()){
         ans--;
     }
+    return ans;
 }
 void solve() {
-    
     cin >> n;
-    
     cin >> s;
-    
-    
     for(auto x : s){
         if(x=='0'){
             n0++;
@@ -34,11 +31,25 @@ void solve() {
         return;
     }
     ll D=abs(n0-n1);
-    ll anss=-1;
+    ll maxl=-1;/////d=0-1
     for(ll d=-1;d<2;d++){
-        
+        if(abs(D-d)<=1){
+            if(d==0){
+                maxl=max(maxl,0LL);
+                maxl=max(maxl,get_len(0,1));
+                maxl=max(maxl,get_len(1,0));
+            }else if(d==1){
+                maxl=max(maxl,get_len(0,0));
+            }else {
+                maxl=max(maxl,get_len(1,1));
+            }
+        }
     }
-
+    if(maxl=-1){
+        cout << -1<<endl;
+    }else {
+        cout << n-maxl<<endl;
+    }
 }
 
 signed main() {
@@ -46,7 +57,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
