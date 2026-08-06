@@ -9,16 +9,21 @@ void solve() {
     map<ll,ll> mp;
     ll sum=0;
     ll maxx=0;
-    ll maxv=-1;
+    ll val=-1;
     for(int i=0;i<n;i++){
         ll x;
         cin >> x;
         mp[x]++;
         sum+=x;
-        if(x>maxx){
-            maxx=x;
-            maxv=i
+        if(mp[x]>maxx){
+            maxx=mp[x];
+            val=x;  
         }
+    }
+    if(maxx*2<=n+1){
+        cout << sum <<endl;
+    }else {
+        ll sum_=
     }
 
 }
