@@ -24,7 +24,7 @@ void solve() {
     do{
         bool ok=1;
         for(int i=0;i<n;i++){
-            ll dif=abs(a[i]-a[i%n+1]);
+            ll dif=abs(a[i]-a[()]);
             if(isPrime(dif)){
                 ok=0;
             }
