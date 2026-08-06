@@ -3,15 +3,29 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
+ll isPrime(ll x){
+    if(x<=1){
+        return 0;
+    }
+    for(int i=2;i<=x/2;i++){
+        if(x%i==0){
+            return 0;
+        }
+    }
+    return 1;
+}
 void solve() {
     ll n;
     cin >> n;
-    if(n==2){
-        cout << "1 2" <<endl;
-
-    }else {
+    if(isPrime(n-1)){
         cout << -1 <<endl;
+        return;
     }
+    for(int i=1;i<=n;i++){
+        cout << i <<  " ";
+    }
+    cout << endl;
+
 }
 
 signed main() {
