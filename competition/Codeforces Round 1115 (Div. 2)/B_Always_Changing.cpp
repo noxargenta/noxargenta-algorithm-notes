@@ -33,6 +33,7 @@ void solve() {
         cout << -1<<endl;
         return;
     }
+    ll D=abs(n0-n1);
     ll anss=-1;
     for(ll d=-1;d<2;d++){
         
