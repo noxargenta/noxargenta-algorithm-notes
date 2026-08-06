@@ -20,8 +20,8 @@ void solve() {
     vector<ll> a;
     for(ll i=1;i<=n;i++){
         a.push_back(i);
-    } 
-
+    }
+    
 }
 
 signed main() {
