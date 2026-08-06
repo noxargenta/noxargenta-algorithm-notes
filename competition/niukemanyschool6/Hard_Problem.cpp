@@ -18,7 +18,9 @@ void solve() {
     ll n;
     cin >> n;
     if(isPrime(n-1)){
-        if()
+        if(n-3-1!=2){
+            
+        }
     }else {
         for(int i=1;i<=n;i++){
             cout << i <<  " ";
