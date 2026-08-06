@@ -24,7 +24,10 @@ void solve() {
             for(int i=1;i<=n-4;i++){
                 cout << i<<' ';
             }
-            
+            for(int i=n;i>n-4;i--){
+                cout << i << " ";
+            }
+            cout <<endl;
         }
 
     }else {
