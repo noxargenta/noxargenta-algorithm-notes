@@ -18,13 +18,14 @@ void solve() {
     ll n;
     cin >> n;
     if(isPrime(n-1)){
-        cout << -1 <<endl;
-        return;
+        if()
+    }else {
+        for(int i=1;i<=n;i++){
+            cout << i <<  " ";
+        }
+        cout << endl;
     }
-    for(int i=1;i<=n;i++){
-        cout << i <<  " ";
-    }
-    cout << endl;
+    
 
 }
 
