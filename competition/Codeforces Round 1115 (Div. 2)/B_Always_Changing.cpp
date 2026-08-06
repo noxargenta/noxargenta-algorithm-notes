@@ -10,16 +10,21 @@ void solve() {
     cin >> s;
     ll n0=0;
     ll n1=0;
+    string ss;
     for(auto x : s){
         if(x=='0'){
             n0++;
         }else n1++;
-
+        if(ss.empty() || ss.back()!=x){
+            ss.push_back(x);
+        }
     }
     if(abs(n1-n0)>=3){
         cout << -1<<endl;
+        return;
     }
     
+
 }
 
 signed main() {
