@@ -23,7 +23,7 @@ void solve() {
     if(maxx*2<=n+1){
         cout << sum <<endl;
     }else {
-        ll sum_=
+        ll cnt2=
     }
 
 }
