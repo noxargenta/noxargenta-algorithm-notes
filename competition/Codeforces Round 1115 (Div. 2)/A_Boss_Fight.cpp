@@ -13,7 +13,12 @@ void solve() {
         a[i]++;
         cnt[a[i]]++;
     }
-    
+    ll ans=0;
+    for(int i=0;i<n;i++){
+        if(cnt[a[i]]==1){
+            ans+=a[i];
+        }
+    }
 }
 
 signed main() {
