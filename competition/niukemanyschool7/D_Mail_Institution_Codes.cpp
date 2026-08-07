@@ -9,12 +9,18 @@ void solve() {
     getchar();
     string s;
     vector<vector<string>> a(n);
-    string w="";
+    
     for(int i=0;i<n;i++){
-        cin >> ws;
+        string w="";    
         getline(cin,s);
-        
-    }
+        for(char c:s){
+            if(c==' ' || c=='/n'){
+                if(w!=""){
+                    a[i].push_back(w);
+                }
+            }
+        }
+    }   
 }
 
 signed main() {
