@@ -6,13 +6,12 @@ using i64 = long long;
 void solve() {
     ll n;
     cin >> n;
-    vector<string> a;
+    getchar();
     string s;
-
-    while(cin >> s){
-        a.push_back(s);
+    for(int i=0;i<n;i++){
+        getline(cin,s);
+        
     }
-    
 }
 
 signed main() {
