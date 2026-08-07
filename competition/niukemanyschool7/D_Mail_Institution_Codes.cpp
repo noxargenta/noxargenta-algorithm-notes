@@ -8,7 +8,10 @@ void solve() {
     cin >> n;
     getchar();
     string s;
+    vector<vector<string>> a(n);
+    string w="";
     for(int i=0;i<n;i++){
+        cin >> ws;
         getline(cin,s);
         
     }
