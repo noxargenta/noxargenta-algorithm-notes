@@ -7,8 +7,8 @@ void solve() {
     int n;
     cin >> n;
     ll ans=0;cout << "n:" << n <<endl;
-    for(ll i=1;i<=n;i++){
-        for(ll j=1;j<=n;j++){
+    for(ll j=1;j<=n;j++){
+        for(ll i=1;i<=n;i++){
             // if(i==j){
             //     continue;
             // }
