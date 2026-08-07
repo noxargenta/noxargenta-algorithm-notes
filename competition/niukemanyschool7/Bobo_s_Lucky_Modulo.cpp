@@ -12,7 +12,7 @@ void solve() {
             if(i==j){
                 continue;
             }
-            if(i%j+1==i%(j+1)){
+            if((i%j)+1==i%(j+1)){
                 ans++;
             }
         }
