@@ -6,7 +6,7 @@ using i64 = long long;
 void solve() {
     int n;
     cin >> n;
-    ll ans=0;
+    ll ans=0;cout << "n:" << n <<endl;
     for(ll i=1;i<=n;i++){
         for(ll j=1;j<=n;j++){
             // if(i==j){
@@ -14,10 +14,11 @@ void solve() {
             // }
             if((i%j)+1==i%(j+1)){
                 ans++;
+                cout << "(" <<i <<","<<j<< ")"<<endl;
             }
         }
     }
-    cout << "n:" << n <<endl;
+    
     cout << "asn:" <<ans <<endl;
 }
 

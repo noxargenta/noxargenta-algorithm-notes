@@ -4,7 +4,7 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
-    for(ll i=1;i<=1e12;i++){
+    for(ll i=1;i<=100;i++){
         cout << i<<endl;
     }
 }
