@@ -9,9 +9,9 @@ void solve() {
     ll ans=0;
     for(ll i=1;i<=n;i++){
         for(ll j=1;j<=n;j++){
-            if(i==j){
-                continue;
-            }
+            // if(i==j){
+            //     continue;
+            // }
             if((i%j)+1==i%(j+1)){
                 ans++;
             }
