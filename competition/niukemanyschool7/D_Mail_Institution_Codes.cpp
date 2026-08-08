@@ -5,22 +5,33 @@ using i64 = long long;
 #define ll long long
 void solve() {
     ll n;
-    cin >> n;
-    getchar();
+    cin >>n;
+    ll p[n]={0};
     string s;
+    getline(cin,s);
+    s="";
     vector<vector<string>> a(n);
-    
-    for(int i=0;i<n;i++){
-        string w="";    
-        getline(cin,s);
-        for(char c:s){
-            if(c==' ' || c=='/n'){
-                if(w!=""){
-                    a[i].push_back(w);
+    for(ll i=0;i<n;i++){
+        string line;
+        getline(cin,line);
+        stringstream ss(line);
+        string word;
+        while(ss >> word){
+            a[i].push_back(word);
+        }
+    }
+    for(ll i=0;i<n;i++){
+        for(ll j=0;j<n;j++){
+            if(i==j)continue;
+            if(a[i].size()==a[j].size()){
+                for(ll k=0;k<a[i].size()){
+                    if(a[i][k]!=a[j][k]){
+
+                    }
                 }
             }
         }
-    }   
+    }
 }
 
 signed main() {
