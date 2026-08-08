@@ -24,13 +24,24 @@ void solve() {
         for(ll j=0;j<n;j++){
             if(i==j)continue;
             if(a[i].size()==a[j].size()){
-                for(ll k=0;k<a[i].size()){
+                for(ll k=0;k<a[i].size();k++){
                     if(a[i][k]!=a[j][k]){
-
+                        p[i]=max(p[i],k);
+                        p[j]=max(p[j],k);
+                        break;
                     }
                 }
             }
         }
+    }
+    for(ll i=0;i<n;i++){
+        for(ll j=0;j<p[i];j++){
+            cout << a[i][j];
+        }
+        for(ll j=p[i];j<n;j++){
+            cout << a[i][j][0];
+        }
+        cout << endl;
     }
 }
 
