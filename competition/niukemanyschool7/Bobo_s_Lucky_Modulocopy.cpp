@@ -12,9 +12,12 @@ void solve() {
         ll cnt=n/t;
         ll ini=cnt*b;
         ans+=ini;
-        ll scnt=n%t;
-        
-    }    
+        ll s=n%t;
+        if(s>=b*b){
+            ans+=s-b*b+1;
+        }
+    }
+    cout << ans <<endl;
 }
 
 signed main() {
