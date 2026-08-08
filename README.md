@@ -167,6 +167,7 @@
 | 计数 + 组合数学 | `Card_Game.cpp` — **MOD 阶乘计数** | [competition/2026.2.3NEWK1](./competition/2026.2.3NEWK1) |
 | 数学结论 | `Jumps.cpp` — **等差数列求和 + 修正** | [competition/20251130ECUT计协第八次训练赛](./competition/20251130ECUT计协第八次训练赛) |
 | 线性基（XOR Basis） | `Bitwise_Maximization.cpp` — **拆成两集合最大化 XOR 和，S + 2 × max_xor** 详见[笔记14](./笔记/14-线性基.md) | [competition/niukemanyschool2](./competition/niukemanyschool2/Bitwise_Maximization.cpp) |
+| 取模等式计数（CRT + 打表） | `Bobo_s_Lucky_Modulo.cpp` — **合法 a 为连续区间，O(√n) 整除计数** 详见[笔记17](./笔记/17-取模等式计数-CRT与打表找规律.md) | [competition/niukemanyschool7](./competition/niukemanyschool7/Bobo_s_Lucky_Modulo.cpp) |
 | 位运算 + 构造 | `NCPC.cpp` — bit 计数判胜负 | [competition/2026.2.5NEWK2](./competition/2026.2.5NEWK2) |
 | 三分/几何 | `E_Closest_Moment` | 各比赛 |
 
@@ -261,6 +262,7 @@
 | 2026-05-19 | CF Round 1090 (Div. 4) | [study/Codeforces Round 1090 (Div. 4)](./study/Codeforces%20Round%201090%20(Div.%204)) |
 | 2026-05-31 | CF Round 1101 (Div. 2) | [competition/Codeforces Round 1101 (Div. 2)](./competition/Codeforces%20Round%201101%20(Div.%202)) |
 | 2026-07-22 | 2025牛客多校第二场 | [competition/niukemanyschool2](./competition/niukemanyschool2) |
+| 2026-08-08 | 2025牛客多校第七场 | [competition/niukemanyschool7](./competition/niukemanyschool7) |
 | 2026-05-31 | CF Edu Round 190 | [study/Educational Codeforces Round 190 (Rated for Div. 2)](./study/Educational%20Codeforces%20Round%20190%20(Rated%20for%20Div.%202)) |
 | 2025-10-19 | 牛客周赛 | [competition/牛客周赛 Round 114](./competition/牛客周赛%20Round%20114) |
 | 2025-11-22 | 传智杯 | [competition/传智杯](./competition/传智杯) |
@@ -302,6 +304,7 @@
 | Bitwise_Maximization | 线性基 — 拆成两集合最大化 XOR 和 S + 2×max_xor，详见[笔记14](./笔记/14-线性基.md) | [收藏模板题](./收藏模板题/Bitwise_Maximization.cpp) |
 | Lazy_Shuffling | 状压 DP 排列计数 — 满足偏序约束，详见[笔记15](./笔记/15-状压DP-排列计数.md) | [收藏模板题](./收藏模板题/Lazy_Shuffling.cpp) |
 | D_Mail_Institution_Codes | stringstream 按空格分词 + 首字母比较 | [收藏模板题](./收藏模板题/D_Mail_Institution_Codes.cpp) |
+| Bobo_s_Lucky_Modulo | 取模等式计数 — CRT 连续区间 + O(√n) 整除，详见[笔记17](./笔记/17-取模等式计数-CRT与打表找规律.md) | [收藏模板题](./收藏模板题/Bobo_s_Lucky_Modulo.cpp) |
 
 ---
 
@@ -608,4 +611,20 @@ while (getline(s3, tok, ',')) { }   // "a" → "b" → "c"
 
 // 坑：cin >> n 后直接 getline 会读到残留换行，需先 getline 吞掉
 // 例题：D_Mail_Institution_Codes (2025牛客多校7 D)
+```
+
+### 21. 取模等式计数 — CRT 区间规律 + 整除统计
+
+```cpp
+// 统计满足 (a mod b)+1 = a mod (b+1) 的有序数对 (a,b)，1<=a,b<=n
+// 规律：对固定 b，合法 a ≡ b²..b²+b-1 (mod b(b+1))，最小合法 a = b²，故 b 只需枚举到 √n
+ll ans = 0;
+for (ll b = 1; b * b <= n; b++) {
+    ll t = b * (b + 1);
+    ll cnt = n / t;
+    ans += cnt * b;                      // 每个完整周期贡献 b 个
+    ll s = n % t;
+    if (s >= b * b) ans += s - b * b + 1;   // 尾部 [b², s] 内的 a
+}
+// 例题：Bobo_s_Lucky_Modulo (2025牛客多校7 L)
 ```
