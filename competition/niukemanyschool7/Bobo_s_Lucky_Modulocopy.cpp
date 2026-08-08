@@ -1,29 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define int long long
-
+using i64 = long long;
+#define endl '\n'
+#define ll long long
 void solve() {
-    int n, ans = 0;
+    ll n;
     cin >> n;
-    for (int b = 1; b * b <= n; b++) {
-        int T = b * (b + 1);
-        int cnt = n / T;
-        int add = cnt * b;
-        int rem = n % T;
-        if (rem >= b * b) {
-            add += rem - b * b + 1;
-        }
-        ans += add;
-    }
-    cout << ans << endl;
+    for(ll b=1;)    
 }
 
 signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t = 1;
-    //cin >> t;
-    while (t--) {
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
         solve();
     }
     return 0;
