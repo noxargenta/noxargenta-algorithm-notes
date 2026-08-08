@@ -31,6 +31,7 @@
 | 条件判断、循环 | `a.cpp` ~ `f.cpp` | [study/10.4](./study/10.4) |
 | 数组操作 | `a.cpp` ~ `f.cpp` | [study/10.5](./study/10.5)、[study/10.7](./study/10.7) |
 | String 处理 | `B_4012_语言月赛_202407_rules.cpp` | [study/](./study/B_4012_语言月赛_202407_rules.cpp) |
+| stringstream 按空格分词 | `D_Mail_Institution_Codes.cpp` — **`stringstream ss(line)` + `while(ss >> word)` 切词，详见[笔记16](./笔记/16-stringstream用法.md)** | [competition/niukemanyschool7](./competition/niukemanyschool7/D_Mail_Institution_Codes.cpp) |
 | 暴力枚举 | `P_1428_小鱼比可爱.cpp`、`luoguP1008.cpp` | [study/](./study/P_1428_小鱼比可爱.cpp) |
 
 </details>
@@ -300,6 +301,7 @@
 | P_1332 血色先锋队 | 多源 BFS | [study/](./study/P_1332_血色先锋队.cpp) |
 | Bitwise_Maximization | 线性基 — 拆成两集合最大化 XOR 和 S + 2×max_xor，详见[笔记14](./笔记/14-线性基.md) | [收藏模板题](./收藏模板题/Bitwise_Maximization.cpp) |
 | Lazy_Shuffling | 状压 DP 排列计数 — 满足偏序约束，详见[笔记15](./笔记/15-状压DP-排列计数.md) | [收藏模板题](./收藏模板题/Lazy_Shuffling.cpp) |
+| D_Mail_Institution_Codes | stringstream 按空格分词 + 首字母比较 | [收藏模板题](./收藏模板题/D_Mail_Institution_Codes.cpp) |
 
 ---
 
@@ -575,4 +577,35 @@ for (int s = 1; s < (1 << n); s++) {
 }
 // dp[(1<<n)-1] = 满足约束的排列数
 // 例题：Lazy_Shuffling (2025牛客多校2 L)，答案 = 2 × dp[(1<<n)-1]
+```
+
+### 20. stringstream 按空格分词 / 字符串数字互转
+
+```cpp
+#include <sstream>
+
+// 1. 按空格分词：处理"一行不知道几个数"
+string line;
+getline(cin, line);
+stringstream ss(line);
+string word;
+while (ss >> word) {          // 以空白为分隔符逐个提取
+    // 处理 word
+}
+
+// 2. 数字 → 字符串
+stringstream s1; s1 << 123;
+string str = s1.str();        // "123"
+
+// 3. 字符串 → 数字
+stringstream s2("456 789");
+int a, b; s2 >> a >> b;       // a=456, b=789
+
+// 4. 自定义分隔符（如逗号）
+stringstream s3("a,b,c");
+string tok;
+while (getline(s3, tok, ',')) { }   // "a" → "b" → "c"
+
+// 坑：cin >> n 后直接 getline 会读到残留换行，需先 getline 吞掉
+// 例题：D_Mail_Institution_Codes (2025牛客多校7 D)
 ```

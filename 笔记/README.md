@@ -19,3 +19,4 @@
 | 13 | [lower_bound / upper_bound 用法](./13-lower_bound-upper_bound用法.md) — LIS变体/降序greater/坐标压缩/set二分 | P_1020 + 各文件 |
 | 14 | [线性基 Linear Basis](./14-线性基.md) — 插入/求最大XOR/两集合XOR和最大化 | Bitwise_Maximization (2025牛客多校2 B) |
 | 15 | [状压DP — 排列计数](./15-状压DP-排列计数.md) — 拓扑排序计数/满足偏序约束的排列数 | Lazy_Shuffling (2025牛客多校2 L) |
+| 16 | [stringstream 用法](./16-stringstream用法.md) — 按空格分词/数字字符串互转/自定义分隔符 | D_Mail_Institution_Codes (2025牛客多校7 D) |
