@@ -4,10 +4,7 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
-    ll p[9]={0};
-    for(auto x  :p){
-        cout << x <<endl;
-    }
+    
 }
 
 signed main() {
