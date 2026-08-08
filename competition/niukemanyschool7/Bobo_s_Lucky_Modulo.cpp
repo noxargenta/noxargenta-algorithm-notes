@@ -4,22 +4,15 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
-    int n;
-    cin >> n;
-    ll ans=0;cout << "n:" << n <<endl;
-    for(ll j=1;j<=n;j++){
-        for(ll i=1;i<=n;i++){
-            // if(i==j){
-            //     continue;
-            // }
-            if((i%j)+1==i%(j+1)){
-                ans++;
-                cout << "(" <<i <<","<<j<< ")"<<endl;
+    for(int b = 1; b <= 20; b++) {
+        cout << "b = " << b << ": ";
+            for(int a = 1; a <= 200; a++) {
+                if((a % b) + 1 == a % (b + 1)) {
+                    cout << a << " ";
+                }
             }
-        }
+        cout << endl;
     }
-    
-    cout << "asn:" <<ans <<endl;
 }
 
 signed main() {
