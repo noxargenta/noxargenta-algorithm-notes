@@ -6,7 +6,7 @@ using i64 = long long;
 void solve() {
     ll n;
     cin >>n;
-    ll p[n]={0};
+    ll p[n]={-1};
     string s;
     getline(cin,s);
     s="";
