@@ -38,7 +38,7 @@ void solve() {
         for(ll j=0;j<p[i];j++){
             cout << a[i][j];
         }
-        for(ll j=p[i];j<n;j++){
+        for(ll j=p[i];j<a[i].size();j++){
             cout << a[i][j][0];
         }
         cout << endl;
