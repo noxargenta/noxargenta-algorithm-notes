@@ -7,6 +7,10 @@ void solve() {
     ll n;
     cin >>n;
     vector<ll> p(n,-1);
+    // for(auto x : p){
+    //     cout << x << " ";
+    // }
+    // cout << endl;
     string s;
     getline(cin,s);
     s="";
