@@ -24,13 +24,19 @@ void solve() {
         for(ll j=0;j<n;j++){
             if(i==j)continue;
             if(a[i].size()==a[j].size()){
+                string s1;
+                string s2;
                 for(ll k=0;k<a[i].size();k++){
-                    if(a[i][k][0]==a[j][k][0]){
-                        p[i]=max(p[i],k);
-                        p[j]=max(p[j],k);
-                    }else{
-                        break;
-                    }
+                    s1+=a[i][k][0];s2+=a[j][k][0];
+                }
+                if(s1==s2){
+                    for(ll k=0;k<a[i].size();k++){
+                        if(a[i][k]!=a[j][k]){
+                            p[i]=max(p[i],k);
+                            p[j]=max(p[j],k);
+                            break;
+                        }    
+                    }            
                 }
             }
         }
