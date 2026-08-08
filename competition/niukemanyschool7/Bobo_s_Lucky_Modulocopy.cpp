@@ -6,9 +6,13 @@ using i64 = long long;
 void solve() {
     ll n;
     cin >> n;
+    ll ans=0;
     for(ll b=1;b*b<=n;b++){
         ll t=b*(b+1);
         ll cnt=n/t;
+        ll ini=cnt*b;
+        ans+=ini;
+        ll scnt=n%t;
         
     }    
 }
