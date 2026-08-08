@@ -24,8 +24,8 @@ void solve() {
         for(ll j=0;j<n;j++){
             if(i==j)continue;
             if(a[i].size()==a[j].size()){
-                string s1;
-                string s2;
+                string s1=" ";
+                string s2=" ";
                 for(ll k=0;k<a[i].size();k++){
                     s1+=a[i][k][0];s2+=a[j][k][0];
                 }
