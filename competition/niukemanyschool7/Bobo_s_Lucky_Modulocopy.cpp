@@ -7,6 +7,8 @@ void solve() {
     ll n;
     cin >> n;
     for(ll b=1;b*b<=n;b++){
+        ll t=b*(b+1);
+        ll cnt=n/t;
         
     }    
 }
