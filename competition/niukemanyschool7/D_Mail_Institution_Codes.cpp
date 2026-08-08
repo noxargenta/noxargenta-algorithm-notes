@@ -6,7 +6,11 @@ using i64 = long long;
 void solve() {
     ll n;
     cin >>n;
-    ll p[n]={-1};
+    vector<ll> p(n,-1);
+    // for(auto x : p){
+    //     cout << x << " ";
+    // }
+    // cout << endl;
     string s;
     getline(cin,s);
     s="";
@@ -50,6 +54,8 @@ void solve() {
         }
         cout << endl;
     }
+    // cout << a[1].size() <<endl;
+    // cout << p[1] <<endl;
 }
 
 signed main() {
