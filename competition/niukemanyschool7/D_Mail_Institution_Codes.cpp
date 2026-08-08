@@ -25,7 +25,7 @@ void solve() {
             if(i==j)continue;
             if(a[i].size()==a[j].size()){
                 for(ll k=0;k<a[i].size();k++){
-                    if(a[i][k]!=a[j][k]){
+                    if(a[i][k][0]!=a[j][k][0]){
                         p[i]=max(p[i],k);
                         p[j]=max(p[j],k);
                         break;
