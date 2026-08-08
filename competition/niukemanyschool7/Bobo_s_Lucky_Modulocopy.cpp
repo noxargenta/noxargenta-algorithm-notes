@@ -6,7 +6,9 @@ using i64 = long long;
 void solve() {
     ll n;
     cin >> n;
-    for(ll b=1;)    
+    for(ll b=1;b*b<=n;b++){
+        
+    }    
 }
 
 signed main() {
