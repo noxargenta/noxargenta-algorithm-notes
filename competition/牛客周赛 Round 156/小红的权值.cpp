@@ -29,7 +29,6 @@ void solve() {
         }
         if(sum2<=k){
             cout << ans << endl;
-
         }else {
             cout << -1 <<endl;
         }
