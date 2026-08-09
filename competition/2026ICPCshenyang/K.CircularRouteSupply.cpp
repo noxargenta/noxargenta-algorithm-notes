@@ -39,7 +39,7 @@ void solve() {
     }
     ll ans=0;
     for(ll i=1;i<=n;i++){
-        if(pre[b[i]]-pre[i]>=0){
+        if(pre[b[i]]-pre[i-1]>=0){
             ans++;
         }
     }
