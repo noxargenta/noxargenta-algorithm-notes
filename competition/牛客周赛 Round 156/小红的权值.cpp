@@ -14,25 +14,16 @@ void solve() {
         sum+=a[i];
     }
     sort(a.begin(),a.end(),greater());
-    
+    vector<ll> pre(n+1);
+    for(ll i=0;i<n;i++){
+        pre[i+1]=pre[i]+a[i];
+    }
     while(q--){
         ll k;
         cin >> k;
         ll ans=0;
-        ll sum2=sum;
-        for(ll i=0;i<n;i++){
-            if(sum2<=k){
-                break;
-            }
-            sum2-=a[i];
-            ans++;
-        }
-        if(sum2<=k){
-            cout << ans << endl;
-        }else {
-            cout << -1 <<endl;
-        }
-
+        ll need=sum-k;
+        ll j=
     }
 }
 
