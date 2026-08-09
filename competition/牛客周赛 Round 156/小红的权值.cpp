@@ -23,7 +23,8 @@ void solve() {
         cin >> k;
         ll ans=0;
         ll need=sum-k;
-        ll j=
+        ll j=lower_bound(pre.begin(),pre.end(),need)-pre.begin();
+        cout << j <<endl;
     }
 }
 
