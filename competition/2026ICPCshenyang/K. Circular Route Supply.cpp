@@ -4,6 +4,21 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
+    ll n;
+    cin >>n;
+    vector<ll> a(2*n+1);
+    vector<ll> pre(2*n,0);
+    for(ll i=1;i<=n;i++){
+        cin >>a[i];
+        a[i+n]=a[i];
+        pre[i]=pre[i-1]+a[i];
+    }
+    for(ll i=n+1;i<=2*n;i++){
+        pre[i]=pre[i-1]+a[i];
+    }
+    // for(auto x:a){
+    //     cout << x << " "; 
+    // }
     
 }
 
