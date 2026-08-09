@@ -25,9 +25,25 @@ void solve() {
         if(d.empty()){
             d.push_back(i);
         }else{
-            if()
+            while(!d.empty() && d.front() <= i-n){
+                d.pop_front();
+            }
+            while(!d.empty() && pre[d.back()]>pre[i]){
+                d.pop_back();
+            }
+            d.push_back(i);
+            if(i>n){
+                b[i-n]=d.front();
+            }
         }
     }
+    ll ans=0;
+    for(ll i=1;i<=n;i++){
+        if(pre[b[i]]-pre[i]>=0){
+            ans++;
+        }
+    }
+    cout <<ans <<endl;
 }
 
 signed main() {
