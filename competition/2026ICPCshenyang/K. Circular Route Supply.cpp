@@ -20,9 +20,13 @@ void solve() {
     // for(auto x:a){
     //     cout << x << " "; 
     // }
-    deque<ll> dq;
+    deque<ll> d;
     for(ll i=1;i<=2*n;i++){
-        
+        if(d.empty()){
+            d.push_back(i);
+        }else{
+            if()
+        }
     }
 }
 
