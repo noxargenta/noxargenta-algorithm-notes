@@ -23,7 +23,7 @@ void solve() {
             if(s[i]==c)continue;
             s2+=s[i];
         }
-        if(check(s2)){
+        if(check(s2) && s2!=s){
             ans++;
         }
     }
