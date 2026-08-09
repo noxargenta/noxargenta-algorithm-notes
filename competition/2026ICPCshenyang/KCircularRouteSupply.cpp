@@ -7,7 +7,7 @@ void solve() {
     ll n;
     cin >>n;
     vector<ll> a(2*n+1);
-    vector<ll> pre(2*n,0);
+    vector<ll> pre(2*n+1,0);
     vector<ll> b(2*n+1);
     for(ll i=1;i<=n;i++){
         cin >>a[i];
@@ -32,13 +32,16 @@ void solve() {
                 d.pop_back();
             }
             d.push_back(i);
-            if(i>n){
-                b[i-n]=d.front();
-            }
+        }
+        if(i>=n){
+            b[i-n+1]=d.front();
         }
     }
     ll ans=0;
     for(ll i=1;i<=n;i++){
+        // if(a[i]<0){
+        //     continue;
+        // }
         if(pre[b[i]]-pre[i-1]>=0){
             ans++;
         }
