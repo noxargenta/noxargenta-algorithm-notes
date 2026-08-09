@@ -8,6 +8,7 @@ void solve() {
     cin >>n;
     vector<ll> a(2*n+1);
     vector<ll> pre(2*n,0);
+    vector<ll> b(2*n+1);
     for(ll i=1;i<=n;i++){
         cin >>a[i];
         a[i+n]=a[i];
@@ -19,7 +20,10 @@ void solve() {
     // for(auto x:a){
     //     cout << x << " "; 
     // }
-    
+    deque<ll> dq;
+    for(ll i=1;i<=2*n;i++){
+        
+    }
 }
 
 signed main() {
