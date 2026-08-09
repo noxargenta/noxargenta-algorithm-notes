@@ -17,7 +17,7 @@ void solve() {
     string s;
     ll ans=0;
     cin >> s;
-    for(char c='a' ;c-'a'<=26;c++){
+    for(char c='a' ;c<='z';c++){
         string s2;
         for(ll i=0;i<n;i++){
             if(s[i]==c)continue;
