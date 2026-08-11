@@ -10,7 +10,7 @@ void solve() {
     cin >> s;
     ll t=0;
     cin >> t;
-    string ini="Rounddo";
+    string ini="Rounddog";
     string ss=s+s;
     string st=ini+string(t,'g');
     ll cnt=0;
