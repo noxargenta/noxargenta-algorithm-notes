@@ -6,7 +6,7 @@ using i64 = long long;
 void solve() {
     ll p;
     cin >> p;
-    ll q=p;
+    
     for(ll x2=1;x2<p/2;x2++){
         for(ll x1=1;x1<q;x1++){
             if(x1*x1%q==p%q && x2*x2%p==q%p){
