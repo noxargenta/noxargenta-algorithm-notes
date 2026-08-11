@@ -15,7 +15,7 @@ void solve() {
     string st=ini+string(t,'g');
     ll cnt=0;
     for(ll i=0;i+st.length()<=ss.length();i++){
-        if(s.substr(i,st.length())==st){
+        if(ss.substr(i,st.length())==st){
             cnt++;
         }
     }
