@@ -10,7 +10,8 @@ void solve() {
     cin >> s;
     ll t=0;
     cin >> t;
-    string st="Rounddo"+string('g',t);
+    string ini="Rounddo";
+    string st=ini+string('g',t);
     ll cnt=0;
     for(ll i=0;i+st.length()<s.length();i++){
         if(s.substr(i,st.length())==st){
