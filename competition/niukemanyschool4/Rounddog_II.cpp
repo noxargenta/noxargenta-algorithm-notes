@@ -4,10 +4,11 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
-    ll n;
-    cin >> n;
     string s;
     cin >> s;
+    ll n;
+    cin >> n;
+    
     ll t=0;
     cin >> t;
     string ini="Rounddo";
@@ -25,7 +26,7 @@ void solve() {
     }else if(cnt==1){
         cout << s.length()-st.length()+1 <<endl;
     }else{
-        cout << s.length();
+        cout << s.length() <<endl;
     }
 }
 
