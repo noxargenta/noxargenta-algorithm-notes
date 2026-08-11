@@ -12,7 +12,7 @@ void solve() {
     cin >> t;
     string st="Rounddo"+string('g',t);
     ll cnt=0;
-    for(ll i=0;i<=s.length()-st.length();i++){
+    for(ll i=0;i<s.length()-st.length();i++){
         if(s.substr(i,st.length())==st){
             cnt++;
         }
@@ -21,7 +21,9 @@ void solve() {
         cout << 0<<endl;
 
     }else if(cnt==1){
-        cout << s.length()-
+        cout << s.length()-t-6 <<endl;
+    }else{
+        cout << s.length();
     }
 }
 
