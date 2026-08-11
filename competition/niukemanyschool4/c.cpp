@@ -3,19 +3,25 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
-void solve() {
-    ll p;
-    cin >> p;
-    for(ll q=1;;q++){
-        for(ll x2=1;x2<p;x2++){
-            for(ll x1=1;x1<q;x1++){
-                if(x1*x1%q==p%q && x2*x2%p==q%p){
-                    cout << x1<< " "<<x2 <<" "<< q<<" "<<endl;
-                    return;
+void find(ll p){
+        for(ll q=1;;q++){
+            for(ll x2=1;x2<p;x2++){
+                for(ll x1=1;x1<q;x1++){
+                    if(x1*x1%q==p%q && x2*x2%p==q%p){
+                        cout << x1<< " "<<x2 <<" "<< q<<" "<<endl;
+                        return;
+                    }
                 }
             }
         }
+        cout << "Impossible\n";
+}
+void solve() {
+    ll p;
+    for(ll p=2;p<100000;p++){
+        find(p);
     }
+    
 }
 
 signed main() {
