@@ -8,12 +8,15 @@ void solve() {
     cin >> p;
     
     for(ll x2=1;x2<p/2;x2++){
-        for(ll x1=1;x1<q;x1++){
-            if(x1*x1%q==p%q && x2*x2%p==q%p){
-                cout << x1<< " "<<x2 <<" "<< p<<" "<<endl;
-                return;
+        for(ll q=1;q<10000;q++){
+            for(ll x1=1;x1<10000;x1++){
+                if(x1*x1%q==p%q && x2*x2%p==q%p){
+                    cout << x1<< " "<<x2 <<" "<< p<<" "<<endl;
+                    return;
+                }
             }
         }
+        
     }
     cout << "Impossible\n"; 
 }
