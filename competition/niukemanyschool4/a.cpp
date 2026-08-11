@@ -4,9 +4,10 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
-    string s;
-    cin >> s;
-    cout << s.size() <<endl;
+    for(ll i=2;i<=1000;i++){
+        cout << i << " ";
+    }
+    cout << 1000-2+1 <<endl;
 }
 
 signed main() {
