@@ -8,7 +8,9 @@ void solve() {
     cin >> p;
     for(ll x=sqrt(p) + 1;;x++){
         ll q=x*x-p;
-        if(x*x % p==q && x * x %q==p){
+        ll x1=x%q;
+        ll x2=x%p;
+        if(x1>=1 && x2 >=1 && q!=0 && p!=0 && x1<q && x2<p){
             cout << x<<" " << x <<" "<< q<<" " <<endl;
             return;
         }
