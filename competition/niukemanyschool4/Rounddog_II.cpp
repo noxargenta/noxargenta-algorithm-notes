@@ -22,7 +22,7 @@ void solve() {
         cout << 0<<endl;
 
     }else if(cnt==1){
-        cout << s.length()-t-6 <<endl;
+        cout << s.length()-st.length()+1 <<endl;
     }else{
         cout << s.length();
     }
