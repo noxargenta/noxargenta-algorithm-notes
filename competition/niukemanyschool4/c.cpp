@@ -3,25 +3,17 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
-void find(ll p){
-        for(ll q=1;;q++){
-            for(ll x2=1;x2<p;x2++){
-                for(ll x1=1;x1<q;x1++){
-                    if(x1*x1%q==p%q && x2*x2%p==q%p){
-                        cout << x1<< " "<<x2 <<" "<< q<<" "<<endl;
-                        return;
-                    }
-                }
-            }
-        }
-        cout << "Impossible\n";
-}
 void solve() {
     ll p;
-    for(ll p=2;p<100000;p++){
-        find(p);
+    cin >> p;
+    for(ll x=1;x*x<=1e9;x++){
+        ll q=x*x-p;
+        if(x*x % p==q && x * x %q==p){
+            cout << x<<" " << x <<" "<< q<<" " <<endl;
+            return;
+        }
     }
-    
+    cout << "Impossible\n";
 }
 
 signed main() {
@@ -29,7 +21,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
