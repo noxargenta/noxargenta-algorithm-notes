@@ -10,11 +10,11 @@ void solve() {
     cin >> s;
     ll t=0;
     cin >> t;
-    string ini="Rounddog";
+    string ini="Rounddo";
     string ss=s+s;
     string st=ini+string(t,'g');
     ll cnt=0;
-    for(ll i=0;i+st.length()<=ss.length();i++){
+    for(ll i=0;i+st.length()<ss.length();i++){
         if(ss.substr(i,st.length())==st){
             cnt++;
         }
