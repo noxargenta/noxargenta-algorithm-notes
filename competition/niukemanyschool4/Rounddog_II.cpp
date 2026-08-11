@@ -6,9 +6,6 @@ using i64 = long long;
 void solve() {
     string s;
     cin >> s;
-    ll n;
-    cin >> n;
-    
     ll t=0;
     cin >> t;
     string ini="Rounddo";
@@ -22,7 +19,8 @@ void solve() {
     }
     if(cnt==0){
         cout << 0<<endl;
-    }else if(cnt==1){cout << "st.length()" << st.length() <<endl;
+    }else if(cnt==1){
+        //cout << "st.length()" << st.length() <<endl;
         cout << s.length()-st.length()+1 <<endl;
     }else{
         cout << s.length() <<endl;
