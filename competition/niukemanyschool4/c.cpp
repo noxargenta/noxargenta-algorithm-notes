@@ -6,7 +6,7 @@ using i64 = long long;
 void solve() {
     ll p;
     cin >> p;
-    for(ll x=1;x*x<=1e9;x++){
+    for(ll x=sqrt(p) + 1;;x++){
         ll q=x*x-p;
         if(x*x % p==q && x * x %q==p){
             cout << x<<" " << x <<" "<< q<<" " <<endl;
