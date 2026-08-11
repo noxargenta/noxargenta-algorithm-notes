@@ -11,7 +11,7 @@ void solve() {
         ll x1=x%q;
         ll x2=x%p;
         if(x1>=1 && x2 >=1 && q!=0 && p!=0 && x1<q && x2<p){
-            cout << x<<" " << x <<" "<< q<<" " <<endl;
+            cout << x1<<" " << x2 <<" "<< q<<" " <<endl;
             return;
         }
     }
