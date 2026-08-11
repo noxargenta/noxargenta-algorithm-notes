@@ -4,7 +4,7 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
-    for(ll i=5002;i<=6000;i++){
+    for(ll i=900000000;i<=1000000000-1;i++){
         cout << i << " ";
     }
 }
