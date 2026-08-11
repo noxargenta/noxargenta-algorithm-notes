@@ -15,14 +15,13 @@ void solve() {
     string ss=s+s;
     string st=ini+string(t,'g');
     ll cnt=0;
-    for(ll i=0;i+st.length()<ss.length();i++){
+    for(ll i=0;i+st.length()<s.length();i++){
         if(ss.substr(i,st.length())==st){
             cnt++;
         }
     }
     if(cnt==0){
         cout << 0<<endl;
-
     }else if(cnt==1){
         cout << s.length()-st.length()+1 <<endl;
     }else{
