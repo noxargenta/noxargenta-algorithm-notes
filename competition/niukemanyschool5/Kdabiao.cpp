@@ -22,20 +22,17 @@ void solve() {
         cin >> a[i];
     }
     vector<ll> b(n,0);
-    
-    if(k>=100){
-        k=100+(k-100)%2;
-    }
     while(k--){
         for(ll i=0;i<n;i++){
             b[i]=mex(a[i],a[(i+1)%n],a[(i+n-1)%n]);
         }
         a=b;
+        for(auto x:a){
+            cout << x << " ";
+        }
+        cout <<endl;
     }
-    for(auto x:a){
-        cout << x << " ";
-    }
-    cout <<endl;
+    
     // if(k>=3){
     //     for(ll j=0;j<2;j++){
     //         vector<ll> tem(n,0);
