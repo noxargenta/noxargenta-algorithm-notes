@@ -11,9 +11,10 @@ void solve() {
     ll t=0;
     cin >> t;
     string ini="Rounddo";
+    string ss=s+s;
     string st=ini+string(t,'g');
     ll cnt=0;
-    for(ll i=0;i+st.length()<=s.length();i++){
+    for(ll i=0;i+st.length()<=ss.length();i++){
         if(s.substr(i,st.length())==st){
             cnt++;
         }
