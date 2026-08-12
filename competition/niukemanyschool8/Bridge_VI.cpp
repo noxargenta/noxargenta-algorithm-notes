@@ -17,10 +17,11 @@ void solve() {
     for(ll i=0;i<2*n;i+=2){
         if(i==0){
             a[i]+=m;
-            continue;
+            
             if(a[i+1]>a[i]){
                 minans++;
             }
+            continue;
         }
         ll cnt=0;
         if(a[i]>a[0]){
@@ -44,10 +45,11 @@ void solve() {
     for(ll i=0;i<2*n;i+=2){
         if(i==0){
             b[i+1]+=m;
-            continue;
+            
             if(b[i+1]>b[i]){
                 maxans++;
             }
+            continue;
         }
         ll cnt=0;
         if(b[i]>b[0]){
