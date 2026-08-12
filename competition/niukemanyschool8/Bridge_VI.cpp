@@ -7,9 +7,11 @@ void solve() {
     ll n,m;
     cin >> n  >> m;
     vector<ll> a(2*n,0);
+    vector<ll> b(2*n,0);
     for( ll i=0;i<2*n;i++){
         cin >> a[i];
     }
+    b=a;
     ll minans=0;
     ll maxans=0;
     for(ll i=0;i<2*n;i+=2){
@@ -34,29 +36,29 @@ void solve() {
         }
     }
     for(ll i=0;i<2*n;i+=2){
-        if(i==0)a[i+1]+=m;
+        if(i==0)b[i+1]+=m;
         ll cnt=0;
-        if(a[i]>a[0]){
+        if(b[i]>b[0]){
             cnt++;
         }
-        if(a[i+1]>a[0]){
+        if(b[i+1]>b[0]){
             cnt++;
         }
         if(cnt==2){
             maxans+=cnt;
         }else if(cnt==1){
-            ll cha=max(a[0]-a[i],a[0]-a[i+1]);
-            if(cha<m){
+            ll chb=max(b[0]-b[i],b[0]-b[i+1]);
+            if(chb<m){
                 maxans+=2;
                 continue;
             }
             maxans++;
         }else {
-            if(a[0]*2-a[i]-a[i+1]<m){
+            if(b[0]*2-b[i]-b[i+1]<m){
                 maxans+=2;
                 continue;
-            }else if(min(a[0]-a[i],a[0]-a[i+1])<m){
-                minans++;
+            }else if(min(b[0]-b[i],b[0]-b[i+1])<m){
+                maxans++;
             }else {
                 continue;
             }
