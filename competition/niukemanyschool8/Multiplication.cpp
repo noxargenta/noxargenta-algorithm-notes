@@ -7,7 +7,27 @@ void solve() {
     ll a,b,c;cin >>a >> b >> c;
     if(c<a){
         string x=string(c,'9');
-        
+        string y=string(b,'9');
+        string x1=x+string(a-c,'0') + string(a,'9');
+        string x2=x+string(a-c+a,'0');
+        string y1=y+string(b,'9');
+        string y2=y+string(b,'0');
+        cout << x1<<" "<<y1<<" "<< x2 << " " << y2 <<endl;
+    }else if(c<b){
+        string y=string(c,'9');
+        string x=string(a,'9');
+        string y1=y+string(b-c,'0') + string(b,'9');
+        string y2=y+string(b-c+b,'0');
+        string x1=x+string(a,'9');
+        string x2=x+string(a,'0');
+        cout << x1<<" "<<y1<<" "<< x2 << " " << y2 <<endl;
+    }else {
+        string y=string(a,'9');
+        string x=string(b,'9');
+        string x1=x+string(a-c,'0') + string(a,'9');
+        string x2=x+string(a-c+a,'0');
+        string y1=y+string(b,'9');
+        string y2=y+string(b,'0');
     }
 }
 
