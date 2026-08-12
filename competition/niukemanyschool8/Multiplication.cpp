@@ -20,11 +20,11 @@ void solve() {
         string y2=y+string(b-c+b,'0');
         string x1=x+string(a,'9');
         string x2=x+string(a,'0');
-       
+        cout << x1<<" "<<y1<<" "<< x2 << " " << y2 <<endl;
     }else {
-        string y=string(a,'9');
-        string x=string(b,'9');
-        string x1=x+string(c-a,9) + string(a,'9');
+        string x=string(a,'9');
+        string y=string(b,'9');
+        string x1=x+string(c-a,'9') + string(a,'9');
         string x2=x+string(c-a,'0')+string(a,'0');
         string y1=y+string(c-b,'9')+string(b,'9');
         string y2=y+string(c-b,'0')+string(b,'0');
