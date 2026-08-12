@@ -8,7 +8,10 @@ void solve() {
     string x=string(a,'3');
     string y="3"+string(b-1,'0');
     string x1=x+string(a+b,'9');
-    string x2=x+string(a+b,'')
+    string x2=x+string(a+b,'0');
+    string y1=y+string(a+b,'9');
+    string y2=y+string(a+b,'0');
+    cout << x1<<" "<<y1<<" "<< x2 << " " << y2 <<endl;
 }
 
 signed main() {
