@@ -14,10 +14,55 @@ void solve() {
     ll maxans=0;
     for(ll i=0;i<2*n;i+=2){
         if(i==0)a[i]+=m;
-        if(a[i]>a[0] && a[i+1]>a[0]){
-            
+        ll cnt=0;
+        if(a[i]>a[0]){
+            cnt++;
+        }
+        if(a[i+1]>a[0]){
+            cnt++;
+        }
+        if(cnt==2){
+            minans+=cnt;
+        }else if(cnt==1){
+            minans++;
+        }else {
+            if(a[0]*2-a[i]-a[i+1]>=m){
+                continue;
+            }else{
+                minans++;
+            }
         }
     }
+    for(ll i=0;i<2*n;i+=2){
+        if(i==0)a[i+1]+=m;
+        ll cnt=0;
+        if(a[i]>a[0]){
+            cnt++;
+        }
+        if(a[i+1]>a[0]){
+            cnt++;
+        }
+        if(cnt==2){
+            maxans+=cnt;
+        }else if(cnt==1){
+            ll cha=max(a[0]-a[i],a[0]-a[i+1]);
+            if(cha<m){
+                maxans+=2;
+                continue;
+            }
+            maxans++;
+        }else {
+            if(a[0]*2-a[i]-a[i+1]<m){
+                maxans+=2;
+                continue;
+            }else if(min(a[0]-a[i],a[0]-a[i+1])<m){
+                minans++;
+            }else {
+                continue;
+            }
+        }
+    }
+    cout << minans << " "<< maxans <<endl; 
 }
 
 signed main() {
