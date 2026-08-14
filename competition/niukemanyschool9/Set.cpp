@@ -23,7 +23,9 @@ void solve() {
     }
     ll ans=0;
     if(ct1%2==1){
-        
+        cout << (maxx+1)/2<<endl;
+    }else {
+        cout << ()
     }
     cout << ans <<endl;
 
