@@ -28,7 +28,6 @@ void solve() {
         ans=maxx/2;
     }
     cout << ans <<endl;
-
 }
 
 signed main() {
