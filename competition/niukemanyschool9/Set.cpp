@@ -9,10 +9,12 @@ void solve() {
     ll ct0=0;
     ll ct1=0;
     ll a[n];
-    set<ll> st;
+    //set<ll> st;
+    ll maxx=0;
     for(ll i=0;i<n;i++){
         cin >> a[i];
-        st.insert(a[i]);
+        maxx=max(maxx,a[i]);
+        //st.insert(a[i]);
         if(a[i]%2==0){
             ct0++;
         }else {
@@ -20,16 +22,8 @@ void solve() {
         }
     }
     ll ans=0;
-    for(auto x : st){
-        if(x%2==1){
-            if(ct1%2==1){
-                ans++;
-            }
-        }else {
-            if(ct1%2==0){
-                ans++;
-            }
-        }
+    if(ct1%2==1){
+        
     }
     cout << ans <<endl;
 
