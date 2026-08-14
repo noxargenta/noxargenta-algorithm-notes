@@ -22,9 +22,16 @@ void solve() {
     ll ans=0;
     for(auto x : st){
         if(x%2==1){
-            
+            if(ct1%2==1){
+                ans++;
+            }
+        }else {
+            if(ct1%2==0){
+                ans++;
+            }
         }
     }
+    cout << ans <<endl;
 
 }
 
