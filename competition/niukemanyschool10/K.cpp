@@ -25,7 +25,7 @@ void solve() {
         }
     }
     
-    vector<vector<ll>> b(n+1);
+    vector<vector<ll>> b(n+1);//n个队伍的状态数组
     for(ll i=0;i<(1LL << N);i++){
         ll cnt=__builtin_popcount(i);
         if(cnt%3==0){
@@ -34,7 +34,10 @@ void solve() {
     }
     dp[0]=0;
     for(ll cnt=0;cnt<n;cnt++){
-        
+        for(auto mask : b[cnt]){
+            if(dp[mask]==-INFLL)continue;
+            
+        }
     }
 }
 
