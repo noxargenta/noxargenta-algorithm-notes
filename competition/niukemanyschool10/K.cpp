@@ -38,7 +38,7 @@ void solve() {
             if(dp[mask]==-INFLL)continue;
             vector<ll> tmp;
             for(ll i=0;i<N;i++){
-                if(!((1LL << i) & 1)){
+                if(!((mask >> i) & 1)){
                     tmp.push_back(i);
                 }
             }
