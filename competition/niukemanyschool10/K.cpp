@@ -52,6 +52,7 @@ void solve() {
             }
         }
     }
+    cout << dp[(1LL << N)-1] <<endl;
 }
 
 signed main() {
