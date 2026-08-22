@@ -36,7 +36,8 @@ void solve() {
     for(ll cnt=0;cnt<n;cnt++){
         for(auto mask : b[cnt]){
             if(dp[mask]==-INFLL)continue;
-            
+            vector<ll> 
+            for()
         }
     }
 }
