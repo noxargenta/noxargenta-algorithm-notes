@@ -24,8 +24,18 @@ void solve() {
             }
         }
     }
+    
+    vector<vector<ll>> b(n+1);
+    for(ll i=0;i<(1LL << N);i++){
+        ll cnt=__builtin_popcount(i);
+        if(cnt%3==0){
+            b[cnt/3].push_back(i);
+        }
+    }
     dp[0]=0;
-    vector<vector<ll>> b()
+    for(ll cnt=0;cnt<n;cnt++){
+        
+    }
 }
 
 signed main() {
