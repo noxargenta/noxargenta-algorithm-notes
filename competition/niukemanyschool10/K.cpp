@@ -43,10 +43,10 @@ void solve() {
                 }
             }
             ll m=tmp.size();
-            ll i=0;
+            ll i=0;//////tmp;
             for(ll j=i+1;j<m;j++){
                 for(ll k=j+1;k<m;k++){
-                    ll cur=(1LL<<i) | (1LL << j) | (1LL << k);
+                    ll cur=(1LL<<tmp[i]) | (1LL << tmp[j]) | (1LL << tmp[k]);
                     dp[mask | cur]=max(dp[mask|cur],dp[mask] + g[cur]);
                 }
             }
