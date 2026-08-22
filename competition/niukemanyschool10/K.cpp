@@ -36,8 +36,20 @@ void solve() {
     for(ll cnt=0;cnt<n;cnt++){
         for(auto mask : b[cnt]){
             if(dp[mask]==-INFLL)continue;
-            vector<ll> 
-            for()
+            vector<ll> tmp;
+            for(ll i=0;i<N;i++){
+                if(!((1LL << i) & 1)){
+                    tmp.push_back(i);
+                }
+            }
+            ll m=tmp.size();
+            ll i=0;
+            for(ll j=i+1;j<m;j++){
+                for(ll k=j+1;k<m;k++){
+                    ll cur=(1LL<<i) | (1LL << j) | (1LL << k);
+                    dp[mask | cur]=max(dp[mask|cur],dp[mask] + g[cur]);
+                }
+            }
         }
     }
 }
