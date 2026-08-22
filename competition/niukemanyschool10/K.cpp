@@ -24,7 +24,8 @@ void solve() {
             }
         }
     }
-    
+    dp[0]=0;
+    vector<vector<ll>> b()
 }
 
 signed main() {
