@@ -164,6 +164,7 @@
 | 欧拉线性筛 O(N) | `P_1036_NOIP_2002_普及组_选数 copy.cpp` — **bitset + 欧拉筛，每次 O(1) 查表** | [study/](./study/P_1036_NOIP_2002_普及组_选数%20copy.cpp) |
 | 质因数分解 | `c.cpp` (2025ECPC) — **试除 O(√n) 模板** | [competition/2025ECPC](./competition/2025ECPC) |
 | 位运算 | `x_y_n.cpp` — 移位 `n<<31` | [competition/2026.2.5NEWK2](./competition/2026.2.5NEWK2) |
+| 异或找两个奇数次数 | `Two_Odd_Count_Numbers.cpp` — **异或抵消 + Brian Kernighan 分组，详见[笔记17](./笔记/17-异或与BrianKernighan.md)** | [收藏模板题](./收藏模板题/Two_Odd_Count_Numbers.cpp) |
 | 计数 + 组合数学 | `Card_Game.cpp` — **MOD 阶乘计数** | [competition/2026.2.3NEWK1](./competition/2026.2.3NEWK1) |
 | 数学结论 | `Jumps.cpp` — **等差数列求和 + 修正** | [competition/20251130ECUT计协第八次训练赛](./competition/20251130ECUT计协第八次训练赛) |
 | 线性基（XOR Basis） | `Bitwise_Maximization.cpp` — **拆成两集合最大化 XOR 和，S + 2 × max_xor** 详见[笔记14](./笔记/14-线性基.md) | [competition/niukemanyschool2](./competition/niukemanyschool2/Bitwise_Maximization.cpp) |
@@ -304,6 +305,7 @@
 | Bitwise_Maximization | 线性基 — 拆成两集合最大化 XOR 和 S + 2×max_xor，详见[笔记14](./笔记/14-线性基.md) | [收藏模板题](./收藏模板题/Bitwise_Maximization.cpp) |
 | Lazy_Shuffling | 状压 DP 排列计数 — 满足偏序约束，详见[笔记15](./笔记/15-状压DP-排列计数.md) | [收藏模板题](./收藏模板题/Lazy_Shuffling.cpp) |
 | D_Mail_Institution_Codes | stringstream 按空格分词 + 首字母比较 | [收藏模板题](./收藏模板题/D_Mail_Institution_Codes.cpp) |
+| Two_Odd_Count_Numbers | 异或找两个奇数次数 + Brian Kernighan 分组，详见[笔记17](./笔记/17-异或与BrianKernighan.md) | [收藏模板题](./收藏模板题/Two_Odd_Count_Numbers.cpp) |
 | Bobo_s_Lucky_Modulo | 取模等式计数 — CRT 连续区间 + O(√n) 整除，详见[笔记17](./笔记/17-取模等式计数-CRT与打表找规律.md) | [收藏模板题](./收藏模板题/Bobo_s_Lucky_Modulo.cpp) |
 
 ---
@@ -627,4 +629,21 @@ for (ll b = 1; b * b <= n; b++) {
     if (s >= b * b) ans += s - b * b + 1;   // 尾部 [b², s] 内的 a
 }
 // 例题：Bobo_s_Lucky_Modulo (2025牛客多校7 L)
+```
+
+### 22. 异或找两个奇数次数 + Brian Kernighan
+
+```cpp
+// 数组中只有 a、b 出现奇数次，其余偶数次，找出 a、b
+int eor1 = 0;
+for (int num : nums) eor1 ^= num;         // = a ^ b（偶数次抵消）
+
+int rightOne = eor1 & (-eor1);            // Brian Kernighan：提取最右侧的 1
+
+int eor2 = 0;
+for (int num : nums) {
+    if ((num & rightOne) == 0) eor2 ^= num;  // 该位为 0 的一组 → a 或 b
+}
+// 结果：{eor2, eor1 ^ eor2}
+// 例题：左程云030_5 Two_Odd_Count_Numbers
 ```
