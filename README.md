@@ -32,6 +32,7 @@
 | 数组操作 | `a.cpp` ~ `f.cpp` | [study/10.5](./study/10.5)、[study/10.7](./study/10.7) |
 | String 处理 | `B_4012_语言月赛_202407_rules.cpp` | [study/](./study/B_4012_语言月赛_202407_rules.cpp) |
 | stringstream 按空格分词 | `D_Mail_Institution_Codes.cpp` — **`stringstream ss(line)` + `while(ss >> word)` 切词，详见[笔记16](./笔记/16-stringstream用法.md)** | [competition/niukemanyschool7](./competition/niukemanyschool7/D_Mail_Institution_Codes.cpp) |
+| C++ 标准库技巧 | `complex` 做 2D 几何 / `hypot` / `clamp` / `gcd` 等 — **详见[笔记18](./笔记/18-C++标准库技巧.md)** | 左程云系列 |
 | 暴力枚举 | `P_1428_小鱼比可爱.cpp`、`luoguP1008.cpp` | [study/](./study/P_1428_小鱼比可爱.cpp) |
 
 </details>
@@ -646,4 +647,29 @@ for (int num : nums) {
 }
 // 结果：{eor2, eor1 ^ eor2}
 // 例题：左程云030_5 Two_Odd_Count_Numbers
+```
+
+### 23. C++ 标准库几何/数值/位运算速查
+
+```cpp
+#include <complex>
+using Point = complex<double>;
+
+Point A = {3, 2}, B = {-2, 3};
+double len = abs(A);               // 模长 = hypot(x, y)
+double ang = arg(A);               // 极角 = atan2(y, x)
+double dot = (conj(A) * B).real(); // 点乘 A·B
+double cross = (conj(A) * B).imag();// 叉乘 A×B（判顺逆时针）
+Point R = A * polar(1.0, PI/2.0);  // A 逆时针旋转 90°
+
+double d3 = hypot(x, y, z);        // C++17 三维距离
+double t = remainder(theta, 2*M_PI); // 角度规范到 [-PI, PI]
+
+double c = clamp(val, -1.0, 1.0);  // C++17 限值，防 acos NaN
+double m = lerp(x1, x2, 0.5);      // C++20 线性插值
+long long mid = midpoint(L, R);    // C++20 防溢出中点
+
+long long g = gcd(a, b), l = lcm(a, b);   // C++17 数论
+// 位运算：__builtin_popcountll / __builtin_clzll / __builtin_ctzll
+// C++20: std::popcount / std::countl_zero / std::countr_zero
 ```
