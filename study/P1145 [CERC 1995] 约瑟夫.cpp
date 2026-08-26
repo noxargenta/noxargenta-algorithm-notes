@@ -5,7 +5,11 @@ using i64 = long long;
 #define ll long long
 ll k;
 bool check(ll m){
-    
+    ll cur=0;
+    for(ll i=0;i<k;i++){
+        ll remain=2*k-i;//剩余人数
+        
+    }
 }
 void solve() {
     
