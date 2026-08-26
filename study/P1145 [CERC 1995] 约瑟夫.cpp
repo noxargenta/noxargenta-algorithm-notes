@@ -8,6 +8,7 @@ bool check(ll m){
     ll cur=0;
     for(ll i=0;i<k;i++){
         ll remain=2*k-i;//剩余人数
+        cur=(cur + m - 1)%remain;
         
     }
 }
