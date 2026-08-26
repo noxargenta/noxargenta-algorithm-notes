@@ -3,9 +3,25 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
-bool check()
+ll k;
+bool check(ll m){
+    
+}
 void solve() {
     
+    cin >> k;
+    for(ll i=1;;i++){
+        ll t1=i * (k+1);
+        ll t2=i*(k+1) +1;
+        if(check(t1)){
+            cout << t1 <<endl;
+            return;
+        }
+        if(check(t2)){
+            cout << t2 <<endl;
+            return;
+        }
+    }
 }
 
 signed main() {
