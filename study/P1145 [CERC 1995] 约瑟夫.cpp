@@ -9,8 +9,11 @@ bool check(ll m){
     for(ll i=0;i<k;i++){
         ll remain=2*k-i;//剩余人数
         cur=(cur + m - 1)%remain;
-        
+        if(cur < k){
+            return 0;
+        }
     }
+    return 1;
 }
 void solve() {
     
