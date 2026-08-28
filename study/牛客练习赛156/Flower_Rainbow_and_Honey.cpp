@@ -3,19 +3,21 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
-void solve() {
-    string s1,s2;
-    cin >> s1 >> s2;
-    ll l=0,r=0;
 
-    for(ll i=0;i<2;i++){
-        if(s1[i]=='L'){
-            l++;
-        }else {
-            r++;
+string s1,s2;
+bool check(ll now,ll x,ll last,ll post){
+    string x2;
+    
+}
+void solve() {
+    cin >> s1 >> s2;
+    for(ll i=-10;i<=10;i++){
+        if(check()){
+            cout <<  << endl;
+            return;
         }
     }
-    
+    cout << "T_T\n";
 }
 
 signed main() {
