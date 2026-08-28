@@ -20,8 +20,11 @@ void solve() {
         }
 
     }
-    if()
-    cout << "YES\n";
+    if(l==0){
+        cout << "YES\n";
+    }else {
+        cout << "NO\n";
+    }
 }
 
 signed main() {
