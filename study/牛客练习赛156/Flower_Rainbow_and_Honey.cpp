@@ -16,7 +16,7 @@ bool check(ll post){
         now++;
     }
     a2=abs(now-post);
-    if(a1-a2 < 0){
+    if(a1-a2 <= 0){
         x2.push_back('F');
     }else {
         x2.push_back('C');
@@ -28,7 +28,7 @@ bool check(ll post){
         now++;
     }
     a2=abs(now-post);
-    if(a1-a2 < 0){
+    if(a1-a2 <= 0){
         x2.push_back('F');
     }else {
         x2.push_back('C');
