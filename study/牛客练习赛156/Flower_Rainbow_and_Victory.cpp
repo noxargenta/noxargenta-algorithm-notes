@@ -23,9 +23,16 @@ void solve() {
             ar++;
         }
         if(a0+ab !=0 && a1 + ar !=0){
-            
+            d++;
+        }else {
+            if(a0+ab!=0){
+                r++;
+            }else {
+                f++;
+            }
         }
     }
+    
 }
 
 signed main() {
