@@ -14,8 +14,13 @@ void solve() {
         }else if(s[i]==')'){
             r++;
         }
+        if(l==0 && r !=0){
+            cout << "NO\n";
+            return;
+        }
         
     }
+    cout << "YES\n";
 }
 
 signed main() {
