@@ -5,15 +5,45 @@ using i64 = long long;
 #define ll long long
 
 string s1,s2;
-bool check(ll now,ll x,ll last,ll post){
+bool check(ll post){
     string x2;
-    
+    ll now=0;
+    ll a1=abs(now-post);
+    ll a2;
+    if(s1[0]=='R'){
+        now++;
+    }else {
+        now--;
+    }
+    a2=abs(now-post);
+    if(a1-a2 < 0){
+        x2.push_back('F');
+    }else {
+        x2.push_back('C');
+    }
+    a1=a2;
+    if(s1[1]=='R'){
+        now++;
+    }else {
+        now--;
+    }
+    a2=abs(now-post);
+    if(a1-a2 < 0){
+        x2.push_back('F');
+    }else {
+        x2.push_back('C');
+    }
+    if(x2==s2){
+        return 1;
+    }else {
+        return 0;
+    }
 }
 void solve() {
     cin >> s1 >> s2;
     for(ll i=-10;i<=10;i++){
-        if(check()){
-            cout <<  << endl;
+        if(check(i)){
+            cout << i << endl;
             return;
         }
     }
