@@ -12,14 +12,15 @@ void solve() {
         if(s[i]=='('){
             l++;
         }else if(s[i]==')'){
-            r++;
+            if(l==0){
+                cout << "NO\n";
+                return;
+            }
+            l--;
         }
-        if(l==0 && r !=0){
-            cout << "NO\n";
-            return;
-        }
-        
+
     }
+    if()
     cout << "YES\n";
 }
 
