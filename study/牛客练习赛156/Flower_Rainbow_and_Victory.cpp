@@ -32,7 +32,15 @@ void solve() {
             }
         }
     }
-    
+    ll ansr=(d+2-1)/2;
+    ll ansf=d/2;
+    if(r>f){
+        ansr+=(abs(r-f)+2-1)/2;
+        ansf+=(abs(r-f)/2);
+    }else if(){
+        
+    }
+
 }
 
 signed main() {
