@@ -7,12 +7,18 @@ void solve() {
      ll n;
     cin >> n;
     unordered_set<ll> s;
+    vector<ll> ans;
     for(ll i=0;i<n;i++){
         ll x;
         cin >> x;
+        
+        if(s.count(x)){
+            continue;
+        }
         s.insert(x);
+        ans.push_back(x);
     }
-    for(auto x : s){
+    for(auto x : ans){
         cout << x <<  " "; 
     }
     cout <<endl;
