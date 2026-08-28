@@ -32,14 +32,35 @@ void solve() {
             }
         }
     }
-    ll ansr=(d+2-1)/2;
-    ll ansf=d/2;
-    if(r>f){
-        ansr+=(abs(r-f)+2-1)/2;
-        ansf+=(abs(r-f)/2);
-    }else if(){
-        
+    ll ansr;
+    ll ansf;
+    if(d%2==0){
+        ansr=d/2;
+        //ll ansr=(d+2-1)/2;
+        ansf=d/2;
+        if(r>f){
+            ansr+=(abs(r-f)+2-1)/2;
+        }else if(r<f){
+            ansf+=(abs(r-f)/2);
+        }
+    }else {
+        ansr=(d+2-1)/2;
+        ansf=d/2;
+        if(r>f){
+            ansr+=(abs(r-f))/2;
+        }else if(r<f){
+            ansf+=((abs(r-f)+2-1)/2);
+        }
     }
+    if(ansf>ansr){
+        cout << "Flower\n";
+    }else if(ansf==ansr){
+        cout << "Draw\n";
+    }else {
+        cout << "Rainbow\n";
+    }
+    
+    
 
 }
 
