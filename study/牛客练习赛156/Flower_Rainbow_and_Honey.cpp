@@ -11,9 +11,9 @@ bool check(ll post){
     ll a1=abs(now-post);
     ll a2;
     if(s1[0]=='R'){
-        now++;
-    }else {
         now--;
+    }else {
+        now++;
     }
     a2=abs(now-post);
     if(a1-a2 < 0){
@@ -23,9 +23,9 @@ bool check(ll post){
     }
     a1=a2;
     if(s1[1]=='R'){
-        now++;
-    }else {
         now--;
+    }else {
+        now++;
     }
     a2=abs(now-post);
     if(a1-a2 < 0){
