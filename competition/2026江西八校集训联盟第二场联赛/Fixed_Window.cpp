@@ -31,7 +31,9 @@ void solve() {
         xinhao[a[i]]+=w[i];
         maxans=max(maxans,xinhao[a[i]]);
     }
-    
+    for(;r<=n;r++,l++){
+        
+    }
 
 
 }
