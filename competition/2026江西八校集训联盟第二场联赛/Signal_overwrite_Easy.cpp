@@ -20,7 +20,20 @@ void solve() {
     }
     ll r=0;
     for(ll l=0;l<b2.size();l++){
-        ll x=
+        ll x=b2[l];
+        while(r<n){
+            if(a[r]==x){
+                r++;
+                break;
+            }
+            r++;
+        }
+        
+    }
+    if(r!=n){
+        cout << "Yes\n";
+    }else {
+        cout << "No\n";
     }
 
 
