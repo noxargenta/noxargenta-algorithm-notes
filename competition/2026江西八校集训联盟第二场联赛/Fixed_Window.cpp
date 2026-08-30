@@ -3,8 +3,8 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
-
-vector<ll> xinhao(2*(1e6)+10,0);
+map<ll,ll> xinhao;
+//vector<ll> xinhao(2*(1e6)+10,0);
 void solve() {
     ll n,L,k;
     cin >> n >> L >> k;
@@ -20,7 +20,7 @@ void solve() {
     }
     ll maxans=0;
     for(ll i=0;i<n;i++){
-        xinhao[a[i]+1e6]+=w[i];
+        xinhao[a[i]]+=w[i];
         maxans=max(maxans,xinhao[a[i]]);
     }
     ll l=1;
