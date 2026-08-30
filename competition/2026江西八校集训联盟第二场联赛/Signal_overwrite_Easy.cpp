@@ -6,13 +6,21 @@ using i64 = long long;
 void solve() {
     ll n;
     cin >> n;
-    vector<vector<ll>> a(n);
+    vector<ll> a(n);
+    vector<ll> b(n);
+    vector<ll> b2;
     for(ll i=0;i<n;i++){
-        ll x;
-        cin >> x;
-        a.push_back(x);
+        cin >> a[i];
+    }
+    for( ll i=0;i<n;i++){
+        cin >> b[i];
+        if(i==0 || a[i]!=a[i-1]){
+            b.push_back(a[i]);
+        }
     }
     
+
+
 }
 
 signed main() {
