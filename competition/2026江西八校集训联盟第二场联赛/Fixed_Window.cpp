@@ -19,7 +19,7 @@ void solve() {
         prew[i]=prew[i]+w[i];
     }
     ll maxans=0;
-    for(ll i=0;i<n;i++){
+    for(ll i=1;i<n;i++){
         xinhao[a[i]]+=w[i];
         maxans=max(maxans,xinhao[a[i]]);
         //cout << "deb" << maxans << endl;
@@ -32,6 +32,9 @@ void solve() {
         xinhao[a[i]]+=w[i];
         maxans=max(maxans,xinhao[a[i]]);
         //cout << "deb" << maxans << endl;
+    }
+    for(ll i=l;i<=r;i++){
+        maxans=max(maxans,xinhao[a[i]]);
     }
     l++;
     r++;
