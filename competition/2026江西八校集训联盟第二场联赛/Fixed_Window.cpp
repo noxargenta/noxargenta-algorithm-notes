@@ -3,6 +3,8 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
+
+vector<ll> xinhao(2*(1e6)+10,0);
 void solve() {
     ll n,l,k;
     cin >> n >> l >> k;
