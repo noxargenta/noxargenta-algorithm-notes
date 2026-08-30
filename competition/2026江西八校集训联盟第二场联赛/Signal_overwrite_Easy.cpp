@@ -18,7 +18,7 @@ void solve() {
             b.push_back(a[i]);
         }
     }
-    
+    for(ll l=0;l<b2.size())
 
 
 }
