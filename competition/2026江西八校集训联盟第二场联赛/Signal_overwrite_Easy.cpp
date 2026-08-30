@@ -4,6 +4,12 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
+    ll n;
+    cin >> n;
+    vector<ll> a(n);
+    for(ll i=0;i<n;i++){
+        cin >> a[i];
+    }
     
 }
 
