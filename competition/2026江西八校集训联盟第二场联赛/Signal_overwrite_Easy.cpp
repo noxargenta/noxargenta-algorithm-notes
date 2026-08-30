@@ -6,9 +6,11 @@ using i64 = long long;
 void solve() {
     ll n;
     cin >> n;
-    vector<ll> a(n);
+    vector<vector<ll>> a(n);
     for(ll i=0;i<n;i++){
-        cin >> a[i];
+        ll x;
+        cin >> x;
+        a.push_back(x);
     }
     
 }
