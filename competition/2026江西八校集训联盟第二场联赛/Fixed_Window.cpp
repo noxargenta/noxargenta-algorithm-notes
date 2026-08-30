@@ -31,10 +31,22 @@ void solve() {
         xinhao[a[i]]+=w[i];
         maxans=max(maxans,xinhao[a[i]]);
     }
+    l++;
+    r++;
     for(;r<=n;r++,l++){
+        xinhao[a[l-1]]-=w[l-1];
+        a[l-1]-=k;
+        xinhao[a[l-1]]+=w[l-1];
         
+        xinhao[a[r]]-=w[r];
+        a[r]+=k;
+        xinhao[a[r]]+=w[r];
+        maxans=max(maxans,a[r]);
+        maxans=max(maxans,a[l-1]);
+        maxans=max(maxans,a[l-1]+k);
+        maxans=max(maxans,a[r]-k);
     }
-
+    cout << maxans << endl;
 
 }
 
