@@ -4,6 +4,18 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
+    ll n,l,k;
+    cin >> n >> l >> k;
+    vector<ll> a(n+1,0);
+    vector<ll> w(n+1,0);
+    vector<ll> prew(n+1,0);
+    for(ll i=1;i<=n;i++){
+        cin >> a[i];
+    }
+    for(ll i=1;i<=n;i++){
+        cin >> w[i];
+        prew[i]=prew[i]+w[i];
+    }
     
 }
 
