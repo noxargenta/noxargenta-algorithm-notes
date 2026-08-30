@@ -10,13 +10,13 @@ void solve() {
     cin >> n >> L >> k;
     vector<ll> a(n+1,0);
     vector<ll> w(n+1,0);
-    vector<ll> prew(n+1,0);
+    ///vector<ll> prew(n+1,0);
     for(ll i=1;i<=n;i++){
         cin >> a[i];
     }
     for(ll i=1;i<=n;i++){
         cin >> w[i];
-        prew[i]=prew[i]+w[i];
+        //prew[i]=prew[i]+w[i];
     }
     ll maxans=0;
     for(ll i=1;i<n;i++){
