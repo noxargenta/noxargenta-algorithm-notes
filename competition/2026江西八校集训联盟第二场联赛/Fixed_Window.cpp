@@ -27,8 +27,12 @@ void solve() {
     ll r=l+L-1;
     for(ll i=l;i<=r;i++){
         xinhao[a[i]]-=w[i];
+        a[i]+=k;
+        xinhao[a[i]]+=w[i];
+        maxans=max(maxans,xinhao[a[i]]);
     }
     
+
 
 }
 
