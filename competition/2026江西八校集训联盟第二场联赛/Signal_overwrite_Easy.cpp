@@ -14,8 +14,8 @@ void solve() {
     }
     for( ll i=0;i<n;i++){
         cin >> b[i];
-        if(i==0 || a[i]!=a[i-1]){
-            b.push_back(a[i]);
+        if(i==0 || b[i]!=b[i-1]){
+            b2.push_back(b[i]);
         }
     }
     for(ll l=0;l<b2.size())
