@@ -23,7 +23,6 @@ void solve() {
         ll x=b2[l];
         while(r<n){
             if(a[r]==x){
-                r++;
                 break;
             }
             r++;
