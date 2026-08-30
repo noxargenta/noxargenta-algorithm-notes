@@ -6,8 +6,8 @@ using i64 = long long;
 
 vector<ll> xinhao(2*(1e6)+10,0);
 void solve() {
-    ll n,l,k;
-    cin >> n >> l >> k;
+    ll n,L,k;
+    cin >> n >> L >> k;
     vector<ll> a(n+1,0);
     vector<ll> w(n+1,0);
     vector<ll> prew(n+1,0);
@@ -23,6 +23,8 @@ void solve() {
         xinhao[a[i]]+=w[i];
         maxans=max(maxans,xinhao[a[i]]);
     }
+    ll l=0;
+    ll r=l+L-1;
     
 
 }
