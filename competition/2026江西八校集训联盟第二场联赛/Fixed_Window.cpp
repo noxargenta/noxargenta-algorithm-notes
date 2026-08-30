@@ -20,7 +20,7 @@ void solve() {
     }
     ll maxans=0;
     for(ll i=0;i<n;i++){
-        xinhao[a[i]]+=w[i];
+        xinhao[a[i]+1e6]+=w[i];
         maxans=max(maxans,xinhao[a[i]]);
     }
     ll l=1;
