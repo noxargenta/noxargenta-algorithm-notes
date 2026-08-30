@@ -18,7 +18,10 @@ void solve() {
             b2.push_back(b[i]);
         }
     }
-    for(ll l=0;l<b2.size())
+    ll r=0;
+    for(ll l=0;l<b2.size();l++){
+        ll x=
+    }
 
 
 }
