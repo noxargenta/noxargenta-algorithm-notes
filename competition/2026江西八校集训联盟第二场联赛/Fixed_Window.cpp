@@ -30,7 +30,6 @@ void solve() {
         xinhao[a[i]]-=w[i];
         a[i]+=k;
         xinhao[a[i]]+=w[i];
-        maxans=max(maxans,xinhao[a[i]]);
         //cout << "deb" << maxans << endl;
     }
     for(ll i=l;i<=r;i++){
