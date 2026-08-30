@@ -22,6 +22,7 @@ void solve() {
     for(ll i=0;i<n;i++){
         xinhao[a[i]]+=w[i];
         maxans=max(maxans,xinhao[a[i]]);
+        cout << "deb" << maxans << endl;
     }
     ll l=1;
     ll r=l+L-1;
@@ -30,6 +31,7 @@ void solve() {
         a[i]+=k;
         xinhao[a[i]]+=w[i];
         maxans=max(maxans,xinhao[a[i]]);
+        cout << "deb" << maxans << endl;
     }
     l++;
     r++;
@@ -45,6 +47,7 @@ void solve() {
         maxans=max(maxans,a[l-1]);
         maxans=max(maxans,a[l-1]+k);
         maxans=max(maxans,a[r]-k);
+        cout << "deb" << maxans << endl;
     }
     cout << maxans << endl;
 
