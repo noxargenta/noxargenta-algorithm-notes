@@ -9,7 +9,7 @@ void solve() {
     ll r,c;
     cin >> r >>c;
     ll sum=n *m;
-    
+    cout << (r-1)*m + c << " " << (r-1)*m + c -1 << " "<< sum - ((r-1)*m + c) <<endl;
 }
 
 signed main() {
