@@ -6,9 +6,17 @@ using i64 = long long;
 void solve() {
     ll n,m;
     cin >> n >> m;
-    vector<ll> hd(n+1,-1);
-    vector<ll> in(n+1,0);
+    //dian
+    vector<ll> hd(n+1,-1);//出边
+    vector<ll> in(n+1,0);//入度
+
+    //bian
+    vector<ll> to;
+    vector<ll> nxt;
+
     
+
+
 }
 
 signed main() {
