@@ -29,7 +29,31 @@ void solve() {
             pq.push(i);
         }
     }
+    vector<ll> ord;
+    while(!pq.empty()){
+        ll x=pq.top();
+        pq.pop();
+        ord.push_back(x);
+        for(auto v : g[x]){
+            deg[v]--;
+            if(deg[v]==0){
+                pq.push(v);
 
+            }
+        }
+    }
+    if((ll)ord.size()<n){
+        cout << -1 <<endl;
+    }
+    vector<ll> ans(n+1,0);
+    for(ll i=1;i<=n;i++){
+        ans[ord[i]]=i;
+    }
+    for(ll i=1;i<=n;i++){
+        cout << ans[i] << " ";
+    }
+    cout << endl;
+    
 }
 
 signed main() {
