@@ -3,24 +3,22 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
+
 void solve() {
     ll n,m;
     cin >> n >> m;
-    //dian
-    vector<ll> hd(n+1,-1);//上一条出边的点编号
-    vector<ll> in(n+1,0);//入度
-
-    //bian
-    vector<ll> to;
-    vector<ll> nxt;
-
-    auto add = [&](ll u ,ll v){
-        to.push_back(v);
-        nxt.push_back(hd[u]);
-        hd[u]=
-    
+    vector<vector<ll>> g(n+1);
+    vector<ll> deg(n+1,0);
+    while(m--){
+        ll l,r;
+        cin >> l >> r;
+        ll k=r-l+1;
+        ll pre;
+        cin >> pre;
+        for(ll i=1;i<k;i++){
+            
+        }
     }
-
 
 }
 
@@ -30,6 +28,7 @@ signed main() {
     cin.tie(nullptr);
     int _ = 1;
     // cin >> _;
+    
     while(_--) {
         solve();
     }
