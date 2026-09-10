@@ -42,7 +42,7 @@ void solve() {
             }
         }
     }
-    if((ll)ord.size()<n){
+    if((ll)ord.size()-1 < n){
         cout << -1 <<endl;
         return;
 
