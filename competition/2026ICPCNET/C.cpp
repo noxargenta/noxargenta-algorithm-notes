@@ -16,6 +16,10 @@ void solve() {
         ll pre;
         cin >> pre;
         for(ll i=1;i<k;i++){
+            ll cur;
+            cin >> cur;
+            g[pre].push_back(cur);
+            deg[cur]++;
             
         }
     }
