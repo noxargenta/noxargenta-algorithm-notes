@@ -53,7 +53,7 @@ void solve() {
         cout << ans[i] << " ";
     }
     cout << endl;
-    
+
 }
 
 signed main() {
@@ -61,7 +61,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     
     while(_--) {
         solve();
