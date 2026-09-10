@@ -2,211 +2,171 @@
 using namespace std;
 
 int main() {
-    // 关闭 C 与 C++ 输入输出同步，提高 cin/cout 速度
     ios::sync_with_stdio(false);
-
-    // 解除 cin 与 cout 的绑定，进一步加速输入
     cin.tie(nullptr);
 
-    // 测试用例数量
     int T;
     cin >> T;
 
-    // 依次处理每组测试数据
     while (T--) {
-        // n：排列长度，m：约束数量
         int n, m;
         cin >> n >> m;
 
         /*
-            链式前向星存图。
+            g[u] 保存所有满足 u -> v 的点 v。
 
-            hd[u] 表示点 u 的第一条出边编号。
-            如果 hd[u] == -1，说明 u 没有出边。
+            u -> v 表示：
+            p[u] 必须小于 p[v]，
+            因此下标 u 必须比下标 v 更早进入拓扑序。
         */
-        vector<int> hd(n + 1, -1);
+        vector<vector<int>> g(n + 1);
 
-        /*
-            in[v] 表示点 v 当前的入度。
+        // deg[i] 表示点 i 当前的入度
+        vector<int> deg(n + 1, 0);
 
-            如果 in[v] == 0，说明当前没有任何点
-            必须排在 v 前面，此时 v 可以进入拓扑序。
-        */
-        vector<int> in(n + 1, 0);
-
-        /*
-            第 e 条边的信息：
-
-            to[e]  ：第 e 条边指向的终点
-            nxt[e] ：与第 e 条边起点相同的下一条边
-        */
-        vector<int> to;
-        vector<int> nxt;
-
-        /*
-            加入一条有向边 u -> v。
-
-            在本题中，它表示：
-            p[u] < p[v]
-        */
-        auto add = [&](int u, int v) {
-            // 记录这条边的终点 v
-            to.push_back(v);
-
-            // 新边的下一条边，是原本 u 的第一条边
-            nxt.push_back(hd[u]);
-
-            // 更新 u 的第一条边编号
-            hd[u] = (int)to.size() - 1;
-
-            // 因为多了一条指向 v 的边，所以 v 的入度加一
-            ++in[v];
-        };
-
-        // 读取 m 条约束
         while (m--) {
-            // 当前约束对应的连续区间 [l,r]
             int l, r;
             cin >> l >> r;
 
-            // 当前区间的长度
-            int len = r - l + 1;
+            // 当前约束一共包含 k 个下标
+            int k = r - l + 1;
 
             /*
-                q 中的第一个下标。
+                例如输入：
 
-                因为 len >= 1，所以一定存在第一个数。
+                2 4  4 2 3
+
+                表示：
+                p[4] < p[2] < p[3]
+
+                建边：
+                4 -> 2
+                2 -> 3
             */
             int pre;
-            cin >> pre;
+            cin >> pre; // 先读 q 中的第一个下标
 
-            /*
-                对于约束：
-
-                p[q1] < p[q2] < ... < p[q_len]
-
-                只需要加入：
-
-                q1 -> q2
-                q2 -> q3
-                ...
-                q_(len-1) -> q_len
-
-                一共 len-1 条边。
-            */
-            for (int i = 1; i < len; ++i) {
-                // 当前读到的 q 下标
+            for (int i = 1; i < k; ++i) {
                 int cur;
-                cin >> cur;
+                cin >> cur; // 读 q 中的下一个下标
 
                 /*
-                    pre 在 cur 前面，表示：
-
-                    p[pre] < p[cur]
-
-                    因此加入 pre -> cur。
+                    p[pre] < p[cur]，
+                    所以建立 pre -> cur。
                 */
-                add(pre, cur);
+                g[pre].push_back(cur);
 
-                // 当前元素成为下一次循环的前一个元素
+                // cur 多了一个必须排在它前面的点
+                ++deg[cur];
+
+                // 准备连接下一对相邻下标
                 pre = cur;
             }
         }
 
         /*
-            小根堆。
+            小根堆维护当前所有入度为 0 的点。
 
-            pq 中保存当前所有入度为 0 的点，
-            每次取出编号最小的点。
+            入度为 0：
+            这个点目前没有未完成的前置条件，可以选择。
+
+            使用小根堆：
+            每次选择编号最小的合法下标，使逆序数最少。
         */
         priority_queue<int, vector<int>, greater<int>> pq;
 
-        // 将所有初始入度为 0 的点加入小根堆
+        // 把所有初始入度为 0 的点加入小根堆
         for (int i = 1; i <= n; ++i) {
-            if (in[i] == 0) {
+            if (deg[i] == 0) {
                 pq.push(i);
             }
         }
 
         /*
-            ans[i] 表示最终排列中的 p[i]。
+            ord 保存拓扑序。
 
-            如果下标 u 是拓扑序中的第 k 个点，
-            就令 ans[u] = k。
+            ord 中记录的是下标，而不是 p 中的值。
+
+            如果：
+            ord = [1, 4, 2, 3, 5]
+
+            表示：
+            p[1] < p[4] < p[2] < p[3] < p[5]
         */
-        vector<int> ans(n + 1, 0);
+        vector<int> ord;
 
-        // cnt 表示已经完成拓扑排序的点数
-        int cnt = 0;
-
-        // Kahn 拓扑排序
         while (!pq.empty()) {
             // 取出当前编号最小的零入度点
             int u = pq.top();
             pq.pop();
 
-            /*
-                u 是拓扑序中的第 cnt+1 个点。
-
-                也就是说，p[u] 应该是当前尚未使用的最小值。
-            */
-            ans[u] = ++cnt;
+            // 把这个下标加入拓扑序
+            ord.push_back(u);
 
             /*
-                枚举 u 的所有出边。
+                相当于从图中删除 u。
 
-                hd[u] 是第一条出边；
-                nxt[e] 是下一条出边；
-                e == -1 时枚举结束。
+                删除边 u -> v 后，
+                v 就少了一个前置条件，所以入度减一。
             */
-            for (int e = hd[u]; e != -1; e = nxt[e]) {
-                // 第 e 条边为 u -> v
-                int v = to[e];
+            for (int v : g[u]) {
+                --deg[v];
 
                 /*
-                    将 u 从剩余图中删除。
-
-                    对于边 u -> v，相当于 v 少了一个前驱，
-                    所以 v 的入度减一。
+                    v 的入度变成 0，
+                    说明它的所有前置条件都完成了。
                 */
-                --in[v];
-
-                /*
-                    如果 v 的入度变成 0，
-                    说明 v 的所有前置要求都已经处理完，
-                    可以加入小根堆。
-                */
-                if (in[v] == 0) {
+                if (deg[v] == 0) {
                     pq.push(v);
                 }
             }
         }
 
         /*
-            如果 cnt < n，说明有一些点始终无法变成零入度点。
+            如果拓扑序长度不足 n，说明图中存在环。
 
-            这些点位于有向环中，因此约束互相矛盾，无解。
+            例如：
+            1 -> 2
+            2 -> 1
+
+            对应：
+            p[1] < p[2] < p[1]
+
+            显然无解。
         */
-        if (cnt < n) {
+        if ((int)ord.size() < n) {
             cout << -1 << '\n';
             continue;
         }
 
-        // 输出最终排列 p
-        for (int i = 1; i <= n; ++i) {
-            // 除第一个数字外，每个数字前输出一个空格
-            if (i > 1) {
-                cout << ' ';
-            }
+        /*
+            ord[i] 是第 i+1 个进入拓扑序的下标，
+            所以给这个下标赋值 i+1。
 
-            // ans[i] 就是 p[i]
-            cout << ans[i];
+            例如：
+            ord = [1, 4, 2, 3, 5]
+
+            那么：
+            ans[1] = 1
+            ans[4] = 2
+            ans[2] = 3
+            ans[3] = 4
+            ans[5] = 5
+
+            最终：
+            ans = [1, 3, 4, 2, 5]
+        */
+        vector<int> ans(n + 1);
+
+        for (int i = 0; i < n; ++i) {
+            ans[ord[i]] = i + 1;
         }
 
-        // 当前测试用例输出结束
-        cout << '\n';
+        // 按照原下标 1~n 输出排列
+        for (int i = 1; i <= n; ++i) {
+            cout << ans[i] << " \n"[i == n];
+        }
     }
 
-    // 程序正常结束
     return 0;
 }
