@@ -20,7 +20,7 @@ void solve() {
             in_degree[v]++;
         }
     }
-    priority_queue<ll> pq;
+    priority_queue<ll,vector<ll>,greater<ll>> pq;
     for(ll i=1;i<=n;i++){
         if(in_degree[i]==0) pq.push(i);
     }
