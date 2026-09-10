@@ -30,6 +30,7 @@ void solve() {
         }
     }
     vector<ll> ord;
+    ord.push_back(-1);
     while(!pq.empty()){
         ll x=pq.top();
         pq.pop();
@@ -38,14 +39,13 @@ void solve() {
             deg[v]--;
             if(deg[v]==0){
                 pq.push(v);
-
             }
         }
     }
     if((ll)ord.size()<n){
         cout << -1 <<endl;
         return;
-        
+
     }
     vector<ll> ans(n+1,0);
     for(ll i=1;i<=n;i++){
