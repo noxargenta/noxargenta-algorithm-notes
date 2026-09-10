@@ -27,7 +27,7 @@ void solve() {
     vector<ll> q;
     
     while(!pq.empty()){
-        ll u=pq.top();pq.pop();q;.push_back(u);
+        ll u=pq.top();pq.pop();q.push_back(u);
         for(ll v:edge[u]){
             in_degree[v]--;
             if(in_degree[v]==0){
