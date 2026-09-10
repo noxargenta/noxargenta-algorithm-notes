@@ -20,7 +20,13 @@ void solve() {
             cin >> cur;
             g[pre].push_back(cur);
             deg[cur]++;
-            
+            pre= cur;
+        }
+    }
+    priority_queue<ll,vector<ll>,greater<ll>> pq;
+    for(ll i=1;i<=n;i++){
+        if(deg[i]==0){
+            pq.push(i);
         }
     }
 
