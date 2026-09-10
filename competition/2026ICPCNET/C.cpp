@@ -7,7 +7,7 @@ void solve() {
     ll n,m;
     cin >> n >> m;
     //dian
-    vector<ll> hd(n+1,-1);//出边
+    vector<ll> hd(n+1,-1);//出边的编号
     vector<ll> in(n+1,0);//入度
 
     //bian
@@ -16,7 +16,7 @@ void solve() {
 
     auto add = [&](ll u ,ll v){
         to.push_back(v);
-        
+        nxt.push_back(hd[u])
     }
 
 
