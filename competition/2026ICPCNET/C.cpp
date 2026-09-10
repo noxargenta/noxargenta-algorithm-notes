@@ -6,7 +6,8 @@ using i64 = long long;
 void solve() {
     ll n,m;
     cin >> n >> m;
-    vector<ll> head()
+    vector<ll> head(n+1,-1);
+    vector<ll> 
 }
 
 signed main() {
