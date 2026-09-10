@@ -3,7 +3,6 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
-
 void solve() {
     ll n,m;
     cin >> n >> m;
@@ -45,7 +44,6 @@ void solve() {
     if((ll)ord.size()-1 < n){
         cout << -1 <<endl;
         return;
-
     }
     vector<ll> ans(n+1,0);
     for(ll i=1;i<=n;i++){
@@ -55,7 +53,6 @@ void solve() {
         cout << ans[i] << " ";
     }
     cout << endl;
-
 }
 
 signed main() {
