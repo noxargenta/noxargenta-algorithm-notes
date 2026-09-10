@@ -14,7 +14,10 @@ void solve() {
     vector<ll> to;
     vector<ll> nxt;
 
-    
+    auto add = [&](ll u ,ll v){
+        to.push_back(v);
+        
+    }
 
 
 }
