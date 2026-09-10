@@ -44,6 +44,8 @@ void solve() {
     }
     if((ll)ord.size()<n){
         cout << -1 <<endl;
+        return;
+        
     }
     vector<ll> ans(n+1,0);
     for(ll i=1;i<=n;i++){
