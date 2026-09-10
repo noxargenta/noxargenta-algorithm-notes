@@ -13,7 +13,7 @@ void solve() {
         for(ll j=0;j<r-l+1;j++){
             cin>>t[j];    
         }
-        for(ll j=0;j<r-l;i++){
+        for(ll j=0;j<r-l;j++){
             ll u=t[j];
             ll v=t[j+1];
             edge[u].push_back(v);
