@@ -10,7 +10,7 @@ void solve() {
         ll l,r;
         cin>>l>>r;
         vector<ll> t(r-l+1);
-        for(ll j=0;j<=r-l+1;j++){
+        for(ll j=0;j<r-l+1;j++){
             cin>>t[j];    
         }
         for(ll j=0;j<r-l;i++){
