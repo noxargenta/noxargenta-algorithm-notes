@@ -1,68 +1,93 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define int long long
+using i64 = long long;
+#define endl '\n'
+#define ll long long
+int kmpCount(const string& string1, const string& string2) {
+    if (string2.empty()) return 0;
+
+    int n = string1.length();
+    int m = string2.length();
+
+    // 1. 构建 next 数组
+    vector<int> nxt(m, 0);
+    int j = 0;
+    for (int i = 1; i < m; ++i) {
+        while (j > 0 && string2[i] != string2[j]) {
+            j = nxt[j - 1];
+        }
+        if (string2[i] == string2[j]) {
+            j++;
+        }
+        nxt[i] = j;
+    }
+
+    // 2. 匹配并计数
+    int count = 0;
+    j = 0;
+    for (int i = 0; i < n; ++i) {
+        while (j > 0 && string1[i] != string2[j]) {
+            j = nxt[j - 1];
+        }
+        if (string1[i] == string2[j]) {
+            j++;
+        }
+
+        // 成功匹配一个完整的模式串
+        if (j == m) {
+            count++;
+            j = nxt[j - 1]; // 允许重叠匹配（例如 "aba" 在 "ababa" 中算 2 次）
+        }
+    }
+
+    return count;
+}
 
 void solve() {
-    int n, m, q;
+    ll n,m,q;
     cin >> n >> m >> q;
-    vector<int>a(n), b(m);
-    vector<int>sa(n, 0), sb(n, 0);
-    for (int i = 0; i < n; i++) {
+    vector<ll> a(n);
+    for(ll i=0;i<n;i++){
         cin >> a[i];
     }
-    for (int i = 0; i < m; i++) {
+    vector<ll> b(m);
+    for(ll i=0;i<m;i++){
         cin >> b[i];
     }
-    for (int i = 1; i < n; i++) {
-        sa[i] = a[i] - a[i - 1];
+    vector<ll> prea;
+    vector<ll> preb;
+    
+    string aa="",bb="";
+    for(ll i=1;i<n;i++){
+        prea.push_back(a[i]-a[i-1]);
+        //aa+=a[i]-a[i-1];
     }
-
-    for (int i = 1; i < m; i++) {
-        sb[i] = b[i] - b[i - 1];
+    for(ll i=1;i<n;i++){
+        preb.push_back(b[i]-b[i-1]);
+        bb+=b[i]-b[i-1]-'0';
     }
-    vector<int>pre(n + 2, 0);
-    int im = n - m + 1;
-    if (m == 1) {
-        for (int i = 1; i <= n; i++) {
-            pre[i] = pre[i - 1] + 1;
+    while(q--){
+        ll l,r;
+        cin >> l >>r;
+        aa="";
+        if(r-l+1<m){
+            cout << 0 <<endl;
+            continue;
         }
-    } else {
-
-        for (int i = 1; i <= im; i++) {
-            bool ok = 1;
-            int x = i;
-            for (int j = 1; j <= m - 1 ; j++) {
-                if (sa[x + j - 1] != sb[j]) {
-                    ok = 0;
-                    break;
-                }
-            }
-            pre[i] = pre[i - 1] + ok;
+        for(ll i=l;i<r;i++){
+            aa+=prea[i]-'0';
         }
-        for (int i = im; i <= n; i++) {
-            pre[i] = pre[i - 1];
-        }
-    }
-    while (q--) {
-        int l, r;
-        cin >> l >> r;
-        int y = r - m + 1;
-        y = min(y, im);
-        if (l > y) {
-            cout << 0 << endl;
-        } else {
-            int ans = pre[y] - pre[l - 1];
-            cout << ans << endl;
-        }
+        cout << kmpCount(aa,bb)<<endl;
     }
 }
 
 signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t = 1;
-    //cin >> t;
-    while (t--) {
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
         solve();
     }
     return 0;
