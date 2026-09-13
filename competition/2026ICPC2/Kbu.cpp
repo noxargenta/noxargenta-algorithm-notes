@@ -52,12 +52,15 @@ ll mex(){
 void solve() {
     cin >> n;
     a.resize(n);
-    small.resize(n);
+    small.assign(n+1,0);
     cnt.clear();
     best.clear();
     for(ll i=0;i<n;i++){
         cin >> a[i];
         cnt[a[i]]++;
+        if(a[i]<=n){
+            small[a[i]]++;
+        }
     }
     ll M=mex();
     for(auto ai : a){
