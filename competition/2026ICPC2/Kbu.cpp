@@ -8,7 +8,27 @@ vector<ll> a;
 unordered_map<ll,ll> cnt;
 unordered_map<ll,ll> best;
 ll calc(ll k){
-    return;
+    ll ans=n;
+    for(ll x=0;x<n;x ++ ){
+        ll y=k-x;
+        ll cntx=0,cnty=0;
+        if(cnt.count(x)){
+            cntx=cnt[x];
+        }
+        if(cnt.count(y)){
+            cnty=cnt[y];
+        }
+        if(cntx+cnty==0){
+            ll cur=x;
+            if(y>0){
+                cur=min(x,y);
+            }
+            ans=min(ans,cur);
+        }else if(cntx + cnty ==1 && x < y && y<n){
+            ans=min(ans,y);
+        }
+    }
+    return ans;
 }
 ll mex(){
     vector<ll> vis(n+1,0);
@@ -40,14 +60,20 @@ void solve() {
             best[k]=calc(k);
         }
     }
+    ll res=0;
     ll q;
     cin >> q;
     while(q--){
         ll k;
         cin >> k;
         ll x=k-M;
-        
+        if(x<0 || !cnt.count(x)){
+            res^=M;
+        }else {
+            res^=best[k];
+        }
     }
+    cout << res << endl;
 }
 
 signed main() {
