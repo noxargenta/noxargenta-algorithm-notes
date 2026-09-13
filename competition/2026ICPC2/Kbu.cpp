@@ -7,6 +7,7 @@ ll n;
 vector<ll> a;
 unordered_map<ll,ll> cnt;
 unordered_map<ll,ll> best;
+vector<ll> small;
 ll calc(ll k){
     ll ans=n;
     for(ll x=0;x<n;x ++ ){
@@ -51,6 +52,7 @@ ll mex(){
 void solve() {
     cin >> n;
     a.resize(n);
+    small.resize(n);
     cnt.clear();
     best.clear();
     for(ll i=0;i<n;i++){
