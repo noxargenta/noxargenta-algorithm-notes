@@ -18,14 +18,14 @@ ll calc(ll k){
         if(cnt.count(y)){
             cnty=cnt[y];
         }
-        if(cntx+cnty==0){
-            ll cur=x;
-            if(y>0){
-                cur=min(x,y);
-            }
-            ans=min(ans,cur);
-        }else if(cntx + cnty ==1 && x < y && y<n){
-            ans=min(ans,y);
+        if(cntx+cnty==0){ 
+            ll cur=x; 
+            if(y>0){ 
+                cur=min(x,y); 
+            } 
+            return cur; 
+        }else if(cntx + cnty ==1 && x < y && y<n){ 
+            return y; 
         }
     }
     return ans;
