@@ -10,22 +10,26 @@ unordered_map<ll,ll> best;
 ll calc(ll k){
     ll ans=n;
     for(ll x=0;x<n;x ++ ){
+        if(x>ans){
+            break;
+        }
         ll y=k-x;
         ll cntx=0,cnty=0;
+        
         if(cnt.count(x)){
             cntx=cnt[x];
         }
         if(cnt.count(y)){
             cnty=cnt[y];
         }
-        if(cntx+cnty==0){ 
-            ll cur=x; 
-            if(y>0){ 
-                cur=min(x,y); 
-            } 
-            return cur; 
-        }else if(cntx + cnty ==1 && x < y && y<n){ 
-            return y; 
+        if(cntx+cnty==0){
+            ll cur=x;
+            if(y>0){
+                cur=min(x,y);
+            }
+            ans=min(ans,cur);
+        }else if(cntx + cnty ==1 && x < y && y<n){
+            ans=min(ans,y);
         }
     }
     return ans;
