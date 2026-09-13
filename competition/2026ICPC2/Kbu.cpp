@@ -23,12 +23,12 @@ ll calc(ll k){
             if(y>0){
                 cur=min(x,y);
             }
-            ans=min(ans,cur);
+            return cur;
         }else if(cntx + cnty ==1 && x < y && y<n){
-            ans=min(ans,y);
+            return y;
         }
     }
-    return ans;
+    return n;
 }
 ll mex(){
     vector<ll> vis(n+1,0);
