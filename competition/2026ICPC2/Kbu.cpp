@@ -7,6 +7,9 @@ ll n;
 vector<ll> a;
 unordered_map<ll,ll> cnt;
 unordered_map<ll,ll> best;
+ll calc(ll k){
+    return;
+}
 ll mex(){
     vector<ll> vis(n+1,0);
     for(auto x : a){
@@ -33,9 +36,17 @@ void solve() {
     ll M=mex();
     for(auto ai : a){
         ll k=M+ai;
-        if(best[ai]==0){
-            
+        if(!best.count(k)){
+            best[k]=calc(k);
         }
+    }
+    ll q;
+    cin >> q;
+    while(q--){
+        ll k;
+        cin >> k;
+        ll x=k-M;
+        
     }
 }
 
