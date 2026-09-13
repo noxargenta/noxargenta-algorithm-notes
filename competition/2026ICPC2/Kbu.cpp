@@ -7,7 +7,7 @@ ll n;
 vector<ll> a;
 unordered_map<ll,ll> cnt;
 unordered_map<ll,ll> best;
-vector<pair<ll,ll>> f;
+//vector<pair<ll,ll>> f;
 vector<ll> small;
 ll calc(ll k){
     ll ans=n;
@@ -63,16 +63,16 @@ void solve() {
             small[a[i]]++;
         }
     }
-    f.clear();
-    sort(a.begin(),a.end());
+    // f.clear();
+    // sort(a.begin(),a.end());
 
-    for(ll i=0;i<n;i++){
-        if(i==0 || a[i]!=a[i-1]){
-            f.push_back({a[i],1});
-        }else{
-            f.back().second++;
-        }
-    }
+    // for(ll i=0;i<n;i++){
+    //     if(i==0 || a[i]!=a[i-1]){
+    //         f.push_back({a[i],1});
+    //     }else{
+    //         f.back().second++;
+    //     }
+    // }
     ll M=mex();
     for(auto ai : a){
         ll k=M+ai;
