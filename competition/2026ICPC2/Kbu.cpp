@@ -6,6 +6,7 @@ using i64 = long long;
 ll n;
 vector<ll> a;
 unordered_map<ll,ll> cnt;
+unordered_map<ll,ll> best;
 ll mex(){
     vector<ll> vis(n+1,0);
     for(auto x : a){
@@ -24,15 +25,17 @@ void solve() {
     cin >> n;
     a.resize(n);
     cnt.clear();
-
+    best.clear();
     for(ll i=0;i<n;i++){
         cin >> a[i];
         cnt[a[i]]++;
     }
     ll M=mex();
     for(auto ai : a){
-        ll j=M+ai;
-        if()
+        ll k=M+ai;
+        if(best[ai]==0){
+            
+        }
     }
 }
 
