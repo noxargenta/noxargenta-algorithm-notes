@@ -2,7 +2,7 @@
 using namespace std;
 #define ll long long
 void solve(){
-    cout << "Ciallo~" <<endl;
+    
 }
 signed main(){
     ios::sync_with_stdio(false);
