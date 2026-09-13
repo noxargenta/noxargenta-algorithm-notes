@@ -3,8 +3,22 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
-void solve() {
+ll n;
+vector<ll> a;
+map<ll,ll> cnt;
+ll mex(){
     
+}
+void solve() {
+    cin >> n;
+    a.resize(n);
+    cnt.clear();
+
+    for(ll i=0;i<n;i++){
+        cin >> a[i];
+        cnt[a[i]]++;
+    }
+    ll M=mex();
 }
 
 signed main() {
