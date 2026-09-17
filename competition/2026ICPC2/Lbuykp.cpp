@@ -26,8 +26,8 @@ void solve() {
     ll ans=LLONG_MAX;
     for(ll i=1;i<=n-1;i++){
         ll rig=prea[i];
-        ll lrf=preb[i];
-        
+        ll lef=preb[i];
+        ans=min(rig+(n-i)*)
     }
 }
 
