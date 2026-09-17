@@ -21,7 +21,7 @@ void solve() {
             preb[i]=a[i];
             b[i]=a[i];
         }else {
-            preb[i]=a[n+2-i]+preb[i];
+            preb[i]=a[n+2-i]+preb[i-1];
             b[i]=a[n+2-i];
         }
     }   
