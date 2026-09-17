@@ -12,6 +12,10 @@ void solve() {
         cin >> a[i];
         prea[i]=a[i]+prea[i-1];
     }
+    if(n==1){
+        cout << a[1] << endl;
+        return;
+    }
     for(ll i=1;i<=n;i++){
         if(i==1){
             preb[i]=a[i];
