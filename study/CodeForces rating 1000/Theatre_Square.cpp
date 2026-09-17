@@ -6,7 +6,9 @@ using i64 = long long;
 void solve() {
     ll n,m,a;
     cin >> n >> m >> a;
-    
+    ll nn=(n+a-1)/a;
+    ll mm=(m+a-1)/a;
+    cout << nn *mm <<endl;
 }
 
 signed main() {
