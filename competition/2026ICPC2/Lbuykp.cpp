@@ -23,8 +23,11 @@ void solve() {
             preb[i]=a[n+2-i]+preb[i];
         }
     }   
+    ll ans=LLONG_MAX;
     for(ll i=1;i<=n-1;i++){
-        ll rig=
+        ll rig=prea[i];
+        ll lrf=preb[i];
+        
     }
 }
 
