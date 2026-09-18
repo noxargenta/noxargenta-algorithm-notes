@@ -6,7 +6,7 @@ using i64 = long long;
 void solve() {
        ll a,b,c;
        cin >> a >> b >> c;
-       cout << max(a+b*c,max(a*(b+c),max(a*b*c,(a+b)*c)));
+       cout << max(a+b*c,max(a*(b+c),max(a*b*c,(a+b)*c))) <<endl;
 }
 
 signed main() {
