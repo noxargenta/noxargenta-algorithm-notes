@@ -1,0 +1,1 @@
+{"name":"Local: n","url":"c:\\code\\c++lan\\competition\\2026CCPCNET\\n.cpp","tests":[{"id":1789794599120,"input":"5\n100 50 00:00\n100 10 03:59\n100 10 04:00\n100 20 02:00\n10000 0 05:00","output":"YES\nNO\nYES\nYES\nYES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\2026CCPCNET\\n.cpp","group":"local","local":true}
