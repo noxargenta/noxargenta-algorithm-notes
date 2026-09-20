@@ -21,7 +21,7 @@ void solve() {
     ll l=1;
     r++;
     l++;
-    for(;r<n;r++){
+    for(;r<=n;r++){
         l=r-k+1;
         ll last=sum;
         sum+=a[r];
