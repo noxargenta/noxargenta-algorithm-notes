@@ -22,7 +22,22 @@ void solve() {
     ans+=val/4;
     val%=4;
     cnt[2]=val;
-    
+    ll now=0;
+    for(ll i=1;i<=3;i++){
+        if(cnt[i]==0){
+            continue;
+        }
+        if(now+i>4 && cnt[i]>0){
+            ans++;
+            now=i;
+            cnt[i]--;
+        }
+        if(i==1){
+            now+=cnt[i]*i;
+        }
+        
+    }
+    cout <<ans <<endl;
 }
 
 signed main() {
