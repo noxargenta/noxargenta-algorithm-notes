@@ -12,8 +12,10 @@ void solve() {
         cin >> x;
         cnt[x]++;
     }
+    ll ans=0;
     for(ll i=1;i<=4;i++){
-        
+        ans+=cnt[i]/4;
+        cnt[i]%=4;
     }
 }
 
