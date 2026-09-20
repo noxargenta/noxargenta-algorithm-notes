@@ -12,32 +12,12 @@ void solve() {
         cin >> x;
         cnt[x]++;
     }
-    ll ans=0;
-    ans+=cnt[4];
-    ll val=cnt[1]*1;
-    ans+=val/4;
-    val%=4;
-    cnt[1]=val;
-    val=cnt[2]*2;
-    ans+=val/4;
-    val%=4;
-    cnt[2]=val;
-    ll now=0;
-    for(ll i=1;i<=3;i++){
-        if(cnt[i]==0){
-            continue;
-        }
-        if(now+i>4 && cnt[i]>0){
-            ans++;
-            now=i;
-            cnt[i]--;
-        }
-        if(i==1){
-            now+=cnt[i]*i;
-        }
-        
-    }
-    cout <<ans <<endl;
+    
+    ll x=min(cnt[1],cnt[3]);
+    cnt[4]+=x;
+    cnt[3]-=x;
+    cnt[1]-=x;
+    cout << cnt[4] + cnt[3] + (cnt[1]*1 + cnt[2] * 2 + (4-1))/4 <<endl;
 }
 
 signed main() {
