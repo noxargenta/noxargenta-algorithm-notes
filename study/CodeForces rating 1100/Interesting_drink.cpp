@@ -16,17 +16,9 @@ void solve() {
     while(q--){
         ll x;
         cin >> x;
-        ll idx=lower_bound(a.begin(),a.end(),x)-a.begin();
-        if(idx==0){
-            if(a[0]<=x){
-                cout << 1 <<endl;
-                continue;
-            }else {
-                cout << 0 << endl;
-                continue;
-            }
-        }   
-        cout << idx + 1 <<endl;
+        ll idx=upper_bound(a.begin(),a.end(),x)-a.begin();
+        
+        cout << idx<<endl;
     }
 }
 
