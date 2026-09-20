@@ -16,6 +16,7 @@ void solve() {
     while(q--){
         ll x;
         cin >> x;
+        ll idx=lower_bound(a.begin(),a.end(),x  )-a.begin();
         
     }
 }
