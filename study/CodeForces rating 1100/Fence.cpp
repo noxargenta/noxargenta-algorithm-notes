@@ -16,16 +16,19 @@ void solve() {
             sum+=a[i];
         }
     }   
-    ll ans=sum;
+    ll ans=1;
     ll r=k;
     ll l=1;
     r++;
     l++;
     for(;r<n;r++){
         l=r-k+1;
+        ll last=sum;
         sum+=a[r];
         sum-=a[l-1];
-        ans=min(ans,sum);
+        if(sum<last){
+            ans=l;
+        }
     }
     cout <<ans <<endl;
 }
