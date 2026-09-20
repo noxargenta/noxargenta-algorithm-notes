@@ -14,9 +14,22 @@ void solve() {
     }
     ll ans=0;
     for(ll i=1;i<=4;i++){
-        ans+=cnt[i]/4;
-        cnt[i]%=4;
+        ll val=cnt[i]*i;
+        ans+=val/4;
+        val%=4;
+        cnt[i]=val;
     }
+    ll val=min(cnt[1],cnt[3]);
+    ans+=val;
+    cnt[1]-=val;
+    cnt[3]-=val;
+    if(cnt[1]!=0){
+        ans++;
+    }
+    if(cnt[3]!=0){
+        ans++;
+    }
+    cout << ans <<endl;
 }
 
 signed main() {
