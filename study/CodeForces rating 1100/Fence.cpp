@@ -12,13 +12,13 @@ void solve() {
         cin >>a[i];
     
     
-        if(i<k){
+        if(i<=k){
             sum+=a[i];
         }
     }   
     ll ans=sum;
-    ll r=k-1;
-    ll l=0;
+    ll r=k;
+    ll l=1;
     r++;
     l++;
     for(;r<n;r++){
