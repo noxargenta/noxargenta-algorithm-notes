@@ -17,16 +17,17 @@ void solve() {
         }
     }   
     ll ans=1;
+    ll mn=sum;
     ll r=k;
     ll l=1;
     r++;
     l++;
     for(;r<=n;r++){
         l=r-k+1;
-        ll last=sum;
         sum+=a[r];
         sum-=a[l-1];
-        if(sum<last){
+        if(sum<mn){
+            mn=sum;
             ans=l;
         }
     }
