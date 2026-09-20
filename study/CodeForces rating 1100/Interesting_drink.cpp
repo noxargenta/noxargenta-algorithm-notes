@@ -17,7 +17,6 @@ void solve() {
         ll x;
         cin >> x;
         ll idx=upper_bound(a.begin(),a.end(),x)-a.begin();
-        
         cout << idx<<endl;
     }
 }
