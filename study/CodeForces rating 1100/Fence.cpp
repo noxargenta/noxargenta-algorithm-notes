@@ -16,8 +16,18 @@ void solve() {
             sum+=a[i];
         }
     }   
-    
-    
+    ll ans=sum;
+    ll r=k-1;
+    ll l=0;
+    r++;
+    l++;
+    for(;r<n;r++){
+        l=r-k+1;
+        sum+=a[r];
+        sum-=a[l-1];
+        ans=min(ans,sum);
+    }
+    cout <<ans <<endl;
 }
 
 signed main() {
