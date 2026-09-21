@@ -6,12 +6,13 @@ using i64 = long long;
 void solve() {
     string s;
     cin >> s;
-    ll n=s.length();
+    s=" "+s;
+    ll n=s.length()-1;
     vector<ll> a(n+10,0);
     vector<ll> pre(n+10,0);
-    for(ll i=0;i<n-1;i++){
+    for(ll i=1;i<n;i++){
         if(s[i]==s[i+1]){
-            a[i+1]++;
+            a[i]++;
         }
     }
     for(ll i=1;i<n;i++){
