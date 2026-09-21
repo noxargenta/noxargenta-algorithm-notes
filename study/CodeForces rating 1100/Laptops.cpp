@@ -6,16 +6,16 @@ using i64 = long long;
 void solve() {
     ll n;
     cin >> n;
-    vector<pair<ll,ll>> a(n+1,0);
+    vector<pair<ll,ll>> a(n+1,{0,0});
     for(ll i=1;i<=n;i++){
         cin >> a[i].first;
     }
-    for(ll i=1;i<n;i++){
+    for(ll i=1;i<=n;i++){
         cin >> a[i].second;
 
     }
     sort(a.begin()+1,a.end(),[&](pair<ll,ll> x ,pair<ll,ll> y){
-        x.first<y.first;
+        return x.first<y.first;
     });
     ll maxx=0;
     for(ll i=1;i<n;i++){
