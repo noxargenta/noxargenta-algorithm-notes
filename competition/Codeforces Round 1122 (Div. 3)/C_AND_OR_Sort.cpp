@@ -22,6 +22,7 @@ void solve() {
     cin >> s;
     if(check(s)){
         cout << 0 <<endl;
+        return;
     }
     if(s[0]=='1'){
         ll ans=0;
@@ -33,16 +34,16 @@ void solve() {
         cout << ans <<endl;
         return;
     }
-    if(s[n-1]=='0'){
-        ll ans=0;
-        for(ll i=0;i<n;i++){
-            if(s[i]=='1'){
-                ans++;
-            }
-        }
-        cout << ans <<endl;
-        return;
-    }
+    // if(s[n-1]=='0'){
+    //     ll ans=0;
+    //     for(ll i=0;i<n;i++){
+    //         if(s[i]=='1'){
+    //             ans++;
+    //         }
+    //     }
+    //     cout << ans <<endl;
+    //     return;
+    // }
     vector<ll> pre1(n+2,0);
     vector<ll> pre0(n+2,0);
     for(ll i=0;i<n;i++){
