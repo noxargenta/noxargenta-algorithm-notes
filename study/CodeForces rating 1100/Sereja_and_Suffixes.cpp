@@ -4,7 +4,7 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 ll n,m;
-ll dp[(ll)1e5];
+vector<ll> dp(1e5,0);
 map<ll,bool> mp;
 void solve() {
     cin >> n >> m;
@@ -15,7 +15,9 @@ void solve() {
     for(ll i=n;i>=1;i--){
         if(!mp[a[i]]){
             mp[a[i]]=1;
-            dp[i]=
+            dp[i]=dp[i+1]+1;
+        }else {
+            dp[i]=dp[]
         }
     }
     ll q;
