@@ -8,12 +8,9 @@ void solve() {
     cin >> n;
     vector<pair<ll,ll>> a(n+1,{0,0});
     for(ll i=1;i<=n;i++){
-        cin >> a[i].first;
+        cin >> a[i].first >> a[i].second;
     }
-    for(ll i=1;i<=n;i++){
-        cin >> a[i].second;
-
-    }
+    
     sort(a.begin()+1,a.end(),[&](pair<ll,ll> x ,pair<ll,ll> y){
         return x.first<y.first;
     });
