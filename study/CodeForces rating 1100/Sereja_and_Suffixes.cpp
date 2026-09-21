@@ -5,6 +5,7 @@ using i64 = long long;
 #define ll long long
 ll n,m;
 ll dp[(ll)1e5];
+map<ll,bool> mp;
 void solve() {
     cin >> n >> m;
     vector<ll> a(n+1);
@@ -12,7 +13,7 @@ void solve() {
         cin >> a[i];
     }
     for(ll i=n;i>=1;i--){
-        
+        if(!mp[a[i]])
     }
     ll q;
     cin >> q;
