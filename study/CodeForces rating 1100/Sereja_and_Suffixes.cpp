@@ -13,7 +13,10 @@ void solve() {
         cin >> a[i];
     }
     for(ll i=n;i>=1;i--){
-        if(!mp[a[i]])
+        if(!mp[a[i]]){
+            mp[a[i]]=1;
+            dp[i]=
+        }
     }
     ll q;
     cin >> q;
