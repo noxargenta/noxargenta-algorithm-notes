@@ -6,8 +6,10 @@ using i64 = long long;
 void solve() {
     for(ll i=1;i<=100000;i++){
         double j=((i-3+1)*180*1.0/i);
-        if(floor(j)==j);
-        cout << j <<endl;
+        if(abs(j-round(j))<1e-9){
+            cout << j << ",";
+        }
+        
     }
 }
 
