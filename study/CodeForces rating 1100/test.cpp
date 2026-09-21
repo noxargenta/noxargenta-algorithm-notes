@@ -9,7 +9,7 @@ int main()
 	for(int x=n;x>0;x--){//从后向前枚举 
 		if(!k[a[x]])s[x]=s[x+1]+1;//优化
 		else s[x]=s[x+1];
-		k[a[x]]=1;
+		
 	}
 	for(int x=1;x<=m;x++)cin>>l,cout<<s[l]<<endl;
 	return 0;
