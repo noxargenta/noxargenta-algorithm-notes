@@ -43,7 +43,27 @@ void solve() {
         cout << ans <<endl;
         return;
     }
-
+    vector<ll> pre1(n+2,0);
+    vector<ll> pre0(n+2,0);
+    for(ll i=0;i<n;i++){
+        if(s[i]=='1'){
+            pre1[i+1]=pre1[i] + 1;
+        }else {
+            pre1[i+1]=pre1[i];
+        }
+    }
+    for(ll i=n-1;i>=0;i--){
+        if(s[i]=='0'){
+            pre0[i+1]=pre0[i+2]+1;
+        }else {
+            pre0[i+1]=pre0[i+2];
+        }
+    }
+    ll ans=LLONG_MAX;
+    for(ll i=0;i<n;i++){
+        ans=min(ans,min(pre1[i+1],pre0[i+1]));
+    }
+    cout << ans <<endl;
 }
 
 signed main() {
