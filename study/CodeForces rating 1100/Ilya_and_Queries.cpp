@@ -15,7 +15,7 @@ void solve() {
             a[i]++;
         }
     }
-    for(ll i=1;i<n;i++){
+    for(ll i=1;i<=n;i++){
         pre[i]=pre[i-1]+a[i];
     }
     ll q;
