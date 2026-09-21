@@ -15,9 +15,9 @@ void solve() {
         cin >> a[i];
         
     }
-    dfs(ll x,ll y)->void{
-        for()
-    }
+    void dfs[&](ll x,ll y){
+
+    };
 }
 
 signed main() {
