@@ -61,8 +61,7 @@ void solve() {
         }
     }
     ll ans=pre1[n];
-    ll fir=s.find('1');
-    for(ll i=fir;i<n;i++){
+    for(ll i=1;i<=n;i++){
         ans=min(ans,pre1[i] + pre0[i+1]);
     }
     cout << ans <<endl;
