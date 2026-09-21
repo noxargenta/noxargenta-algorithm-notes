@@ -7,7 +7,7 @@ void solve() {
     ll n;
     cin >> n;
     for(ll i=1;i<=n;i++){
-        string s (i,'*');
+        string s(i,'*');
         cout << s <<endl;
     }
 }
