@@ -15,18 +15,18 @@ void solve() {
         cin >> a[i];
         
     }
-    auto dfs=[&](ll x,ll y){
+    function<void(ll,ll)> dfs=[&](ll x,ll y){
         for(ll i=0;i<4;i++){
             ll x2=dx[i];
             ll y2=dy[i];
             if(x2>=0 && x2 <n && y2>=0 && y2 <m){
                 if(!vis[x2][y2] && a[x2][y2]=='*'){
                     cout << dd[i];
-                    self()
+                    vis[x2][y2]=1;
+                    dfs(x2,y2);
                 }
             }
         }
-
     };
 }
 
