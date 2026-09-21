@@ -3,11 +3,26 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
+ll a[]={60,
+90,
+108,
+120,
+135,
+140,
+144,
+150,
+156};
 void solve() {
-    for(ll i=1;i<=100000;i++){
-        if(fabs((double)((i-3+1)*180*1.0/i)-(i-3+1)*180*1.0/i) < 0.1)
-        cout << (double)((i-3+1)*180*1.0/i) <<endl;
+    ll n;
+    cin >> n;
+    for(auto x :a){
+        if(x==n){
+            cout << "YES\n";
+            return;
+        }
+
     }
+    cout << "NO\n";
 }
 
 signed main() {
@@ -15,7 +30,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
