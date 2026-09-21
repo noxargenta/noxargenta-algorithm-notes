@@ -61,8 +61,9 @@ void solve() {
         }
     }
     ll ans=LLONG_MAX;
-    for(ll i=0;i<n;i++){
-        ans=min(ans,min(pre1[i+1],pre0[i+1]));
+    ll fir=s.find('1');
+    for(ll i=fir;i<n;i++){
+        ans=min(ans,pre1[i] + pre0[i+1]);
     }
     cout << ans <<endl;
 }
