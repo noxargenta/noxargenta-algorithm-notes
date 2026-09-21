@@ -62,7 +62,7 @@ void solve() {
     }
     ll ans=pre1[n];
     for(ll i=1;i<=n;i++){
-        ans=min(ans,pre1[i] + pre0[i+1]);
+        ans=min(ans,pre1[i] + pre0[i]);
     }
     cout << ans <<endl;
 }
