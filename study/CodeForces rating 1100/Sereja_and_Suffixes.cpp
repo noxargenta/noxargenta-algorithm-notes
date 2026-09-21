@@ -17,7 +17,7 @@ void solve() {
             mp[a[i]]=1;
             dp[i]=dp[i+1]+1;
         }else {
-            dp[i]=dp[]
+            dp[i]=dp[i+1];
         }
     }
     ll q;
