@@ -4,17 +4,17 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 ll n,m;
-vector<ll> dp(1e5,0);
-map<ll,bool> mp;
 void solve() {
     cin >> n >> m;
     vector<ll> a(n+1);
+    vector<ll> dp(n + 2, 0);
+    vector<bool> vis(100005, false);
     for(ll i=1;i<=n;i++){
         cin >> a[i];
     }
     for(ll i=n;i>=1;i--){
-        if(!mp[a[i]]){
-            mp[a[i]]=1;
+        if(!vis[a[i]]){
+            vis[a[i]]=1;
             dp[i]=dp[i+1]+1;
         }else {
             dp[i]=dp[i+1];
