@@ -28,23 +28,27 @@ void solve() {
             break;
         }
     }
-
     string ans;
-    function<void(ll,ll)> dfs=[&](ll x,ll y){
+    function<void(ll,ll,ll)> dfs=[&](ll x,ll y,ll length){
         for(ll i=0;i<4;i++){
             ll x2=x+dx[i];
             ll y2=y+dy[i];
+            
             if(x2>=0 && x2 <n && y2>=0 && y2 <m){
-
+                if (a[x2][y2] == 'S' && length > 2) {
+                    cout << dd[i] << endl; // 打印最后一步并换行
+                    exit(0); // 直接结束程序
+                }
                 if(!vis[x2][y2] && a[x2][y2]=='*'){
+
                     cout << dd[i];
                     vis[x2][y2]=1;
-                    dfs(x2,y2);
+                    dfs(x2,y2,length+1);
                 }
             }
         }
     };
-    dfs(xxx,yyy);
+    dfs(xxx,yyy,0);
     
 }
 
