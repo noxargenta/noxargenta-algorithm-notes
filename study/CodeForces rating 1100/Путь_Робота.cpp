@@ -5,6 +5,7 @@ using i64 = long long;
 #define ll long long
 ll dx[]={1,0,-1,0};
 ll dy[]={0,-1,0,1};
+
 void solve() {
     ll n,m;
     cin >> n >> m;
@@ -14,7 +15,9 @@ void solve() {
         cin >> a[i];
         
     }
-    
+    dfs(ll x,ll y)->void{
+        for()
+    }
 }
 
 signed main() {
