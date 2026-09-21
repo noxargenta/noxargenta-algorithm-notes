@@ -20,12 +20,11 @@ void solve() {
             dp[i]=dp[i+1];
         }
     }
-    ll q;
-    cin >> q;
-    while(q--){
+
+    while(m--){
         ll x;
         cin >> x;
-
+        cout << dp[x] << endl;
     }
 }
 
