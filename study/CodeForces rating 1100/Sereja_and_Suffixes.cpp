@@ -3,8 +3,19 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
+ll n,m;
+
 void solve() {
-    
+    cin >> n >> m;
+    vector<ll> a(n+1);
+    for(ll i=1;i<=n;i++){
+        cin >> a[i];
+    }
+    ll q;
+    cin >> q;
+    while(q--){
+        
+    }
 }
 
 signed main() {
