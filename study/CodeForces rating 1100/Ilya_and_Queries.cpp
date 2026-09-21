@@ -23,7 +23,7 @@ void solve() {
     while(q--){
         ll l,r;
         cin >> l >> r;
-        cout << pre[r]-pre[l-1] <<endl;
+        cout << pre[r-1]-pre[l-1] <<endl;
     }
 }
 
