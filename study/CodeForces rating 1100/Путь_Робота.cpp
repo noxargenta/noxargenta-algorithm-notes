@@ -28,14 +28,14 @@ void solve() {
             break;
         }
     }
+
+    string ans;
     function<void(ll,ll)> dfs=[&](ll x,ll y){
         for(ll i=0;i<4;i++){
             ll x2=x+dx[i];
             ll y2=y+dy[i];
             if(x2>=0 && x2 <n && y2>=0 && y2 <m){
-                if(x2==xxx && y2==yyy){
-                    return;
-                }
+
                 if(!vis[x2][y2] && a[x2][y2]=='*'){
                     cout << dd[i];
                     vis[x2][y2]=1;
@@ -45,6 +45,7 @@ void solve() {
         }
     };
     dfs(xxx,yyy);
+    
 }
 
 signed main() {
