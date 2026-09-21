@@ -18,7 +18,7 @@ void solve() {
         return x.first<y.first;
     });
     ll maxx=0;
-    for(ll i=1;i<n;i++){
+    for(ll i=1;i<=n;i++){
         maxx=max(maxx,a[i].second);
         if(a[i].second<maxx){
             cout  << "Happy Alex\n";
