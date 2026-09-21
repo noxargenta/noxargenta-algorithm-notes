@@ -6,8 +6,9 @@ using i64 = long long;
 void solve() {
     ll a,b,c;
     cin >> a >> b >> c;
+    ll val=abs(a-(b+c));
+    ll val2=abs((a+c)-b);
     if(a<b){
-        ll val=abs(a+c-b);
         ll val2=abs(a-b);
         cout << max(val,val2) <<endl;
     }else {
