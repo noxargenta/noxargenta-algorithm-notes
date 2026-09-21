@@ -4,17 +4,22 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 ll n,m;
-
+ll dp[(ll)1e5];
 void solve() {
     cin >> n >> m;
     vector<ll> a(n+1);
     for(ll i=1;i<=n;i++){
         cin >> a[i];
     }
+    for(ll i=n;i>=1;i--){
+        
+    }
     ll q;
     cin >> q;
     while(q--){
-        
+        ll x;
+        cin >> x;
+
     }
 }
 
