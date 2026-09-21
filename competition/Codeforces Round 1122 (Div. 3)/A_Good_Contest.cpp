@@ -6,11 +6,13 @@ using i64 = long long;
 void solve() {
     ll n;
     cin >> n;
-    vector<ll> a(n+1,0);
-    for(ll i=1;i<=n;i++){
+    vector<ll> a(4,0);
+    ll minn=LLONG_MAX;
+    for(ll i=1;i<=3;i++){
         cin >> a[i];
+        minn=min(minn,a[i]);
     }
-    
+    cout << n-minn <<endl;
 }
 
 signed main() {
