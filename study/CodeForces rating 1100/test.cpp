@@ -1,26 +1,16 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-using i64 = long long;
-#define endl '\n'
-#define ll long long
-void solve() {
-    for(ll i=1;i<=100000;i++){
-        double j=((i-3+1)*180*1.0/i);
-        if(abs(j-round(j))<1e-9){
-            cout << j << ",";
-        }
-        
-    }
-}
-
-signed main() {
-//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    int _ = 1;
-    // cin >> _;
-    while(_--) {
-        solve();
-    }
-    return 0;
+map <int,bool> k;
+int n,m,a[100100],s[100100],l;
+int main()
+{
+	cin>>n>>m;
+	for(int x=1;x<=n;x++)cin>>a[x];
+	for(int x=n;x>0;x--){//从后向前枚举 
+		if(!k[a[x]])s[x]=s[x+1]+1;//优化
+		else s[x]=s[x+1];
+		k[a[x]]=1;
+	}
+	for(int x=1;x<=m;x++)cin>>l,cout<<s[l]<<endl;
+	return 0;
 }
