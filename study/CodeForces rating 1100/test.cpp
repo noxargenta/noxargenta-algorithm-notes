@@ -5,8 +5,9 @@ using i64 = long long;
 #define ll long long
 void solve() {
     for(ll i=1;i<=100000;i++){
-        if((double)((i-3+1)*180*1.0/i)-(i-3+1)*180*1.0/i < 0.1);
-        cout << (double)((i-3+1)*180*1.0/i) <<endl;
+        double j=((i-3+1)*180*1.0/i);
+        if(floor(j)==j);
+        cout << j <<endl;
     }
 }
 
