@@ -14,7 +14,9 @@ void solve() {
     cin >> val;
     for(ll i=0;i<m;i++){
         ll now=val^a[i];
+        ll num=_builtin_popcount(now);
     }
+    
     
 }
 
