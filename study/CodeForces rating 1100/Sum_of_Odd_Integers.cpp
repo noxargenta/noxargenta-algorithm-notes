@@ -8,7 +8,7 @@ void solve() {
     cin >> n >> m;
     ll nn=n%2;
     ll mm=m%2;
-    if(n==m && n>=m*m){
+    if(nn==mm && n>=m*m){
         cout << "YES\n";
     }else {
         cout << "NO\n";
