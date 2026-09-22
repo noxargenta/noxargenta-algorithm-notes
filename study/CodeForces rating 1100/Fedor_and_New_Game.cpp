@@ -11,12 +11,17 @@ void solve() {
         cin  >> a[i];
     }
     ll val=0;
+    ll ans=0;
     cin >> val;
     for(ll i=0;i<m;i++){
         ll now=val^a[i];
-        ll num=_builtin_popcount(now);
+        ll num=__builtin_popcount(now);
+        if(num<=k){
+            ans++;
+        }
     }
-    
+    cout << ans << endl;
+
     
 }
 
