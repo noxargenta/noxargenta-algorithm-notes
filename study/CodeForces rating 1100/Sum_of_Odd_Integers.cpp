@@ -6,9 +6,9 @@ using i64 = long long;
 void solve() {
     ll n,m;
     cin >> n >> m;
-    n%=2;
-    m%=2;
-    if(n==m){
+    ll nn=n%2;
+    ll mm=m%2;
+    if(n==m && n>=m*m){
         cout << "YES\n";
     }else {
         cout << "NO\n";
