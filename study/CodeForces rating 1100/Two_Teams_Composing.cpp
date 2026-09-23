@@ -10,19 +10,31 @@ void solve() {
     set<ll> st;
     ll maxx=0;
     ll ans;
+    ll cnt=0;
     if(n<=1){
         cout << 0 <<endl;
         return;
     }
+    vector<ll> a(n);
     for(ll i=0;i<n;i++){
-        ll x;
-        cin >> x;
-        if(!mp.count(x)){
-            maxx++;
-        }
-        st.insert(x);
-
+        cin >> a[i];
     }
+    sort(a.begin(),a.end());
+    ll cur=0;
+    ll now;
+    for(ll i=0;i<n;i++){
+        if(!mp[a[i]]){
+            now=a[i];
+            ll cur=0;
+            mp[a[i]]++;
+            st.insert(a[i]);
+        }
+        if(now==a[i]){
+            cur++;
+        }
+        maxx=max(maxx,cur);
+    }
+    cout << max(min((ll)st.size()-maxx,maxx),min((ll)st.size()-maxx+1,maxx-1));
 }
 
 signed main() {
