@@ -5,37 +5,21 @@ using i64 = long long;
 #define ll long long
 void solve() {
     ll n;
-    cin >> n;
-    map<ll,ll> mp;
-    set<ll> st;
-    ll maxx=0;
-    ll ans;
-    ll cnt=0;
-    if(n<=1){
-        cout << 0 <<endl;
-        return;
-    }
+    cin  >> n;
     vector<ll> a(n);
+    map<ll,ll> mp;
+    ll mx=0;
     for(ll i=0;i<n;i++){
         cin >> a[i];
+        mp[a[i]]++;
+        mx=max(mx,mp[a[i]]);
     }
-    sort(a.begin(),a.end());
-    ll cur=0;
-    ll now;
-    for(ll i=0;i<n;i++){
-        if(!mp[a[i]]){
-            now=a[i];
-            ll cur=0;
-            mp[a[i]]++;
-            st.insert(a[i]);
-        }
-        if(now==a[i]){
-            cur++;
-        }
-        maxx=max(maxx,cur);
-    }
-    cout << max(min((ll)st.size()-1,maxx),min((ll)st.size()-1+1,maxx-1));
+    ll size=mp.size();
+    ll ans;
+
+
 }
+
 
 signed main() {
 //  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
