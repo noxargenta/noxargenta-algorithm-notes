@@ -32,7 +32,12 @@ void solve() {
             sum++;
         }
     }
-    
+    if(sum){
+        cout << "YES\n";
+        return;
+    }else {
+        cout << ""
+    }
     
 }
 
