@@ -18,7 +18,7 @@ void solve() {
         ll x;
         cin >> x;
         if(!mp.count(x)){
-            
+            maxx++;
         }
         st.insert(x);
 
