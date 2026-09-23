@@ -34,7 +34,7 @@ void solve() {
         }
         maxx=max(maxx,cur);
     }
-    cout << max(min((ll)st.size()-maxx,maxx),min((ll)st.size()-maxx+1,maxx-1));
+    cout << max(min((ll)st.size()-1,maxx),min((ll)st.size()-1+1,maxx-1));
 }
 
 signed main() {
