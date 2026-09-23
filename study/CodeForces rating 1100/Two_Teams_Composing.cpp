@@ -16,7 +16,11 @@ void solve() {
     }
     ll size=mp.size();
     ll ans;
-    
+    if(size==mx){
+        cout << mx-1 <<endl;
+    }else {
+        cout << min(size,mx) <<endl;
+    }
 
 }
 
