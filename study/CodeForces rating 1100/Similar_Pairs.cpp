@@ -23,8 +23,15 @@ void solve() {
     }
     if(ji % 2==0 && ou%2==0){
         cout << "YES\n";
+        return;
     }
-
+    sort(a.begin(),a.end());
+    ll sum=0;
+    for(ll i=1;i<n;i++){
+        if(a[i]==a[i-1]+1){
+            
+        }
+    }
     
 }
 
