@@ -29,9 +29,10 @@ void solve() {
     ll sum=0;
     for(ll i=1;i<n;i++){
         if(a[i]==a[i-1]+1){
-            
+            sum++;
         }
     }
+    
     
 }
 
