@@ -23,13 +23,13 @@ void solve() {
                 mp[25]--;
             }
         }else{
-            if(mp[25]>=3){
-                mp[25]-=3;
-                mp[100]++;
-            }else if(mp[25]>=1 && mp[50]>=1){
+            if(mp[25]>=1 && mp[50]>=1){
                 mp[100]++;
                 mp[25]--;
                 mp[50]--;
+            }else if(mp[25]>=3){
+                mp[25]-=3;
+                mp[100]++;
             }else {
                 cout << "NO\n";
                 return;
