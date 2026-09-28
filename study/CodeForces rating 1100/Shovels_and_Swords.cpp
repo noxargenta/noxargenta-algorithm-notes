@@ -6,7 +6,7 @@ using i64 = long long;
 void solve() {
     ll n, m;
     cin >>n >>m;
-    
+    cout <<min(min(n,m),(n+m)/3)<<endl;
 }
 
 signed main() {
