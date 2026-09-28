@@ -5,6 +5,8 @@ using i64 = long long;
 #define ll long long
 void solve() {
     ll n;
+    cin >> n;
+    
     map<ll,ll> mp;
     while(n--){
         ll x;
