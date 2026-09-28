@@ -19,7 +19,7 @@ void solve() {
                 cout << "NO\n";
                 return;
             }else {
-                mp[x++];
+                mp[x]++;
                 mp[25]--;
             }
         }else{
