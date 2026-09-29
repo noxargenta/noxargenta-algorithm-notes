@@ -8,6 +8,7 @@ void solve() {
     cin >> a >> b >> x >> y >> n;
     if(a>b){
         swap(a,b);
+        swap(x,y);
     }
     ll val=min(n,a-x);
     n-=val;
@@ -19,8 +20,8 @@ void solve() {
     val=min(n,b-y);
     n-=val;
     b-=val;
-    cout <<  "a:" <<a <<endl;
-    cout << "b:" << b << endl;
+    // cout <<  "a:" <<a <<endl;
+    // cout << "b:" << b << endl;
     cout << a*b <<endl;
 }
 
