@@ -11,8 +11,16 @@ void solve() {
         cout << x *y <<endl;
     }else {
         while(n!=0){
-            ll val=min(n,min(a,b));
+            ll val1=max(a-x,b-y);
+            ll val=min(n,val1);
+            n-=val;
+            if(val1==(a-x)){
+                a-=val;
+            }else {
+                b-=val;
+            }
         }
+        cout << a*b <<endl;
     }
 
 }
