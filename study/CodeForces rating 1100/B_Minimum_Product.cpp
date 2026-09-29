@@ -4,7 +4,15 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
-    
+    ll a,b,x,y,n;
+    cin >> a >> b >> x >> y >> n;
+    ll sum=(a-x)+(b-y);
+    if(sum<=n){
+        cout << x *y <<endl;
+    }else {
+        
+    }
+
 }
 
 signed main() {
@@ -12,7 +20,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
