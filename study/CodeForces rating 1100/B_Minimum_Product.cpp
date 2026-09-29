@@ -19,6 +19,8 @@ void solve() {
     val=min(n,b-y);
     n-=val;
     b-=val;
+    cout <<  "a:" <<a <<endl;
+    cout << "b:" << b << endl;
     cout << a*b <<endl;
 }
 
