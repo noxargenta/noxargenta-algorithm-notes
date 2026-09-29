@@ -15,9 +15,9 @@ void solve() {
         b2-=val;
         n2-=val;
     }
-    ll ans=0;
-    ans=max(a2*b2,ans);
-    
+    ll ans=LLONG_MAX;
+    ans=min(a2*b2,ans);
+
     val=min(a-x2,n);
     a-=val;
     n-=val;
@@ -26,7 +26,7 @@ void solve() {
         b-=val;
         n-=val;
     }
-    ans=max(a*b,ans);
+    ans=min(a*b,ans);
     cout << ans <<endl;
 }
 
