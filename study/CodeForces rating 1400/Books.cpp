@@ -15,8 +15,13 @@ void solve() {
     }
     ll ans=0;
     for(ll i=1;i<=n;i++){
-        
+        ll b=pre[i-1];
+        ll need=pre[i-1]+t;
+        ll idx=upper_bound(pre.begin(),pre.end(),need)-pre.begin();
+        idx--;
+        ans=max(ans,idx-i+1);
     }
+    cout << ans <<endl;
     
 }
 
