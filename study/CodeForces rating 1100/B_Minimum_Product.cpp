@@ -18,12 +18,12 @@ void solve() {
     ll ans=LLONG_MAX;
     ans=min(a2*b2,ans);
 
-    val=min(a-x2,n);
-    a-=val;
+    val=min(b-y,n);
+    b-=val;
     n-=val;
     if(n!=0){
-        val=min(b-y,n);
-        b-=val;
+        val=min(a-x,n);
+        a-=val;
         n-=val;
     }
     ans=min(a*b,ans);
