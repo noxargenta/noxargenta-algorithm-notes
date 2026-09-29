@@ -11,7 +11,7 @@ void solve() {
         cout << x *y <<endl;
     }else {
         while(n!=0){
-            ll val=min(n,min())
+            ll val=min(n,min(a,b));
         }
     }
 
