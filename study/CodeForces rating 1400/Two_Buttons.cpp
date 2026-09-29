@@ -9,7 +9,6 @@ void solve() {
     if(n>=m){
         cout << n-m <<endl;
         return;
-
     }
     ll ans=0;
     while(n!=m){
