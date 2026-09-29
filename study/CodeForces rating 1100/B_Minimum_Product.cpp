@@ -10,7 +10,9 @@ void solve() {
     if(sum<=n){
         cout << x *y <<endl;
     }else {
-        
+        while(n!=0){
+            ll val=min(n,min())
+        }
     }
 
 }
