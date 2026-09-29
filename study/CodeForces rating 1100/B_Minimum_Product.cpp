@@ -6,23 +6,28 @@ using i64 = long long;
 void solve() {
     ll a,b,x,y,n;
     cin >> a >> b >> x >> y >> n;
-    if(a>b){
-        swap(a,b);
-        swap(x,y);
+    ll a2=a,b2=b,x2=x,y2=y,n2=n;
+    ll val=min(a2-x2,n2);
+    a2-=val;
+    n2-=val;
+    if(n!=0){
+        val=min(b2-y2,n2);
+        b2-=val;
+        n2-=val;
     }
-    ll val=min(n,a-x);
-    n-=val;
+    ll ans=0;
+    ans=max(a2*b2,ans);
+    
+    val=min(a-x2,n);
     a-=val;
-    if(n==0){
-        cout << a * b <<endl;
-        return;
-    }
-    val=min(n,b-y);
     n-=val;
-    b-=val;
-    // cout <<  "a:" <<a <<endl;
-    // cout << "b:" << b << endl;
-    cout << a*b <<endl;
+    if(n!=0){
+        val=min(b-y,n);
+        b-=val;
+        n-=val;
+    }
+    ans=max(a*b,ans);
+    cout << ans <<endl;
 }
 
 signed main() {
