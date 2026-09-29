@@ -14,13 +14,14 @@ void solve() {
     ll ans=0;
     while(n!=m){
         if(m%2!=0){
-            m--;
+            m++;
             ans++;
         }else {
             m/=2;
+            ans++;
         }
     }
-    cout <<ans <<endl;
+    cout << ans <<endl;
 
 
 
