@@ -11,7 +11,7 @@ void solve() {
         return;
     }
     ll ans=0;
-    while(n!=m){
+    while(m>n){
         if(m%2!=0){
             m++;
             ans++;
@@ -20,6 +20,7 @@ void solve() {
             ans++;
         }
     }
+    ans+=(n-m);
     cout << ans <<endl;
 
 
