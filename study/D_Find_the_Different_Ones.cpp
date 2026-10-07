@@ -12,18 +12,34 @@ void solve() {
     }
     vector<ll> dif(n+1,-1);
     for(ll i=1;i<=n;i++){
-        
+        if(dif[i-1]>i){
+            dif[i]=dif[i-1];
+            continue;
+        }
         for(ll j=i+1;j<=n;j++){
             if(a[j]!=a[i]){
                 dif[i]=j;
                 break;
             }
         }
-
     }
     ll q;
     cin >> q;
-
+    while(q--){
+        ll l,r;
+        cin >> l >> r;
+        bool ok=0;
+        for(ll i=l;i<=r;i++){
+            if(dif[i]!=-1 && dif[i]<=r){
+                cout << i <<" " << dif[i] << endl;
+                ok=1;
+                break;
+            }
+        }
+        if(!ok){
+            cout << -1 << " " << -1 <<endl;
+        }
+    }
 }
 
 signed main() {
