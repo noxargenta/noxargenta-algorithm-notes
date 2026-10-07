@@ -12,7 +12,7 @@ void solve() {
     }
     vector<ll> dif(n+1,-1);
     for(ll i=1;i<=n;i++){
-        if(dif[i-1]>i || dif[i-1]==-1){
+        if((dif[i-1]>i || dif[i-1]==-1) && i!=1){
             dif[i]=dif[i-1];
             continue;
         }
@@ -33,8 +33,9 @@ void solve() {
         }else {
             cout << -1 << " " << -1 <<endl; 
         }
-
+        
     }
+    cout <<endl;
 }
 
 signed main() {
