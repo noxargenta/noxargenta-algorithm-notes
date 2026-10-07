@@ -28,17 +28,12 @@ void solve() {
     while(q--){
         ll l,r;
         cin >> l >> r;
-        bool ok=0;
-        for(ll i=l;i<=r;i++){
-            if(dif[i]!=-1 && dif[i]<=r){
-                cout << i <<" " << dif[i] << endl;
-                ok=1;
-                break;
-            }
+        if(dif[l]!=-1 && dif[l]<=r){
+            cout << l << " " << dif[l]<<endl;
+        }else {
+            cout << -1 << " " << -1 <<endl; 
         }
-        if(!ok){
-            cout << -1 << " " << -1 <<endl;
-        }
+
     }
 }
 
