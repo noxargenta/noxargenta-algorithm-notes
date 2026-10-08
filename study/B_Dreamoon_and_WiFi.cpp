@@ -7,7 +7,7 @@ string s1,s2;
 ll cnt=0;
 ll need=0;
 void dfs(ll i,ll now){
-    if(i==s1.length()-1){
+    if(i==s1.length()){
         if(now==need){
             cnt++;
         }
@@ -40,6 +40,7 @@ void solve() {
         }
     }
     dfs(0,0);
+    cout << fixed << setprecision(12) ;
     cout << (double)cnt*1.0/(1LL << xx) <<endl;
 
 }
