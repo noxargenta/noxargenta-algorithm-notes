@@ -11,7 +11,7 @@ void solve() {
     for(ll i=1;i<=n;i++){
         cin >> a[i];
     }
-
+    
 }
 
 signed main() {
