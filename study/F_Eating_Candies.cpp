@@ -13,7 +13,7 @@ void solve() {
     ll l=1,r=n;
     ll sum1=0,sum2=0;
     ll ans=0;
-    while(l<r){
+    while(l<=r){
         sum1+=a[l];
         while(l<r && sum1 > sum2){
             sum2+=a[r];
