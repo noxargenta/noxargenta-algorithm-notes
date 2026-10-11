@@ -4,21 +4,26 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
-    for(ll i=0;i<32;i++){
-        cout << "?" << i <<endl;
+    ll l=0,r=1e9;
+    while(l<=r){
+        ll mid=(l+r)/2;
+        cout << "? " << mid << endl; 
         ll x;
         cin >> x;
         if(x==1){
-            cout << "!" << i <<endl;
-            return;
+            r=mid;
+        }else {
+            l=mid+1;
         }
+        
     }
+    cout << "! " << l << endl;
 }
 
 signed main() {
 //  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    // ios::sync_with_stdio(false);
+    // cin.tie(nullptr);
     int _ = 1;
     // cin >> _;
     while(_--) {
