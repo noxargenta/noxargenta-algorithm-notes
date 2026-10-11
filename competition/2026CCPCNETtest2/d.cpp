@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 using i64 = long long;
-#define endl '\n'
 #define ll long long
 void solve() {
     ll x;
@@ -17,16 +16,25 @@ void solve() {
             ll y=a[i]/l;
             ans.push_back(y);
         }
-        sort(ans.begin(),ans.end(),greater());
+        sort(ans.begin(),ans.end(),greater<ll>());
         for(auto y : ans){
             cout << y << " ";
         }
         cout << endl;
     }else {
-        ll n,l;
+        ll n,k;
         cin >> n >> k;
         vector<ll> a(n+1,0);
-            
+        ll pre=0;
+        for(ll i=1;i<=n;i++){
+            cin >> a[i];
+            pre+=a[i];
+            if(pre>=k){
+                cout << i <<endl;
+                return;
+            }
+        }
+        cout << -1 <<endl;
     }
 }
 
