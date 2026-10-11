@@ -11,7 +11,7 @@ void solve() {
         ll x;
         cin >> x;
         if(x==1){
-            r=mid;
+            r=mid-1;
         }else {
             l=mid+1;
         }
