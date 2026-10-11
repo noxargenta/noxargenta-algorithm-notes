@@ -11,7 +11,39 @@ void solve(ll x) {
         for(ll i=1;i<=n;i++){
             cin >> a[i];
         }
-        
+        sort(a.begin(),a.end());
+        cout << n << endl;
+        cout.flush();
+        for(ll i=1;i<=n;i++){
+            cout << a[i] << " ";
+            cout.flush();
+        }
+        cout << endl;
+        cout.flush();
+        ll y;
+        cin >> y;
+        cout << y <<endl;
+
+    }else {
+        ll n;
+        cin >> n;
+        vector<ll> a(n+1,0);
+        for(ll i=1;i<=n;i++){
+            cin >> a[i];
+        }
+        sort(a.begin(),a.end());
+        vector<ll> b(n+1,0);
+        for(ll i=1;i<=n;i++){
+            cin >> b[i];
+        }
+        sort(b.begin(),b.end());
+        if(a==b){
+            cout << 1 << endl;
+            cout.flush();
+        }else {
+            cout << 0 << endl;
+            cout.flush();
+        }
     }
 }
 
