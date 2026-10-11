@@ -6,14 +6,27 @@ void solve(ll x) {
     if(x==0){
         ll n,m;
         cin >> n >> m;
+        vector<vector<ll>> G[]
         ll a[m][2];
         for(ll i=0;i<m;i++){
             for(ll j=0;j<2;j++){
                 cin >> a[i][j];
             }
         }
+        cout << m <<endl;
+        for(ll i=0;i<m;i++){
+            for(ll j=0;j<2;j++){
+                cout << a[i][j];
+            }
+            cout << endl;
+        }
+        for(ll i=1;i<=3;i++){
+            ll x;
+            cin >> x;
+
+        }
     }
-    
+
 }
 
 signed main(int,char* st[]) {
