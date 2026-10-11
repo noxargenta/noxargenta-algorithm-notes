@@ -37,14 +37,42 @@ void solve(ll x) {
             if(vis[i])continue;
             dq.clear();
             ll cur=1;
-            for(auto x : G[i]){
-                if(vis[x]==0){
-                    cur++;
-                    vis[x]=1;
-                }
-
-            }   
+            dq.push_back(i);
+            while(!dq.empty()){
+                
+                ll c=dq.front();
+                dq.pop_front();
+                for(auto x : G[c]){
+                    if(vis[x]==0){
+                        cur++;
+                        vis[x]=1;
+                        dq.push_back(x);
+                    }
+                }   
+            }
+            ans=max(cur,ans);
         }
+        cout << ans << endl;
+    }else {
+        ll n,m;
+        cin >> n >> m;
+        vector<vector<ll>> G(n+1);
+        ll a[m][2];
+        for(ll i=0;i<m;i++){
+            for(ll j=0;j<2;j++){
+                cin >> a[i][j];
+            }
+        }
+        cout << m <<endl;
+        for(ll i=0;i<m;i++){
+            for(ll j=0;j<2;j++){
+                cout << a[i][j];
+            }
+            cout << endl;
+        }
+        ll x;
+        cin >> x;
+        cout << x <<endl;
     }
 
 }
