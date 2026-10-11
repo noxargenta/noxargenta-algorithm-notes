@@ -10,8 +10,9 @@ void solve() {
     for(ll i=1;i<=n;i++){
         ll x;
         cin >> x;
-        
+        ans+=(!x+1) * (n-i+1) * (i);
     }
+    cout << ans <<endl;
 }
 
 signed main() {
