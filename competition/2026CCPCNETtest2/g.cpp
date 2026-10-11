@@ -11,17 +11,17 @@ void solve(){
     ll l=0,r=1e18;
     ll res=1e18;
     while(l<=r){
-    ll mid=(l+r)/2;
-    cout<<"? "<<mid<<"\n";
-    cout.flush();
-    ll c;
-    cin>>c;
-    if(c<i){
-        l=mid+1;
-    }else{
-        res=mid;
-        r=mid-1;
-    }
+        ll mid=(l+r)/2;
+        cout<<"? "<<mid<<"\n";
+        cout.flush();
+        ll c;
+        cin>>c;
+        if(c<i){
+            l=mid+1;
+        }else{
+            res=mid;
+            r=mid-1;
+        }
     }
     ans.push_back(res);
   }
