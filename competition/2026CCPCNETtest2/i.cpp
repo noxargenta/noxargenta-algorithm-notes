@@ -67,7 +67,7 @@ void solve(ll x) {
         cout << m <<endl;
         for(ll i=0;i<m;i++){
             for(ll j=0;j<2;j++){
-                cout << a[i][j];
+                cout << a[i][j] << " ";
             }
             cout << endl;
         }
