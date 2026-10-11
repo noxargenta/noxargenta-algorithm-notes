@@ -5,6 +5,12 @@ using i64 = long long;
 #define ll long long
 void solve(ll x) {
     if(x==0){
+        ll n;
+        cin >> n;
+        vector<ll> a(n+1,0);
+        for(ll i=1;i<=n;i++){
+            cin >> a[i];
+        }
         
     }
 }
