@@ -7,9 +7,8 @@ void solve(){
   int n;
   cin>>n;
   vector<ll>ans;
-  ll R=1e18;
-  while(n){
-    ll l=0,r=R;
+  for(int i=1;i<=n;i++){
+    ll l=0,r=1e18;
     ll res=1e18;
     while(l<=r){
       ll mid=(l+r)/2;
@@ -17,7 +16,7 @@ void solve(){
       cout.flush();
       ll c;
       cin>>c;
-      if(c<n){
+      if(c<i){
         l=mid+1;
       }else{
         res=mid;
@@ -25,8 +24,6 @@ void solve(){
       }
     }
     ans.push_back(res);
-    n--;
-    R=res-1;
   }
   cout<<"!"<<" ";
   int m=ans.size();
