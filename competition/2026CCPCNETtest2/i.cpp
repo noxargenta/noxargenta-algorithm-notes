@@ -11,6 +11,12 @@ void solve(ll x) {
         for(ll i=0;i<m;i++){
             for(ll j=0;j<2;j++){
                 cin >> a[i][j];
+
+            }
+            ll u=a[i][0],v=a[i][1];
+            if (u!=v){
+                G[u].push_back(v);
+                G[v].push_back(u);
             }
         }
         cout << m <<endl;
