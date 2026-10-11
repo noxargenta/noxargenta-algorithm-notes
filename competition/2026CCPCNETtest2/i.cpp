@@ -6,7 +6,7 @@ void solve(ll x) {
     if(x==0){
         ll n,m;
         cin >> n >> m;
-        vector<vector<ll>> G[]
+        vector<vector<ll>> G(n+1);
         ll a[m][2];
         for(ll i=0;i<m;i++){
             for(ll j=0;j<2;j++){
@@ -23,7 +23,27 @@ void solve(ll x) {
         for(ll i=1;i<=3;i++){
             ll x;
             cin >> x;
+            while(x--){
+                ll u,v;
+                cin >> u >> v;
+                G[u].push_back(v);
+                G[v].push_back(u);
+            }
+        }
+        ll ans=0;
+        vector<bool> vis(n+1,0);
+        deque<ll> dq;
+        for(ll i=1;i<=n;i++){
+            if(vis[i])continue;
+            dq.clear();
+            ll cur=1;
+            for(auto x : G[i]){
+                if(vis[x]==0){
+                    cur++;
+                    vis[x]=1;
+                }
 
+            }   
         }
     }
 
