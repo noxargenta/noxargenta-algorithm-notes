@@ -38,6 +38,7 @@ void solve(ll x) {
             dq.clear();
             ll cur=1;
             dq.push_back(i);
+            vis[i]=1;
             while(!dq.empty()){
                 
                 ll c=dq.front();
