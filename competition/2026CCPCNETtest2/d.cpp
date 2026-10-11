@@ -10,11 +10,23 @@ void solve() {
         ll n,l;
         cin >> n >> l;
         vector<ll> a(n+1,0);
-        ll ans=0;
+        
+        vector<ll> ans;
         for(ll i=1;i<=n;i++){
             cin >> a[i];
+            ll y=a[i]/l;
+            ans.push_back(y);
         }
-
+        sort(ans.begin(),ans.end(),greater());
+        for(auto y : ans){
+            cout << y << " ";
+        }
+        cout << endl;
+    }else {
+        ll n,l;
+        cin >> n >> k;
+        vector<ll> a(n+1,0);
+            
     }
 }
 
