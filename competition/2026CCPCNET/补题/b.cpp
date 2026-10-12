@@ -14,8 +14,10 @@ void solve() {
     cin >> k;
     ll sum=LLONG_MAX;
     vector<ll> ans;
+    //idx是当前这一层的骰子第idx面
+    //cur是候选下标从哪里开始尝试
     //sum1 是当前赢的次数  sum2是当前这个骰子数值的总和
-    auto bfs = [&](auto &&self,ll idx,ll cur,ll sum1, ll sum2)->void{
+    auto dfs = [&](auto &&self,ll idx,ll cur,ll sum1, ll sum2)->void{
         if(idx>n){
             if(sum1 >= 19 && sum2 <= k){
                 sum=sum2;
@@ -24,9 +26,11 @@ void solve() {
             return;
         }
         for(ll i=cur;i<=6;i++){
-            
+            b[idx]=a[i]+1;
+            self(self,idx+1,sum1+i,sum2+b[idx]);
         }
     };
+    dfs(dfs,1,0,0,0);
 }
 
 signed main() {
