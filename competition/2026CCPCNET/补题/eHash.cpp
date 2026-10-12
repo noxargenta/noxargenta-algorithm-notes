@@ -8,8 +8,7 @@ void solve() {
     ll n;
     cin >> n;
     ll b[n+1];
-    unsigned ll has[4];
-    has[4]={};
+    unsigned ll prehash[4]={};
     vector<vector<ll>> a(4,vector<ll> (n+1,0));
     for(ll i=1;i<=3;i++){
         for(ll j=1;j<=n;j++){
@@ -22,11 +21,11 @@ void solve() {
     ll ans=1;
     for(ll i=1;i<=n;i++){
         for(ll j=1;j<=3;j++){
-            has[i] ^= a[j][i];
+            prehash[j] ^= b[a[j][i]];
         }
-        if(has[1]==has[2] || 
-        has[2]==has[3]||
-        has[1]==has[3]){
+        if(prehash[1]==prehash[2] || 
+        prehash[2]==prehash[3]||
+        prehash[1]==prehash[3]){
             ans++;
 
         }
