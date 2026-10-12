@@ -4,7 +4,9 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
-    
+    ll n;
+    cin >> n;
+    vector<vector<ll>> 
 }
 
 signed main() {
@@ -12,7 +14,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
