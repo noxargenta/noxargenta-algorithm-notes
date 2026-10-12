@@ -8,6 +8,8 @@ void solve() {
     ll n;
     cin >> n;
     ll b[n+1];
+    unsigned ll has[4];
+    has[4]={};
     vector<vector<ll>> a(4,vector<ll> (n+1,0));
     for(ll i=1;i<=3;i++){
         for(ll j=1;j<=n;j++){
@@ -17,7 +19,12 @@ void solve() {
     for(ll i=1;i<=n;i++){
         b[i]=rng();
     }
-    
+    for(ll i=1;i<=3;i++){
+        for(ll j=1;j<=n;j++){
+            has[i]^=
+        }
+    }
+
 }
 
 signed main() {
