@@ -20,11 +20,16 @@ void solve() {
         b[i]=rng();
     }
     ll ans=1;
-    for(ll i=1;i<=3;i++){
-        for(ll j=1;j<=n;j++){
-            has[i]^=a[i][j];
+    for(ll i=1;i<=n;i++){
+        for(ll j=1;j<=3;j++){
+            has[i] ^= a[j][i];
         }
-        if(has[])
+        if(has[1]==has[2] || 
+        has[2]==has[3]||
+        has[1]==has[3]){
+            ans++;
+
+        }
     }
 
 }
