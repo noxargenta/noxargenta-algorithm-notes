@@ -27,7 +27,7 @@ void solve() {
         }
         for(ll i=cur;i<=6;i++){
             b[idx]=a[i]+1;
-            self(self,idx+1,sum1+i,sum2+b[idx]);
+            self(self,idx+1,i,sum1+i,sum2+b[idx]);
         }
     };
     dfs(dfs,1,0,0,0);
