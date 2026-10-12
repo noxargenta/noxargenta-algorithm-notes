@@ -3,6 +3,7 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
+std::mt19937_64 rng(time(0));
 void solve() {
     ll n;
     cin >> n;
@@ -12,7 +13,7 @@ void solve() {
             cin >> a[i][j];
         }
     }
-    
+
 }
 
 signed main() {
