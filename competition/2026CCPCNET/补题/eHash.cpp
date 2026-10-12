@@ -30,7 +30,7 @@ void solve() {
 
         }
     }
-    cout << ans << endl;
+    cout << ans-1 << endl;
 }
 
 signed main() {
