@@ -30,7 +30,18 @@ void solve() {
             self(self,idx+1,i,sum1+i,sum2+b[idx]);
         }
     };
+
     dfs(dfs,1,0,0,0);
+    
+    if(ans.size()){
+        cout << "YES\n";
+        ans.back()+=k-sum;
+        for(ll i=1;i<=6;i++)cout << ans[i] << " ";
+        cout << endl;
+    }else {
+        cout << "NO\n";
+    }
+
 }
 
 signed main() {
