@@ -6,7 +6,13 @@ using i64 = long long;
 void solve() {
     ll n;
     cin >> n;
-    vector<vector<ll>> 
+    vector<vector<ll>> a(4,vector<ll> (n+1,0));
+    for(ll i=1;i<=3;i++){
+        for(ll j=1;j<=n;j++){
+            cin >> a[i][j];
+        }
+    }
+    
 }
 
 signed main() {
