@@ -14,7 +14,7 @@ void solve() {
         ll ans=(n/m )* b;
         //cout << "ans:" << ans <<endl;
         n%=m;
-        ans+=(n*a);
+        ans+=min((n*a),b);
         cout << ans <<endl;
     }
 
