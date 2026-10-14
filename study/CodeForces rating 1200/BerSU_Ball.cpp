@@ -34,11 +34,11 @@ void solve() {
             aa++;
             bb++;
         }else if(a[aa]>b[bb]){
-            while(a[aa]>b[bb] && aa!=n && bb!=m && !abs(a[aa]-b[bb])<=1){
+            while(!abs(a[aa]-b[bb])<=1 &&a[aa]>b[bb] && aa!=n && bb!=m  ){
                 bb++;
             }
         }else {
-            while(a[aa]<b[bb] && aa!=n && bb!=m && !abs(a[aa]-b[bb])<=1){
+            while(!abs(a[aa]-b[bb])<=1 && a[aa]<b[bb] && aa!=n && bb!=m  ){
                 aa++;
             }
         }
