@@ -6,8 +6,10 @@ using i64 = long long;
 void solve() {
     ll n,m,a,b;
     cin  >> n >> m >> a >> b;
-    if(b*1 >= m*a) {
-        cout << n *a <<endl;
+    //  n、            m、              a、       b（               1 ≤ n, m, a, b ≤ 1000）——分别表示安
+    // 计划乘坐的次数、多程票可乘坐次数、单程票价格和多程票价格。
+    if(b*1 >= m*a) {    
+    cout << n *a <<endl;
     }else {
         ll ans=(n/m )* b;
         //cout << "ans:" << ans <<endl;
