@@ -6,7 +6,16 @@ using i64 = long long;
 void solve() {
     ll n,m,a,b;
     cin  >> n >> m >> a >> b;
-    
+    if(m *a >= b * 1) {
+        cout << n *a <<endl;
+    }else {
+        ll ans=(n/m )* b;
+        cout << "ans:" << ans <<endl;
+        n%=m;
+        ans+=(n*a);
+        cout << ans <<endl;
+    }
+
 }
 
 signed main() {
