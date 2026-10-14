@@ -4,6 +4,8 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
+    ll n,m,a,b;
+    cin  >> n >> m >> a >> b;
     
 }
 
