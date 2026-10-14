@@ -41,7 +41,7 @@ void solve() {
             while(aa<=n && bb<=m && !(abs(a[aa]-b[bb])<=1) && a[aa]<b[bb] ){
                 aa++;
             }
-        }
+        } 
     }
     cout <<ans <<endl;
 }
