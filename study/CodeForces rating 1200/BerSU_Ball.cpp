@@ -10,15 +10,25 @@ void solve() {
     for(ll i=1;i<=n;i++){
         cin >> a[i];
     }
-    sort(a.begin(),a.end());
+    sort(a.begin()+1,a.end());
     ll m;
     cin >> m;
     vector<ll> b(m+1,0);
     for(ll i=1;i<=m;i++){
         cin >> b[i];
     }
-    sort(b.begin(),b.end());
-    
+    sort(b.begin()+1,b.end());
+    ll aa=1,bb=1;
+    ll ans=0;
+    while(aa!=n && bb!=n){
+        if(abs(a[aa]-b[bb])<=1){
+            ans++;
+            aa++;
+            bb++;
+        }else {
+            
+        }
+    }
 }
 
 signed main() {
