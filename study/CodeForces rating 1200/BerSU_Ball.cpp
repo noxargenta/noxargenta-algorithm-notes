@@ -20,13 +20,13 @@ void solve() {
     sort(b.begin()+1,b.end());
     ll aa=1,bb=1;
     ll ans=0;
-    for(auto x :a){
-        cout << x << " ";
-    }
-    cout << endl;
-    for(auto x : b){
-        cout << x << " ";
-    }
+    // for(auto x :a){
+    //     cout << x << " ";
+    // }
+    // cout << endl;
+    // for(auto x : b){
+    //     cout << x << " ";
+    // }
     cout << endl;
     while(aa<=n && bb<=m){
         if(abs(a[aa]-b[bb])<=1){
@@ -34,11 +34,11 @@ void solve() {
             aa++;
             bb++;
         }else if(a[aa]>b[bb]){
-            while(!(abs(a[aa]-b[bb])<=1) &&a[aa]>b[bb] && aa<=n && bb<=m  ){
+            while(aa<=n && bb<=m && !(abs(a[aa]-b[bb])<=1) &&a[aa]>b[bb] ){
                 bb++;
             }
         }else {
-            while(!(abs(a[aa]-b[bb])<=1) && a[aa]<b[bb] && aa<=n && bb<=m  ){
+            while(aa<=n && bb<=m && !(abs(a[aa]-b[bb])<=1) && a[aa]<b[bb] ){
                 aa++;
             }
         }
