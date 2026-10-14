@@ -28,17 +28,17 @@ void solve() {
         cout << x << " ";
     }
     cout << endl;
-    while(aa!=n && bb!=m){
+    while(aa<=n && bb<=m){
         if(abs(a[aa]-b[bb])<=1){
             ans++;
             aa++;
             bb++;
         }else if(a[aa]>b[bb]){
-            while(!abs(a[aa]-b[bb])<=1 &&a[aa]>b[bb] && aa!=n && bb!=m  ){
+            while(!(abs(a[aa]-b[bb])<=1) &&a[aa]>b[bb] && aa<=n && bb<=m  ){
                 bb++;
             }
         }else {
-            while(!abs(a[aa]-b[bb])<=1 && a[aa]<b[bb] && aa!=n && bb!=m  ){
+            while(!(abs(a[aa]-b[bb])<=1) && a[aa]<b[bb] && aa<=n && bb<=m  ){
                 aa++;
             }
         }
