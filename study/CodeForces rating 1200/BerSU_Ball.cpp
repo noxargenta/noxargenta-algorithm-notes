@@ -20,15 +20,22 @@ void solve() {
     sort(b.begin()+1,b.end());
     ll aa=1,bb=1;
     ll ans=0;
-    while(aa!=n && bb!=n){
+    while(aa!=n && bb!=m){
         if(abs(a[aa]-b[bb])<=1){
             ans++;
             aa++;
             bb++;
+        }else if(a[aa]>b[bb]){
+            while(a[aa]>b[bb]){
+                bb++;
+            }
         }else {
-            
+            while(a[aa]<b[bb]){
+                aa++;
+            }
         }
     }
+    cout <<ans <<endl;
 }
 
 signed main() {
