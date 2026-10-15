@@ -42,9 +42,9 @@ void solve()
 {
     cin >> s1 >> s2;
     ll m=s2.length()+1;
-    ll next[m];
+    vector<ll> next(s2.length() + 1);
     kmp_pre(s2,m,next);
-
+    KMP_Count(s1,m,s2,)
 }
 
 signed main()
