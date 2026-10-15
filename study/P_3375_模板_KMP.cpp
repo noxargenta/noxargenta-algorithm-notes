@@ -43,7 +43,7 @@ void solve()
     cin >> s1 >> s2;
     ll m=s2.length()+1;
     vector<ll> next(s2.length() + 1);
-    kmp_pre(s2,m,next);
+    kmp_pre(s2,m,next.data());
     KMP_Count(s1,m,s2,)
 }
 
