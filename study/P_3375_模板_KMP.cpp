@@ -20,7 +20,7 @@ string s1,s2;
 void solve()
 {
     cin >> s1 >> s2;
-    
+    ll next[s2.length()];
     kmp_pre(s2,);
 }
 
