@@ -16,7 +16,7 @@ void kmp_pre(const string &x, int m,ll next[]) {
 }
 
 int KMP_Count(const string &x , ll m , const string &y , ll n, ll next[]) {
-    kmp_pre(x, m, next);
+    //kmp_pre(x, m, next);
 
     int i = 0, j = 0;
     int ans = 0;
@@ -44,7 +44,8 @@ void solve()
     ll m=s2.length()+1;
     vector<ll> next(s2.length() + 1);
     kmp_pre(s2,m,next.data());
-    KMP_Count(s1,m,s2,)
+    KMP_Count(s2,s2.length(),s1,s1.length(),next.data());
+
 }
 
 signed main()
