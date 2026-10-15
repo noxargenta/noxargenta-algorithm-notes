@@ -15,7 +15,7 @@ void kmp_pre(const string &x, int m,ll next[]) {
     }
 }
 
-int KMP_Count(char x[], int m, char y[], int n,ll next[]) {
+int KMP_Count(const string &x , ll m , const string &y , ll n, ll next[]) {
     kmp_pre(x, m, next);
 
     int i = 0, j = 0;
