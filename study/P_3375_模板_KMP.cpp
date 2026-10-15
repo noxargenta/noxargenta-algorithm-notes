@@ -3,12 +3,25 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
+void kmp_pre(string x, int m,ll next[]) {
+    int i = 0, j = -1;
+    next[0] = -1;
+
+    while (i < m) {
+        while (j != -1 && x[i] != x[j])
+            j = next[j];
+
+        next[++i] = ++j;
+    }
+}
+
 string s1,s2;
 
 void solve()
 {
     cin >> s1 >> s2;
     
+    kmp_pre(s2,);
 }
 
 signed main()
