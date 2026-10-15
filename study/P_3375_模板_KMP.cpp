@@ -3,7 +3,7 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
-void kmp_pre(string x, int m,ll next[]) {
+void kmp_pre(const string &x, int m,ll next[]) {
     int i = 0, j = -1;
     next[0] = -1;
 
@@ -41,8 +41,9 @@ string s1,s2;
 void solve()
 {
     cin >> s1 >> s2;
-    ll next[s2.length()];
-    kmp_pre(s2,s2.length(),next);
+    ll m=s2.length()+1;
+    ll next[m];
+    kmp_pre(s2,m,next);
 
 }
 
