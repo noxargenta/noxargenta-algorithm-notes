@@ -51,8 +51,11 @@ void solve()
     ll m=s2.length()+1;
     vector<ll> next(s2.length() + 1);
     kmp_pre(s2,m,next.data());
-    KMP_Count(s2,s2.length(),s1,s1.length(),next.data());
-
+    ll ans=KMP_Count(s2,s2.length(),s1,s1.length(),next.data());
+    for (int i = 1; i <= (int)s2.length(); i++) {
+        cout << next[i] << " ";
+    }
+    cout <<endl;
 }
 
 signed main()
