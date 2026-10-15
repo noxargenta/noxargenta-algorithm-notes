@@ -22,14 +22,21 @@ int KMP_Count(const string &x , ll m , const string &y , ll n, ll next[]) {
     int ans = 0;
 
     while (i < n) {
-        while (j != -1 && y[i] != x[j])
+        while (j != -1 && y[i] != x[j]){
             j = next[j];
+        }
+            
 
         i++;
         j++;
 
         if (j == m) {
             ans++;
+
+            /////
+            cout << i-m+1 <<endl;
+            ////
+
             j = next[j];
         }
     }
