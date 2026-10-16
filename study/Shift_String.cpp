@@ -3,9 +3,11 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
-ll kmp(const string& x,ll m,const string& y,ll n){// 
+ll kmp(const string& x,ll m,const string& y,ll n,ll next[]){// x是模式串，y是珠串；
+    //ll next[]是next数组指向第一个next第一个位置的指针
     ll i,j;
-
+    ll ans=0;
+    
 }
 void kmp_pre(const string &x,ll m,ll next[]){
     ll i,j;
@@ -23,6 +25,7 @@ void solve() {
     string s2;
     cin >> s1 >> s2;
     s1+=s1;
+    ll n=s2.length();
 
 }
 
