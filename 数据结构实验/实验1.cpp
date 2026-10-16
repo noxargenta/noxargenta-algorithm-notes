@@ -24,8 +24,8 @@ Node *toucha_ctList(ll n){
 
 Node * weicha_ctList(ll n){//n个数字的链表
     Node * head=nullptr;
-    Node *cur=nullptr;
     Node *nextNode=new Node();
+    Node *ini=nextNode;
     cout  << "输入"  << n << "个数字" <<endl;
     for(ll i=1;i<=n;i++){
         ll x;
@@ -39,10 +39,14 @@ Node * weicha_ctList(ll n){//n个数字的链表
             head->next=new Node();
             nextNode=head->next;
         }
-        
-    }
 
+    }
+    return ini;
 }
+
+
+
+
 
 void solve() {
 
