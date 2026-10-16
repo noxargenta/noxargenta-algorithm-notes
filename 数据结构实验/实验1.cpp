@@ -66,12 +66,16 @@ void printNode(Node * head){
 void reverseList(Node* &head){
     Node* cur=head;
     Node* pre=nullptr;
+    Node* next=nullptr;
     while(cur!=nullptr){
-        Node* next=cur->next;
+        next=cur->next;
         cur->next=pre;
-        
+        pre=cur;
+        cur=next;
     }
+    head=pre;
 }
+
 
 
 
