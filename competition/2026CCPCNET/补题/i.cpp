@@ -7,13 +7,13 @@ int main() {
     long long n;
     if (!(cin >> n)) return 0;
 
-    long long qmxntrvazk = 0; // 题目要求的变量
+    long long aa = 0; // 题目要求的变量
 
     if (n % 2 != 0) {
         cout << -1 << "\n";
     } else {
-        qmxntrvazk = n / 2;
-        long long a = qmxntrvazk;
+        aa = n / 2;
+        long long a = aa;
         long long b = 1;
         long long c = -1;
         cout << a << " " << b << " " << c << "\n";

@@ -9,6 +9,7 @@
 | 板块 | 说明 |
 |------|------|
 | [学习路径](#学习路径) | 按算法分类的代码索引，标注了每个知识点对应的练习 |
+| [算法笔记](./笔记/README.md) | 按主题分类的算法原理、代码模板与易错点 |
 | [目录概览](#目录概览) | 仓库物理结构说明 |
 | [训练记录](#训练记录) | 按时间线的比赛/训练索引 |
 | [模板收藏](#模板收藏) | 经典模板题汇总 |
@@ -47,6 +48,7 @@
 | 二维前缀和与差分 | 专题训练 | [study/11.5(二维前缀和差分, 链表, 图的存储, 并查集, 堆)](./study/11.5(二维前缀和差分,%20链表,%20图的存储,%20并查集,%20堆)) |
 | 差分数组区间修改 | `Meximum_Array_2.cpp` — 差分经典写法 `d1[l]++` `d1[r+1]--` | [study/CF 1066(div1+2)](./study/CF%201066(div1+2)) |
 | 前缀和统计 | 日常练习 | [study/2025.10.20](./study/2025.10.20) |
+| 随机异或哈希 | 按值随机赋权，用前缀指纹比较排列集合；详见[笔记 20](./笔记/20-随机异或哈希-排列前缀集合.md) | [eHash.cpp](./competition/2026CCPCNET/补题/eHash.cpp) |
 
 </details>
 
@@ -169,7 +171,7 @@
 | 计数 + 组合数学 | `Card_Game.cpp` — **MOD 阶乘计数** | [competition/2026.2.3NEWK1](./competition/2026.2.3NEWK1) |
 | 数学结论 | `Jumps.cpp` — **等差数列求和 + 修正** | [competition/20251130ECUT计协第八次训练赛](./competition/20251130ECUT计协第八次训练赛) |
 | 线性基（XOR Basis） | `Bitwise_Maximization.cpp` — **拆成两集合最大化 XOR 和，S + 2 × max_xor** 详见[笔记14](./笔记/14-线性基.md) | [competition/niukemanyschool2](./competition/niukemanyschool2/Bitwise_Maximization.cpp) |
-| 取模等式计数（CRT + 打表） | `Bobo_s_Lucky_Modulo.cpp` — **合法 a 为连续区间，O(√n) 整除计数** 详见[笔记17](./笔记/17-取模等式计数-CRT与打表找规律.md) | [competition/niukemanyschool7](./competition/niukemanyschool7/Bobo_s_Lucky_Modulo.cpp) |
+| 取模等式计数（CRT + 打表） | `Bobo_s_Lucky_Modulo.cpp` — **合法 a 为连续区间，O(√n) 整除计数** 详见[笔记 19](./笔记/19-取模等式计数-CRT与打表找规律.md) | [competition/niukemanyschool7](./competition/niukemanyschool7/Bobo_s_Lucky_Modulo.cpp) |
 | 位运算 + 构造 | `NCPC.cpp` — bit 计数判胜负 | [competition/2026.2.5NEWK2](./competition/2026.2.5NEWK2) |
 | 三分/几何 | `E_Closest_Moment` | 各比赛 |
 
@@ -307,7 +309,7 @@
 | Lazy_Shuffling | 状压 DP 排列计数 — 满足偏序约束，详见[笔记15](./笔记/15-状压DP-排列计数.md) | [收藏模板题](./收藏模板题/Lazy_Shuffling.cpp) |
 | D_Mail_Institution_Codes | stringstream 按空格分词 + 首字母比较 | [收藏模板题](./收藏模板题/D_Mail_Institution_Codes.cpp) |
 | Two_Odd_Count_Numbers | 异或找两个奇数次数 + Brian Kernighan 分组，详见[笔记17](./笔记/17-异或与BrianKernighan.md) | [收藏模板题](./收藏模板题/Two_Odd_Count_Numbers.cpp) |
-| Bobo_s_Lucky_Modulo | 取模等式计数 — CRT 连续区间 + O(√n) 整除，详见[笔记17](./笔记/17-取模等式计数-CRT与打表找规律.md) | [收藏模板题](./收藏模板题/Bobo_s_Lucky_Modulo.cpp) |
+| Bobo_s_Lucky_Modulo | 取模等式计数 — CRT 连续区间 + O(√n) 整除，详见[笔记 19](./笔记/19-取模等式计数-CRT与打表找规律.md) | [收藏模板题](./收藏模板题/Bobo_s_Lucky_Modulo.cpp) |
 
 ---
 
@@ -444,7 +446,8 @@ while (!q.empty()) {
 ```
 
 **三个坑**：
-1. 题目坐标是 1-based，读入后必须 `x1--; y1--; x2--; y2--;`
+
+1. 如果代码使用 0-based 下标，而题目坐标是 1-based，读入后需要 `x1--; y1--; x2--; y2--;`
 2. 扩展前要先判 `x2<0||x2>=n||y2<0||y2>=m`，否则数组越界
 3. `push` 后立刻 `vis=1`，漏了会死循环
 
@@ -673,3 +676,23 @@ long long g = gcd(a, b), l = lcm(a, b);   // C++17 数论
 // 位运算：__builtin_popcountll / __builtin_clzll / __builtin_ctzll
 // C++20: std::popcount / std::countl_zero / std::countr_zero
 ```
+
+### 24. 随机异或哈希：排列前缀集合
+
+给每个值一个固定的 64 位随机权重，所有排列共用同一套权重。扫描前缀时按值异或，指纹相同表示集合高概率相同。
+
+```cpp
+using u64 = uint64_t;
+mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
+vector<u64> weight(n + 1);
+for (int x = 1; x <= n; ++x) weight[x] = rng();
+
+array<u64, 3> pre{};
+int ans = 0;
+for (int i = 1; i <= n; ++i) {
+    for (int j = 0; j < 3; ++j) pre[j] ^= weight[a[j][i]];
+    if (pre[0] == pre[1] || pre[1] == pre[2] || pre[0] == pre[2]) ++ans;
+}
+```
+
+适用于集合或排列前缀；含重复值时只能保留出现次数的奇偶性。原理、完整模板、碰撞概率与双哈希见[笔记 20](./笔记/20-随机异或哈希-排列前缀集合.md)，来源为 [eHash.cpp](./competition/2026CCPCNET/补题/eHash.cpp)。
