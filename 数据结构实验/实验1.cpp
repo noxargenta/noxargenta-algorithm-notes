@@ -102,7 +102,64 @@ void destroyList(Node*& head) {
 }    
 
 void solve() {
+    Node* list = nullptr;                        // 定义链表头指针，初始为空
+    int choice;                                  // 定义菜单选择变量
 
+    do {                                         // 进入菜单循环
+        cout << "\n===== 单链表算法实验 =====\n"; // 输出菜单标题
+        cout << "1. 头插法创建单链表\n";         // 输出菜单项 1
+        cout << "2. 尾插法创建单链表\n";         // 输出菜单项 2
+        cout << "3. 输出链表\n";                 // 输出菜单项 3
+        cout << "4. 逆置链表\n";                 // 输出菜单项 4
+        cout << "5. 删除值相等的结点（去重）\n"; // 输出菜单项 5
+        cout << "0. 退出\n";                     // 输出菜单项 0
+        cout << "请选择：";                      // 提示输入选择
+        cin >> choice;                           // 读取用户选择
+
+        switch (choice) {                        // 根据用户选择执行对应功能
+        case 1: {                                // 选择 1：头插法创建单链表
+            int n;                               // 定义结点个数变量
+            cout << "请输入结点个数 n：";        // 提示输入结点个数
+            cin >> n;                            // 读取结点个数
+            destroyList(list);                   // 先释放旧链表内存
+            list = createByHead(n);              // 调用头插法创建链表
+            cout << "头插法创建结果：";          // 输出提示
+            printList(list);                     // 输出创建后的链表
+            break;                               // 跳出 switch
+        }                                        // case 1 结束
+        case 2: {                                // 选择 2：尾插法创建单链表
+            int n;                               // 定义结点个数变量
+            cout << "请输入结点个数 n：";        // 提示输入结点个数
+            cin >> n;                            // 读取结点个数
+            destroyList(list);                   // 先释放旧链表内存
+            list = createByTail(n);              // 调用尾插法创建链表
+            cout << "尾插法创建结果：";          // 输出提示
+            printList(list);                     // 输出创建后的链表
+            break;                               // 跳出 switch
+        }                                        // case 2 结束
+        case 3:                                  // 选择 3：输出链表
+            cout << "当前链表：";                // 输出提示
+            printList(list);                     // 调用输出函数
+            break;                               // 跳出 switch
+        case 4:                                  // 选择 4：逆置链表
+            reverseList(list);                   // 调用逆置函数
+            cout << "逆置后链表：";              // 输出提示
+            printList(list);                     // 输出逆置后的链表
+            break;                               // 跳出 switch
+        case 5:                                  // 选择 5：删除值相等的结点
+            removeDuplicates(list);              // 调用去重函数
+            cout << "删除值相等结点后链表：";    // 输出提示
+            printList(list);                     // 输出去重后的链表
+            break;                               // 跳出 switch
+        case 0:                                  // 选择 0：退出程序
+            cout << "退出程序。" << endl;        // 输出退出提示
+            break;                               // 跳出 switch
+        default:                                 // 其他输入
+            cout << "输入有误，请重新选择。" << endl; // 输出错误提示
+        }                                        // switch 结束
+    } while (choice != 0);                       // 当选择不为 0 时继续循环
+
+    destroyList(list);                           // 程序结束前释放链表内存
 }
 
 signed main() {
