@@ -44,7 +44,20 @@ Node * weicha_ctList(ll n){//n个数字的链表
     return ini;
 }
 
-
+void printNode(Node * head){
+    if(head==nullptr){
+        cout << "这是一个空链表\n";
+        return;
+    }
+    Node *p=head;
+    while(p!=nullptr){
+        cout << p->val;
+        if(p->next!=nullptr){
+            cout << "->";
+        }
+    }
+    
+}
 
 
 
