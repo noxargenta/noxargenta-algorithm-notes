@@ -10,11 +10,13 @@ struct Node{
 Node *creativeList(ll n){
     Node *head=nullptr;
     Node *cur=nullptr;
-    cout  << "输入"  << n << "数字" <<endl;
+    cout  << "输入"  << n << "个数字" <<endl;
     for(ll i=1;i<=n;i++){
         ll x;
         cin >> x;
         Node * newdat=new Node();
+        newdat->val=x;
+        newdat->next=head;
         
     }
 }
