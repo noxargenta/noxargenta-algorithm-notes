@@ -36,6 +36,7 @@ Node * weicha_ctList(ll n){//n个数字的链表
         }else {
             nextNode->next=new Node();
         }
+        
     }
 
 }
