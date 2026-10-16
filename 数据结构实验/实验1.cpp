@@ -53,9 +53,13 @@ void printNode(Node * head){
     while(p!=nullptr){
         cout << p->val;
         if(p->next!=nullptr){
-            cout << "->";
+            cout << " -> ";
+        }else {
+            cout << " -> nullptr\n";
         }
+        p=p->next;
     }
+    cout << endl;
     
 }
 
