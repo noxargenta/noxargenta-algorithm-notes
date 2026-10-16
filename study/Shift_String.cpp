@@ -2,12 +2,12 @@
 using namespace std;
 using i64 = long long;
 #define endl '\n'
+bool ok=0;
 #define ll long long
 ll kmp(const string& x,ll m,const string& y,ll n,ll next[]){// x是模式串，y是主串；
     //ll next[]是next数组指向第一个next第一个位置的指针
     ll i,j;
     ll ans=0;
-    kmp_pre(x,m,next);
     i=j=0;
     while(i<n){
         while(-1!=j && y[i]!=x[i]){
@@ -19,6 +19,11 @@ ll kmp(const string& x,ll m,const string& y,ll n,ll next[]){// x是模式串，y
             ans++;
             j=next[j];
         }
+        if(ans>=1){
+            ok=1;
+            return i;  
+        }
+
     }
 }
 void kmp_pre(const string &x,ll m,ll next[]){
@@ -37,8 +42,19 @@ void solve() {
     string s2;
     cin >> s1 >> s2;
     s1+=s1;
-    ll n=s2.length();
+    ll m=s2.length();
+    ll n=s1.length();
+    
+    vector<ll> next(m);
+    
+    kmp_pre(s2,m,next.data());
+    ll ans=kmp(s2,m,s1,n,next.data());
+    if(!ok){
+        cout << -1 <<endl;
 
+    }else {
+        cout << ans <<endl;
+    }
 }
 
 signed main() {
