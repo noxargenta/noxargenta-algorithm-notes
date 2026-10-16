@@ -7,8 +7,19 @@ struct Node{
     ll val;
     Node *next; 
 };
+Node *creativeList(ll n){
+    Node *head=nullptr;
+    Node *cur=nullptr;
+    cout  << "输入"  << n << "数字" <<endl;
+    for(ll i=1;i<=n;i++){
+        ll x;
+        cin >> x;
+        Node * newdat=new Node();
+        
+    }
+}
 void solve() {
-      
+
 }
 
 signed main() {
