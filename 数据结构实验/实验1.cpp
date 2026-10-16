@@ -60,7 +60,16 @@ void printNode(Node * head){
         p=p->next;
     }
     cout << endl;
-    
+
+}
+//链表反转
+void reverseList(Node* &head){
+    Node* cur=head;
+    Node* pre=nullptr;
+    while(cur!=nullptr){
+        Node* next=cur->next;
+        
+    }
 }
 
 
