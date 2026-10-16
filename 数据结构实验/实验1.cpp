@@ -6,9 +6,9 @@ using i64 = long long;
 struct Node{
     ll val;
     Node *next; 
-}
+};
 void solve() {
-    
+      
 }
 
 signed main() {
