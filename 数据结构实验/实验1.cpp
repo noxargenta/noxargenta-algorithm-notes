@@ -68,6 +68,7 @@ void reverseList(Node* &head){
     Node* pre=nullptr;
     while(cur!=nullptr){
         Node* next=cur->next;
+        cur->next=pre;
         
     }
 }
