@@ -22,10 +22,14 @@ Node *toucha_ctList(ll n){
     return head;
 }
 
-
+Node * weicha_ctList(ll n){//n个数字的链表
+    Node * head=nullptr;
+    Node *cur=nullptr;
+    
+}
 
 void solve() {
-    
+
 }
 
 signed main() {
