@@ -7,7 +7,7 @@ struct Node{
     ll val;
     Node *next; 
 };
-Node *creativeList(ll n){
+Node *toucha_ctList(ll n){
     Node *head=nullptr;
     Node *cur=nullptr;
     cout  << "输入"  << n << "个数字" <<endl;
@@ -17,6 +17,7 @@ Node *creativeList(ll n){
         Node * newdat=new Node();
         newdat->val=x;
         newdat->next=head;
+        head=newdat;
         
     }
 }
