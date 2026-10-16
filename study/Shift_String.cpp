@@ -3,7 +3,15 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
-void kmp_pre(const string &s2,ll m,vector<ll>* next)
+void kmp_pre(const string &x,ll m,ll next[]){
+    ll i,j;
+    j=next[0]=-1;
+    i=0;
+    while(i<m){
+        while(-1!=j && x[i]!=x[j])j=next[j];
+        
+    }
+}
 void solve() {
     string s1;
     string s2;
