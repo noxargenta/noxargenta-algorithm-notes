@@ -18,11 +18,14 @@ Node *toucha_ctList(ll n){
         newdat->val=x;
         newdat->next=head;
         head=newdat;
-        
     }
+    return head;
 }
-void solve() {
 
+
+
+void solve() {
+    
 }
 
 signed main() {
