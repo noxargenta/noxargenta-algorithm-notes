@@ -3,7 +3,10 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
+ll kmp(const string& x,ll m,const string& y,ll n){// 
+    ll i,j;
 
+}
 void kmp_pre(const string &x,ll m,ll next[]){
     ll i,j;
     j=next[0]=-1;
