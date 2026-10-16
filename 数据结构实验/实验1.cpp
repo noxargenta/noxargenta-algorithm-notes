@@ -76,8 +76,30 @@ void reverseList(Node* &head){
     head=pre;
 }
 
+void delListNode(Node*& head) {             
+    Node* p = head;                              
 
-
+    while (p != nullptr) {                       
+        Node* q = p;                             
+        while (q->next != nullptr) {             
+            if (q->next->val == p->val) {      
+                Node* del = q->next;             
+                q->next = del->next;             
+                delete del;                      
+            } else {                             
+                q = q->next;                     
+            }                                    
+        }                                        
+        p = p->next;                             
+    }                                            
+}   
+void destroyList(Node*& head) {                  
+    while (head != nullptr) {                    
+        Node* temp = head;                       
+        head = head->next;                       
+        delete temp;                             
+    }                                            
+}    
 
 void solve() {
 
