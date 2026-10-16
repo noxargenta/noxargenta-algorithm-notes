@@ -122,9 +122,9 @@ void solve() {
             cout << "请输入结点个数 n：";        // 提示输入结点个数
             cin >> n;                            // 读取结点个数
             destroyList(list);                   // 先释放旧链表内存
-            list = createByHead(n);              // 调用头插法创建链表
+            list = toucha_ctList(n);              // 调用头插法创建链表
             cout << "头插法创建结果：";          // 输出提示
-            printList(list);                     // 输出创建后的链表
+            printNode(list);                     // 输出创建后的链表
             break;                               // 跳出 switch
         }                                        // case 1 结束
         case 2: {                                // 选择 2：尾插法创建单链表
@@ -132,24 +132,24 @@ void solve() {
             cout << "请输入结点个数 n：";        // 提示输入结点个数
             cin >> n;                            // 读取结点个数
             destroyList(list);                   // 先释放旧链表内存
-            list = createByTail(n);              // 调用尾插法创建链表
+            list = weicha_ctList(n);              // 调用尾插法创建链表
             cout << "尾插法创建结果：";          // 输出提示
-            printList(list);                     // 输出创建后的链表
+            printNode(list);                     // 输出创建后的链表
             break;                               // 跳出 switch
         }                                        // case 2 结束
         case 3:                                  // 选择 3：输出链表
             cout << "当前链表：";                // 输出提示
-            printList(list);                     // 调用输出函数
+            printNode(list);                     // 调用输出函数
             break;                               // 跳出 switch
         case 4:                                  // 选择 4：逆置链表
             reverseList(list);                   // 调用逆置函数
             cout << "逆置后链表：";              // 输出提示
-            printList(list);                     // 输出逆置后的链表
+            printNode(list);                     // 输出逆置后的链表
             break;                               // 跳出 switch
         case 5:                                  // 选择 5：删除值相等的结点
-            removeDuplicates(list);              // 调用去重函数
+            delListNode(list);              // 调用去重函数
             cout << "删除值相等结点后链表：";    // 输出提示
-            printList(list);                     // 输出去重后的链表
+            printNode(list);                     // 输出去重后的链表
             break;                               // 跳出 switch
         case 0:                                  // 选择 0：退出程序
             cout << "退出程序。" << endl;        // 输出退出提示
@@ -164,8 +164,8 @@ void solve() {
 
 signed main() {
 //  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    // ios::sync_with_stdio(false);
+    // cin.tie(nullptr);
     int _ = 1;
     // cin >> _;
     while(_--) {
