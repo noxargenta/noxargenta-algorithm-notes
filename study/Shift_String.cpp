@@ -10,7 +10,7 @@ ll kmp(const string& x,ll m,const string& y,ll n,ll next[]){// x是模式串，y
     ll ans=0;
     i=j=0;
     while(i<n){
-        while(-1!=j && y[i]!=x[i]){
+        while(-1!=j && y[i]!=x[j]){
             j=next[j];
         }
         i++;
@@ -21,7 +21,7 @@ ll kmp(const string& x,ll m,const string& y,ll n,ll next[]){// x是模式串，y
         }
         if(ans>=1){
             ok=1;
-            return i;  
+            return (ll)i;  
         }
 
     }
