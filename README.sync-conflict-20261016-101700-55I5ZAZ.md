@@ -1,0 +1,698 @@
+# 算法竞赛学习记录
+
+个人算法竞赛训练仓库，涵盖从入门语法到竞赛算法的完整学习路径。包含日常练习、比赛训练与模板整理。
+
+---
+
+## 快速导航
+
+| 板块 | 说明 |
+|------|------|
+| [学习路径](#学习路径) | 按算法分类的代码索引，标注了每个知识点对应的练习 |
+| [算法笔记](./笔记/README.md) | 按主题分类的算法原理、代码模板与易错点 |
+| [目录概览](#目录概览) | 仓库物理结构说明 |
+| [训练记录](#训练记录) | 按时间线的比赛/训练索引 |
+| [模板收藏](#模板收藏) | 经典模板题汇总 |
+| [套路总结](#套路总结) | 常用写法和小技巧 |
+
+---
+
+## 学习路径
+
+按算法竞赛常见的学习顺序组织。
+
+### 阶段一：基础语法与输入输出
+
+<details>
+<summary>语法基础、STL 入门、暴力枚举</summary>
+
+| 知识点 | 练习代码 | 位置 |
+|-------|---------|------|
+| 基本输入输出 | `A_.../B_.../C_...` | [study/10.1](./study/10.1)、[study/10.2](./study/10.2) |
+| 条件判断、循环 | `a.cpp` ~ `f.cpp` | [study/10.4](./study/10.4) |
+| 数组操作 | `a.cpp` ~ `f.cpp` | [study/10.5](./study/10.5)、[study/10.7](./study/10.7) |
+| String 处理 | `B_4012_语言月赛_202407_rules.cpp` | [study/](./study/B_4012_语言月赛_202407_rules.cpp) |
+| stringstream 按空格分词 | `D_Mail_Institution_Codes.cpp` — **`stringstream ss(line)` + `while(ss >> word)` 切词，详见[笔记16](./笔记/16-stringstream用法.md)** | [competition/niukemanyschool7](./competition/niukemanyschool7/D_Mail_Institution_Codes.cpp) |
+| C++ 标准库技巧 | `complex` 做 2D 几何 / `hypot` / `clamp` / `gcd` 等 — **详见[笔记18](./笔记/18-C++标准库技巧.md)** | 左程云系列 |
+| 暴力枚举 | `P_1428_小鱼比可爱.cpp`、`luoguP1008.cpp` | [study/](./study/P_1428_小鱼比可爱.cpp) |
+
+</details>
+
+### 阶段二：差分与前缀和
+
+<details>
+<summary>一维/二维差分、前缀和技巧</summary>
+
+| 知识点 | 练习代码 | 位置 |
+|-------|---------|------|
+| 二维前缀和与差分 | 专题训练 | [study/11.5(二维前缀和差分, 链表, 图的存储, 并查集, 堆)](./study/11.5(二维前缀和差分,%20链表,%20图的存储,%20并查集,%20堆)) |
+| 差分数组区间修改 | `Meximum_Array_2.cpp` — 差分经典写法 `d1[l]++` `d1[r+1]--` | [study/CF 1066(div1+2)](./study/CF%201066(div1+2)) |
+| 前缀和统计 | 日常练习 | [study/2025.10.20](./study/2025.10.20) |
+| 随机异或哈希 | 按值随机赋权，用前缀指纹比较排列集合；详见[笔记 20](./笔记/20-随机异或哈希-排列前缀集合.md) | [eHash.cpp](./competition/2026CCPCNET/补题/eHash.cpp) |
+
+</details>
+
+### 阶段三：二分查找与二分答案
+
+<details>
+<summary>二分搜索、二分答案 + check 函数</summary>
+
+| 知识点 | 练习代码 | 位置 |
+|-------|---------|------|
+| 二分答案 + 区间可行性 | `D_Jumping_Through_Segments.cpp` — 二分移动次数，check 里维护可达区间 | [competition/20251120ECUT计协第六次训练赛](./competition/20251120ECUT计协第六次训练赛) |
+| 二分 + 差分 | `C_租借教室.cpp` — 二分订单数，差分判断 | [competition/20251123ECUT计协第七次训练赛](./competition/20251123ECUT计协第七次训练赛) |
+| 二分 + 贪心 | `D_劫富济贫.cpp` — 中位数 + 平均数的二分思路 | [competition/20251123ECUT计协第七次训练赛](./competition/20251123ECUT计协第七次训练赛) |
+| `lower_bound` / `upper_bound` 用法 | [笔记13](./笔记/13-lower_bound-upper_bound用法.md) — LIS 贪心二分 / 降序 greater / 坐标压缩 / set 二分，含导弹拦截完整示例 | P_1020 + 6 个源码用例 |
+
+</details>
+
+### 阶段四：双指针与滑动窗口
+
+<details>
+<summary>同向/相向双指针、滑动窗口</summary>
+
+| 知识点 | 练习代码 | 位置 |
+|-------|---------|------|
+| 双指针维护合法区间 | `d.cpp` — 累加 sum 超出 r 时收缩左指针，经典滑窗计数 | [competition/20251110ECUT计协第四次训练赛](./competition/20251110ECUT计协第四次训练赛) |
+| 滑动窗口最小值/最大值 | `P_1886_滑动窗口_模板_单调队列.cpp` — **deque 维护下标，O(n) 经典模板** | [study/](./study/P_1886_滑动窗口_模板_单调队列.cpp) |
+| 双指针去重统计 | `J_Range_Replace.cpp` — 排序后滑窗计数贡献 | [competition/20251214ECUT10](./competition/20251214ECUT10) |
+
+</details>
+
+### 阶段五：栈与单调栈
+
+<details>
+<summary>单调栈（Next Greater Element）</summary>
+
+| 知识点 | 练习代码 | 位置 |
+|-------|---------|------|
+| 单调栈模板 | `P_5788_模板_单调栈.cpp` — **逆序遍历，单调递减栈 O(n)** | [study/](./study/P_5788_模板_单调栈.cpp) |
+| 单调栈应用 | 各种涉及"右边第一个大于/小于"的题目 | 各比赛 |
+
+</details>
+
+### 阶段六：排序与贪心
+
+<details>
+<summary>排序 + 贪心策略</summary>
+
+| 知识点 | 练习代码 | 位置 |
+|-------|---------|------|
+| 排序 + 枚举 | `A_Unique_Number.cpp` | [competition/20251130ECUT计协第八次训练赛](./competition/20251130ECUT计协第八次训练赛) |
+| 贪心构造 | `B_Jumps.cpp` — 数学 + 贪心跳步 | [competition/20251130ECUT计协第八次训练赛](./competition/20251130ECUT计协第八次训练赛) |
+| 贪心 + 前缀最大值 | `Block_Game.cpp` — 相邻和最大 | [competition/2026.2.3NEWK1](./competition/2026.2.3NEWK1) |
+| 贪心 + 排序 | `I_EKIPA.cpp` — 按最大值排序取 top-k | [competition/20251207ECUT9](./competition/20251207ECUT9) |
+
+</details>
+
+### 阶段七：搜索（DFS / BFS）
+
+<details>
+<summary>深度优先搜索、广度优先搜索、树上的 DFS</summary>
+
+| 知识点 | 练习代码 | 位置 |
+|-------|---------|------|
+| BFS 网格搜索 | `C_幅優先探索.cpp` — **双队列存坐标，经典 BFS 模板** | [competition/20251130ECUT12](./competition/20251130ECUT12) |
+| BFS 马走日 | `P_1443_马的遍历.cpp` — **queue<pair> + memset 初始化 + 8 方向** | [study/](./study/P_1443_马的遍历.cpp) |
+| BFS 最短路径 | `蓝桥云课 走迷宫.cpp` — **BFS 四方向走迷宫基础模板** | [study/](./study/蓝桥云课%20走迷宫.cpp) |
+| DFS 洪水填充 (8 方向) | `P_1596_USACO_10_OCT_Lake_Counting_S.cpp` — **Flood Fill 数连通块** | [study/](./study/P_1596_USACO_10_OCT_Lake_Counting_S.cpp) |
+| DFS 岛屿淹没 | `蓝桥云课 全球变暖.cpp` — **检查四面是否邻水判断是否淹没** | [study/](./study/蓝桥云课%20全球变暖.cpp) |
+| Valid BFS 序验证 | `CF_1037_D_Valid_BFS.cpp` — **邻接表按 BFS 序排序后验证** | [study/](./study/CF_1037_D_Valid_BFS.cpp) |
+| BFS 序 | `K_BFS序.cpp` | [competition/2025.12.29group4](./competition/2025.12.29group4) |
+| DFS 序 | `P_9872_DFS_Order.cpp` — **DFS 遍历树，记录 depth 和子树大小** | [study/](./study/P_9872_DFS_Order.cpp) |
+| DFS 搜索 | `MC0456(DFS)斩断灵根.cpp` | [收藏模板题](./收藏模板题) |
+| 回溯搜索 | `MC0509 快刀乱麻定局.cpp` | [收藏模板题](./收藏模板题) |
+| BFS 闭合圈染色 | `P_1162_填涂颜色.cpp` — **边界 BFS 标记外圈，再 BFS 填充内圈** | [study/](./study/P_1162_填涂颜色.cpp) |
+| 多源 BFS | `P_1332_血色先锋队.cpp` — **多个起点同时入队，一次 BFS 计算最近距离** | [study/](./study/P_1332_血色先锋队.cpp) |
+
+</details>
+
+### 阶段八：图论基础
+
+<details>
+<summary>图的存储、树的遍历、拓扑排序</summary>
+
+| 知识点 | 练习代码 | 位置 |
+|-------|---------|------|
+| 邻接表存图 | 专题训练 | [study/11.5](./study/11.5(二维前缀和差分,%20链表,%20图的存储,%20并查集,%20堆)) |
+| 树上 DFS（子树大小 + 深度） | `C_Minimum_Steiner_Tree.cpp` — **DFS 标记关键点子树，双向遍历** | [competition/20251130ECUT11](./competition/20251130ECUT11) |
+| 最短路 / 01-BFS | `B_Toggle_Maze.cpp` | [competition/20251130ECUT11](./competition/20251130ECUT11) |
+| Floyd | `D_Development.cpp` (优化) | 各比赛 |
+| 拓扑排序 | 图论基础训练 | 各比赛 |
+
+</details>
+
+### 阶段九：并查集（DSU）
+
+<details>
+<summary>并查集、带权并查集、扩展域</summary>
+
+| 知识点 | 练习代码 | 位置 |
+|-------|---------|------|
+| DSU 基础模板 | `P_3367_模板_并查集.cpp` — **路径压缩 + 合并 + 查询** | [study/](./study/P_3367_模板_并查集.cpp) |
+| DSU 亲戚关系 | `P_1551_亲戚.cpp` — **基础并查集应用** | [study/](./study/P_1551_亲戚.cpp) |
+| DSU 判环 | `F_Cow_and_Snacks.cpp` — **路径压缩 `f[x]==x? x:f[x]=find(f[x])`** | [competition/20251130ECUT12](./competition/20251130ECUT12) |
+| 扩展域 DSU（敌人关系） | `K_团伙.cpp` — **`merge(x+n,y)` 处理敌人的敌人是朋友** | [competition/20251207ECUT9](./competition/20251207ECUT9) |
+
+</details>
+
+### 阶段十：数学与数论
+
+<details>
+<summary>质因数分解、GCD/LCM、组合数学、位运算</summary>
+
+| 知识点 | 练习代码 | 位置 |
+|-------|---------|------|
+| 质数判定 O(√n) | `P_1036_NOIP_2002_普及组_选数.cpp` — **`isPrime()` 试除模板** | [study/](./study/P_1036_NOIP_2002_普及组_选数.cpp) |
+| 欧拉线性筛 O(N) | `P_1036_NOIP_2002_普及组_选数 copy.cpp` — **bitset + 欧拉筛，每次 O(1) 查表** | [study/](./study/P_1036_NOIP_2002_普及组_选数%20copy.cpp) |
+| 质因数分解 | `c.cpp` (2025ECPC) — **试除 O(√n) 模板** | [competition/2025ECPC](./competition/2025ECPC) |
+| 位运算 | `x_y_n.cpp` — 移位 `n<<31` | [competition/2026.2.5NEWK2](./competition/2026.2.5NEWK2) |
+| 异或找两个奇数次数 | `Two_Odd_Count_Numbers.cpp` — **异或抵消 + Brian Kernighan 分组，详见[笔记17](./笔记/17-异或与BrianKernighan.md)** | [收藏模板题](./收藏模板题/Two_Odd_Count_Numbers.cpp) |
+| 计数 + 组合数学 | `Card_Game.cpp` — **MOD 阶乘计数** | [competition/2026.2.3NEWK1](./competition/2026.2.3NEWK1) |
+| 数学结论 | `Jumps.cpp` — **等差数列求和 + 修正** | [competition/20251130ECUT计协第八次训练赛](./competition/20251130ECUT计协第八次训练赛) |
+| 线性基（XOR Basis） | `Bitwise_Maximization.cpp` — **拆成两集合最大化 XOR 和，S + 2 × max_xor** 详见[笔记14](./笔记/14-线性基.md) | [competition/niukemanyschool2](./competition/niukemanyschool2/Bitwise_Maximization.cpp) |
+| 取模等式计数（CRT + 打表） | `Bobo_s_Lucky_Modulo.cpp` — **合法 a 为连续区间，O(√n) 整除计数** 详见[笔记 19](./笔记/19-取模等式计数-CRT与打表找规律.md) | [competition/niukemanyschool7](./competition/niukemanyschool7/Bobo_s_Lucky_Modulo.cpp) |
+| 位运算 + 构造 | `NCPC.cpp` — bit 计数判胜负 | [competition/2026.2.5NEWK2](./competition/2026.2.5NEWK2) |
+| 三分/几何 | `E_Closest_Moment` | 各比赛 |
+
+</details>
+
+### 阶段十一：动态规划
+
+<details>
+<summary>背包 DP、线性 DP、LIS、树形 DP</summary>
+
+| 知识点 | 练习代码 | 位置 |
+|-------|---------|------|
+| 01 背包（二维） | `P_1048_NOIP_2005_普及组_采药.cpp` — **经典 `dp[i][j]=max(dp[i-1][j], dp[i-1][j-w]+v)`** | [study/](./study/P_1048_NOIP_2005_普及组_采药.cpp) |
+| 01 背包（价值变形） | `P_1060_NOIP_2006_普及组_开心的金明.cpp` — **价值 = 价格 × 重要度** | [study/](./study/P_1060_NOIP_2006_普及组_开心的金明.cpp) |
+| 完全背包（一维正序） | `P_1616_疯狂的采药.cpp` — **`for(i=w;i<=t;i++)` 正序，边读边算** | [study/](./study/P_1616_疯狂的采药.cpp) |
+| 网格路径 DP | `P_1002_NOIP_2002_普及组_过河卒.cpp` — **马挡路，`dp[i][j]=dp[i-1][j]+dp[i][j-1]`** | [study/](./study/P_1002_NOIP_2002_普及组_过河卒.cpp) |
+| 双向 LIS | `P_1091_NOIP_2004_提高组_合唱队形DP解决.cpp` — **正向+反向 LIS，`dp1[i]+dp2[i]-1`** | [study/](./study/P_1091_NOIP_2004_提高组_合唱队形DP解决.cpp) |
+| LIS 贪心 + 二分 | `P_1020_NOIP_1999_提高组_导弹拦截.cpp` — **详解见[笔记13](./笔记/13-lower_bound-upper_bound用法.md)** | [study/](./study/P_1020_NOIP_1999_提高组_导弹拦截.cpp) |
+| 计数 DP | `P_1077_NOIP_2012_普及组_摆花.cpp` — **三维 DP，`dp[i][j][k]` 前 i 种花 j 盆和为 k** | [study/](./study/P_1077_NOIP_2012_普及组_摆花.cpp) |
+| 树形 DP | DSU on tree、树上 DFS 类 | 各比赛 |
+| 状压 DP — 排列计数（偏序约束） | `Lazy_Shuffling.cpp` — **DP over subsets 统计满足前置约束的排列数，见[笔记15](./笔记/15-状压DP-排列计数.md)** | [competition/niukemanyschool2](./competition/niukemanyschool2/Lazy_Shuffling.cpp) |
+
+</details>
+
+### 阶段十二：数据结构进阶
+
+<details>
+<summary>线段树、树状数组、ST 表</summary>
+
+| 知识点 | 练习代码 | 位置 |
+|-------|---------|------|
+| 树状数组 | 专题训练 | 各比赛 |
+| 线段树 | 各比赛中高级题目 | 各比赛 |
+| 优先队列 | STL 混战专题 | [competition/stl-hunzhan](./competition/stl-hunzhan) |
+
+</details>
+
+---
+
+## 目录概览
+
+| 目录 | 说明 |
+|------|------|
+| [study/](./study) | **日常学习** — 按日期/主题组织的练习题，含洛谷、CF、AtCoder 等平台题目 |
+| [competition/](./competition) | **比赛训练** — ECUT 计协训练赛、ECPC 江西省赛、NewCode、牛客周赛等 |
+| [tiantisai/](./tiantisai) | **天梯赛专题** — 含个人解法与 std 标准参考 |
+| [收藏模板题/](./收藏模板题) | **经典模板** — 并查集、DFS、BFS 等收藏题目 |
+
+---
+
+## 训练记录
+
+### ECUT 计协训练赛
+
+| 时间 | 赛事 | 链接 |
+|------|------|------|
+| 2025-10-22 | 记协第一次训练赛 | [competition/记协第一次训练赛](./competition/记协第一次训练赛) |
+| 2025-10-30 | 计算机协会第二次 | [competition/计算机协会第二次](./competition/计算机协会第二次) |
+| 2025-11-10 | ECUT 计协第四次训练赛 | [competition/20251110ECUT计协第四次训练赛](./competition/20251110ECUT计协第四次训练赛) |
+| 2025-11-16 | ECUT 计协第五次训练赛 | [competition/20251115ECUT计协第五次训练赛](./competition/20251115ECUT计协第五次训练赛) |
+| 2025-11-20 | ECUT 计协第六次训练赛 | [competition/20251120ECUT计协第六次训练赛](./competition/20251120ECUT计协第六次训练赛) |
+| 2025-11-23 | ECUT 计协第七次训练赛 | [competition/20251123ECUT计协第七次训练赛](./competition/20251123ECUT计协第七次训练赛) |
+| 2025-11-30 | ECUT 计协第八次训练赛 | [competition/20251130ECUT计协第八次训练赛](./competition/20251130ECUT计协第八次训练赛) |
+| 2025-12-21 | ECUT 训练赛 11 | [competition/20251130ECUT11](./competition/20251130ECUT11) |
+| 2025-12-29 | ECUT 训练赛 12 | [competition/20251130ECUT12](./competition/20251130ECUT12) |
+| 2025-12-07 | ECUT 训练赛 9 | [competition/20251207ECUT9](./competition/20251207ECUT9) |
+| 2025-12-14 | ECUT 训练赛 10 | [competition/20251214ECUT10](./competition/20251214ECUT10) |
+
+### 校外比赛与训练
+
+| 时间 | 赛事 | 链接 |
+|------|------|------|
+| 2025-12-23 | ECUT 新生赛 | [competition/2024ECUT](./competition/2024ECUT) |
+| 2025-10-15 | NCHU 训练赛 | [competition/2025.10.15NCHU](./competition/2025.10.15NCHU) |
+| 2025-10-12 | 牛客训练 | [competition/niuke2025.10.12](./competition/niuke2025.10.12) |
+| 2025-11-02 | 第三次训练赛 | [competition/2025.11.2第三次训练赛](./competition/2025.11.2第三次训练赛) |
+| 2025-11-30 | CF 1066(div1+2) 补题 | [study/CF 1066(div1+2)](./study/CF%201066(div1+2)) |
+| 2025-12-06 | Pinely Round 5 补题 | [study/Pinely Round 5 (Div. 1 + Div. 2)](./study/Pinely%20Round%205%20(Div.%201%20+%20Div.%202)) |
+| 2025-11-11 | 组队训练 | [competition/2025.11.11](./competition/2025.11.11) |
+| 2025-12-29 | 组队训练 group4 | [competition/2025.12.29group4](./competition/2025.12.29group4) |
+| 2025-12-16 | 组队训练 12.16 | [competition/group4 2025.12.16](./competition/group4%202025.12.16) |
+| 2026-02-09 | 江西省赛 ECPC | [competition/2025ECPC](./competition/2025ECPC) |
+| 2026-03-18 | 码蹄集训练 | [competition/2025matiji111](./competition/2025matiji111) |
+| 2026-02-09 | NewCode K1 | [competition/2026.2.3NEWK1](./competition/2026.2.3NEWK1) |
+| 2026-02-09 | NewCode K2 | [competition/2026.2.5NEWK2](./competition/2026.2.5NEWK2) |
+| 2026-02-09 | NewCode K3 | [competition/2026.2.7NEWK3](./competition/2026.2.7NEWK3) |
+| 2026-02-09 | NewCode K4 | [competition/2026.2.9NEWK4](./competition/2026.2.9NEWK4) |
+| 2026-04-02 | 码蹄集（第二阶段） | [competition/2026matiji](./competition/2026matiji) |
+| 2026-04-26 | 码蹄集比赛 | [competition/2026matijicomepition](./competition/2026matijicomepition) |
+| 2026-03-14 | 天梯赛训练 | [tiantisai](./tiantisai) |
+| 2025-12-14 | AtCoder ABC | [competition/ATC436](./competition/ATC436) |
+| 2026-05-19 | CF Round 1090 (Div. 4) | [study/Codeforces Round 1090 (Div. 4)](./study/Codeforces%20Round%201090%20(Div.%204)) |
+| 2026-05-31 | CF Round 1101 (Div. 2) | [competition/Codeforces Round 1101 (Div. 2)](./competition/Codeforces%20Round%201101%20(Div.%202)) |
+| 2026-07-22 | 2025牛客多校第二场 | [competition/niukemanyschool2](./competition/niukemanyschool2) |
+| 2026-08-08 | 2025牛客多校第七场 | [competition/niukemanyschool7](./competition/niukemanyschool7) |
+| 2026-05-31 | CF Edu Round 190 | [study/Educational Codeforces Round 190 (Rated for Div. 2)](./study/Educational%20Codeforces%20Round%20190%20(Rated%20for%20Div.%202)) |
+| 2025-10-19 | 牛客周赛 | [competition/牛客周赛 Round 114](./competition/牛客周赛%20Round%20114) |
+| 2025-11-22 | 传智杯 | [competition/传智杯](./competition/传智杯) |
+
+### STL 专题混战
+
+| 时间 | 专题 | 链接 |
+|------|------|------|
+| 2025-10-14 | STL 综合应用 | [competition/stl-hunzhan](./competition/stl-hunzhan) |
+
+---
+
+## 模板收藏
+
+| 题目 | 算法 | 位置 |
+|------|------|------|
+| F_Cow_and_Snacks | DSU 并查集判环 + 路径压缩 | [收藏模板题](./收藏模板题/F_Cow_and_Snacks.cpp) |
+| K_团伙 | 扩展域并查集（敌人关系） | [competition/20251207ECUT9](./competition/20251207ECUT9/K_团伙.cpp) |
+| Valid BFS | BFS 序验证 | [收藏模板题](./收藏模板题/Valid%20BFS.cpp) |
+| MC0456(DFS)斩断灵根 | DFS 搜索 | [收藏模板题](./收藏模板题/MC0456(DFS)斩断灵根.cpp) |
+| MC0509 快刀乱麻定局 | 回溯搜索 | [收藏模板题](./收藏模板题/MC0509%20快刀乱麻定局.cpp) |
+| P_1443 马的遍历 | BFS queue<pair> + memset | [study/](./study/P_1443_马的遍历.cpp) |
+| 蓝桥云课 走迷宫 | BFS 走迷宫完整模板 | [study/](./study/蓝桥云课%20走迷宫.cpp) |
+| P_1596 Lake Counting | DFS Flood Fill 8 方向 | [study/](./study/P_1596_USACO_10_OCT_Lake_Counting_S.cpp) |
+| 蓝桥云课 全球变暖 | DFS 岛屿淹没判定 | [study/](./study/蓝桥云课%20全球变暖.cpp) |
+| P_1886 滑动窗口 | 单调队列（deque） | [study/](./study/P_1886_滑动窗口_模板_单调队列.cpp) |
+| P_5788 单调栈 | 单调栈 NGE | [study/](./study/P_5788_模板_单调栈.cpp) |
+| P_9872 DFS Order | DFS 序 + 子树大小 | [study/](./study/P_9872_DFS_Order.cpp) |
+| C_幅優先探索 | BFS 网格搜索 | [competition/20251130ECUT12](./competition/20251130ECUT12/C_幅優先探索.cpp) |
+| C_Minimum_Steiner_Tree | 树上 DFS 标记 + 剪枝 | [competition/20251130ECUT11](./competition/20251130ECUT11/C_Minimum_Steiner_Tree.cpp) |
+| P_1048 采药 | 01 背包二维 DP | [study/](./study/P_1048_NOIP_2005_普及组_采药.cpp) |
+| P_1616 疯狂的采药 | 完全背包一维 DP | [study/](./study/P_1616_疯狂的采药.cpp) |
+| P_1002 过河卒 | 网格路径 DP | [study/](./study/P_1002_NOIP_2002_普及组_过河卒.cpp) |
+| P_1091 合唱队形 | 双向 LIS | [study/](./study/P_1091_NOIP_2004_提高组_合唱队形DP解决.cpp) |
+| P_1020 导弹拦截 | LIS 贪心 + 二分 | [study/](./study/P_1020_NOIP_1999_提高组_导弹拦截.cpp) |
+| P_3367 模板_并查集 | 并查集路径压缩 | [study/](./study/P_3367_模板_并查集.cpp) |
+| P_1162 填涂颜色 | BFS 闭合圈染色 | [study/](./study/P_1162_填涂颜色.cpp) |
+| P_1332 血色先锋队 | 多源 BFS | [study/](./study/P_1332_血色先锋队.cpp) |
+| Bitwise_Maximization | 线性基 — 拆成两集合最大化 XOR 和 S + 2×max_xor，详见[笔记14](./笔记/14-线性基.md) | [收藏模板题](./收藏模板题/Bitwise_Maximization.cpp) |
+| Lazy_Shuffling | 状压 DP 排列计数 — 满足偏序约束，详见[笔记15](./笔记/15-状压DP-排列计数.md) | [收藏模板题](./收藏模板题/Lazy_Shuffling.cpp) |
+| D_Mail_Institution_Codes | stringstream 按空格分词 + 首字母比较 | [收藏模板题](./收藏模板题/D_Mail_Institution_Codes.cpp) |
+| Two_Odd_Count_Numbers | 异或找两个奇数次数 + Brian Kernighan 分组，详见[笔记17](./笔记/17-异或与BrianKernighan.md) | [收藏模板题](./收藏模板题/Two_Odd_Count_Numbers.cpp) |
+| Bobo_s_Lucky_Modulo | 取模等式计数 — CRT 连续区间 + O(√n) 整除，详见[笔记 19](./笔记/19-取模等式计数-CRT与打表找规律.md) | [收藏模板题](./收藏模板题/Bobo_s_Lucky_Modulo.cpp) |
+
+---
+
+## 套路总结
+
+常用写法汇总。
+
+### 1. 基础模板
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl '\n'
+#define int long long
+
+void solve() {
+    // your code here
+}
+
+signed main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
+        solve();
+    }
+    return 0;
+}
+```
+
+### 2. 单调队列 — 滑窗最值 (deque 存下标)
+
+```cpp
+deque<int> q;
+for(int i = 0; i < n; i++) {
+    if(!q.empty() && q.front() <= i - k) q.pop_front();
+    while(!q.empty() && a[q.back()] >= a[i]) q.pop_back();
+    q.push_back(i);
+    if(i >= k - 1) cout << a[q.front()] << " ";
+}
+```
+
+### 3. 单调栈 — 右边第一个更大
+
+```cpp
+stack<int> s;
+for(int i = n; i >= 1; i--) {
+    while(!s.empty() && a[i] >= a[s.top()]) s.pop();
+    ans[i] = s.empty() ? 0 : s.top();
+    s.push(i);
+}
+```
+
+### 4. DSU 路径压缩 (一行版)
+
+```cpp
+int find(int x) {
+    return f[x] == x ? x : f[x] = find(f[x]);
+}
+```
+
+### 5. 扩展域 DSU — 敌人的敌人是朋友
+
+```cpp
+merge(x + n, y);
+merge(y + n, x);
+```
+
+### 6. 二分答案 — 区间可行性 check
+
+```cpp
+bool check(int k) {
+    int L = 0, R = 0;
+    for(int i = 1; i <= n; i++) {
+        L -= k; R += k;
+        if(L > r[i] || R < l[i]) return false;
+        L = max(L, l[i]);
+        R = min(R, r[i]);
+    }
+    return true;
+}
+```
+
+### 7. 差分数组
+
+```cpp
+diff[l] += val;
+diff[r + 1] -= val;
+for(int i = 1; i <= n; i++) diff[i] += diff[i - 1];
+```
+
+### 8. 双指针 — 统计合法区间
+
+```cpp
+int j = 0; i64 sum = 0;
+for(int i = 0; i < n; i++) {
+    sum += a[i];
+    while(sum > r && j <= i) {
+        sum -= a[j]; j++;
+    }
+    if(sum >= l && sum <= r) {
+        ans++;
+        sum = 0; j = i + 1;
+    }
+}
+```
+
+### 9. BFS (queue<pair> + 走迷宫三坑：下标/边界/标记)
+
+```cpp
+bool vis[405][405]; int dis[405][405];
+memset(vis, 0, sizeof(vis));
+memset(dis, -1, sizeof(dis));          // -1 表示不可达
+queue<pair<int, int>> q;
+q.push({x, y}); vis[x][y] = 1; dis[x][y] = 0;
+
+while (!q.empty()) {
+    int xx = q.front().first;
+    int yy = q.front().second;
+    q.pop();
+    for (int i = 0; i < 4; i++) {
+        int x2 = xx + dx[i];
+        int y2 = yy + dy[i];
+        if (x2 < 0 || x2 >= n || y2 < 0 || y2 >= m) continue;
+        if (!vis[x2][y2]) {
+            vis[x2][y2] = 1;
+            dis[x2][y2] = dis[xx][yy] + 1;
+            q.push({x2, y2});
+        }
+    }
+}
+```
+
+**三个坑**：
+
+1. 如果代码使用 0-based 下标，而题目坐标是 1-based，读入后需要 `x1--; y1--; x2--; y2--;`
+2. 扩展前要先判 `x2<0||x2>=n||y2<0||y2>=m`，否则数组越界
+3. `push` 后立刻 `vis=1`，漏了会死循环
+
+### 10. 常用 INF / 哨兵值
+
+```cpp
+const int INF = 0x7f7f7f7f;
+const int INFLL = 0x3f3f3f3f3f3f3f3f;
+int maxx = -0x7f7f7f7f;
+```
+
+### 11. 邻接表排序 (按 BFS 序)
+
+```cpp
+sort(tu[i].begin(), tu[i].end(), [&](int x, int y) {
+    return pos[x] < pos[y];
+});
+```
+
+### 12. DFS Flood Fill（8 方向数连通块）
+
+```cpp
+int dx[8] = {-1, 0, 1, 0, 1, 1, -1, -1};
+int dy[8] = {0, 1, 0, -1, 1, -1, 1, -1};
+
+void dfs(int x, int y) {
+    vis[x][y] = 1;
+    for (int i = 0; i < 8; i++) {
+        int nx = x + dx[i], ny = y + dy[i];
+        if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
+        if (a[nx][ny] == 'W' && !vis[nx][ny]) dfs(nx, ny);
+    }
+}
+// 外部计数：每个未访问的 'W' 触发 dfs，ans++
+```
+
+### 13. 方向数组速查
+
+| 场景 | dx | dy |
+|------|----|----|
+| 4 方向（上下左右） | `{1,-1,0,0}` | `{0,0,1,-1}` |
+| 8 方向（含对角线） | `{-1,0,1,0,1,1,-1,-1}` | `{0,1,0,-1,1,-1,1,-1}` |
+| 马走日 | `{1,2,2,1,-1,-2,-2,-1}` | `{-2,-1,1,2,2,1,-1,-2}` |
+
+### 14. 欧拉线性筛 (bitset + 最小质因子)
+
+```cpp
+const int N = 100000008;
+bitset<N> c;
+c.set(); c[0] = c[1] = 0;
+vector<int> primes;
+for (int i = 2; i < N; i++) {
+    if (c[i]) primes.push_back(i);
+    for (auto x : primes) {
+        if (x * i >= N) break;
+        c[x * i] = 0;
+        if (i % x == 0) break;
+    }
+}
+// c[x] == 1 表示 x 是质数，O(1) 查表
+```
+
+### 15. 01 背包（一维倒序）
+
+```cpp
+int dp[1005];
+for (int i = 1; i <= M; i++) {
+    for (int j = T; j >= w[i]; j--) {
+        dp[j] = max(dp[j], dp[j - w[i]] + v[i]);
+    }
+}
+```
+
+### 16. 完全背包（一维正序，边读边算）
+
+```cpp
+int dp[10000007];
+while (m--) {
+    int w, v; cin >> w >> v;
+    for (int i = w; i <= t; i++)
+        dp[i] = max(dp[i], dp[i - w] + v);
+}
+```
+
+### 17. LIS 贪心 + 二分 O(n log n)
+
+```cpp
+// 最长上升子序列
+vector<int> f;
+for (auto x : a) {
+    auto it = lower_bound(f.begin(), f.end(), x);
+    if (it == f.end()) f.push_back(x);
+    else *it = x;
+}
+
+// 最长不升子序列
+vector<int> f;
+for (auto x : a) {
+    auto it = upper_bound(f.begin(), f.end(), x, greater<int>());
+    if (it == f.end()) f.push_back(x);
+    else *it = x;
+}
+//lower_bound：查找第一个大于或等于>=目标值的元素。
+//upper_bound：查找第一个严格大于>目标值的元素。
+```
+
+### 18. 网格路径 DP（过河卒）
+
+```cpp
+dp[0][0] = 1;
+for (int i = 0; i <= n; i++) {
+    for (int j = 0; j <= m; j++) {
+        if (block[i][j]) { dp[i][j] = 0; continue; }
+        if (i > 0) dp[i][j] += dp[i-1][j];
+        if (j > 0) dp[i][j] += dp[i][j-1];
+    }
+}
+```
+
+### 19. 状压 DP — 排列计数（满足偏序约束）
+
+```cpp
+// DP over subsets：统计满足前置约束的排列数
+// pre[u] = 必须在 u 之前放置的元素集合（位掩码）
+dp[0] = 1;
+for (int s = 1; s < (1 << n); s++) {
+    int sum = 0;
+    for (int u = 0; u < n; u++) {
+        if (s & (1 << u)) {
+            if ((pre[u] & s) == 0) {     // u 的所有前置元素都已放置
+                sum += dp[s ^ (1 << u)];
+            }
+        }
+    }
+    dp[s] = sum;
+}
+// dp[(1<<n)-1] = 满足约束的排列数
+// 例题：Lazy_Shuffling (2025牛客多校2 L)，答案 = 2 × dp[(1<<n)-1]
+```
+
+### 20. stringstream 按空格分词 / 字符串数字互转
+
+```cpp
+#include <sstream>
+
+// 1. 按空格分词：处理"一行不知道几个数"
+string line;
+getline(cin, line);
+stringstream ss(line);
+string word;
+while (ss >> word) {          // 以空白为分隔符逐个提取
+    // 处理 word
+}
+
+// 2. 数字 → 字符串
+stringstream s1; s1 << 123;
+string str = s1.str();        // "123"
+
+// 3. 字符串 → 数字
+stringstream s2("456 789");
+int a, b; s2 >> a >> b;       // a=456, b=789
+
+// 4. 自定义分隔符（如逗号）
+stringstream s3("a,b,c");
+string tok;
+while (getline(s3, tok, ',')) { }   // "a" → "b" → "c"
+
+// 坑：cin >> n 后直接 getline 会读到残留换行，需先 getline 吞掉
+// 例题：D_Mail_Institution_Codes (2025牛客多校7 D)
+```
+
+### 21. 取模等式计数 — CRT 区间规律 + 整除统计
+
+```cpp
+// 统计满足 (a mod b)+1 = a mod (b+1) 的有序数对 (a,b)，1<=a,b<=n
+// 规律：对固定 b，合法 a ≡ b²..b²+b-1 (mod b(b+1))，最小合法 a = b²，故 b 只需枚举到 √n
+ll ans = 0;
+for (ll b = 1; b * b <= n; b++) {
+    ll t = b * (b + 1);
+    ll cnt = n / t;
+    ans += cnt * b;                      // 每个完整周期贡献 b 个
+    ll s = n % t;
+    if (s >= b * b) ans += s - b * b + 1;   // 尾部 [b², s] 内的 a
+}
+// 例题：Bobo_s_Lucky_Modulo (2025牛客多校7 L)
+```
+
+### 22. 异或找两个奇数次数 + Brian Kernighan
+
+```cpp
+// 数组中只有 a、b 出现奇数次，其余偶数次，找出 a、b
+int eor1 = 0;
+for (int num : nums) eor1 ^= num;         // = a ^ b（偶数次抵消）
+
+int rightOne = eor1 & (-eor1);            // Brian Kernighan：提取最右侧的 1
+
+int eor2 = 0;
+for (int num : nums) {
+    if ((num & rightOne) == 0) eor2 ^= num;  // 该位为 0 的一组 → a 或 b
+}
+// 结果：{eor2, eor1 ^ eor2}
+// 例题：左程云030_5 Two_Odd_Count_Numbers
+```
+
+### 23. C++ 标准库几何/数值/位运算速查
+
+```cpp
+#include <complex>
+using Point = complex<double>;
+
+Point A = {3, 2}, B = {-2, 3};
+double len = abs(A);               // 模长 = hypot(x, y)
+double ang = arg(A);               // 极角 = atan2(y, x)
+double dot = (conj(A) * B).real(); // 点乘 A·B
+double cross = (conj(A) * B).imag();// 叉乘 A×B（判顺逆时针）
+Point R = A * polar(1.0, PI/2.0);  // A 逆时针旋转 90°
+
+double d3 = hypot(x, y, z);        // C++17 三维距离
+double t = remainder(theta, 2*M_PI); // 角度规范到 [-PI, PI]
+
+double c = clamp(val, -1.0, 1.0);  // C++17 限值，防 acos NaN
+double m = lerp(x1, x2, 0.5);      // C++20 线性插值
+long long mid = midpoint(L, R);    // C++20 防溢出中点
+
+long long g = gcd(a, b), l = lcm(a, b);   // C++17 数论
+// 位运算：__builtin_popcountll / __builtin_clzll / __builtin_ctzll
+// C++20: std::popcount / std::countl_zero / std::countr_zero
+```
+
+### 24. 随机异或哈希：排列前缀集合
+
+给每个值一个固定的 64 位随机权重，所有排列共用同一套权重。扫描前缀时按值异或，指纹相同表示集合高概率相同。
+
+```cpp
+using u64 = uint64_t;
+mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
+vector<u64> weight(n + 1);
+for (int x = 1; x <= n; ++x) weight[x] = rng();
+
+array<u64, 3> pre{};
+int ans = 0;
+for (int i = 1; i <= n; ++i) {
+    for (int j = 0; j < 3; ++j) pre[j] ^= weight[a[j][i]];
+    if (pre[0] == pre[1] || pre[1] == pre[2] || pre[0] == pre[2]) ++ans;
+}
+```
+
+适用于集合或排列前缀；含重复值时只能保留出现次数的奇偶性。原理、完整模板、碰撞概率与双哈希见[笔记 20](./笔记/20-随机异或哈希-排列前缀集合.md)，来源为 [eHash.cpp](./competition/2026CCPCNET/补题/eHash.cpp)。
