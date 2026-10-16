@@ -11,8 +11,9 @@ void kmp_pre(const string &x,ll m,ll next[]){
         while(-1!=j && x[i]!=x[j]){
             j=next[j];
         }
-        
+        next[++i]=++j;
     }
+
 }
 void solve() {
     string s1;
