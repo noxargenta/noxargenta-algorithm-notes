@@ -8,7 +8,9 @@ void kmp_pre(const string &x,ll m,ll next[]){
     j=next[0]=-1;
     i=0;
     while(i<m){
-        while(-1!=j && x[i]!=x[j])j=next[j];
+        while(-1!=j && x[i]!=x[j]){
+            j=next[j];
+        }
         
     }
 }
