@@ -30,11 +30,14 @@ Node * weicha_ctList(ll n){//n个数字的链表
     for(ll i=1;i<=n;i++){
         ll x;
         cin >> x;
-        nextNode->val=x;
+        head=nextNode;
+        head->val=x;
         if(i==n){
-            nextNode->next=nullptr;
+            head->next=nullptr;
+            nextNode=nullptr;
         }else {
-            nextNode->next=new Node();
+            head->next=new Node();
+            nextNode=head->next;
         }
         
     }
