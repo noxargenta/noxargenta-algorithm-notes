@@ -7,7 +7,7 @@ ll kmp(const string& x,ll m,const string& y,ll n,ll next[]){// x是模式串，y
     //ll next[]是next数组指向第一个next第一个位置的指针
     ll i,j;
     ll ans=0;
-     
+    
 }
 void kmp_pre(const string &x,ll m,ll next[]){
     ll i,j;
