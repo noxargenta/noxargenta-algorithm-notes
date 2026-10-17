@@ -10,7 +10,7 @@ void solve() {
     vector<ll> b(m+1,0);
     
     vector<ll> difa(n+1,0);
-    vector<ll> difb(n+1,0);
+    vector<ll> difb(m+1,0);
     for(ll i=1;i<=n;i++){
         cin >> a[i];
         difa[i]=a[i]-a[i-1];
@@ -21,8 +21,8 @@ void solve() {
     }
     ll ans=0;
     auto kmp = [&](vector<ll> s,vector<ll> p) -> void{
-        ll nn=m+1;
-        ll mm=n+1;
+        ll nn=n+1;
+        ll mm=m+1;
         ll i,j;
         vector<ll> next(nn+1);
         
