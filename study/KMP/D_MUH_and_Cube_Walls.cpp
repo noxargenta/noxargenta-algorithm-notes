@@ -23,7 +23,7 @@ void solve() {
         cout << n  << endl;
         return;
     }
-    
+
     ll ans=0;
     auto kmp = [&](vector<ll> s,vector<ll> p) -> void{
         ll nn=m+1;/////nn  s
@@ -43,6 +43,7 @@ void solve() {
         while(i<nn){
             while(j!=-1 && s[j]!=p[i]){
                 j=nxt[j];
+                i++;j++;
                 if(j>=nn){
                     ans++;
                     j=nxt[j];
