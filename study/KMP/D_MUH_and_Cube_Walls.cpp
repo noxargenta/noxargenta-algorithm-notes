@@ -10,8 +10,8 @@ void solve() {
     vector<ll> a(n+1,0);
     vector<ll> b(m+1,0);
     
-    vector<ll> difa(n,0);
-    vector<ll> difb(m,0);
+    vector<ll> difa(n-1,0);
+    vector<ll> difb(m-1,0);
     for(ll i=1;i<=n;i++){
         cin >> a[i];
         
@@ -38,7 +38,7 @@ void solve() {
         ll mm=n+1;/////mm  p长串
         // ms//np
         ll i,j;
-        vector<ll> nxt(m+1);
+        vector<ll> nxt(m);
         
         j=nxt[0]=-1;
         i=0;
