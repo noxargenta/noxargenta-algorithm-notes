@@ -19,7 +19,7 @@ void solve() {
         cin>> b[i];
         difb[i]=b[i]-b[i-1];
     }
-    
+    auto kmp = [&]()
     
 }
 
