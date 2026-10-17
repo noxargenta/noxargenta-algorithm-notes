@@ -4,6 +4,7 @@ using i64 = long long;
 
 #define endl '\n'
 #define ll long long
+/// @brief 
 void solve() {
     ll n,m;
     cin >> n >> m;
@@ -64,8 +65,10 @@ void solve() {
         }
         return;
     };
-    kmp(difb,difa);
-    cout << ans <<endl;
+    ////////
+
+    kmp(difb, difa);
+    cout << ans << endl;
 }
 
 signed main() {
