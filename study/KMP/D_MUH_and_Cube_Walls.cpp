@@ -15,8 +15,8 @@ void solve() {
     vector<ll> difb(m-1,0);
     for(ll i=1;i<=n;i++){
         cin >> a[i];
-        
-    }for(ll i=1;i<n;i++){
+    }
+    for(ll i=1;i<n;i++){
         difa[i-1]=a[i+1]-a[i];
 
     }
