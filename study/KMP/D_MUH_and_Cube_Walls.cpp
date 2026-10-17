@@ -21,10 +21,10 @@ void solve() {
     }
     ll ans=0;
     auto kmp = [&](vector<ll> s,vector<ll> p) -> void{
-        ll n=s.size();
-        ll m=p.size();
+        ll nn=s.size();
+        ll mm=p.size();
         ll i,j;
-        vector<ll> next(n+1);
+        vector<ll> next(nn+1);
         
         j=next[1]=-1;
         i=1;
@@ -34,9 +34,20 @@ void solve() {
             }
             next[++i]=++j;
         } 
-        
-    }
-    
+        i=j=0;
+        while(i<nn){
+            while(j!=-1 && s[j]!=p[i]){
+                j=next[j];
+                if(j>=nn){
+                    ans++;
+                    j=next[j];
+                }
+            }
+        }
+        return;
+    };
+    kmp(difb,difa);
+    cout << ans <<endl;
 }
 
 signed main() {
