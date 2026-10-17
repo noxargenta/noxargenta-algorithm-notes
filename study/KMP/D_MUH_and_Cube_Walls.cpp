@@ -12,13 +12,13 @@ void solve() {
     
     vector<ll> difa(n,0);
     vector<ll> difb(m,0);
-    for(ll i=1;i<=n;i++){
+    for(ll i=1;i<n;i++){
         cin >> a[i];
-        difa[i-1]=a[i]-a[i-1];
+        difa[i-1]=a[i+1]-a[i];
     }
-    for(ll i=1;i<=m;i++){
+    for(ll i=1;i<m;i++){
         cin>> b[i];
-        difb[i-1]=b[i]-b[i-1];
+        difb[i-1]=b[i+1]-b[i];
     }
     if(m==1){
         cout << n  << endl;
