@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 using i64 = long long;
+
 #define endl '\n'
 #define ll long long
 void solve() {
@@ -9,15 +10,15 @@ void solve() {
     vector<ll> a(n+1,0);
     vector<ll> b(m+1,0);
     
-    vector<ll> difa(n+1,0);
-    vector<ll> difb(m+1,0);
+    vector<ll> difa(n,0);
+    vector<ll> difb(m,0);
     for(ll i=1;i<=n;i++){
         cin >> a[i];
-        difa[i]=a[i]-a[i-1];
+        difa[i-1]=a[i]-a[i-1];
     }
     for(ll i=1;i<=m;i++){
         cin>> b[i];
-        difb[i]=b[i]-b[i-1];
+        difb[i-1]=b[i]-b[i-1];
     }
     if(m==1){
         cout << n  << endl;
@@ -29,22 +30,22 @@ void solve() {
         ll nn=m+1;/////nn  s
         ll mm=n+1;/////mm  p长串
         ll i,j;
-        vector<ll> nxt(nn+1);
+        vector<ll> nxt(n+1);
         
-        j=nxt[1]=-1;
-        i=1;
-        while(i<mm){
+        j=nxt[0]=-1;
+        i=0;
+        while(i<m){
             while(j!=-1 && s[i]!=s[j]){
                 j=nxt[j];
             }
             nxt[++i]=++j;
         } 
         i=j=0;
-        while(i<nn){
+        while(i<n){
             while(j!=-1 && s[j]!=p[i]){
                 j=nxt[j];
                 i++;j++;
-                if(j>=nn){
+                if(j>=n){
                     ans++;
                     j=nxt[j];
                 }
