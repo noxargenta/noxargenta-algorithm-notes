@@ -21,6 +21,19 @@ void solve() {
     }
     ll ans=0;
     auto kmp = [&](vector<ll> s,vector<ll> p) -> void{
+        ll n=s.size();
+        ll m=p.size();
+        ll i,j;
+        vector<ll> next(n+1);
+        
+        j=next[1]=-1;
+        i=1;
+        while(i<m){
+            while(j!=-1 && s[i]!=s[j]){
+                j=next[j];
+            }
+            next[++i]=++j;
+        } 
         
     }
     
