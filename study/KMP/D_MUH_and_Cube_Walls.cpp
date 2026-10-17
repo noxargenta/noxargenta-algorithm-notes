@@ -34,15 +34,15 @@ void solve() {
 
     ll ans=0;
     auto kmp = [&](vector<ll> s,vector<ll> p) -> void{
-        //ll nn=m+1;/////nn  s
-        //ll mm=n+1;/////mm  p长串
+        ll nn = m - 1;         // 原来是 m + 1
+        ll mm = n - 1;         // 原来是 n + 1
         // ms//np
         ll i,j;
-        vector<ll> nxt(m);
+        vector<ll> nxt(mm+1);
         //kmp_pre
         j=nxt[0]=-1;
         i=0;
-        while(i<m){
+        while(i<nn){
             while(j!=-1 && s[i]!=s[j]){
                 j=nxt[j];
             }
@@ -52,12 +52,12 @@ void solve() {
 
         //kmp
         i=j=0;
-        while(i<n){
+        while(i<mm){
             while(j!=-1 && s[j]!=p[i]){
                 j=nxt[j];
             }
             i++;j++;
-            if(j>=m){
+            if(j>=nn){
                 ans++;
                 j=nxt[j];
             }
