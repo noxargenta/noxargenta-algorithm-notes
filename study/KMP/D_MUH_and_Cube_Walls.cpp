@@ -24,23 +24,23 @@ void solve() {
         ll nn=m+1;/////nn  s
         ll mm=n+1;/////mm  p长串
         ll i,j;
-        vector<ll> next(nn+1);
+        vector<ll> nxt(nn+1);
         
-        j=next[1]=-1;
+        j=nxt[1]=-1;
         i=1;
         while(i<mm){
             while(j!=-1 && s[i]!=s[j]){
-                j=next[j];
+                j=nxt[j];
             }
-            next[++i]=++j;
+            nxt[++i]=++j;
         } 
         i=j=0;
         while(i<nn){
             while(j!=-1 && s[j]!=p[i]){
-                j=next[j];
+                j=nxt[j];
                 if(j>=nn){
                     ans++;
-                    j=next[j];
+                    j=nxt[j];
                 }
             }
         }
