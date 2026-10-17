@@ -21,14 +21,14 @@ void solve() {
     }
     ll ans=0;
     auto kmp = [&](vector<ll> s,vector<ll> p) -> void{
-        ll nn=s.size();
-        ll mm=p.size();
+        ll nn=m+1;
+        ll mm=n+1;
         ll i,j;
         vector<ll> next(nn+1);
         
         j=next[1]=-1;
         i=1;
-        while(i<m){
+        while(i<mm){
             while(j!=-1 && s[i]!=s[j]){
                 j=next[j];
             }
