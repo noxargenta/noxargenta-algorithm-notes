@@ -29,8 +29,9 @@ void solve() {
     auto kmp = [&](vector<ll> s,vector<ll> p) -> void{
         ll nn=m+1;/////nn  s
         ll mm=n+1;/////mm  p长串
+        // ms//np
         ll i,j;
-        vector<ll> nxt(n+1);
+        vector<ll> nxt(m+1);
         
         j=nxt[0]=-1;
         i=0;
@@ -44,11 +45,11 @@ void solve() {
         while(i<n){
             while(j!=-1 && s[j]!=p[i]){
                 j=nxt[j];
-                i++;j++;
-                if(j>=n){
-                    ans++;
-                    j=nxt[j];
-                }
+            }
+            i++;j++;
+            if(j>=m){
+                ans++;
+                j=nxt[j];
             }
         }
         return;
