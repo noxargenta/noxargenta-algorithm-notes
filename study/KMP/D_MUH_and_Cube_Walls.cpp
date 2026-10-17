@@ -21,8 +21,8 @@ void solve() {
     }
     ll ans=0;
     auto kmp = [&](vector<ll> s,vector<ll> p) -> void{
-        ll nn=n+1;
-        ll mm=m+1;
+        ll nn=m+1;/////nn  s
+        ll mm=n+1;/////mm  p长串
         ll i,j;
         vector<ll> next(nn+1);
         
