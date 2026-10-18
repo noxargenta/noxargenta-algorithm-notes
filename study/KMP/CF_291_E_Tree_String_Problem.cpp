@@ -39,7 +39,17 @@ void solve() {
         auto [u,now]=st.top();
         st.pop();
         for(ll v : G[u]){
-            
+            ll j=now;
+            for(auto c : a[v]){
+                while(j!=-1 && c != pat[j]){
+                    j=nxt[j];
+                }
+                j++;
+                if(j>=m){
+                    ans++;
+                    j=nxt[j];
+                }
+            }
         }
     }
 }
