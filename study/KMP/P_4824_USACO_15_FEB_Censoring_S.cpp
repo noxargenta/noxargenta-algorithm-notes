@@ -37,18 +37,19 @@ void solve() {
         // }
         i++;
         j++;
-        if(j>n){
+        if(j==n){
             ll xxx=n;
             while(xxx--){
                 st.pop();
             }
-            j=st.top().j+1;
+            j= st.empty() ? 0 : st.top().j+1;
         }
 
     }
     string ans="";
     while(!st.empty()){
         ans+=st.top().c1;
+        st.pop();
     }
     reverse(ans.begin(),ans.end());
     cout << ans << endl;
