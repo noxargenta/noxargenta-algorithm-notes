@@ -7,13 +7,15 @@ void solve() {
     ll n;
     cin >> n;
     ll tmp=n;
+    ll fu=1;
+
     vector<string> a(n+1,"");
     while(tmp--){
         ll x;
         cin >> x;
         cin >> a[x];
     }   
-    
+
 }
 
 signed main() {
