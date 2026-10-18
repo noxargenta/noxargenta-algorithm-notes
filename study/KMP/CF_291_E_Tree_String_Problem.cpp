@@ -10,6 +10,7 @@ void solve() {
     vector<string> a(n+1,"");
     vector<ll> f(n+1);
     ll i=1;
+    string 
     while(tmp--){
         i++;
         ll fu;
@@ -17,7 +18,7 @@ void solve() {
         cin >> a[i];
         f[i]=fu;
         ll u=i,v=fu;
-        
+
     }   
 
 }
