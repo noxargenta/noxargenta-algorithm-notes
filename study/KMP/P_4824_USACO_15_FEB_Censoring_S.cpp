@@ -19,6 +19,8 @@ void solve() {
         }
         nxt[++i]=++j;
     }
+    stack<ll> stack1;
+    stack<ll> stack2;
     
 }
 
