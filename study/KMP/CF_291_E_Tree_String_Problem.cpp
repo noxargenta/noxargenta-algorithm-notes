@@ -50,9 +50,10 @@ void solve() {
                     j=nxt[j];
                 }
             }
-            st.push()
+            st.push({v,j});
         }
     }
+    cout << ans <<endl;
 }
 
 
