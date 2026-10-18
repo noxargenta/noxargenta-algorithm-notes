@@ -6,22 +6,16 @@ using i64 = long long;
 void solve() {
     ll n;
     cin >> n;
-    ll tmp=n;
-    vector<string> a(n+1,"");
+    ll tmp=n-1;
     vector<ll> f(n+1);
     ll i=1;
-    
-    vector<vector<ll>> G(n+10,vector<ll> (0));
-    while(tmp--){
-        i++;
+    vector<string> a(n + 1);
+    vector<vector<ll>> G(n + 1);
+    for (ll i = 2; i <= n; i++) {
         ll fu;
-        cin >> fu;
-        cin >> a[i];
-        f[i]=fu;
-        ll u=i,v=fu;
-        G[v].push_back(u);
-        G[u].push_back(v);
-    }   
+        cin >> fu >> a[i];
+        G[fu].push_back(i);
+    }
     string pat;
     cin >> pat;
     ll m=pat.length();
@@ -35,7 +29,9 @@ void solve() {
         }
         nxt[++i]=++j;
     }
-    
+    i=0;
+    j=0;
+
 }
 
 
