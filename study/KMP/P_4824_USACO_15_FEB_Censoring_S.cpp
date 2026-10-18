@@ -21,7 +21,8 @@ void solve() {
     }
     stack<ll> stack1;
     stack<ll> stack2;
-    
+    i=0;j=0;
+
 }
 
 signed main() {
