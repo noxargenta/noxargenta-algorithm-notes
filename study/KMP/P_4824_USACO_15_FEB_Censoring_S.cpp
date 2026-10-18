@@ -31,9 +31,10 @@ void solve() {
         while(j!=-1 && s1[i]!=s2[j]){
             j=nxt[j];
         }
-        if(s1[i]==s2[j]){
-            st.push({s1[i],(ll)i,s2[j],(ll)j});
-        }
+        st.push({s1[i], i, '\0', j});
+        // if(s1[i]==s2[j]){
+        //     st.push({s1[i],(ll)i,s2[j],(ll)j});
+        // }
         i++;
         j++;
         if(j>n){
