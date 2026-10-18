@@ -4,7 +4,20 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
-    
+    string s1;
+    cin >> s1;
+    string s2;
+    cin >> s2;
+    ll n=s2.length();
+    vector<ll> nxt(n+1);
+    ll i,j;
+    j=nxt[0]=-1;
+    i=0;
+    while(i<n){
+        while(j!=-1 && s2[i]!=s2[j]){
+            nxt[++i]=++j;
+        }
+    }
 }
 
 signed main() {
