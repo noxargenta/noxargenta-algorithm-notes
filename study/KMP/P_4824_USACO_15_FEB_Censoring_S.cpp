@@ -5,8 +5,8 @@ using i64 = long long;
 #define ll long long
 struct Node{
     char c1;
-    char c2;
     ll i;
+    char c2;
     ll j;
 };
 void solve() {
@@ -28,9 +28,10 @@ void solve() {
     stack<Node> st;
     i=0;j=0;
     while(i<s1.length()){
+        while(j!=-1 && s1[i]!=s2[j])
         if(s1[i]==s2[j]){
             st.push({s1[i],(ll)i,s2[j],(ll)j});
-            
+
         }
     }
 }
