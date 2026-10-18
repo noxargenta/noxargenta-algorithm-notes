@@ -28,7 +28,9 @@ void solve() {
     stack<Node> st;
     i=0;j=0;
     while(i<s1.length()){
-        while(j!=-1 && s1[i]!=s2[j])
+        while(j!=-1 && s1[i]!=s2[j]){
+            j=nxt[j];
+        }
         if(s1[i]==s2[j]){
             st.push({s1[i],(ll)i,s2[j],(ll)j});
         }
@@ -39,9 +41,16 @@ void solve() {
             while(xxx--){
                 st.pop();
             }
+            j=st.top().j+1;
         }
-        
+
     }
+    string ans="";
+    while(!st.empty()){
+        ans+=st.top().c1;
+    }
+    reverse(ans.begin(),ans.end());
+    cout << ans << endl;
 }
 
 signed main() {
