@@ -15,9 +15,11 @@ void solve() {
     i=0;
     while(i<n){
         while(j!=-1 && s2[i]!=s2[j]){
-            nxt[++i]=++j;
+            j=nxt[j];
         }
+        nxt[++i]=++j;
     }
+    
 }
 
 signed main() {
