@@ -6,10 +6,14 @@ using i64 = long long;
 void solve() {
     ll n;
     cin >> n;
-    ll =n;
-    while(curr--){
-
-    }
+    ll tmp=n;
+    vector<string> a(n+1,"");
+    while(tmp--){
+        ll x;
+        cin >> x;
+        cin >> a[x];
+    }   
+    
 }
 
 signed main() {
