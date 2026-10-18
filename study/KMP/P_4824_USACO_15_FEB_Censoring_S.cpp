@@ -6,7 +6,8 @@ using i64 = long long;
 struct Node{
     char c1;
     char c2;
-    ll i,j;
+    ll i;
+    ll j;
 };
 void solve() {
     string s1;
@@ -24,10 +25,13 @@ void solve() {
         }
         nxt[++i]=++j;
     }
-    stack<Node> stack1;
+    stack<Node> st;
     i=0;j=0;
     while(i<s1.length()){
-        
+        if(s1[i]==s2[j]){
+            st.push({s1[i],(ll)i,s2[j],(ll)j});
+            
+        }
     }
 }
 
