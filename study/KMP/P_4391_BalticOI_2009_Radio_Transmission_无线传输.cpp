@@ -23,7 +23,7 @@ void solve() {
         }
     };
     prekmp();
-    cout << n-next[n-1] <<endl;
+    cout << n-next[n] <<endl;
 }
 
 signed main() {
