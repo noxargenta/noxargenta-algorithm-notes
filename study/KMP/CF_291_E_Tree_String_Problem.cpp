@@ -7,13 +7,17 @@ void solve() {
     ll n;
     cin >> n;
     ll tmp=n;
-    ll fu=1;
-
     vector<string> a(n+1,"");
+    vector<ll> f(n+1);
+    ll i=1;
     while(tmp--){
-        ll x;
-        cin >> x;
-        cin >> a[x];
+        i++;
+        ll fu;
+        cin >> fu;
+        cin >> a[i];
+        f[i]=fu;
+        ll u=i,v=fu;
+        
     }   
 
 }
