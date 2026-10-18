@@ -10,7 +10,8 @@ void solve() {
     vector<string> a(n+1,"");
     vector<ll> f(n+1);
     ll i=1;
-    string 
+    string pat;
+    vector<vector<ll>> G(n+10,vector<ll> (0));
     while(tmp--){
         i++;
         ll fu;
@@ -18,9 +19,10 @@ void solve() {
         cin >> a[i];
         f[i]=fu;
         ll u=i,v=fu;
-
+        G[v].push_back(u);
+        G[u].push_back(v);
     }   
-
+    cin >> pat;
 }
 
 signed main() {
