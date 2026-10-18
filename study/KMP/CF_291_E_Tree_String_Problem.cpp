@@ -32,36 +32,9 @@ void solve() {
     i=0;
     j=0;
     ll ans = 0;
-
-    // 保存：节点编号、到达该节点时的匹配长度
-    stack<pair<ll, ll>> st;
-    st.push({1, 0});
-
-    while (!st.empty()) {
-        auto [u, state] = st.top();
-        st.pop();
-
-        for (ll v : G[u]) {
-            ll j = state;  // 每个孩子复制父亲的匹配状态
-
-            for (char c : a[v]) {
-                // 下面就是你熟悉的普通 KMP
-                while (j != -1 && c != pat[j]) {
-                    j = nxt[j];
-                }
-                j++;
-
-                if (j == m) {
-                    ans++;
-                    j = nxt[j];  // 保留重叠匹配
-                }
-            }
-
-            st.push({v, j});
-        }
-    }
-
-    cout << ans << endl;
+    stack<pair<ll,ll>> st;
+    //{节点编号，目前长度}
+    st.push({1,0});
 
 }
 
