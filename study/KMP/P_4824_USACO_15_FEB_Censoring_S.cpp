@@ -3,6 +3,11 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
+struct Node{
+    char c1;
+    char c2;
+    ll i,j;
+};
 void solve() {
     string s1;
     cin >> s1;
@@ -19,10 +24,11 @@ void solve() {
         }
         nxt[++i]=++j;
     }
-    stack<ll> stack1;
-    stack<ll> stack2;
+    stack<Node> stack1;
     i=0;j=0;
-
+    while(i<s1.length()){
+        
+    }
 }
 
 signed main() {
