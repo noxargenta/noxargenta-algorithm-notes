@@ -50,6 +50,7 @@ void solve() {
                     j=nxt[j];
                 }
             }
+            st.push()
         }
     }
 }
