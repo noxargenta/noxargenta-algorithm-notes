@@ -35,7 +35,13 @@ void solve() {
     stack<pair<ll,ll>> st;
     //{节点编号，目前长度}
     st.push({1,0});
-
+    while(st.empty()){
+        auto [u,now]=st.top();
+        st.pop();
+        for(ll v : G[u]){
+            
+        }
+    }
 }
 
 
