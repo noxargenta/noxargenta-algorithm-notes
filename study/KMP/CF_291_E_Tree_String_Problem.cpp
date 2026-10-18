@@ -10,7 +10,7 @@ void solve() {
     vector<string> a(n+1,"");
     vector<ll> f(n+1);
     ll i=1;
-    string pat;
+    
     vector<vector<ll>> G(n+10,vector<ll> (0));
     while(tmp--){
         i++;
@@ -22,8 +22,22 @@ void solve() {
         G[v].push_back(u);
         G[u].push_back(v);
     }   
+    string pat;
     cin >> pat;
+    ll m=pat.length();
+    vector<ll> nxt(m+1);
+    ll j;
+    j=nxt[0]=-1;
+    i=0;
+    while(i<m){
+        while(j!=-1 && pat[i]!=pat[j]){
+            j=nxt[j];
+        }
+        nxt[++i]=++j;
+    }
+    
 }
+
 
 signed main() {
 //  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
