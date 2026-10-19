@@ -14,6 +14,8 @@ void solve() {
         xs.push_back(a[i].second);
         
     }
+    sort(xs.begin(),xs.end());
+    xs.erase(unique())
 }
 
 
