@@ -29,10 +29,13 @@ void solve() {
     for(auto i=1;i<=m;i++){
         b[i]=b[i-1]+dif[i];
     }
-    ll ans2=0;
+    ll ans=0;
     for(ll i=0;i<n;i++){
-        if(abs[b[a[]]])
+        if(abs(b[a[i].first]-b[a[i].second])>=p){
+            ans++;
+        }
     }
+    cout << ans <<endl;
 
 }
 
