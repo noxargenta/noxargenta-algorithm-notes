@@ -15,7 +15,16 @@ void solve() {
         
     }
     sort(xs.begin(),xs.end());
-    xs.erase(unique())
+    xs.erase(unique(xs.begin(),xs.end()),xs.end());
+    ll m=xs.size();
+    vector<ll> dif(m+10,0);
+    vector<ll> b(m+100,0);
+    for(ll i=0;i<n;i++){
+        ll l=lower_bound(xs.begin(),xs.end(),a[i].first)-xs.begin()+1;
+        ll r=lower_bound(xs.begin(),xs.end(),a[i].second)-xs.begin()+1;
+        
+    }
+
 }
 
 
