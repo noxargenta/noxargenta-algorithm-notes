@@ -22,7 +22,16 @@ void solve() {
     for(ll i=0;i<n;i++){
         ll l=lower_bound(xs.begin(),xs.end(),a[i].first)-xs.begin()+1;
         ll r=lower_bound(xs.begin(),xs.end(),a[i].second)-xs.begin()+1;
-        
+        a[i]={l,r};
+        dif[l]++;
+        dif[r+1]--;
+    }
+    for(auto i=1;i<=m;i++){
+        b[i]=b[i-1]+dif[i];
+    }
+    ll ans2=0;
+    for(ll i=0;i<n;i++){
+        if(abs[b[a[]]])
     }
 
 }
