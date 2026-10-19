@@ -7,13 +7,29 @@ void solve() {
     ll n,p;
     cin >>n >> p;
     vector<pair<ll,ll>> a(n);
-    vector<ll> dif(n+100);
+    vector<ll> dif(n+100,0);
     for(ll i=0;i<n;i++){
         cin >>a[i].first >> a[i].second;
         dif[a[i].first]++;
         dif[a[i].second+1]--;
     }
-    
+    vector<ll> ans(n+100,0);
+    ll val=0;
+    for(ll i=0;i<n;i++){
+        val+=dif[i];
+        ans[i]+=val;
+        for(ll k=0;k<n;k++){
+            cout << ans[k]  << " ";
+        }
+        cout <<endl;
+    }
+    ll ans2=0;
+    for(ll i=0;i<n;i++){
+        if(abs(ans[a[i].first]-ans[a[i].second])>=p){
+            ans2++;
+        }
+    }
+    cout << ans2 <<endl;
 
 }
 
