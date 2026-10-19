@@ -16,8 +16,8 @@ void solve() {
     vector<ll> ans(n+100,0);
     ll val=0;
     for(ll i=0;i<n;i++){
-        val+=dif[i];
-        ans[i]+=val;
+        
+        ans[i]+=dif[i]+ans[i==0 ? 0 : i-1];
         for(ll k=0;k<n;k++){
             cout << ans[k]  << " ";
         }
