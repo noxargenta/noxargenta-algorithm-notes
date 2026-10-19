@@ -6,26 +6,28 @@ using i64 = long long;
 void solve() {
     ll n,p;
     cin >>n >> p;
+    ll maxx=0;
     vector<pair<ll,ll>> a(n);
     vector<ll> dif(n+100,0);
     for(ll i=0;i<n;i++){
         cin >>a[i].first >> a[i].second;
+        maxx=max(a[i].second,maxx);
         dif[a[i].first]++;
         dif[a[i].second+1]--;
     }
-    vector<ll> ans(n+100,0);
+    vector<ll> b(maxx+100,0);
     ll val=0;
-    for(ll i=0;i<n;i++){
+    for(ll i=0;i<=maxx;i++){
         
-        ans[i]+=dif[i]+ans[i==0 ? 0 : i-1];
-        for(ll k=0;k<n;k++){
-            cout << ans[k]  << " ";
-        }
-        cout <<endl;
+        b[i]+=dif[i]+b[i==0 ? 0 : i-1];
+        // for(ll k=0;k<maxx;k++){
+        //     cout << b[k]  << " ";
+        // }
+        // cout <<endl;
     }
     ll ans2=0;
     for(ll i=0;i<n;i++){
-        if(abs(ans[a[i].first]-ans[a[i].second])>=p){
+        if(abs(b[a[i].first]-b[a[i].second])>=p){
             ans2++;
         }
     }
