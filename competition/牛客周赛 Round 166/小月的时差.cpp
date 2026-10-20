@@ -43,13 +43,15 @@ void solve() {
         c[i]=abs(da[i]-db[i]);
     }
 
-    vector<ll> dist(n+10,L;LONG_MAX);
+    vector<ll> dist(n+10,LONG_MAX);
     priority_queue<pair<ll, ll>,
                    vector<pair<ll,ll>>,
                    greater<pair<ll,ll>>> pq;
 
     dist[s]=c[s];
+    pq.push({dist[s],s});
     
+
 
 }
 
