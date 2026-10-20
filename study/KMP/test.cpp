@@ -4,9 +4,7 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
-    string s="abcd";
-    reverse(s.begin(),s.end());
-    cout << s <<endl;   
+    
 }
 
 signed main() {
