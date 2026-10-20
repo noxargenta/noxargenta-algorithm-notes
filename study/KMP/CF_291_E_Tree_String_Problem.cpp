@@ -34,7 +34,7 @@ void solve() {
     ll ans = 0;
     stack<pair<ll,ll>> st;
     //{节点编号，目前长度}
-    vector<vector<ll>> go(m+10);
+    vector<vector<ll>> go(m+10,vector<ll> (26));
     for(ll i=0;i<m;i++){
         for(ll c=0;c<26;c++){
             if(pat[i]==char('a'+c)){
@@ -53,10 +53,12 @@ void solve() {
         for(ll v : G[u]){
             ll j=now;
             for(auto c : a[v]){
-                while(j!=-1 && c != pat[j]){
-                    j=nxt[j];
-                }
-                j++;
+                j=go[j][c-'a'];
+
+                // while(j!=-1 && c != pat[j]){
+                //     j=nxt[j];
+                // }
+                // j++;
                 if(j>=m){
                     ans++;
                     j=nxt[j];
