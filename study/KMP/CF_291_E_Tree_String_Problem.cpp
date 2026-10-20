@@ -34,6 +34,16 @@ void solve() {
     ll ans = 0;
     stack<pair<ll,ll>> st;
     //{节点编号，目前长度}
+    vector<vector<ll>> go(m+10);
+    for(ll i=0;i<m;i++){
+        for(ll c=0;c<26;c++){
+            if(pat[i]==char('a'+c)){
+                go[i][c]=j+1;
+            }else if(i==0){
+                
+            }
+        }
+    }
     st.push({1,0});
     while(!st.empty()){
         auto [u,now]=st.top();
