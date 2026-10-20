@@ -3,20 +3,28 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
-ll n,m,a,b,s,t;
-vector<vector<ll>> G(2e5+10);
-vector<ll> x(2e5+10,0);
-vector<ll> y(2e5+10,0);
-vector<ll> c(2e5+10,0);
 void solve() {
+    ll n,m,a,b,s,t;
     cin >> n >> m >> a >> b >> s >> t;
-    for(ll i=1;i<=m;i++){
+    vector<vector<ll>> G(n+1);
+    for(ll i=0;i<m;i++){
         ll u,v;
         cin >> u >> v;
         G[u].push_back(v);
         G[v].push_back(u);
     }
-    
+    auto bfs = [&](ll start){
+        vector<ll> d(n+1,-1);
+        queue<ll> q;
+        d[start]=0;
+        q.push(start);
+        while(!q.empty()){
+            ll u = q.front();
+            p.pop();
+            
+        }
+    }
+    G[v].push_back(u);
 }
 
 signed main() {
