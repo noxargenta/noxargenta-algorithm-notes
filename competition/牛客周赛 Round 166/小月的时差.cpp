@@ -18,10 +18,14 @@ void solve() {
         queue<ll> q;
         d[start]=0;
         q.push(start);
+
         while(!q.empty()){
             ll u = q.front();
-            p.pop();
-            
+            q.pop();
+
+            for(auto v : g[u]){
+                
+            }
         }
     }
     G[v].push_back(u);
