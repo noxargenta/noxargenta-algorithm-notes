@@ -37,13 +37,13 @@ void solve() {
     vector<vector<ll>> go(m+10,vector<ll> (26));
     for(ll i=0;i<m;i++){
         for(ll c=0;c<26;c++){
-            if(pat[i]==char('a'+c)){
-                go[i][c]=j+1;
-            }else if(i==0){
-                go[i][c]=0;
-            }else {
-                go[i][c]=go[nxt[i]][c];
+            char ch=char('a'+c);
+            ll k=i;
+            while(k!=-1 && ch!=pat[k]){
+                k=nxt[k];
             }
+            k++;
+            go[k][c]=k;
         }
     }
     st.push({1,0});
