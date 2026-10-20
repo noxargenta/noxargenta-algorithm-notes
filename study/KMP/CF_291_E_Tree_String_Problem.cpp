@@ -39,14 +39,14 @@ void solve() {
         for(ll c=0;c<26;c++){
             char ch=char('a'+c);
             ll k=i;
-            if(pat[i]==k){
+            if(pat[i]==ch){
                 k++;
-            }else if(k==0){
+            }else if(i==0){
                 k=0;
             }else {
-                
+                k=go[nxt[i]][c];
             }
-
+            go[i][c]=k;
         }
     }
     st.push({1,0});
