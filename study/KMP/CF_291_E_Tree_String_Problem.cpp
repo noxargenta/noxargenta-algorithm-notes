@@ -41,8 +41,12 @@ void solve() {
             ll k=i;
             if(pat[i]==k){
                 k++;
+            }else if(k==0){
+                k=0;
+            }else {
+                
             }
-            
+
         }
     }
     st.push({1,0});
