@@ -6,6 +6,7 @@ using i64 = long long;
 void solve() {
     ll n,m,a,b,s,t;
     cin >> n >> m >> a >> b >> s >> t;
+
     vector<vector<ll>> G(n+1);
     for(ll i=0;i<m;i++){
         ll u,v;
@@ -13,6 +14,8 @@ void solve() {
         G[u].push_back(v);
         G[v].push_back(u);
     }
+
+
     auto bfs = [&](ll start){
         vector<ll> d(n+1,-1);
         queue<ll> q;
@@ -23,12 +26,31 @@ void solve() {
             ll u = q.front();
             q.pop();
 
-            for(auto v : g[u]){
-                
+            for(auto v : G[u]){
+                if(d[v]!=-1)continue;
+                d[v] = d[u]+1;
+                q.push(v);
             }
         }
+        return d;
+    };
+
+    auto da = bfs(a);
+    auto db= bfs(b);
+
+    vector<ll> c(n+10);
+    for(ll i=1;i<=n;i++){
+        c[i]=abs(da[i]-db[i]);
     }
-    G[v].push_back(u);
+
+    vector<ll> dist(n+10,L;LONG_MAX);
+    priority_queue<pair<ll, ll>,
+                   vector<pair<ll,ll>>,
+                   greater<pair<ll,ll>>> pq;
+
+    dist[s]=c[s];
+    
+
 }
 
 signed main() {
