@@ -52,10 +52,20 @@ void solve() {
     pq.push({dist[s],s});
     while(!pq.empty()){
         auto [d,u]=pq.top();
+        pq.pop();
         if(d!=dist[u])continue;
-        
+        if(u==t){
+            break;
+        }
+        for(auto v : G[u]){
+            ll nd=max(d,c[v]);
+            if(nd<dist[v]){
+                dist[v]=nd;
+                pq.push({nd,v});
+            }
+        }
     }
-
+    cout << dist[t] <<endl;
 
 }
 
