@@ -1,0 +1,1 @@
+{"name":"Local: 小月的时差 copy","url":"c:\\code\\c++lan\\competition\\牛客周赛 Round 166\\小月的时差 copy.cpp","tests":[{"id":1792499405743,"input":"5 4 1 5 2 4\n1 2\n2 3\n3 4\n4 5","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\competition\\牛客周赛 Round 166\\小月的时差 copy.cpp","group":"local","local":true}
