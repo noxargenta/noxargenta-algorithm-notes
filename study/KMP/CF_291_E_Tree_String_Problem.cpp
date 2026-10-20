@@ -42,7 +42,7 @@ void solve() {
             }else if(i==0){
                 go[i][c]=0;
             }else {
-                go[i][c]=go[]
+                go[i][c]=go[nxt[i]][c];
             }
         }
     }
