@@ -39,11 +39,10 @@ void solve() {
         for(ll c=0;c<26;c++){
             char ch=char('a'+c);
             ll k=i;
-            while(k!=-1 && ch!=pat[k]){
-                k=nxt[k];
+            if(pat[i]==k){
+                k++;
             }
-            k++;
-            go[i][c]=k;
+            
         }
     }
     st.push({1,0});
