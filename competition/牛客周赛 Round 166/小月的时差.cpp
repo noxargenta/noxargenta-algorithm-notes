@@ -51,6 +51,8 @@ void solve() {
     dist[s]=c[s];
     pq.push({dist[s],s});
     while(!pq.empty()){
+        auto [d,u]=pq.top();
+        if(d!=dist[u])continue;
         
     }
 
