@@ -19,13 +19,18 @@ void solve() {
     ll ans=0;
     for(ll i=1;i<=n;i++){
         for(ll v=1;v<=30;v++){
+            ll l=i;
             ll tar=pre[i]+a[i]*v;
             if(tar>pre[n])break;
             ll k=pos[tar];
             if(k==-1)continue;
-            if(k==)
+            ll r=k+1;
+            if(r-l>=2 && r<=n && a[r]==v){
+                ans++;
+            }
         }
     }
+    cout << ans <<endl;
 }
 
 signed main() {
