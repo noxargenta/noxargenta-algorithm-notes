@@ -43,7 +43,7 @@ void solve() {
                 k=nxt[k];
             }
             k++;
-            go[k][c]=k;
+            go[i][c]=k;
         }
     }
     st.push({1,0});
