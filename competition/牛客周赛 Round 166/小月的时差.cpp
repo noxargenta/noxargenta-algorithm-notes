@@ -50,7 +50,9 @@ void solve() {
 
     dist[s]=c[s];
     pq.push({dist[s],s});
-    
+    while(!pq.empty()){
+        
+    }
 
 
 }
