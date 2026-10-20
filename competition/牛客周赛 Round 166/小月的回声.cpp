@@ -13,7 +13,11 @@ void solve() {
         cin >> a[i];
         pre[i]=pre[i-1]+a[i];
     }
-    for()
+    for(ll i=1;i<=n;i++){
+        for(ll v=1;v<=30;v++){
+            
+        }
+    }
 }
 
 signed main() {
