@@ -40,7 +40,9 @@ void solve() {
             if(pat[i]==char('a'+c)){
                 go[i][c]=j+1;
             }else if(i==0){
-                
+                go[i][c]=0;
+            }else {
+                go[i][c]=go[]
             }
         }
     }
