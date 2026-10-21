@@ -46,18 +46,10 @@ public:
 
         // ===== 3. 记忆化搜索 =====
         // f[i][j][low][high]，-1 表示还没计算
-        vector<vector<array<array<ll, 2>, 2>>> f(
-            n, vector<array<array<ll, 2>, 2>>(m)
-        );
-
-        for (auto &a : f) {
-            for (auto &b : a) {
-                for (auto &c : b) {
-                    c.fill(-1);
-                }
-            }
-        }
-
+        // 放在 class Solution 中、函数外，作为成员变量
+        ll f[505][55][2][2];
+        memset(f,-1,sizeof f);
+        
         auto dfs = [&](auto &&self, int i, int j,
                        int low, int high) -> ll {
             // 能进入这个状态，说明之前一直没有出现 evil
