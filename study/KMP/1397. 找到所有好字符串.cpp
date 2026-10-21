@@ -1,94 +1,95 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-const int MOD = 1'000'000'007;
+using i64 = long long;
+#define endl '\n'
+#define ll long long
 
 class Solution {
 public:
     int findGoodStrings(int n, string s1, string s2, string evil) {
-        int m = evil.size();
+        const ll MOD = 1000000007;
+        string pat = evil;
+        int m = pat.length();
 
-        // pi[i]：evil[0..i] 的最长真前后缀长度
-        vector<int> pi(m, 0);
-        for (int i = 1, j = 0; i < m; i++) {
-            while (j > 0 && evil[i] != evil[j])
-                j = pi[j - 1];
-            if (evil[i] == evil[j])
-                j++;
-            pi[i] = j;
+        // ===== 1. 预处理 next：与你原来的写法相同 =====
+        vector<int> nxt(m + 1);
+        int i = 0, j = -1;
+        nxt[0] = -1;
+
+        while (i < m) {
+            while (j != -1 && pat[i] != pat[j]) {
+                j = nxt[j];
+            }
+            nxt[++i] = ++j;
         }
 
-        // go[j][c]：当前匹配长度为 j，添加字符 c 后的新匹配长度
+        // ===== 2. KMP 自动机 =====
+        // go[j][c]：匹配长度为 j，追加字符 c 后的新匹配长度
         vector<vector<int>> go(m, vector<int>(26));
-        for (int j = 0; j < m; j++) {
+
+        for (int i = 0; i < m; i++) {
             for (int c = 0; c < 26; c++) {
-                char ch = 'a' + c;
-                int k = j;
+                char ch = char('a' + c);
+                int k;
 
-                while (k > 0 && evil[k] != ch)
-                    k = pi[k - 1];
-                if (evil[k] == ch)
-                    k++;
-
-                go[j][c] = k;
-            }
-        }
-
-        auto countUpTo = [&](const string& bound) {
-            // dp[匹配长度][是否仍与 bound 前缀相等]
-            vector<array<int, 2>> dp(m), ndp(m);
-            dp[0][1] = 1;
-
-            for (int i = 0; i < n; i++) {
-                for (auto& row : ndp)
-                    row = {0, 0};
-
-                for (int j = 0; j < m; j++) {
-                    for (int tight = 0; tight <= 1; tight++) {
-                        int ways = dp[j][tight];
-                        if (ways == 0) continue;
-
-                        int limit = tight ? bound[i] - 'a' : 25;
-
-                        for (int c = 0; c <= limit; c++) {
-                            int nj = go[j][c];
-
-                            // 完整匹配 evil，非法字符串不加入 DP
-                            if (nj == m) continue;
-
-                            int ntight = tight && (c == limit);
-                            // tight 时 limit == bound[i]-'a'；
-                            // 不 tight 时原本已经小于 bound，仍保持不 tight。
-                            if (!tight)
-                                ntight = 0;
-
-                            ndp[nj][ntight] += ways;
-                            if (ndp[nj][ntight] >= MOD)
-                                ndp[nj][ntight] -= MOD;
-                        }
-                    }
+                if (pat[i] == ch) {
+                    k = i + 1;
+                } else if (i == 0) {
+                    k = 0;
+                } else {
+                    k = go[nxt[i]][c];
                 }
-                dp.swap(ndp);
+
+                go[i][c] = k;
             }
-
-            int result = 0;
-            for (int j = 0; j < m; j++)
-                result = (result + dp[j][0] + dp[j][1]) % MOD;
-            return result;
-        };
-
-        auto containsEvil = [&](const string& text) {
-            return text.find(evil) != string::npos;
-        };
-
-        int ans = countUpTo(s2) - countUpTo(s1);
-        if (ans < 0) ans += MOD;
-
-        if (!containsEvil(s1)) {
-            ans++;
-            if (ans == MOD) ans = 0;
         }
 
-        return ans;
+        // ===== 3. 记忆化搜索 =====
+        // f[i][j][low][high]，-1 表示还没计算
+        vector<vector<array<array<ll, 2>, 2>>> f(
+            n, vector<array<array<ll, 2>, 2>>(m)
+        );
+
+        for (auto &a : f) {
+            for (auto &b : a) {
+                for (auto &c : b) {
+                    c.fill(-1);
+                }
+            }
+        }
+
+        auto dfs = [&](auto &&self, int i, int j,
+                       int low, int high) -> ll {
+            // 能进入这个状态，说明之前一直没有出现 evil
+            // 所有位置已经填完，得到一种合法方案
+            if (i == n) return 1;
+
+            ll &ans = f[i][j][low][high];
+            if (ans != -1) return ans;
+            ans = 0;
+
+            int l = low ? s1[i] - 'a' : 0;
+            int r = high ? s2[i] - 'a' : 25;
+
+            for (int c = l; c <= r; c++) {
+                int nj = go[j][c];
+
+                // 出现完整 evil：直接丢弃，不能回退后继续
+                if (nj == m) continue;
+
+                // 原来贴着边界，且当前字符等于边界字符，
+                // 下一位才继续受对应边界限制
+                int nlow = low && (c == s1[i] - 'a');
+                int nhigh = high && (c == s2[i] - 'a');
+
+                ans += self(self, i + 1, nj, nlow, nhigh);
+                ans %= MOD;
+            }
+
+            return ans;
+        };
+
+        // 初始为空串，同时与上下界的空前缀相等
+        return dfs(dfs, 0, 0, 1, 1);
     }
 };
