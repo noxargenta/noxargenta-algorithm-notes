@@ -92,7 +92,7 @@ while (qx.size()) {
 }
 ```
 
-> 双队列现在建议统一用 `queue<pair<int,int>>`（P1443 风格），更简洁。
+> `queue<pair<int,int>>` 可以将横纵坐标保存在同一队列中，避免双队列同步维护。
 
 ---
 
