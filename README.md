@@ -211,6 +211,14 @@
 
 ---
 
+### 阶段十三：字符串匹配与 KMP
+
+| 知识点 | 题目与代码 | 笔记 |
+| :--- | :--- | :--- |
+| KMP 基础与周期 | [P3375、Shift String、P4391](./study/KMP) | [KMP 模板与题型总结](./笔记/21-KMP模板与题型总结.md) |
+| 差分匹配与区间计数 | [MUH and Cube Walls](./study/KMP/D_MUH_and_Cube_Walls.cpp)、[Harmonious subarrays 改进版](./competition/2026江西八校集训联盟第二场联赛/2.cpp) | 数值序列 KMP、匹配起点前缀和 |
+| KMP 状态与自动机 | [Censoring、Tree String Problem、找到所有好字符串](./study/KMP) | 删除回滚、树上状态传递、字典序双边界 DP |
+
 ## 目录概览
 
 | 目录 | 说明 |
