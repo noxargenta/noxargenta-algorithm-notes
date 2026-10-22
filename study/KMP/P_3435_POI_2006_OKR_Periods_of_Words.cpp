@@ -12,7 +12,7 @@ void solve() {
     ll i,j;
     j=nxt[0]=-1;
     i=0;
-    while(i<m){
+    while(i<n){
         while(j!=-1 && s[i]!=s[j]){
             j=nxt[j];
         }
@@ -23,7 +23,7 @@ void solve() {
         }
     }
     ll ans=0;
-    for(ll i=2;i<m;i++){
+    for(ll i=2;i<=n;i++){
         ll j=i;
         while(j!=0){
             j=nxt[j];
