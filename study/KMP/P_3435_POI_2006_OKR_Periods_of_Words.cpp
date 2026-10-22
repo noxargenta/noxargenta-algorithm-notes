@@ -24,7 +24,7 @@ void solve() {
     }
     ll ans=0;
     for(ll i=2;i<=n;i++){
-        ll j=i;
+        ll j=nxt[i];
         while(j!=0){
             j=nxt[j];
         }
