@@ -8,7 +8,6 @@ void solve() {
     cin >> n;
     string s;
     cin >> s;
-    ll m=s.length();
     vector<ll> nxt(n+1);
     ll i,j;
     j=nxt[0]=-1;
@@ -26,12 +25,12 @@ void solve() {
     ll ans=0;
     for(ll i=2;i<m;i++){
         ll j=i;
-        ll low=(i+1)/2;
-        ll maxx=0;
-        while(j>=low){
-            
+        while(j!=0){
+            j=nxt[j];
         }
+        ans+=(i-j);
     }
+    cout << ans <<endl;
 }
 
 signed main() {
