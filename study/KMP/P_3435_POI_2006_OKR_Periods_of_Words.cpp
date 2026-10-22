@@ -24,6 +24,7 @@ void solve() {
             while(nxt[j]>0){
                 j=nxt[j];
             }
+            nxt[i]=j;
             ans+=i-j;
 
         }
