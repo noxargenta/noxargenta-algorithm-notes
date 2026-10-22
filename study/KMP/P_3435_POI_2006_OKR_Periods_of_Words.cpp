@@ -20,10 +20,13 @@ void solve() {
     ll ans=0;
     for(ll i=2;i<=n;i++){
         ll j=nxt[i];
-        while(j!=0){
-            j=nxt[j];
+        if(j>0){
+            while(nxt[j]>0){
+                j=nxt[j];
+            }
+            ans+=i-j;
+
         }
-        ans+=(i-j);
     }
     cout << ans <<endl;
 }
