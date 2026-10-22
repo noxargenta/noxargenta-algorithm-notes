@@ -15,12 +15,7 @@ void solve() {
     while(i<n){
         while(j!=-1 && s[i]!=s[j]){
             j=nxt[j];
-        }
-        if(s[++i]==s[++j]){
-            nxt[i]=nxt[j];
-        }else {
-            nxt[i]=j;
-        }
+        }nxt[++i]=++j;
     }
     ll ans=0;
     for(ll i=2;i<=n;i++){
