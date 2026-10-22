@@ -14,10 +14,23 @@ void solve() {
     j=nxt[0]=-1;
     i=0;
     while(i<m){
-        while(j!=-1 && s[i]!=s[j])[
+        while(j!=-1 && s[i]!=s[j]){
             j=nxt[j];
         }
-        
+        if(s[++i]==s[++j]){
+            nxt[i]=nxt[j];
+        }else {
+            nxt[i]=j;
+        }
+    }
+    ll ans=0;
+    for(ll i=2;i<m;i++){
+        ll j=i;
+        ll low=(i+1)/2;
+        ll maxx=0;
+        while(j>=low){
+            
+        }
     }
 }
 
