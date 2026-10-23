@@ -4,7 +4,9 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 #define ull unsigned long long
-ll B=131313137;
+const ull B=131;
+const ull MOD=1000000007;
+
 void solve() {
     ll n;
     cin >> n;
@@ -18,21 +20,22 @@ void solve() {
         ll len=min((ll)ans.length(),(ll)s.length());
         ull pow=1;
         ll k=0;
-        ull pre=0;
-        ull xpre=0;
+        ull pre=0,xpre=0;
+
         for(ll j=1;j<=len;j++){
             ull x=(unsigned char)s[j-1]+10;
             ull y=(unsigned char)ans[m-j]+10;
-            pre=(pre*B + x );
-            xpre=(xpre + y * pow);
-            pow*=B;
-            if(pre== xpre){
-                k=j;    
-                // cout << "s.substr(k);" <<endl;
-                // cout << s.substr(k) << endl;
+
+            pre=(pre*B+x)%MOD;
+            xpre=(xpre+y*pow)%MOD;
+
+            if(pre==xpre){
+                k=j;
             }
-            
+
+            pow=pow*B%MOD;
         }
+
         ans+=s.substr(k);
     }
     cout << ans <<endl;
