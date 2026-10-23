@@ -16,12 +16,11 @@ void solve() {
         cin >> s;
         ll m=(ll)ans.length();
         ll len=min((ll)ans.length(),(ll)s.length());
-        ll pow=1;
+        ull pow=1;
         ll k=0;
         ull pre=0;
         ull xpre=0;
         for(ll j=1;j<=len;j++){
-            
             ull x=s[j-1]-'A'+10;
             ull y=ans[m-j]-'A'+10;
             pre=(pre*B + x );
