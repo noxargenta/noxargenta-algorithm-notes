@@ -4,7 +4,12 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 void solve() {
-    
+    for(char x='a';x<='z';x++){
+        cout << (ll)x <<endl;
+    }
+    for(char x='A';x<='Z';x++){
+        cout << (ll)x <<endl;
+    }
 }
 
 signed main() {
