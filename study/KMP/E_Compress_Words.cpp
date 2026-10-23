@@ -20,6 +20,8 @@ void solve() {
         ll pow=1;
         ll k=0;
         for(ll j=1;j<len;j++){
+            pre=0;
+            xpre=0;
             ull x=s[j-1]-'a'+1;
             ull y=ans[m-j]-'a'+1;
             pre=(pre*B + x );
@@ -27,8 +29,8 @@ void solve() {
             pow*=B;
             if(pre== xpre){
                 k=j;
-                cout << "s.substr(k);" <<endl;
-                cout << s.substr(k) << endl;
+                // cout << "s.substr(k);" <<endl;
+                // cout << s.substr(k) << endl;
             }
             
         }
