@@ -27,7 +27,10 @@ void solve() {
             pow*=B;
             if(pre== xpre){
                 k=j;
+                cout << "s.substr(k);" <<endl;
+                cout << s.substr(k) << endl;
             }
+            
         }
         ans+=s.substr(k);
     }
