@@ -19,9 +19,10 @@ void solve() {
         ll len=min((ll)ans.length(),(ll)s.length());
         ll pow=1;
         ll k=0;
+        pre=0;
+        xpre=0;
         for(ll j=1;j<len;j++){
-            pre=0;
-            xpre=0;
+            
             ull x=s[j-1]-'a'+1;
             ull y=ans[m-j]-'a'+1;
             pre=(pre*B + x );
