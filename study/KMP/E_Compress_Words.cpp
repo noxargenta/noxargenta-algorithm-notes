@@ -1,54 +1,47 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
+using i64 = long long;
 #define endl '\n'
-
-const ll B=1313137;
-const ll MOD=1000000007;
-
+#define ll long long
+#define ull unsigned long long
+ll B=131313137;
 void solve() {
-    int n;
+    ll n;
     cin >> n;
-
-    string ans,s;
-    cin >> ans;
-
-    for(int i=1;i<n;i++){
+    string s;
+    string ans;
+    cin >> ans ;
+    ull pre=0;
+    ull xpre=0;
+    for(ll i=1;i<n;i++){
         cin >> s;
-
-        int m=(int)ans.size();
-        int len=min(m,(int)s.size());
-        int k=0;
-        ll pre=0,suf=0,pw=1;
-
-        for(int j=1;j<=len;j++){
-            ll x=(unsigned char)s[j-1]+1;
-            ll y=(unsigned char)ans[m-j]+1;
-
-            pre=(pre*B+x)%MOD;    // 前缀右边添加字符
-            suf=(y*pw+suf)%MOD;   // 后缀左边添加字符
-
-            if(pre==suf){
-                k=j;             // 记录当前匹配的长度
+        ll m=(ll)ans.length();
+        ll len=min((ll)ans.length(),(ll)s.length());
+        ll pow=1;
+        ll k=0;
+        for(ll j=1;j<len;j++){
+            ull x=s[j-1]-'a'+1;
+            ull y=ans[m-j]-'a'+1;
+            pre=(pre*B + x );
+            xpre=(xpre + y * pow);
+            pow*=B;
+            if(pre== xpre){
+                k=j;
             }
-
-            pw=pw*B%MOD;
         }
-
         ans+=s.substr(k);
     }
-    cout << ans << endl;
+    cout << ans <<endl;
 }
 
 signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
-    int _=1;
+    int _ = 1;
     // cin >> _;
-    while(_--){
+    while(_--) {
         solve();
     }
-
     return 0;
 }
