@@ -3,7 +3,6 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
-#define  ull unsigned long long
 void solve() {
     
 }
