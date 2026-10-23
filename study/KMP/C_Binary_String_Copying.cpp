@@ -59,7 +59,7 @@ struct Hash {
 
         // 右边部分：原串 [R+1,n]
         ll right = get(R + 1, n);
-
+ 
         // 拼接右边
         res = (res * pw[n - R] + right) % mod;
 
