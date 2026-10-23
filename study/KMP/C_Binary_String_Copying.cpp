@@ -6,10 +6,15 @@ using i64 = long long;
 void solve() {
     ll n,m;
     cin >> n >> m;
+    string s;
+    cin >> s;
+
     for(ll i=1;i<=m;i++){
+        string ss;
         ll l,r;
         cin >> l >> r;
-        
+        ss=s;
+        sort(s.begin+l,s.begin+r);
     }
 }
 
