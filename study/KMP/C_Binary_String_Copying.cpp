@@ -3,20 +3,9 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
-
+#define  ull unsigned long long
 void solve() {
-    ll n,m;
-    cin >> n >> m;
-    string s;
-    cin >> s;
-    vector<> 
-    for(ll i=1;i<=m;i++){
-        string ss;
-        ll l,r;
-        cin >> l >> r;
-        ss=s;
-        
-    }
+    
 }
 
 signed main() {
@@ -24,7 +13,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    cin >> _;
+    // cin >> _;
     while(_--) {
         solve();
     }
