@@ -21,13 +21,13 @@ void solve() {
         ull pre=0;
         ull xpre=0;
         for(ll j=1;j<=len;j++){
-            ull x=s[j-1]-'A'+10;
-            ull y=ans[m-j]-'A'+10;
+            ull x=(unsigned char)s[j-1]+10;
+            ull y=(unsigned char)ans[m-j]+10;
             pre=(pre*B + x );
             xpre=(xpre + y * pow);
             pow*=B;
             if(pre== xpre){
-                k=j;
+                k=j;    
                 // cout << "s.substr(k);" <<endl;
                 // cout << s.substr(k) << endl;
             }
