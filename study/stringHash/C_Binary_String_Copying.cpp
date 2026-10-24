@@ -47,7 +47,9 @@ void solve() {
         //变为00111
         //Hash=hash("111");
         ll mid = one[k];
-        ll right = (h[n]-h[r])
+        ll right = (h[n]-h[r] * p[n-r] % mod + mod)%mod;
+
+        ll 
         
     }
 }
