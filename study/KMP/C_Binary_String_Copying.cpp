@@ -35,14 +35,17 @@ void solve() {
     }
     auto cal = [&](ll l,ll r,vector<ll> &p,
         vector<ll> &h,
-        vector<ll> &one)-> ll {
+        vector<ll> &one,ll mod)-> ll {
         ll len=r-l+1;
         // k 为区间内1的个数
         ll k = cnt[r]-cnt[l-1];
         ll left = h[l-1];
-        ll right = h[r];
+        //区间内排序之后的“1”段的hash
+        //例如01011
+        //变为00111
+        //Hash=hash("111");
         ll mid = one[k];
-        
+        ll right =( (h[n]-h[r] * p[n-r])%mod + mod)%mod;
     }
 }
 
