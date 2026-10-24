@@ -18,7 +18,8 @@ void solve() {
     map<pair<ll,ll>,ll> mp;
     ll d=0;
     ll k=0;
-    vector<pair<ll,ll>> pre(n+10);
+    ll ans=0;
+    vector<pair<ll,ll>> pre;
     for(ll i=0;i<n;i++){
         if(s[i]=='D'){
             d++;
@@ -26,13 +27,20 @@ void solve() {
         pair<ll,ll> tmp=ger(d,k);
 
         mp[tmp]++;
-        pre.push_back(tmp);
+        ans=max(ans,mp[tmp]);
+        if(mp[tmp]!=ans){
+            cout << 1 << " ";
+
+        }else {
+            cout << ans <<" ";
+        }
+        
     }
-    ll ans=0;
-    for(ll i=0;i<n;i++){
-        ans=max(ans,mp[pre[i]]);
-    }
-    cout << ans <<endl;
+    cout << endl;
+    // for(ll i=0;i<n;i++){
+    //     ans=max(ans,mp[pre[i]]);
+    // }
+    // cout << ans <<endl;
 }
 
 signed main() {
