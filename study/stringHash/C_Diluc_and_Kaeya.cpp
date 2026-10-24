@@ -27,13 +27,8 @@ void solve() {
         pair<ll,ll> tmp=ger(d,k);
 
         mp[tmp]++;
-        ans=max(ans,mp[tmp]);
-        if(mp[tmp]!=ans){
-            cout << 1 << " ";
-
-        }else {
-            cout << ans <<" ";
-        }
+        cout << mp[tmp] << " ";
+        
         
     }
     cout << endl;
