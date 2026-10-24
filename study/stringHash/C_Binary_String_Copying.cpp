@@ -49,7 +49,9 @@ void solve() {
         ll mid = one[k];
         ll right = (h[n]-h[r] * p[n-r] % mod + mod)%mod;
 
-        ll res = (left * p[len])
+        ll res = (left * p[len] + mid) %mod;
+        res=(res * p[n-r] + right)%mod;
+        
         
     }
 }
