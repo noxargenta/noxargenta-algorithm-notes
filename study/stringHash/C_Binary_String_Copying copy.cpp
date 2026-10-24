@@ -41,9 +41,10 @@ void solve() {
     }
 
     // 计算排序 [l,r] 后的完整字符串哈希
-    auto calc = [&](int l,int r,const vector<ll>& h,
-                    const vector<ll>& p,const vector<ll>& one,
-                    ll mod)->ll{
+    auto calc = [&](int l,int r,
+        vector<ll>& h,
+        vector<ll>& p,
+        vector<ll>& one,ll mod)->ll{
         int len=r-l+1;
         int k=cnt[r]-cnt[l-1];
 

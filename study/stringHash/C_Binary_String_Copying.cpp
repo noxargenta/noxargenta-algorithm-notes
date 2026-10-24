@@ -51,9 +51,10 @@ void solve() {
 
         ll res = (left * p[len] + mid) %mod;
         res=(res * p[n-r] + right)%mod;
-        
-        
-    }
+
+        return res;
+    };
+
 }
 
 signed main() {
