@@ -27,9 +27,14 @@ void solve() {
         h1[i]=(h1[i-1] * B + x) %MOD1;
         h2[i]=(h2[i-1] * B + x) % MOD2;
 
+        //长度为i的全1字符串hash
+        one1[i]=(one1[i-1] * B + 1) % MOD1;
+        one2[i]=(one2[i-1] * B + 1) % MOD2;
         
-
+        // cnt表示前i个字符中1的个数
+        cnt[i]=cnt[i-1] + x;
     }
+    
 }
 
 signed main() {
