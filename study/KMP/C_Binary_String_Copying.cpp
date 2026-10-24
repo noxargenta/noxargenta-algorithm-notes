@@ -20,8 +20,7 @@ void solve() {
     for(ll i=1;i<=n;i++){
         ll x=s[i]-'0';
         p1[i]=p1[i-1]*B%MOD1;
-        
-        p1[i]=p1[i-1]*B%MOD2;
+        p2[i]=p1[i-1]*B%MOD2;
 
         //原串Hash前缀
         h1[i]=(h1[i-1] * B + x) %MOD1;
@@ -34,7 +33,15 @@ void solve() {
         // cnt表示前i个字符中1的个数
         cnt[i]=cnt[i-1] + x;
     }
-    
+    auto cal = [&](ll l,ll r,vector<ll> &p,
+        vector<ll> &h,
+        vector<ll> &one)-> ll {
+        ll len=r-l+1;
+        ll k = cnt[r]-cnt[l-1];
+        ll left = h[l-1];
+        ll right = h[r];
+        
+    } 
 }
 
 signed main() {
