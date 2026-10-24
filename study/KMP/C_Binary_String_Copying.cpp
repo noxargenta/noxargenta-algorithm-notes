@@ -19,6 +19,8 @@ void solve() {
     vector<ll> cnt(n+1);
     for(ll i=1;i<=n;i++){
         ll x=s[i]-'0';
+
+        //p表示在MOD意义下B的i次方的值是p[i];
         p1[i]=p1[i-1]*B%MOD1;
         p2[i]=p1[i-1]*B%MOD2;
 
@@ -45,7 +47,8 @@ void solve() {
         //变为00111
         //Hash=hash("111");
         ll mid = one[k];
-        ll right =( (h[n]-h[r] * p[n-r])%mod + mod)%mod;
+        ll right = (h[n]-h[r])
+        
     }
 }
 
