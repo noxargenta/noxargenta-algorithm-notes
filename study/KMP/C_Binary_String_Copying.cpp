@@ -40,6 +40,7 @@ void solve() {
         ll k = cnt[r]-cnt[l-1];
         ll left = h[l-1];
         ll right = h[r];
+        ll mid = one[k];
         
     } 
 }
