@@ -37,12 +37,13 @@ void solve() {
         vector<ll> &h,
         vector<ll> &one)-> ll {
         ll len=r-l+1;
+        // k 为区间内1的个数
         ll k = cnt[r]-cnt[l-1];
         ll left = h[l-1];
         ll right = h[r];
         ll mid = one[k];
         
-    } 
+    }
 }
 
 signed main() {
