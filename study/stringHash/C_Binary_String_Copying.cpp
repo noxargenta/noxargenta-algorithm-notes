@@ -54,7 +54,15 @@ void solve() {
 
         return res;
     };
-
+    set<pair<ll,ll>> st;
+    while(m--){
+        ll l,r;
+        cin >> l >> r;
+        ll x=cal(l,r,p1,h1,one1,MOD1);
+        ll y=cal(l,r,p2,h2,one2,MOD2);
+        st.insert({x,y});
+    }
+    cout << st.size() << endl;
 }
 
 signed main() {
