@@ -22,7 +22,7 @@ void solve() {
 
         //p表示在MOD意义下B的i次方的值是p[i];
         p1[i]=p1[i-1]*B%MOD1;
-        p2[i]=p1[i-1]*B%MOD2;
+        p2[i]=p2[i-1]*B%MOD2;
 
         //原串Hash前缀
         h1[i]=(h1[i-1] * B + x) %MOD1;
@@ -35,7 +35,9 @@ void solve() {
         // cnt表示前i个字符中1的个数
         cnt[i]=cnt[i-1] + x;
     }
-    auto cal = [&](ll l,ll r,vector<ll> &p,
+    auto cal = [&](ll l,
+        ll r,
+        vector<ll> &p,
         vector<ll> &h,
         vector<ll> &one,ll mod)-> ll {
         ll len=r-l+1;
@@ -70,7 +72,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
