@@ -23,7 +23,12 @@ void solve() {
         
         p1[i]=p1[i-1]*B%MOD2;
 
+        //原串Hash前缀
+        h1[i]=(h1[i-1] * B + x) %MOD1;
+        h2[i]=(h2[i-1] * B + x) % MOD2;
+
         
+
     }
 }
 
