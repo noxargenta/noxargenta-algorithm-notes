@@ -7,7 +7,7 @@ using i64 = long long;
 void solve() {
     ll n;
     cin >> n;
-    
+
     vector<ll> a(n);
     vector<ll> b(n);
     for(ll i=0;i<n;i++){
@@ -27,7 +27,7 @@ void solve() {
         if(a[i]%2==1){
             j1++;
         }
-        if(a[i]%2==1){
+        if(b[i]%2==1){
             j2++;
         }
         if(a[i]!=b[i]){
