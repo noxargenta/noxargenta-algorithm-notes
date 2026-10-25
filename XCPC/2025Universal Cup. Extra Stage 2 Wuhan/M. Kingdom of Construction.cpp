@@ -4,7 +4,7 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 #define ull unsigned long long
-const ll mod= 
+const ll mod= 998244353;
 void solve() {
     ll n;
     cin >> n;
@@ -17,9 +17,9 @@ void solve() {
     for(ll i=1;i<=n;i++){
         for(ll j=1;j<=n;j++){
             if(i== j){
-                cout << a[i] + 1<< " ";
+                cout << (a[i] + 1)%mod<< " ";
             }else {
-                cout << a[i] << " ";
+                cout << a[i] % mod << " ";
             }
         }
         cout << endl;
