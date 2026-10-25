@@ -12,7 +12,7 @@ void solve() {
     for(ll i=0;i<m;i++){
         cin >> a[i].first >> a[i].second;
     }
-    sort(a.begin(),a.end(),[](ll x,ll r){
+    sort(a.begin(),a.end(),[&](ll x,ll r){
         if(a[x].second!=a[r].second){
             return a[x].second<a[r].second;
         }else {
@@ -40,7 +40,6 @@ void solve() {
             return;
         }
     }
-
 }
 
 signed main() {
