@@ -4,10 +4,11 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 #define ull unsigned long long
+const ll mod= 
 void solve() {
     ll n;
     cin >> n;
-    
+
     vector<ll> a(n+1);
     for(ll i=1;i<=n;i++){
         cin  >> a[i];
