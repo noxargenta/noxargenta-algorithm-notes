@@ -21,11 +21,10 @@ void solve() {
     });
     ll cnt=0;
     ll x=-1;
-    for(ll i=0;i<n;i++){
+    for(ll i=0;i<m;i++){
         ll l=a[i].first;
         ll r=a[i].second;
-
-        x=a[i].second;
+        
         if(x>=l && x <= r){
             continue;
         }else {
