@@ -12,11 +12,11 @@ void solve() {
     for(ll i=0;i<m;i++){
         cin >> a[i].first >> a[i].second;
     }
-    sort(a.begin(),a.end(),[&](ll x,ll r){
-        if(a[x].second!=a[r].second){
-            return a[x].second<a[r].second;
+    sort(a.begin(),a.end(),[&](auto  x,auto  r){
+        if(x.second!=r.second){
+            return x.second<r.second;
         }else {
-            return a[x].first<a[r].first;
+            return x.first<r.first;
         }
     });
     ll cnt=0;
