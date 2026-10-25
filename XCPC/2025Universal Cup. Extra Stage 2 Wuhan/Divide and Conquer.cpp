@@ -12,15 +12,33 @@ void solve() {
     for(ll i=0;i<m;i++){
         cin >> a[i].first >> a[i].second;
     }
-    sort(a.begin(),a.end(),[&](ll x,ll r){
+    sort(a.begin(),a.end(),[](ll x,ll r){
         if(a[x].second!=a[r].second){
             return a[x].second<a[r].second;
         }else {
             return a[x].first<a[r].first;
         }
     });
+    ll cnt=0;
+    ll x=-1;
     for(ll i=0;i<n;i++){
-        
+        ll l=a[i].first;
+        ll r=a[i].second;
+
+        x=a[i].second;
+        if(x>=l && x <= r){
+            continue;
+        }else {
+            x=r;
+            cnt++;
+        }
+        mp[a[i]]++;
+    }
+    for(ll i=1;i<64;i++){
+        if((1 << i)-1 >= cnt){
+            cout << i << endl;
+            return;
+        }
     }
 
 }
