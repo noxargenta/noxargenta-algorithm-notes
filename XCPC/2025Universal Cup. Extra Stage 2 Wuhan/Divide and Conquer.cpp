@@ -20,9 +20,9 @@ void solve() {
         }
     });
     for(ll i=0;i<n;i++){
-
+        
     }
-    
+
 }
 
 signed main() {
