@@ -1,172 +1,127 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, m;
-int need;
-vector<vector<int>> a;
-int cnt[3];
+using Grid = vector<string>;
 
-long long solutionCount = 0;
-vector<vector<int>> firstAnswer;
+const string P[3] = {
+    "011220",
+    "102102",
+    "220011"
+};
 
-// 八个方向
-int dx[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
-int dy[8] = {-1, 0, 1, -1, 1, -1, 0, 1};
+Grid transpose(const Grid& a) {
+    int n = (int)a.size();
+    int m = (int)a[0].size();
 
-// 检查三个数字是否分别八连通
-bool checkConnected() {
-    for (int color = 0; color < 3; color++) {
-        pair<int, int> start = {-1, -1};
+    Grid b(m, string(n, '0'));
 
-        // 找到这个数字的第一个格子
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (a[i][j] == color) {
-                    start = {i, j};
-                    break;
-                }
-            }
-            if (start.first != -1) break;
-        }
-
-        if (start.first == -1) return false;
-
-        vector<vector<bool>> vis(n, vector<bool>(m, false));
-        queue<pair<int, int>> q;
-
-        q.push(start);
-        vis[start.first][start.second] = true;
-
-        int reached = 0;
-
-        while (!q.empty()) {
-            auto [x, y] = q.front();
-            q.pop();
-            reached++;
-
-            for (int k = 0; k < 8; k++) {
-                int nx = x + dx[k];
-                int ny = y + dy[k];
-
-                if (nx < 0 || nx >= n || ny < 0 || ny >= m) {
-                    continue;
-                }
-
-                if (!vis[nx][ny] && a[nx][ny] == color) {
-                    vis[nx][ny] = true;
-                    q.push({nx, ny});
-                }
-            }
-        }
-
-        // 统计这个数字实际出现了多少个格子
-        int total = 0;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (a[i][j] == color) {
-                    total++;
-                }
-            }
-        }
-
-        if (reached != total) {
-            return false;
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < m; ++j) {
+            b[j][i] = a[i][j];
         }
     }
 
-    return true;
+    return b;
 }
 
-// 检查当前位置填入 color 后，是否出现连续三个相同数字
-bool canPlace(int pos, int color) {
-    int x = pos / m;
-    int y = pos % m;
+// n 是 3 的倍数。
+// 使用条件：n == 3，或者 m >= 5。
+Grid build3(int n, int m) {
+    Grid a(n, string(m, '0'));
 
-    // 横向检查：当前位置、左边两个
-    if (y >= 2 &&
-        a[x][y - 1] == color &&
-        a[x][y - 2] == color) {
-        return false;
+    for (int i = 0; i < n; ++i) {
+        int block = i / 3;
+        int row = i % 3;
+
+        // 奇数编号条带上下翻转。
+        if (block % 2 == 1) {
+            row = 2 - row;
+        }
+
+        for (int j = 0; j < m; ++j) {
+            a[i][j] = P[row][j % 6];
+        }
     }
 
-    // 纵向检查：当前位置、上面两个
-    if (x >= 2 &&
-        a[x - 1][y] == color &&
-        a[x - 2][y] == color) {
-        return false;
-    }
-
-    return true;
+    return a;
 }
 
-void dfs(int pos) {
-    if (pos == n * m) {
-        if (checkConnected()) {
-            solutionCount++;
+// 构造 4 × m，其中 m >= 6 且 m 是 3 的倍数。
+Grid build4(int m) {
+    Grid a = build3(3, m);
+    a.push_back(a[2]);
 
-            if (firstAnswer.empty()) {
-                firstAnswer = a;
-            }
+    if (m % 6 == 3) {
+        string patch = "220101120";
+
+        for (int j = 0; j < 9; ++j) {
+            a[3][m - 9 + j] = patch[j];
         }
-        return;
     }
 
-    int x = pos / m;
-    int y = pos % m;
+    return a;
+}
 
-    for (int color = 0; color < 3; color++) {
-        // 每种数字不能超过要求数量
-        if (cnt[color] >= need) {
-            continue;
-        }
-
-        // 提前剪枝：当前位置不能造成三个连续相同数字
-        if (!canPlace(pos, color)) {
-            continue;
-        }
-
-        a[x][y] = color;
-        cnt[color]++;
-
-        dfs(pos + 1);
-
-        cnt[color]--;
-        a[x][y] = -1;
+// 这里保证 n, m >= 3。
+Grid construct(int n, int m) {
+    // 让行数成为 3 的倍数。
+    if (n % 3 != 0) {
+        return transpose(construct(m, n));
     }
+
+    // 转置后只剩三行。
+    if (m == 3 && n > 3) {
+        return transpose(build3(3, n));
+    }
+
+    // 边长为 4 的特殊构造。
+    if (m == 4 && n > 3) {
+        return transpose(build4(n));
+    }
+
+    // 此时 n == 3，或者 m >= 5。
+    return build3(n, m);
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    cin >> n >> m;
+    int T;
+    cin >> T;
 
-    if ((n * m) % 3 != 0) {
-        cout << "nm 不能被 3 整除\n";
-        return 0;
-    }
+    while (T--) {
+        int n, m;
+        cin >> n >> m;
 
-    need = n * m / 3;
+        Grid ans;
 
-    a.assign(n, vector<int>(m, -1));
-    memset(cnt, 0, sizeof(cnt));
+        if (min(n, m) <= 2) {
+            int d = min(n, m);
+            int len = max(n, m);
 
-    dfs(0);
+            if (len > 6) {
+                cout << "No\n";
+                continue;
+            }
 
-    cout << "合法方案数量: " << solutionCount << "\n";
+            Grid a(d, string(len, '0'));
 
-    if (solutionCount == 0) {
-        cout << "No\n";
-        return 0;
-    }
+            for (int i = 0; i < d; ++i) {
+                for (int j = 0; j < len; ++j) {
+                    a[i][j] = char('0' + j / (len / 3));
+                }
+            }
 
-    cout << "第一组合法方案:\n";
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            cout << firstAnswer[i][j];
+            ans = (n == d ? a : transpose(a));
+        } else {
+            ans = construct(n, m);
         }
-        cout << '\n';
+
+        cout << "Yes\n";
+        for (const string& row : ans) {
+            cout << row << '\n';
+        }
     }
 
     return 0;
