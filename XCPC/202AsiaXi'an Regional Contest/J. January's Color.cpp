@@ -60,7 +60,9 @@ void solve() {
                 mn2[u] = mn1[u];
                 mn1[u] = f[v];
                 best[u] = v;
-                 
+                
+            }else if(f[v]<mn2[u]){
+                mn2[u]=f[v];
             }
         }
 
