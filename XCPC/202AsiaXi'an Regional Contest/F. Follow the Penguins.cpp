@@ -11,7 +11,30 @@ void solve() {
     vector<vector<ll>> rev(n+1);
     for(ll i=1;i<=n;i++){
         cin >> to[i];
-        rev[to[i]]=i;
+        rev[to[i]].push_back(i);
+    }
+    vector<ll> x(n+1);
+    for(ll i=1;i<=n;i++){
+        cin >> x[i];
+        x[i]*=2;
+    }
+    vector<ll> dir(n+1);
+    for(ll i=1;i<=n;i++){
+        if(to[i]>i){
+            dir[i]=1;
+        }else {
+            dir[i]=-1;
+        }
+    }
+    ll inf=LLONG_MAX;
+    vector<ll> nxt(n+1,inf);
+    
+    vector<ll> pos(n+1);
+    priority_queue<pair<ll,ll>,
+                   vector<pair<ll,ll>>,
+                   greater<pair<ll,ll>>> pq;
+
+    for(ll i=1;i<=n;i++){
         
     }
 }
