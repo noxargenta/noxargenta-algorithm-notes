@@ -35,7 +35,12 @@ void solve() {
                    greater<pair<ll,ll>>> pq;
 
     for(ll i=1;i<=n;i++){
-        
+        ll j= to[i];
+        if(dir[i]!=dir[j]){
+            nxt[i] = abs(x[i]-x[j])/2;
+            pq.push({nxt[i],i});
+
+        }
     }
 }
 
