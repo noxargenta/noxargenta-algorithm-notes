@@ -50,7 +50,9 @@ void solve() {
         auto [tm,u] = pq.top();
         pq.pop();
 
-        if(ans[u]=-1 || tm != nxt[u])
+        if(ans[u]=-1 || tm != nxt[u]) continue;
+        ans[u] = tm;
+        
     }
 
 }
