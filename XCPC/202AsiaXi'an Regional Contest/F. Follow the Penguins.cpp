@@ -20,7 +20,7 @@ void solve() {
     }
     vector<ll> dir(n+1);
     for(ll i=1;i<=n;i++){
-        if(to[i]>i){
+        if(x[to[i]]>x[i]){
             dir[i]=1;
         }else {
             dir[i]=-1;
