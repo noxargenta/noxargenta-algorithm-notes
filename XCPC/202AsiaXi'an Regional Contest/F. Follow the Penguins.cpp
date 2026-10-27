@@ -18,7 +18,7 @@ void solve() {
         cin >> to[i];
         rev[to[i]].push_back(i);
     }
-
+    
     // 坐标放大两倍，速度变成每秒 1 个单位
     vector<ll> x(n + 1);
     for(int i=1;i<=n;i++){
