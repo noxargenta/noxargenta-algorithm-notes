@@ -75,7 +75,15 @@ void solve() {
         if(u==1)continue;
         ll p=parent[u];
 
-        ll w
+        ll w;
+        if(best[p]==u){
+            w=mn2[p];
+
+        }else {
+            w=mn1[p];
+        }
+        D[u]=D[u]+w;
+        
     }    
 }
 
