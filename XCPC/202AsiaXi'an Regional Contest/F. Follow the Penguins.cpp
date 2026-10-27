@@ -50,7 +50,7 @@ void solve() {
         auto [tm,u] = pq.top();
         pq.pop();
 
-        if(ans[u]=-1 || tm != nxt[u]) continue;
+        if(ans[u]==-1 || tm != nxt[u]) continue;
         ans[u] = tm;
         pos[u] = x[u] + 1LL * dir[u] * tm;
         for(auto v : rev[u]){
