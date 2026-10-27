@@ -27,6 +27,7 @@ void solve() {
         }
     }
     ll inf=LLONG_MAX;
+    //nxt[i]表示第i只企鹅当前情况追到目标企鹅的时间是nvt[i];
     vector<ll> nxt(n+1,inf);
     
     vector<ll> pos(n+1);
@@ -34,14 +35,21 @@ void solve() {
                    vector<pair<ll,ll>>,
                    greater<pair<ll,ll>>> pq;
 
+
+///////////////
+    //初始化
     for(ll i=1;i<=n;i++){
         ll j= to[i];
         if(dir[i]!=dir[j]){
             nxt[i] = abs(x[i]-x[j])/2;
             pq.push({nxt[i],i});
-            
         }
     }
+
+    while(!pq.empty()){
+        
+    }
+
 }
 
 signed main() {
