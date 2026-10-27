@@ -20,7 +20,7 @@ void solve() {
         adj[v].push_back(u);
 
     }
-
+    
 }
 
 signed main() {
