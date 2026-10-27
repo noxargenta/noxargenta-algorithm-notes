@@ -45,7 +45,8 @@ void solve() {
     vector<ll> f(n+1);
     vector<ll> mn1(n+1,INF);
     vector<ll> mn2(n+1,INF);
-    
+    vector<ll> best(n+1,-1);
+    for(ll i=n-1)
 }
 
 signed main() {
