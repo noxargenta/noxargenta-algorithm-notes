@@ -51,6 +51,15 @@ void solve() {
         
         f[u]=c[u];
         
+        for(auto v : G[u]){
+            if(parent[v]!=u)continue;
+
+            sz[u]+=sz[v];
+
+            if(f[v]<mn1[u]){
+                mn2 = 
+            }
+        }
 
     }
 }
