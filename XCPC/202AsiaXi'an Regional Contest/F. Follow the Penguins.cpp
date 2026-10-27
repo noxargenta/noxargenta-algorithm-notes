@@ -14,11 +14,12 @@ void solve() {
 
     vector<vector<int>> rev(n + 1);
 
-    for(int i=1;i<=n;i++){
+    for(ll i=1;i<=n;i++){
         cin >> to[i];
         rev[to[i]].push_back(i);
     }
     
+
     // 坐标放大两倍，速度变成每秒 1 个单位
     vector<ll> x(n + 1);
     for(int i=1;i<=n;i++){
