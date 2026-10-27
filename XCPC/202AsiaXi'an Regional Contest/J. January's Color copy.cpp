@@ -46,26 +46,24 @@ void solve() {
     vector<int> order;
     order.reserve(n);
 
-    // st：手动维护的 DFS 栈，避免递归过深导致栈溢出。
-    vector<int> st;
-    st.reserve(n);
-    st.push_back(1);
+    // 用 stack 做深度优先遍历。
+    stack<int> st;
+    st.push(1);
 
-    // 栈模拟 DFS，计算 parent、tin 和 order。
     while (!st.empty()) {
-        int u = st.back();
-        st.pop_back();
+        int u = st.top();
+        st.pop();
 
-        // 当前节点在 DFS 先序中的编号。
-        tin[u] = static_cast<int>(order.size());
+        // 记录 u 在 DFS 先序中的位置。
+        tin[u] = order.size();
         order.push_back(u);
 
-        for (int v : G[u]) {
-            // 无向树中跳过父节点，避免走回头路。
+        for (int v : adj[u]) {
+            // 跳过父节点，避免沿无向边走回去。
             if (v == parent[u]) continue;
 
             parent[v] = u;
-            st.push_back(v);
+            st.push(v);
         }
     }
 
