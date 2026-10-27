@@ -18,14 +18,27 @@ void solve() {
     }
     ll l=1;
     for(ll k=n;k>=3;k--){
-        ll r=l+k;
-        
+        l=1;
+        while(l+k-1<=n){
+            
+            ll r=l+k-1;
+            ll cur=pre[r]-pre[l-1];
+            ll val=pre[r]-pre[l];
+            if(val>a[l]){
+                ans[k]=cur;
+                break;
+            }else {
+                l++;
+            }
+        }
+
     }
 
 
     for (ll k = 1; k <= n; k++) {
-        cout << ans[k] << (k == n ? '\n' : ' ');
+        cout << ans[k] << " ";
     }
+    cout << endl;
 }
 
 signed main() {
