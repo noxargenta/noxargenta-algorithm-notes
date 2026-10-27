@@ -52,7 +52,7 @@ void solve() {
 
         if(ans[u]=-1 || tm != nxt[u]) continue;
         ans[u] = tm;
-        
+        pos[u] = x[u] + 1LL * dir[u] * tm;
     }
 
 }
