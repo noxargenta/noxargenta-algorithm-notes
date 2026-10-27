@@ -9,6 +9,9 @@ void solve() {
     cin >> n;
 
     vector<int> to(n + 1);
+    //to[i]表示第i只企鹅追to[i]企鹅
+    // 反向rev[i]表示i企鹅追的企鹅有rev[i]={x,x,x,x,x}编号
+
     vector<vector<int>> rev(n + 1);
 
     for(int i=1;i<=n;i++){
