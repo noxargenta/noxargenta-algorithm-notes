@@ -35,7 +35,7 @@ void solve() {
                    vector<pair<ll,ll>>,
                    greater<pair<ll,ll>>> pq;
 
-
+    vector<ll> ans(n + 1, -1);
 ///////////////
     //初始化
     for(ll i=1;i<=n;i++){
@@ -47,7 +47,10 @@ void solve() {
     }
 
     while(!pq.empty()){
-        
+        auto [tm,u] = pq.top();
+        pq.pop();
+
+        if(ans[u]=-1 || tm != nxt[u])
     }
 
 }
