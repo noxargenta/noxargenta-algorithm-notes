@@ -83,8 +83,13 @@ void solve() {
             w=mn1[p];
         }
         D[u]=D[u]+w;
-        
+
     }    
+    while(m--){
+        ll x,y;
+        cin >> x >> y;
+        bool ok= (tin[y] <= tin[x] && tin[x]<tin[y] + sz[y]);
+    }
 }
 
 signed main() {
