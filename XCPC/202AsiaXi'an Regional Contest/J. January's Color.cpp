@@ -36,7 +36,9 @@ void solve() {
         tin[u]=order.size();
         order.push_back(u);
         for(ll v : G[u]){
-            
+            if(v== parent[u] )continue;
+            parent[v]=u;
+            st.push(v);
         }
     }
 
