@@ -28,8 +28,13 @@ void solve() {
     }
 
     vector<int> dir(n + 1);
+    //dir[i]表示第i只企鹅的方向1为正-1为负
     for(int i=1;i<=n;i++){
-        dir[i] = (x[to[i]] > x[i] ? 1 : -1);
+        if(to[i]>i){
+            dir[i]=1;
+        }else {
+            dir[i]=-1;
+        }
     }
 
     const ll INF = LLONG_MAX;
