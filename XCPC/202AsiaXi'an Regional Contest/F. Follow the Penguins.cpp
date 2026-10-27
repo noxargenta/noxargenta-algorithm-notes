@@ -18,7 +18,7 @@ void solve() {
         cin >> to[i];
         rev[to[i]].push_back(i);
     }
-    
+
 
     // 坐标放大两倍，速度变成每秒 1 个单位
     vector<ll> x(n + 1);
@@ -32,7 +32,7 @@ void solve() {
         dir[i] = (x[to[i]] > x[i] ? 1 : -1);
     }
 
-    const ll INF = (1LL << 62);
+    const ll INF = LLONG_MAX;
 
     vector<ll> nxt(n + 1, INF);
     vector<ll> ans(n + 1, -1);
