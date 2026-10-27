@@ -65,8 +65,13 @@ void solve() {
                 mn2[u]=f[v];
             }
         }
+        if(mn2[u]!=INF){
+            f[u]=min(f[u],mn1[u]+mn2[u]);
 
+        }
     }
+    vector<ll> D(n+1,0);
+    
 }
 
 signed main() {
