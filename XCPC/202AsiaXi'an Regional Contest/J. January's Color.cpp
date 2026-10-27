@@ -48,10 +48,10 @@ void solve() {
     vector<ll> best(n+1,-1);
     for(ll i=n-1;i>=0;i--){
         ll u=order[i];
-
-        f[u]=c[u];
-
         
+        f[u]=c[u];
+        
+
     }
 }
 
