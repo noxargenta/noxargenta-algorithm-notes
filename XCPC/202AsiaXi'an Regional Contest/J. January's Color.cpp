@@ -41,7 +41,7 @@ void solve() {
             st.push(v);
         }
     }
-
+    
 }
 
 signed main() {
