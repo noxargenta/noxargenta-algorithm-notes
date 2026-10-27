@@ -27,8 +27,13 @@ void solve() {
     vector<ll> order;
     order.reserve(n);
 
-    vector<ll> st;
-    
+    stack<ll> st;
+    st.push(1);
+    while(!st.empty()){
+        ll u=st.top();
+        
+    }
+
 }
 
 signed main() {
