@@ -21,7 +21,7 @@ void solve() {
         }
     }
     cout << ans << " ";
-    sort(a.begin(),a.end(),greater());
+    sort(a.begin(),a.end(),greater<ll>());
     ans=0;
     for(ll i=0;i<n;i++){
         if(a[i]<=ans){
