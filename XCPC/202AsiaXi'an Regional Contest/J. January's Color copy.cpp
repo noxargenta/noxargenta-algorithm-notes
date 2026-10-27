@@ -58,7 +58,7 @@ void solve() {
         tin[u] = order.size();
         order.push_back(u);
 
-        for (int v : adj[u]) {
+        for (int v : G[u]) {
             // 跳过父节点，避免沿无向边走回去。
             if (v == parent[u]) continue;
 
