@@ -46,7 +46,13 @@ void solve() {
     vector<ll> mn1(n+1,INF);
     vector<ll> mn2(n+1,INF);
     vector<ll> best(n+1,-1);
-    for(ll i=n-1)
+    for(ll i=n-1;i>=0;i--){
+        ll u=order[i];
+
+        f[u]=c[u];
+
+        
+    }
 }
 
 signed main() {
