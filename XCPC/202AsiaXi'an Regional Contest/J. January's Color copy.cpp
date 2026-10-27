@@ -19,14 +19,14 @@ void solve() {
         cin >> c[u];
     }
 
-    // adj[u]：节点 u 的邻接节点列表，用来存储无向树。
-    vector<vector<int>> adj(n + 1);
+    // G[u]：节点 u 的邻接节点列表，用来存储无向树。
+    vector<vector<int>> G(n + 1);
 
     for (int i = 1; i < n; ++i) {
         int u, v;
         cin >> u >> v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
+        G[u].push_back(v);
+        G[v].push_back(u);
     }
 
     // parent[u]：以 1 为根时，u 的父节点。
@@ -60,7 +60,7 @@ void solve() {
         tin[u] = static_cast<int>(order.size());
         order.push_back(u);
 
-        for (int v : adj[u]) {
+        for (int v : G[u]) {
             // 无向树中跳过父节点，避免走回头路。
             if (v == parent[u]) continue;
 
@@ -92,7 +92,7 @@ void solve() {
         f[u] = c[u];
 
         // 遍历 u 的所有孩子。
-        for (int v : adj[u]) {
+        for (int v : G[u]) {
             if (parent[v] != u) continue;
 
             // v 的子树包含在 u 的子树中。

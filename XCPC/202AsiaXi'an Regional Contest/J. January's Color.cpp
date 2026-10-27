@@ -12,14 +12,22 @@ void solve() {
         cin >> c[i];
 
     }
-    vector<vector<ll>> adj(n+1);
+    vector<vector<ll>> G(n+1);
     for(ll i=1;i<n;i++){
         ll u,v;
         cin >> u >> v;
-        adj[u].push_back(v);
-        adj[v].push_back(u);
+        G[u].push_back(v);
+        G[v].push_back(u);
 
     }
+    vector<ll> parent(n+1,0);
+    vector<ll> tin(n+1);
+    
+    vector<ll> sz(n+1,1);
+    vector<ll> order;
+    order.reserve(n);
+
+    vector<ll> st;
     
 }
 
