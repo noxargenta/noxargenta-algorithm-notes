@@ -82,7 +82,7 @@ void solve() {
         }else {
             w=mn1[p];
         }
-        D[u]=D[u]+w;
+        D[u]=D[p]+w;
 
     }    
     while(m--){
