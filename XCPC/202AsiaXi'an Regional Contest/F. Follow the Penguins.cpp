@@ -53,8 +53,19 @@ void solve() {
         if(ans[u]=-1 || tm != nxt[u]) continue;
         ans[u] = tm;
         pos[u] = x[u] + 1LL * dir[u] * tm;
-    }
+        for(auto v : rev[u]){
+            if(ans[v]!=-1)continue;
+            ll now = x[v] + 1LL * dir[v] * tm;
+            ll nt=tm + abs(pos[u]-now);
 
+            nxt[v]=nt;
+            pq.push({nt,v});
+        }
+    }
+    for(ll i=1;i<=n;i++){
+        cout << ans[i] << " ";
+    }
+    cout << endl;
 }
 
 signed main() {
