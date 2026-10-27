@@ -71,7 +71,12 @@ void solve() {
         }
     }
     vector<ll> D(n+1,0);
-    
+    for(ll u : order){
+        if(u==1)continue;
+        ll p=parent[u];
+
+        ll w
+    }    
 }
 
 signed main() {
