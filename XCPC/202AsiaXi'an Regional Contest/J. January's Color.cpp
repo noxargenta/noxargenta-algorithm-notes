@@ -57,7 +57,10 @@ void solve() {
             sz[u]+=sz[v];
 
             if(f[v]<mn1[u]){
-                mn2 = 
+                mn2[u] = mn1[u];
+                mn1[u] = f[v];
+                best[u] = v;
+                 
             }
         }
 
