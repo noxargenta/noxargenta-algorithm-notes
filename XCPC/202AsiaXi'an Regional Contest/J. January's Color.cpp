@@ -88,7 +88,9 @@ void solve() {
     while(m--){
         ll x,y;
         cin >> x >> y;
-        bool ok= (tin[y] <= tin[x] && tin[x]<tin[y] + sz[y]);
+        bool ok= (tin[y] <= tin[x] && 
+            tin[x]<tin[y] + sz[y]);
+                
     }
 }
 
