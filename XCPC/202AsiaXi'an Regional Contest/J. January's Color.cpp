@@ -31,7 +31,13 @@ void solve() {
     st.push(1);
     while(!st.empty()){
         ll u=st.top();
-        
+        st.pop();
+
+        tin[u]=order.size();
+        order.push_back(u);
+        for(ll v : G[u]){
+            
+        }
     }
 
 }
