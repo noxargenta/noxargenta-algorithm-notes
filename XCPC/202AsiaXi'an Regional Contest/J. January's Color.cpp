@@ -3,6 +3,7 @@ using namespace std;
 using i64 = long long;
 #define endl '\n'
 #define ll long long
+const ll INF=LLONG_MAX;
 #define ull unsigned long long
 void solve() {
     ll n,m;
@@ -41,7 +42,10 @@ void solve() {
             st.push(v);
         }
     }
-    vector<ll>
+    vector<ll> f(n+1);
+    vector<ll> mn1(n+1,INF);
+    vector<ll> mn2(n+1,INF);
+    
 }
 
 signed main() {
