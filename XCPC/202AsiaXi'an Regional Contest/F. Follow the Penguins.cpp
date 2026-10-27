@@ -39,7 +39,7 @@ void solve() {
         if(dir[i]!=dir[j]){
             nxt[i] = abs(x[i]-x[j])/2;
             pq.push({nxt[i],i});
-
+            
         }
     }
 }
