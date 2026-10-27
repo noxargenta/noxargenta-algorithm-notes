@@ -90,7 +90,11 @@ void solve() {
         cin >> x >> y;
         bool ok= (tin[y] <= tin[x] && 
             tin[x]<tin[y] + sz[y]);
-        
+        if(!ok){
+            cout << -1 <<endl;
+        }else {
+            cout << D[x]-D[y] <<endl;
+        }
     }
 }
 
