@@ -1,44 +1,62 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define int long long
-#define N 2000000
-int n,a[N];
-void solve(){
-	cin>>n;
-	int mn=n;
-	for(int i=1;i<=n;++i){
-		cin>>a[i];mn=min(mn,a[i]);
-		a[i+n]=a[i];
-	}
-	vector<pair<int,int>>q,nq;
-	for(int i=1;i<=n;++i)
-		if(a[i]==mn)q.push_back({i,mn});
-	int cnt;
-	for(int i=1;i<n;++i){
-		nq.clear();
-		for(int j=0;j<q.size();++j)q[j].second=max(q[j].second,a[(q[j].first+i-1)%n+1]);
-		mn=n;cnt=0;
-		for(int j=0;j<q.size();++j)mn=min(mn,q[j].second);
-		for(int j=0;j<q.size();++j)
-			if(q[j].second==mn){
-				if(cnt&&nq[cnt-1].first+i>=q[j].first&&nq[cnt-1].first+i<=n||cnt&&nq[cnt-1].first+i>n&&nq[cnt-1].first+i-n>=q[j].first)continue;
-				++cnt;nq.push_back({q[j].first,mn});
-			}
-		q.clear();
-		for(auto j:nq)q.push_back(j);
-	}
-	int t=q[0].first,mx=0;
-	for(int i=1;i<=n;++i){
-		mx=max(mx,a[t]);
-		cout<<mx<<" ";
-		t++;
-		if(t>n)t=1;
-	}
-	cout<<endl;
+#define endl '\n'
+
+void solve() {
+    int n;
+    cin >> n;
+    vector<int> a(2*n+1), mx(n+1);
+    int mn=n;
+
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+        a[i+n]=a[i];
+        mn=min(mn,a[i]);
+    }
+
+    // q 保存仍可能成为答案的起点，mx[p] 是当前前缀最大值
+    vector<int> q, nq;
+    for(int i=1;i<=n;i++){
+        if(a[i]==mn){
+            q.push_back(i);
+            mx[i]=a[i];
+        }
+    }
+
+    for(int i=1;i<n&&q.size()>1;i++){
+        mn=n;
+        for(auto p : q){
+            mx[p]=max(mx[p],a[p+i]);
+            mn=min(mn,mx[p]);
+        }
+
+        nq.clear();
+        for(auto p : q){
+            if(mx[p]!=mn)continue;
+
+            // 当前结果打平且已读区间重叠，保留靠前的起点
+            if(!nq.empty()&&p-nq.back()<=i)continue;
+
+            nq.push_back(p);
+        }
+        q.swap(nq);
+    }
+
+    int s=q[0], ans=0;
+    for(int i=0;i<n;i++){
+        ans=max(ans,a[s+i]);
+        cout << ans << (i==n-1?'\n':' ');
+    }
 }
-signed main(){
-	int T=1;
-	cin>>T;
-	while(T--)solve();
-	return 0;
-} 
+
+signed main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int _=1;
+    cin >> _;
+    while(_--){
+        solve();
+    }
+    return 0;
+}
