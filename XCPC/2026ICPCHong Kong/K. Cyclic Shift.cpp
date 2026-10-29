@@ -18,6 +18,7 @@ void solve() {
             pos=i;
         }
     }
+    cout << "pos:" <<pos <<endl;
     val=-1;
     for(ll i=pos;i<pos+n;i++){
         val=max(val,a[i]);
