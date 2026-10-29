@@ -15,7 +15,9 @@ void solve() {
         a[i+n]=a[i];
         mn=min(mn,a[i]);
     }
+    //nq为候选起点
     vector<ll> q,nq;
+    
     //q最小的a[i]作为起点，存的是下标
     for(ll i=1;i<=n;i++){
         if(a[i]==mn){
@@ -28,9 +30,27 @@ void solve() {
         // x是起点的位置 
         for(auto x : q){
             mx[x]=max(mx[x],a[x+i]);
-            mn=min(mn,mx[])
+            mn=min(mn,mx[x]);
+
         }
+        nq.clear();
+        for(auto x : q){
+            if(mx[x]!=mn)continue;
+
+            if(!nq.empty() && x -nq.back()<=i)continue;
+
+            nq.push_back(x);
+
+        }
+        swap(q,nq);
+
     }
+    ll s=q[0],ans=0;
+    for(ll i=0;i<n;i++){
+        ans=max(ans,a[s+i]);
+        cout << ans << " ";
+    }
+    cout << endl;
 }
 
 signed main() {
