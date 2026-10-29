@@ -1,0 +1,1 @@
+{"name":"Local: H","url":"c:\\code\\c++lan\\XCPC\\2026ICPCHong Kong\\H. Longest Common Prefix.cpp","tests":[{"id":1793255822735,"input":"5\nabac\nabbbb\ncbacb\nbabcc\naa","output":"2\n4\n3\n4\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\XCPC\\2026ICPCHong Kong\\H. Longest Common Prefix.cpp","group":"local","local":true}
