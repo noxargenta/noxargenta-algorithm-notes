@@ -8,13 +8,13 @@ void solve() {
     string s;
     cin  >> s;
     ll n=s.length();
-    char x=s[n-1];
-    char y=s[n-2];
-    if(x==y){
-        cout << n-1 <<endl;
-    }else {
-        cout << n-2 <<endl;
+    for(ll i=0;i<n-1;i++){
+        if(s[i]==s[i+1] ){
+            cout << n-1 <<endl;
+            return;
+        }
     }
+    cout << n-2 <<endl;
 }
 
 signed main() {
