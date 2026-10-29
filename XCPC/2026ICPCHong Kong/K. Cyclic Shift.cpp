@@ -18,7 +18,10 @@ void solve() {
             pos=i;
         }
     }
-    cout << "pos:" <<pos <<endl;
+    if(a[1]==a[n] && a[1]==val){
+        pos=n;
+    }
+    //cout << "pos:" <<pos <<endl;
     val=-1;
     for(ll i=pos;i<pos+n;i++){
         val=max(val,a[i]);
