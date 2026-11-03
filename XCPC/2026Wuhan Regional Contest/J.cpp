@@ -28,7 +28,6 @@ void solve() {
 
         cntB[x]++;
     }
-
     vector<pair<int, int>> a;
     for (auto [v, c] : cntB) {
         a.push_back({v, c});
@@ -37,7 +36,7 @@ void solve() {
     sort(a.begin(), a.end(), [](const auto& x, const auto& y) {
         return x.first - x.second < y.first - y.second;
     });
-
+    
     int k = 0;
     for (auto [v, c] : a) {
         if (k + c >= v) {
