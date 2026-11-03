@@ -36,6 +36,16 @@ void solve() {
         cin >> f[i];
         G[f[i]].push_back(i);
     }
+    ll a[n+1];
+    ll b[n+1];
+    vector<ll> sz(n+1,0);
+    for(ll i=1;i<=n;i++){
+        cin >> a[i];
+    }
+    for(ll i=1;i<=n;i++){
+        cin >> b[i];
+    }
+    
     
 }
 
