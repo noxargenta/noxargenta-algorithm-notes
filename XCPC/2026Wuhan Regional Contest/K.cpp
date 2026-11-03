@@ -25,6 +25,18 @@ using i64 = long long;
 #define ll long long
 #define ull unsigned long long
 const ll mod=998244353;
+ll qpow(ll a,ll b){
+    ll res=1;
+    while(b>0){
+        if(b%2==1){
+            res=res*a % mod;
+        }
+        a=a*a%mod;
+        b>>=1;
+    }
+    return res;
+}
+
 void solve() {
     ll n;
     cin >> n;
@@ -51,7 +63,14 @@ void solve() {
             sz[p]+=sz[i];
         }
     }
-    
+    ll up=1;
+    ll down=1;
+    for(ll i=1;i<=n;i++){
+        up=up*i%mod;
+        down=down*sz[i]%mod;
+    }
+    ll ans = up%mod * (qpow(down,mod-2)%mod)%mod;
+    cout << ans <<endl;
     
 }
 
