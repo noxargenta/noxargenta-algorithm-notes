@@ -24,7 +24,7 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 #define ull unsigned long long
-const ll mod=998 244 353;
+const ll mod=998244353;
 void solve() {
     ll n;
     cin >> n;
@@ -38,12 +38,18 @@ void solve() {
     }
     ll a[n+1];
     ll b[n+1];
-    vector<ll> sz(n+1,0);
+    vector<ll> sz(n+1,1);
     for(ll i=1;i<=n;i++){
         cin >> a[i];
     }
     for(ll i=1;i<=n;i++){
         cin >> b[i];
+    }
+    for(ll i=n;i>=2;i--){
+        ll p=f[i];
+        if(b[p] < a[i] || a[p] < b[i]){
+            sz[p]+=sz[i];
+        }
     }
     
     
