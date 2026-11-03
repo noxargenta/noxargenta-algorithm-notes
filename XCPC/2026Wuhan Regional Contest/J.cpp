@@ -33,11 +33,11 @@ void solve() {
     vector<ll> a(n);
     vector<ll> b(n);
     map<ll,ll> cnta,cntb;
-    for(ll i=1;i<=n;i++){
+    for(ll i=0;i<n;i++){
         cin >> a[i];
         cnta[a[i]]++;
     }
-    for(ll i=1;i<=n;i++){
+    for(ll i=0;i<n;i++){
         cin >> b[i];
         cntb[b[i]]++;
     }
@@ -51,7 +51,9 @@ void solve() {
     });
     ll k=0;
 
-    for(auto [x,y] : pa){
+    for(auto z : pa){
+        ll x=z.first;
+        ll y=z.second;
         if(k+y >= x){
             k+=y;
 
@@ -62,7 +64,7 @@ void solve() {
 
     }   
     cout << "YES\n";
-    
+
 }
 
 signed main() {
