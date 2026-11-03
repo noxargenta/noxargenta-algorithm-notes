@@ -24,6 +24,7 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 #define ull unsigned long long
+const ll mod=998 244 353;
 void solve() {
     ll n;
     cin >> n;
