@@ -62,7 +62,7 @@ void solve() {
 
     }   
     cout << "YES\n";
-
+    
 }
 
 signed main() {
