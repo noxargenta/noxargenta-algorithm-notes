@@ -30,8 +30,10 @@ void solve() {
     
     vector<ll> f(n+1,0);
     f[1]=1;
+    vector<vector<ll>> G(n+1);
     for(ll i=2;i<=n;i++){
         cin >> f[i];
+        G[f[i]].push_back(i);
     }
     
 }
