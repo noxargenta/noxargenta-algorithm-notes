@@ -18,7 +18,10 @@ void solve() {
         cin >> b[i];
         cntb[b[i]]++;
     }
-    
+    vector<pair<ll,ll>> pa(n+1);
+    for(auto [v,c] : cntb){
+        
+    }
     
 }
 
