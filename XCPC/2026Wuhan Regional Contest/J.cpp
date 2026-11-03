@@ -8,18 +8,24 @@ using i64 = long long;
 void solve() {
     int n;
     cin >> n;
-
+    vector<ll> aa(n+1);
+    vector<ll> bb(n+1);
+    
     map<int, int> cntA, cntB;
 
     for (int i = 0; i < n; i++) {
         int x;
         cin >> x;
+        aa[i]=x;
+
         cntA[x]++;
     }
 
     for (int i = 0; i < n; i++) {
         int x;
         cin >> x;
+        bb[i]=x;
+
         cntB[x]++;
     }
 
