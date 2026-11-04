@@ -13,6 +13,7 @@ void solve(){
         if(mp[{a,b}]==0){
             if(c<240 || (c>=240 && dui[a]<3)){
                 cout << b <<endl;
+                dui[a]++;
             }else {
                 cout << 0 <<endl;
             }
