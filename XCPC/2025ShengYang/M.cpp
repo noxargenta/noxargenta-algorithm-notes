@@ -7,7 +7,7 @@ using i64 = long long;
 // p[i]表示i位置放队伍p[i]
 ll a[8+1],b[8+1];
 vector<ll> p(8+1);
-vector<ll> dp(9,1);
+vector<double> dp(9,1);
 void dfs(ll l,ll r){
     if(l==r){
         dp[l]=1;
@@ -52,7 +52,7 @@ void solve() {
             }
         }
     } while (next_permutation(p.data()+1,p.data()+1+8));
-    
+    cout << fixed << setprecision(15) << ans <<endl;
 }
 
 signed main() {
