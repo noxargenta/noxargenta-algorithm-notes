@@ -31,10 +31,14 @@ void solve() {
         //所以就是上面(i)块板子乘上（擦除需要的代价）
 
         ll t=max(0LL,a-i*b);
+        
         cur+=cnt[0]*b;
         cur+=(-f[i]*t);
-    }
+        
+        ans=min(ans,cur);
 
+    }
+    cout << ans <<endl;
 }
 
 signed main() {
@@ -42,7 +46,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+     cin >> _;
     while(_--) {
         solve();
     }
