@@ -32,7 +32,7 @@ void solve() {
 
         ll t=max(0LL,a-i*b);
 
-        cur+=cnt[0]*b
+        cur+=(-f[i]*t);
     }
 
 }
