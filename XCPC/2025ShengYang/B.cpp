@@ -24,7 +24,11 @@ void solve() {
     }
     sort(f.begin(),f.end(),greater<ll>());
     ll cur=1LL*(k-cnt[0])*a;
-    
+    ll ans=cur;
+    for(ll i=0;i<(ll)f.size();i++){
+        ll t=max(0LL,a-1LL*i*b);
+        
+    }
 
 }
 
