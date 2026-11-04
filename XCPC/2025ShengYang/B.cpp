@@ -31,7 +31,7 @@ void solve() {
         //所以就是上面(i)块板子乘上（擦除需要的代价）
 
         ll t=max(0LL,a-i*b);
-
+        cur+=cnt[0]*b;
         cur+=(-f[i]*t);
     }
 
