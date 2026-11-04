@@ -46,9 +46,9 @@ void solve() {
     do
     {
         dfs(1,8);
-        for(ll i=1;i<=n;i++){
+        for(ll i=1;i<=8;i++){
             if(p[i]==0){
-                ans=max(ans,dp[p[i]]);
+                ans=max(ans,dp[i]);
             }
         }
     } while (next_permutation(p.data()+1,p.data()+1+8));
