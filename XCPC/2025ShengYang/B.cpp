@@ -26,8 +26,13 @@ void solve() {
     ll cur=1LL*(k-cnt[0])*a;
     ll ans=cur;
     for(ll i=0;i<(ll)f.size();i++){
-        ll t=max(0LL,a-1LL*i*b);
-        
+        //t为当前能节省的费用
+        //初始每个颜色填充都要a，或者选择擦除上面的颜色露出最下面的颜色
+        //所以就是上面(i)块板子乘上（擦除需要的代价）
+
+        ll t=max(0LL,a-i*b);
+
+        cur+=cnt[0]*b
     }
 
 }
