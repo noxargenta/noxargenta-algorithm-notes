@@ -22,8 +22,14 @@ void dfs(ll l,ll r){
             double x=a[p[i]],y=b[p[j]];
             double meet = dp[i] * dp[j];
 
-            
+            tmp[i]+=meet * x/(x+y);
+            tmp[j]+=meet * y/(x+y);
 
+
+
+        }
+        for(ll i=l;i<=r;i++){
+            dp[i]=tmp[i];
         }
     }   
 }
