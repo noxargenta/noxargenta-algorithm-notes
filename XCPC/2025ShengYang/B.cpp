@@ -1,46 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
+using i64 = long long;
 #define endl '\n'
-
+#define ll long long
+#define ull unsigned long long
 void solve() {
-    int n,m;
+    ll n,m;
     ll a,b;
-    cin >> n >> m >> a >> b;
-
-    int k=n*m;
-    vector<int> cnt(k+1);
-    for(int i=0;i<k;i++){
-        int x;
+    cin >>n >> m >> a >> b;
+    ll k=n*m;
+    map<ll,ll> cnt;
+    for(ll i=0;i<k;i++){
+        ll x;
         cin >> x;
         cnt[x]++;
-    }
 
-    vector<int> f;
-    for(int i=1;i<=k;i++){
-        if(cnt[i])f.push_back(cnt[i]);
     }
-    sort(f.rbegin(),f.rend());
-
+    vector<ll> f;
+    for(ll i=1;i<=k;i++){
+        if(cnt[i]!=0){
+            f.push_back(cnt[i]);
+        }
+    }
+    sort(f.begin(),f.end(),greater<ll>());
     ll cur=1LL*(k-cnt[0])*a;
-    ll ans=cur;
-    for(int i=0;i<(int)f.size();i++){
-        // 在底部新增纯色图层：透明位置增加擦除代价，同色位置节省绘制代价。
-        ll t=max(0LL,a-1LL*i*b);
-        cur+=1LL*cnt[0]*b-1LL*f[i]*t;
-        ans=min(ans,cur);
-    }
+    
 
-    cout << ans << endl;
 }
 
 signed main() {
+//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
-    int _=1;
-    cin >> _;
-    while(_--){
+    int _ = 1;
+    // cin >> _;
+    while(_--) {
         solve();
     }
     return 0;
