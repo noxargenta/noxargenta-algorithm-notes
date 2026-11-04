@@ -3,6 +3,8 @@ using namespace std;
 #define ll long long
 #define endl '\n'
 void solve(){
+    ll n;
+    cin >> n;
     
 }
 signed main(){
@@ -10,7 +12,7 @@ signed main(){
     cin.tie(nullptr);
     cout.tie(nullptr);
     ll _=1;
-    cin >> _;
+    //cin >> _;
     while(_--){
         solve();
     }
