@@ -5,7 +5,21 @@ using namespace std;
 void solve(){
     ll n;
     cin >> n;
-    
+    map<pair<ll,ll>,ll> mp;
+    map<ll,ll> dui;
+    for(ll i=1;i<=n;i++){
+        ll a,b,c;
+        cin >> a >> b >> c;
+        if(mp[{a,b}]==0){
+            if(c<240 || (c>=240 && dui[a]<3)){
+                cout << b <<endl;
+            }else {
+                cout << 0 <<endl;
+            }
+        }else {
+            cout << 0 <<endl;
+        }
+    }
 }
 signed main(){
     ios::sync_with_stdio(false);
@@ -16,5 +30,4 @@ signed main(){
     while(_--){
         solve();
     }
-    return;
 }
