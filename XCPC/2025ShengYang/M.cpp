@@ -15,23 +15,19 @@ void dfs(ll l,ll r){
     }
     ll mid=(l+r)/2;
     dfs(l,mid);
-    dfs(mid,r);
+    dfs(mid+1,r);
     double tmp[9]={};
     for(ll i=l;i<=mid;i++){
         for(ll j=mid+1;j<=r;j++){
             double x=a[p[i]],y=b[p[j]];
             double meet = dp[i] * dp[j];
-
             tmp[i]+=meet * x/(x+y);
             tmp[j]+=meet * y/(x+y);
-
-
-
-        }
-        for(ll i=l;i<=r;i++){
-            dp[i]=tmp[i];
         }
     }   
+    for(ll i=l;i<=r;i++){
+        dp[i]=tmp[i];
+    }
 }
 void solve() {
     ll n=8;
@@ -47,7 +43,7 @@ void solve() {
     {
         dfs(1,8);
         for(ll i=1;i<=8;i++){
-            if(p[i]==0){
+            if(p[i]==1){
                 ans=max(ans,dp[i]);
             }
         }
