@@ -14,7 +14,7 @@ void solve() {
     for(ll i=0;i<n;i++){
         mp[s[i]]++;
     }
-    for(ll i=n-1;i>=0;i--){
+    for(ll i=n-1;i>0;i--){
         ans=min(ans,n-mp[s[i]]);
     }
     cout << ans <<endl;
