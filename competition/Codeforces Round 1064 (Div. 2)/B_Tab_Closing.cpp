@@ -8,8 +8,14 @@ void solve() {
     ll a,b,n;
     cin >> a >> b >> n;
     ll num=a/b;
-    cout << n-num<<endl;
-    
+    if(n<=num){
+        cout << 1 <<endl;
+        return;
+    }else{
+        cout << n-num+1<<endl;
+        return;
+    }
+
 }
 
 signed main() {
