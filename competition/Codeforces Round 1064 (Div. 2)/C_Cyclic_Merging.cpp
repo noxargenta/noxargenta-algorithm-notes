@@ -6,11 +6,22 @@ using i64 = long long;
 #define ull unsigned long long
 void solve() {
     ll n;
+    cin >> n;
+
     vector<ll> a(n+1);
+
     for(ll i=1;i<=n;i++){
         cin >> a[i];
     }
-    
+    ll ans=0;
+    ll maxx=-1;
+    ans+=max(a[n],a[1]);
+    maxx=max(maxx,a[n]);
+    for(ll i=1;i<n;i++){
+        ans+=max(a[i],a[i+1]);
+        maxx=max(maxx,a[i]);
+    }
+    cout << ans-maxx <<endl;
 }
 
 signed main() {
