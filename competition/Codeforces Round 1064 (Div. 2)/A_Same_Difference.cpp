@@ -5,7 +5,19 @@ using i64 = long long;
 #define ll long long
 #define ull unsigned long long
 void solve() {
-    
+    ll n;
+    cin >> n;
+    string s;
+    cin >>s;
+    ll ans=n-1;
+    map<char,ll> mp;
+    for(ll i=0;i<n;i++){
+        mp[s[i]]++;
+    }
+    for(ll i=n-1;i>=0;i--){
+        ans=min(ans,n-mp[s[i]]);
+    }
+    cout << ans <<endl;
 }
 
 signed main() {
@@ -13,7 +25,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
