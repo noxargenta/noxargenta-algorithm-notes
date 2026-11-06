@@ -9,12 +9,18 @@ void solve() {
     cin >>n >> k;
     ll cnt=0;
     ll val=1;
-    while(cnt < n){
-        val*=2;
+    ll ans=0;
+    while(ans < n){
+        
         //cur表示当前最多选的个数
         ll cur=min(k,n/val);
         
+        cnt+=cur;
+        ans+=cur*val;
+        
+        val*=2;
     }
+    cout << cnt<< endl;
 }
 
 signed main() {
