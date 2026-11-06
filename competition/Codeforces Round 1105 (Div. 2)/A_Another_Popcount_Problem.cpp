@@ -7,20 +7,15 @@ using i64 = long long;
 void solve() {
     ll n,k;
     cin >>n >> k;
-    ll cnt=0;
+    
     ll val=1;
     ll ans=0;
-    while(ans < n){
-        
-        //cur表示当前最多选的个数
-        ll cur=min(k,n/val);
-        
-        cnt+=cur;
-        ans+=cur*val;
-        
-        val*=2;
+    for(ll i=1;i<=n;i*=2){
+        ll cnt=min(k,n/i);
+        ans+=cnt;
+        n-=cnt*i;
     }
-    cout << cnt<< endl;
+    cout << ans << endl;
 }
 
 signed main() {
