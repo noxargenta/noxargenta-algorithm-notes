@@ -7,7 +7,14 @@ using i64 = long long;
 void solve() {
     ll n,k;
     cin >>n >> k;
-    
+    ll cnt=0;
+    ll val=1;
+    while(cnt < n){
+        val*=2;
+        //
+        ll cur=min(k,n/val);
+
+    }
 }
 
 signed main() {
