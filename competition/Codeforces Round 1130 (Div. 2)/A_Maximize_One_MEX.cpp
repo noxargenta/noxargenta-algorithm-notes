@@ -6,6 +6,14 @@ using i64 = long long;
 #define ull unsigned long long
 
 void solve() {
+    ll n,k;
+    cin >> n>> k;
+    vector<ll> a(n+1);
+    ll mex=0;
+    for(ll i=1;i<=n;i++){
+        cin >>a[i];
+        
+    }
     
 }
 
@@ -14,7 +22,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
