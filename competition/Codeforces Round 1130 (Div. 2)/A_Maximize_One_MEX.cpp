@@ -10,6 +10,9 @@ void solve() {
     cin >> n>> k;
     vector<ll> a(n+1);
     ll mex=0;
+    mex = [](ll l,ll r) -> ll{
+
+    };
     for(ll i=1;i<=n;i++){
         cin >>a[i];
         
