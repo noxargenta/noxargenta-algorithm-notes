@@ -17,6 +17,7 @@ auto qpow(ll x,ll k){
     }
     return ans;
 }
+
 void solve() {
     ll a,b,n,m;
     cin >> a >> b >> n >> m;
