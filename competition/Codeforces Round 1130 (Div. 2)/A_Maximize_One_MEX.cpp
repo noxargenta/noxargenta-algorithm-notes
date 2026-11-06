@@ -26,8 +26,26 @@ void solve() {
         return mexx;
     };
     ////
-    
-    
+    ll ans=mex(k);
+    ll ans1=-1;
+    ll ans2=-1;
+    for(ll i=1;i<=n;i++){
+        for(ll j=i+1;j<=n;j++){
+            swap(a[i],a[j]);
+            ll cur=mex(k);
+            if(cur>ans){
+                ans1=i;
+                ans2=j;
+            }
+            ans=max(ans,cur);
+            swap(a[i],a[j]);
+        }
+    }
+    if(ans1!=-1){
+        cout << ans1 << " " << ans2 << endl;
+    }else{
+        cout << -1 << endl;
+    }
 }
 
 signed main() {
