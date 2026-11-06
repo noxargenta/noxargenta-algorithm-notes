@@ -9,7 +9,7 @@ void solve() {
     cin >> n;
 
     ll cnt=0;
-    ll s;
+    ll s=0;
     vector<ll> a(n+1);
     for(ll i=1;i<=n;i++){
         cin >> a[i];
@@ -26,11 +26,13 @@ void solve() {
     }else{
         ll ans=0;
         for(auto x : a){
-            if(x^s<x){
+            if((x^s)<x){
                 ans++;
             }
         }
+        cout << ans <<endl;
     }
+    
 }
 
 signed main() {
