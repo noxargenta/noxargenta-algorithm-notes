@@ -7,22 +7,20 @@ using i64 = long long;
 ll mod=998244353;
 auto qpow(ll x,ll k){
     ll ans=1;
+    x%=mod;
     while(k>0){
-        if(k%2!=0){
-            ans=ans*x%mod;
-            k--;
-        }else {
-            k/=2;
-            x=x*x%mod;
+        if(k&1){
             ans=ans*x%mod;
         }
+        x=x*x%mod;
+        k/=2;
     }
     return ans;
 }
 void solve() {
     ll a,b,n,m;
     cin >> a >> b >> n >> m;
-    ll k=(a*b)-(a-n+1)*(m-b+1);
+    ll k=(a*b)-(a-n+1)*(b-m+1);
     cout << qpow(2LL,k) <<endl;
 }
 
