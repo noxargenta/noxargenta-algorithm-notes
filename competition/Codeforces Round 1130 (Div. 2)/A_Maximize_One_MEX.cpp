@@ -9,25 +9,29 @@ void solve() {
     ll n,k;
     cin >> n>> k;
     vector<ll> a(n+1);
-        
-        auto mex = [&](ll x) -> ll{
-            set<ll> st;
-            ll mexx=0;
-
-            for(ll i=1;i<=x;i++){
-                if(a[i]==mexx){
-                    mexx++;
-                    while(st.count(mexx)){
-                        mexx++;
-                    }
-                }
-            }
-        };
-    ////
     for(ll i=1;i<=n;i++){
         cin >>a[i];
         
     }
+    
+    auto mex = [&](ll x) -> ll{
+        set<ll> st;
+        ll mexx=0;
+
+        for(ll i=1;i<=x;i++){
+            if(a[i]==mexx){
+                mexx++;
+                while(st.count(mexx)){
+                    mexx++;
+                }
+            }
+            
+            st.insert(a[i]);
+        }
+        return mexx;
+    };
+    ////
+    
     
 }
 
