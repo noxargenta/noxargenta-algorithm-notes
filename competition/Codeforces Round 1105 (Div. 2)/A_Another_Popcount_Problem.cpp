@@ -11,9 +11,9 @@ void solve() {
     ll val=1;
     while(cnt < n){
         val*=2;
-        //
+        //cur表示当前最多选的个数
         ll cur=min(k,n/val);
-
+        
     }
 }
 
