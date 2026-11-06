@@ -17,16 +17,11 @@ void solve() {
     auto mex = [&](ll x) -> ll{
         set<ll> st;
         ll mexx=0;
-
         for(ll i=1;i<=x;i++){
-            if(a[i]==mexx){
-                mexx++;
-                while(st.count(mexx)){
-                    mexx++;
-                }
-            }
-            
             st.insert(a[i]);
+        }
+        while(st.count(mexx)){
+            ++mexx;
         }
         return mexx;
     };
