@@ -29,8 +29,10 @@ void solve() {
     ll ans=mex(k);
     ll ans1=-1;
     ll ans2=-1;
-    for(ll i=1;i<=n;i++){
+    for(ll i=1;i<=k;i++){
+        
         for(ll j=i+1;j<=n;j++){
+            
             swap(a[i],a[j]);
             ll cur=mex(k);
             if(cur>ans){
