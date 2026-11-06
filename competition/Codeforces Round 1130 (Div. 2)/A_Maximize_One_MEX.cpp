@@ -8,6 +8,7 @@ using i64 = long long;
 void solve() {
     ll n,k;
     cin >> n>> k;
+    k=n-k+1;
     vector<ll> a(n+1);
     for(ll i=1;i<=n;i++){
         cin >>a[i];
