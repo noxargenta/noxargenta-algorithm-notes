@@ -9,17 +9,22 @@ void solve() {
     cin >> n;
 
     ll cnt=0;
-
+    ll s;
     vector<ll> a(n+1);
     for(ll i=1;i<=n;i++){
         cin >> a[i];
+        s^=a[i];
         if(a[i]!=0){
             cnt++;
         }    
     }
+
     if(n==1){
         cout << 0 <<endl;
-    }else{
+    }else if(s==0){
+        cout << 1 <<endl;
+    }
+    else{
         if(cnt>=2){
             cout << cnt << endl;
         }else{
