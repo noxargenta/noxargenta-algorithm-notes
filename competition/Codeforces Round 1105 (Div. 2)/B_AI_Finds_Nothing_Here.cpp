@@ -4,20 +4,40 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 #define ull unsigned long long
-void solve() {
-    ll a,b,n,m;
+ll mod = 998244353;
+auto qpow(ll x, ll k)
+{
+    ll ans = 1;
+    while (k > 0)
+    {
+        if (k % 2 != 0)
+        {
+            ans = ans * x % mod;
+            k /= 2;
+            x = x * x % mod;
+        }
+        else
+        {
+        }
+    }
+}
+void solve()
+{
+    ll a, b, n, m;
     cin >> a >> b >> n >> m;
-    ll k=(a*b)-(a-n+1)
-    cout << qpow(2,)
+    ll k = (a * b) - (a - n + 1) * (m - b + 1);
+    cout << qpow(2LL, k) << endl;
 }
 
-signed main() {
-//  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
+signed main()
+{
+    //  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
     cin >> _;
-    while(_--) {
+    while (_--)
+    {
         solve();
     }
     return 0;
