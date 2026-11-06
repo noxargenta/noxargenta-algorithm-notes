@@ -23,12 +23,12 @@ void solve() {
         cout << 0 <<endl;
     }else if(s==0){
         cout << 1 <<endl;
-    }
-    else{
-        if(cnt>=2){
-            cout << cnt << endl;
-        }else{
-            cout << 0<<endl;
+    }else{
+        ll ans=0;
+        for(auto x : a){
+            if(x^s<x){
+                ans++;
+            }
         }
     }
 }
