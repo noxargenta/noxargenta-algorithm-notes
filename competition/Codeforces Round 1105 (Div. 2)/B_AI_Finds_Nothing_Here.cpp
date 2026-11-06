@@ -7,7 +7,7 @@ using i64 = long long;
 void solve() {
     ll a,b,n,m;
     cin >> a >> b >> n >> m;
-    ll k=(a*b)-()
+    ll k=(a*b)-(a-n+1)
     cout << qpow(2,)
 }
 
