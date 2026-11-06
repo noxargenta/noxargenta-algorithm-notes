@@ -22,6 +22,8 @@ void solve() {
     }else{
         if(cnt>=2){
             cout << cnt << endl;
+        }else{
+            cout << 0<<endl;
         }
     }
 }
