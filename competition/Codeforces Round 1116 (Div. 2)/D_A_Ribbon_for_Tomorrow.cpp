@@ -21,10 +21,7 @@ auto qpow(ll x,ll k){
 }
 ll c(ll x,ll k){
     ll ans=1;
-    for(ll i=x;i>k;i--){
-        ans=ans*i%mod;
-
-    }
+    ans=ans*(fac[x]*ifac[k]) %mod;
     for(ll i=k;i>1;i--){
         ans=ans*ifac[i]%mod;
     }
