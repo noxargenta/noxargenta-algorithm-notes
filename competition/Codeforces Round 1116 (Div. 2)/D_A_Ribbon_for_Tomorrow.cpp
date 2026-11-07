@@ -4,6 +4,7 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 #define ull unsigned long long
+ll MAXX=1000000;
 const ll mod=998244353;
 ll fac[(ll)1e6+10];
 ll ifac[(ll)1e6+10];
