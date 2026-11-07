@@ -21,6 +21,15 @@ void solve() {
             pos2=i;
         }
     }
+    
+    if(ok1+ok2==0){
+        cout << 1 << endl;
+    }else if(ok1 + ok2 == 1){
+        cout << 2 << endl;
+    }else {
+        cout << 4 << endl;
+    }
+    /*
     ll last1=s[pos1]-'0';
     ll last2=s[pos2]-'0';
     if(ok1){
@@ -48,7 +57,7 @@ void solve() {
                 }
             }
         }
-    }
+    } */
 }
 
 signed main() {
