@@ -31,7 +31,7 @@ void solve() {
                 s[l]=!last1 + '0';
                 last1=!last1;
             }else {
-                if(s[l]==last1){
+                if(s[l]-'0'==last1){
                     cout << 0 << endl;
                     return;
                 }
@@ -42,7 +42,7 @@ void solve() {
                 s[r]=!last2 + '0';
                 last2=!last2;
             }else {
-                if(s[r]==last2){
+                if(s[r]-'0'==last2){
                     cout << 0 << endl;
                     return;
                 }
