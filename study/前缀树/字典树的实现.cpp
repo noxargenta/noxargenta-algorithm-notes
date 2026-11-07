@@ -16,7 +16,7 @@ int endCnt[MAXN];  // 在当前节点结尾的单词数量
 int cnt = 1;       // 根节点编号为 1
 
 int findChild(int u, char c) {
-    for (int v = head[u]; v; v = nxt[v]) {
+    for (int v = head[u]; v!=0; v = nxt[v]) {
         if (letter[v] == c) {
             return v;
         }
