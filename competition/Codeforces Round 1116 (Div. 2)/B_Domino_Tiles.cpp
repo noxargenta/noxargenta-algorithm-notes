@@ -21,12 +21,23 @@ void solve() {
             pos2=i;
         }
     }
+    ll last1=s[pos1]-'0';
+    ll last2=s[pos2]-'0';
     if(ok1){
         ll l=pos1-2;
         ll r=pos1+2;
         for(;l>=0;l-=2){
-            
+            if(s[l]=='?'){
+                s[l]=!last1 + '0';
+                last1=!last1;
+            }else {
+                if(s[l]==last1){
+                    cout << 0 << endl;
+                    return;
+                }
+            }
         }
+        
     }
 }
 
