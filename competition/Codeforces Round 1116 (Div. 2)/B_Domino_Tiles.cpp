@@ -13,10 +13,10 @@ void solve() {
     ll pos1=-1,pos2=-1;
     bool ok2=0;
     for(ll i=0;i<n;i++){
-        if(i%2==0 && s[i]!='?'&& pos1!=-1){
+        if(i%2==0 && s[i]!='?'&& pos1==-1){
             ok1=1;
             pos1=i;
-        }else if(i%2==1 && s[i]!='?' && pos2!=-1){
+        }else if(i%2==1 && s[i]!='?' && pos2==-1){
             ok2=1;
             pos2=i;
         }
