@@ -21,13 +21,34 @@ void solve() {
             pos2=i;
         }
     }
-    
+    if(ok1){
+        for(ll i=0;i<n;i+=2){
+            if(abs(i-pos1)/2 %2==1 && s[i]==s[pos1]){
+                cout << 0<< endl;
+                return;
+            }else if(abs(i-pos1)/2 %2==0 && s[i]!='?' && s[i]!=s[pos1]){
+                cout << 0 <<endl;
+                return;
+            }
+        }
+    }
+    if(ok2){
+        for(ll i=1;i<n;i+=2){
+            if(abs(i-pos2)/2 %2==1 && s[i]==s[pos2]){
+                cout << 0<< endl;
+                return;
+            }else if(abs(i-pos2)/2 %2==0 && s[i]!='?' && s[i]!=s[pos2]){
+                cout << 0 <<endl;
+                return;
+            }
+        }
+    }
     if(ok1+ok2==0){
-        cout << 1 << endl;
+        cout << 4 << endl;
     }else if(ok1 + ok2 == 1){
         cout << 2 << endl;
     }else {
-        cout << 4 << endl;
+        cout << 1 << endl;
     }
     /*
     ll last1=s[pos1]-'0';
