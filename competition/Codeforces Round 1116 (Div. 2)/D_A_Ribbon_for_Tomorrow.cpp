@@ -55,7 +55,7 @@ void solve() {
             }
         }
     }
-    cout << c(a-1,cnt0-1)*c(b-1,cnt1-1) <<endl;
+    cout << c(cnt0-1,a-1)*c(cnt1-1,b-1) <<endl;
 }
 
 signed main() {
