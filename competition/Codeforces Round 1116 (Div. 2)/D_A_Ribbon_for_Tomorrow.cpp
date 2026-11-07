@@ -40,13 +40,13 @@ void solve() {
     ll cnt0=0;
     ll cnt1=0;
    
-    for(ll i=0;i<n-1;i++){
+    for(ll i=0;i<n;i++){
         if(s[i]=='0'){
             cnt0++;
         }else {
             cnt1++;
         }
-        if(s[i]!=s[i+1]){
+        if(i<n-1 && s[i]!=s[i+1]){
             
             if(s[i]=='0'){
                 a++;
