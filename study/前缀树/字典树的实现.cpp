@@ -87,10 +87,10 @@ void eraseWord(const string& word) {
 
 void solve() {
     // 清空上一组数据，兼容多组测试
-    for (int i = 1; i <= cnt; ++i) {
-        head[i] = nxt[i] = passCnt[i] = endCnt[i] = 0;
-        letter[i] = 0;
-    }
+    // for (int i = 1; i <= cnt; ++i) {
+    //     head[i] = nxt[i] = passCnt[i] = endCnt[i] = 0;
+    //     letter[i] = 0;
+    // }
     cnt = 1;
 
     int m;
