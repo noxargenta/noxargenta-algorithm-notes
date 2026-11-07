@@ -50,6 +50,10 @@ void solve() {
             }
         }
     }
+    if(cnt1==0 || cnt0==0){
+        cout << 1 <<endl;
+        return;
+    }
     cout << c(cnt0-1,a-1)*c(cnt1-1,b-1) <<endl;
 }
 
