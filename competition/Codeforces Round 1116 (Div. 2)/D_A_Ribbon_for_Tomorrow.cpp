@@ -1,3 +1,21 @@
+//https://codeforces.com/contest/2256/problem/D
+/*
+4
+5
+00110
+6
+001010
+5
+01010
+6
+111111
+
+
+2
+3
+1
+1
+*/
 #include <bits/stdc++.h>
 using namespace std;
 using i64 = long long;
@@ -54,7 +72,7 @@ void solve() {
         cout << 1 <<endl;
         return;
     }
-    cout << c(cnt0-1,a-1)*c(cnt1-1,b-1) <<endl;
+    cout << c(cnt0-1,a-1)*c(cnt1-1,b-1)%mod <<endl;
 }
 
 signed main() {
@@ -67,7 +85,21 @@ signed main() {
         fac[i]=fac[i-1]*i%mod;
         ifac[i]=qpow(fac[i],mod-2);
     }
-    
+    /*
+    fac[0] = 1;
+    for (ll i = 1; i <= MAXX; i++) {
+        fac[i] = fac[i - 1] * i % mod;
+    }
+
+    // 修改：只求一次最大阶乘的逆元
+    ifac[MAXX] = qpow(fac[MAXX], mod - 2);
+
+    // 修改：倒着递推其余逆阶乘，也会算出 ifac[0] = 1
+    for (ll i = MAXX; i >= 1; i--) {
+        ifac[i - 1] = ifac[i] * i % mod;
+    }
+    这样算也是可以的
+    */
     int _ = 1;
     cin >> _;
     while(_--) {
