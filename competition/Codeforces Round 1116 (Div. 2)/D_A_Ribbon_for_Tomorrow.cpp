@@ -57,12 +57,11 @@ signed main() {
 //  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-     fac[1]=1;
     fac[0]=1;
-    ifac[1]=qpow(1,mod-2);
-    for(ll i=2;i<=1e6+1;i++){
+    ifac[0]=1;
+    for(ll i=1;i<=1e6+1;i++){
         fac[i]=fac[i-1]*i%mod;
-        ifac[i]=fac[]qpow(i,mod-2);
+        ifac[i]=qpow(fac[i],mod-2);
     }
     
     int _ = 1;
