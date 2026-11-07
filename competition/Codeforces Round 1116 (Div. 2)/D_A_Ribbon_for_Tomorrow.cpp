@@ -5,7 +5,14 @@ using i64 = long long;
 #define ll long long
 #define ull unsigned long long
 ll c(ll x,ll k){
-    
+    ll ans=1;
+    for(ll i=x;i>k;i--){
+        ans*=i;
+
+    }
+    for(ll i=k;i>1;i--){
+        ans/=i;
+    }
 }
 void solve() {
     ll n;
