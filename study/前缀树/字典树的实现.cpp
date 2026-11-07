@@ -21,10 +21,10 @@ void insert(const string& word) {
     int cur = 1;
     ++passCnt[cur];
 
-    for (int i = 0; i < (int)word.size(); ++i) {
+    for(int i = 0; i < (int)word.size(); ++i) {
         int path = word[i] - 'a';
 
-        if (tree[cur][path] == 0) {
+        if(tree[cur][path] == 0) {
             tree[cur][path] = ++cnt;
         }
 
@@ -38,10 +38,10 @@ void insert(const string& word) {
 int search(const string& word) {
     int cur = 1;
 
-    for (int i = 0; i < (int)word.size(); ++i) {
+    for(int i = 0; i < (int)word.size(); ++i) {
         int path = word[i] - 'a';
 
-        if (tree[cur][path] == 0) {
+        if(tree[cur][path] == 0) {
             return 0;
         }
 
@@ -54,10 +54,10 @@ int search(const string& word) {
 int prefixNumber(const string& pre) {
     int cur = 1;
 
-    for (int i = 0; i < (int)pre.size(); ++i) {
+    for(int i = 0; i < (int)pre.size(); ++i) {
         int path = pre[i] - 'a';
 
-        if (tree[cur][path] == 0) {
+        if(tree[cur][path] == 0) {
             return 0;
         }
 
@@ -68,14 +68,14 @@ int prefixNumber(const string& pre) {
 }
 
 void deleteWord(const string& word) {
-    if (search(word) > 0) {
+    if(search(word) > 0) {
         int cur = 1;
         --passCnt[cur];
 
-        for (int i = 0; i < (int)word.size(); ++i) {
+        for(int i = 0; i < (int)word.size(); ++i) {
             int path = word[i] - 'a';
 
-            if (--passCnt[tree[cur][path]] == 0) {
+            if(--passCnt[tree[cur][path]] == 0) {
                 tree[cur][path] = 0;
                 return;
             }
@@ -88,7 +88,7 @@ void deleteWord(const string& word) {
 }
 
 void clear() {
-    for (int i = 1; i <= cnt; ++i) {
+    for(int i = 1; i <= cnt; ++i) {
         fill(tree[i], tree[i] + 26, 0);
         endCnt[i] = 0;
         passCnt[i] = 0;
@@ -99,21 +99,21 @@ void solve() {
     int m;
 
     // 和原 Java 一样，支持读取到文件结束
-    while (cin >> m) {
+    while(cin >> m) {
         build();
 
-        for (int i = 1; i <= m; ++i) {
+        for(int i = 1; i <= m; ++i) {
             int op;
             string word;
             cin >> op >> word;
 
-            if (op == 1) {
+            if(op == 1) {
                 insert(word);
-            } else if (op == 2) {
+            } else if(op == 2) {
                 deleteWord(word);
-            } else if (op == 3) {
+            } else if(op == 3) {
                 cout << (search(word) > 0 ? "YES" : "NO") << endl;
-            } else if (op == 4) {
+            } else if(op == 4) {
                 cout << prefixNumber(word) << endl;
             }
         }
@@ -129,7 +129,7 @@ signed main() {
 
     int _ = 1;
     // cin >> _;
-    while (_--) {
+    while(_--) {
         solve();
     }
 
