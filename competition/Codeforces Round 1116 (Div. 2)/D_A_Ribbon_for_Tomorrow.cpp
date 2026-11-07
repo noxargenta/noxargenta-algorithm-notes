@@ -41,7 +41,7 @@ void solve() {
         }else {
             cnt1++;
         }
-        if(i<n-1 && s[i]!=s[i+1]){
+        if(i==n-1 && s[i]!=s[i+1]){
             
             if(s[i]=='0'){
                 a++;
