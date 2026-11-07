@@ -37,7 +37,17 @@ void solve() {
                 }
             }
         }
-        
+        for(;r<n;r+=2){
+            if(s[r]=='?'){
+                s[r]=!last2 + '0';
+                last2=!last2;
+            }else {
+                if(s[r]==last2){
+                    cout << 0 << endl;
+                    return;
+                }
+            }
+        }
     }
 }
 
