@@ -21,10 +21,7 @@ auto qpow(ll x,ll k){
 }
 ll c(ll x,ll k){
     ll ans=1;
-    ans=ans*(fac[x]*ifac[k]) %mod;
-    for(ll i=k;i>1;i--){
-        ans=ans*ifac[i]%mod;
-    }
+    ans=ans*(fac[x]%mod*ifac[k]%mod * ifac[x-k]%mod) %mod;
     return ans;
 }
 void solve() {
@@ -63,8 +60,8 @@ signed main() {
     fac[0]=1;
     ifac[1]=qpow(1,mod-2);
     for(ll i=2;i<=1e6+1;i++){
-        fac[i]=fac[i-1]*i;
-        ifac[i]=qpow(i,mod-2);
+        fac[i]=fac[i-1]*i%mod;
+        ifac[i]=fac[]qpow(i,mod-2);
     }
     
     int _ = 1;
