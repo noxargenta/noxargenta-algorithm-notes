@@ -22,7 +22,11 @@ void solve() {
         if(p == n - 1) return true;
 
         auto ok = [&](int l, int r, int mx) {
-            return 2 * mx <= x && pre[max(0, l - 1)] <= x && suf[r + 1] <= x && (l == 0 || abs(a[l - 1] - 2 * a[r]) <= x) && (r == n - 1 || abs(2 * a[l] - a[r + 1]) <= x);
+            return 2 * mx <= x && 
+            pre[max(0, l - 1)] <= x && 
+            suf[r + 1] <= x &&
+             (l == 0 || abs(a[l - 1] - 2 * a[r]) <= x)
+         && (r == n - 1 || abs(2 * a[l] - a[r + 1]) <= x);
         };
 
         int mx = 0;
