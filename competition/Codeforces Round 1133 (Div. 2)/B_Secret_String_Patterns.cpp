@@ -14,8 +14,7 @@ void solve() {
         cout << "! NO\n";
         return;
     }   
-    cout.flush();
-    
+
     cout << "? 1 " << x <<endl;
     ll k;
     cin >> k;
