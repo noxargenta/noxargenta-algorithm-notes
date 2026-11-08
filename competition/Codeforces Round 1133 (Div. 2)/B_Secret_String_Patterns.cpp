@@ -11,16 +11,16 @@ void solve() {
     ll x;
     cin >> x;
     if(x==0 || x==n){
-        cout << "!NO\n";
+        cout << "! NO\n";
         return;
     }   
     cout << "? 1 " << x <<endl;
     ll k;
     cin >> k;
     if(k<x){
-        cout << "YES\n";
+        cout << "! YES\n";
     }else {
-        cout << "!NO\n";
+        cout << "! NO\n";
     }
 
 }
@@ -30,7 +30,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
