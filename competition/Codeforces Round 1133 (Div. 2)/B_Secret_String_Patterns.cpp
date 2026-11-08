@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 using i64 = long long;
-#define endl '\n'
+//#define endl '\n'
 #define ll long long
 #define ull unsigned long long
 void solve() {
@@ -14,7 +14,14 @@ void solve() {
         cout << "!NO\n";
         return;
     }   
-    
+    cout << "? 1 " << x <<endl;
+    ll k;
+    cin >> k;
+    if(k<x){
+        cout << "YES\n";
+    }else {
+        cout << "!NO\n";
+    }
 
 }
 
