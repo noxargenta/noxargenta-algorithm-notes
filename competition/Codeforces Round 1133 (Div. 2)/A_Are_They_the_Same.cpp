@@ -9,6 +9,7 @@ void solve() {
     cin >> n >> k;
     vector<ll> a(n+1);
     vector<ll> b(n+1);
+    k%=2;
 
     for(ll i=1;i<=n;i++){
         cin >> a[i];
