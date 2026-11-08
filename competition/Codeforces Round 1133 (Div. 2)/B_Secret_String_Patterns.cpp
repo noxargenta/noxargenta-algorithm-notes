@@ -5,7 +5,16 @@ using i64 = long long;
 #define ll long long
 #define ull unsigned long long
 void solve() {
+    ll n;
+    cin >> n;
+    cout << "? 1 " << n;
+    ll x;
+    cin >> x;
+    if(x==0 || x==n){
+        cout << "!NO\n";
+    }   
     
+
 }
 
 signed main() {
