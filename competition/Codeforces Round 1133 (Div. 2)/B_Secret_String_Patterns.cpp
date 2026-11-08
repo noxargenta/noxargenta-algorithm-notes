@@ -12,6 +12,7 @@ void solve() {
     cin >> x;
     if(x==0 || x==n){
         cout << "! NO\n";
+        cout.flush();
         return;
     }   
 
@@ -20,8 +21,10 @@ void solve() {
     cin >> k;
     if(k<x){
         cout << "! YES\n";
+        cout.flush();
     }else {
         cout << "! NO\n";
+        cout.flush();
     }
 
 }
