@@ -7,13 +7,15 @@ using i64 = long long;
 void solve() {
     ll n;
     cin >> n;
-    cout << "? 1 " << n;
+    cout << "? 1 " << n <<endl;
     ll x;
     cin >> x;
     if(x==0 || x==n){
         cout << "! NO\n";
         return;
     }   
+    cout.flush();
+    
     cout << "? 1 " << x <<endl;
     ll k;
     cin >> k;
