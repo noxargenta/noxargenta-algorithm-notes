@@ -12,6 +12,7 @@ void solve() {
     cin >> x;
     if(x==0 || x==n){
         cout << "!NO\n";
+        return;
     }   
     
 
