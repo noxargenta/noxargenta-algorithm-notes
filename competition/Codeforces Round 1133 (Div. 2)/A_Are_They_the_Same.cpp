@@ -10,14 +10,31 @@ void solve() {
     vector<ll> a(n+1);
     vector<ll> b(n+1);
     k%=2;
-
+    ll cnt0=0,cnt1=0,m0=0,m1=0,cnt=0;
     for(ll i=1;i<=n;i++){
         cin >> a[i];
+        if(a[i]%2 == !k){
+            cnt++;
+        }else if(a[i]&1){
+            cnt1++;
+        }else {
+            cnt0++;
+        }
     }
     for(ll i=1;i<=n;i++){
         cin >> b[i];
+        if(b[i]&1){
+            m1++;
+        }else {
+            m0++;
+        }
     }
-    
+
+    if(cnt1>m1 || cnt0 > m0){
+        cout << "NO\n";
+    }else {
+        cout << "YES\n";
+    }
 }
 
 signed main() {
