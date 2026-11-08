@@ -7,6 +7,15 @@ using i64 = long long;
 void solve() {
     ll n,k;
     cin >> n >> k;
+    vector<ll> a(n+1);
+    vector<ll> b(n+1);
+
+    for(ll i=1;i<=n;i++){
+        cin >> a[i];
+    }
+    for(ll i=1;i<=n;i++){
+        cin >> b[i];
+    }
     
 }
 
