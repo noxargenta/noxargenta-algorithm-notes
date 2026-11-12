@@ -16,9 +16,9 @@ void solve() {
     }
     sort(a.begin(),a.begin()+4);
     sort(a.begin()+4,a.end());
-    for(ll i=0;i<8;i++){
-        cout << a[i].first << " " << a[i].second <<endl;
-    }
+    // for(ll i=0;i<8;i++){
+    //     cout << a[i].first << " " << a[i].second <<endl;
+    // }
     if (a[3].first > a[7].first) {
         cout << a[3].second << " beats " << a[7].second << endl;
     } else {
