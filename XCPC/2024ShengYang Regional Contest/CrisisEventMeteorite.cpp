@@ -15,7 +15,7 @@ void solve() {
 
     }
     sort(a.begin(),a.begin()+4);
-    sort(a.end()+4,a.end());
+    sort(a.begin()+4,a.end());
     for(ll i=0;i<8;i++){
         cout << a[i].first << " " << a[i].second <<endl;
     }
