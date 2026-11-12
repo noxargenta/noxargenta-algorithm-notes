@@ -5,16 +5,16 @@ using i64 = long long;
 #define ll long long
 #define ull unsigned long long
 void solve() {
+    map<ll,ll> cnt;
+    vector<ll> a,b;
     for(ll i=1;i<=1000;i++){
-        for(ll j=1;j<=1000;j++){
-            for(ll a=1;a<=1000;a++){
-                for(ll b=1;b<=1000;b++){
-                    if((a==i && b==j) ||(a==j && b==i)){
-                        continue;
-                    }else if(a*b==i*j){
-                        cout << a << "*" << b << "==" << i << "*" << j << endl;
-                    }
-                }
+        a.push_back(i);
+        b.push_back(i+1);
+    }
+    for(auto i : a ){
+        for(auto j : b){
+            if(cnt[i*j]==1){
+                cout << "NO\n";
             }
         }
     }
