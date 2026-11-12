@@ -7,7 +7,7 @@ using i64 = long long;
 void solve() {
     map<ll,ll> cnt;
     vector<ll> a,b;
-    for(ll i=1;i<=1000;i++){
+    for(ll i=1;i<=5000;i++){
         a.push_back(i);
         b.push_back(i+1);
     }
