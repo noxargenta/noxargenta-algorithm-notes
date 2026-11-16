@@ -5,8 +5,14 @@ using i64 = long long;
 #define ll long long
 ll n;
 #define ull unsigned long long
+
 void solve() {
     cin >> n;
+    vector<string> g(n);
+    for(ll i=0;i<n;i++){
+        cin >> g[i];
+    }
+    
 
 }
 
