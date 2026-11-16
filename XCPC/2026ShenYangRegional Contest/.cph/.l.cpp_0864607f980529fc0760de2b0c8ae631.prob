@@ -1,0 +1,1 @@
+{"name":"Local: l","url":"c:\\code\\c++lan\\XCPC\\2026ShenYangRegional Contest\\l.cpp","tests":[{"id":1794840334833,"input":"5\naa\nabab-\n--\nabcabc\nicpc-ec-shenyang","output":"a\na\n-\nabcabc\nicshenyang"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\XCPC\\2026ShenYangRegional Contest\\l.cpp","group":"local","local":true}
