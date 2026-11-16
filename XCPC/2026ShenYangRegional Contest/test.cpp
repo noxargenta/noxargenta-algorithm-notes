@@ -5,7 +5,7 @@ using i64 = long long;
 #define ll long long
 #define ull unsigned long long
 void solve() {
-    1111
+    
 }
 
 signed main() {
