@@ -1,0 +1,1 @@
+{"name":"Local: H","url":"c:\\code\\c++lan\\XCPC\\2026ShenYangRegional Contest\\H.cpp","tests":[{"id":1794843123287,"input":"4\n1...\n..3.\n.4..\n...2","output":"1113\n1133\n1432\n3332"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\code\\c++lan\\XCPC\\2026ShenYangRegional Contest\\H.cpp","group":"local","local":true}
