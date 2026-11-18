@@ -15,17 +15,22 @@ void solve() {
         if(s[0]>='a'  && s[0]<='z') cnt[s[0]+('A'-'a')]++ ;
         
     }
+    bool ok=1;
+
     for(ll i=0;i<m;i++){
         string s;
         cin >> s;
         for(ll j=0;j<s.size();j++){
             if(cnt[s[j]]==0){
-                cout << "NO\n";
-                return;
+                ok=0;
             }
         }
     }
-    cout << "YES\n";
+    if(ok){
+        cout << "YES\n";
+        return;
+    }
+    cout << "NO\n";
 }
 signed main() {
 //  freopen("../data/data.in","r",stdin), freopen("../data/data.out","w",stdout);
