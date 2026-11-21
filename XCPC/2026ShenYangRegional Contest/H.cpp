@@ -55,26 +55,22 @@ void solve() {
             ll iniy=y1;
             
         }
-        for (ll xx = x + 1; xx < n && vis[xx][y] != 2 && vis[xx][y]!=-1; xx++) {
-            vis[xx][y] = 1;
-        }
-        for(ll xx=x-1;xx>=0 && vis[xx][y]!=2 && vis[xx][y]!=-1;xx--){
-            vis[xx][y]=1;
-        }
-        for (ll yy = y + 1; yy < n && vis[x][yy] != 2 && vis[x][yy]!=-1; yy++) {
-            vis[x][yy] = 1;
-        }
-        for(ll yy=y-1;yy>=0 && vis[x][yy]!=2 && vis[x][yy]!=-1;yy--){
-            vis[x][yy]=1;
-        }
-        cout << "debug------------" <<endl;
-        for(auto x : g){
-            for(auto y: x){
-                cout << y;
+        for (ll i = 0; i < n; i++) {
+            if (vis[x][i] == 0) {
+                vis[x][i] = 1;
             }
-            cout << endl;
+            if (vis[i][y] == 0) {
+                vis[i][y] = 1;
+            }
         }
-        cout << "debug------------" <<endl;
+        // cout << "debug------------" <<endl;
+        // for(auto x : g){
+        //     for(auto y: x){
+        //         cout << y;
+        //     }
+        //     cout << endl;
+        // }
+        // cout << "debug------------" <<endl;
 
     }
     for(auto x : g){
@@ -96,7 +92,7 @@ signed main() {
     }
     return 0;
 }
-1332
-4432
-4442
-2222
+// 1332
+// 4432
+// 4442
+// 2222
