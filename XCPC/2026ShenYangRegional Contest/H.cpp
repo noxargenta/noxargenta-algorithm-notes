@@ -53,11 +53,11 @@ void solve() {
             }
             ll inix=x1;
             ll iniy=y1;
-            while(x1<n){
+            while(x1<n && vis[x1][iniy]!=2){
                 vis[x1][iniy]=1;
                 x1++;
             }
-            while(y1<n){
+            while(y1<n && vis[inix][y1]!=2){
                 vis[inix][y1]=1;
                 y1++;
             }
