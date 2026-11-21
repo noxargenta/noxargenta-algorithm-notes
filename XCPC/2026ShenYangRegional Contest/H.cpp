@@ -61,11 +61,16 @@ void solve() {
                 vis[inix][y1]=1;
                 y1++;
             }
-            
+
         }
 
     }
-
+    for(auto x : g){
+        for(auto y: x){
+            cout << y;
+        }
+        cout << endl;
+    }
 }
 
 signed main() {
