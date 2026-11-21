@@ -13,8 +13,16 @@ void solve() {
     for(ll i=0;i<n;i++){
         cin >> g[i];
     }
-    vector<vector<bool>> vis(10,vector<bool>(10,0));
-    
+    vector<vector<ll>> vis(10,vector<ll>(10,0LL));
+    for(ll i=0;i<n;i++){
+        for(ll j=0;j<n;j++){
+            if(g[i][j]!='.'){
+                vis[i][j]=2;//2表示战车的位置;
+                
+            }
+        }
+    }
+
 
 }
 
