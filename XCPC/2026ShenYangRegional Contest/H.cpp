@@ -46,9 +46,22 @@ void solve() {
                 if(xx > mx || yy > my || yy<0 || xx < 0)continue;
                 if(vis[xx][yy]==1){
                     vis[xx][yy]=-1;
-                    
+                    g[xx][yy]=g[x1][y1];
+                    q.push({xx,yy});
                 }
+                
             }
+            ll inix=x1;
+            ll iniy=y1;
+            while(x1<n){
+                vis[x1][iniy]=1;
+                x1++;
+            }
+            while(y1<n){
+                vis[inix][y1]=1;
+                y1++;
+            }
+            
         }
 
     }
