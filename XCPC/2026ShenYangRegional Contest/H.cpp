@@ -67,6 +67,14 @@ void solve() {
         for(ll yy=y-1;yy>=0 && vis[x][yy]!=2 && vis[x][yy]!=-1;yy--){
             vis[x][yy]=1;
         }
+        cout << "debug------------" <<endl;
+        for(auto x : g){
+            for(auto y: x){
+                cout << y;
+            }
+            cout << endl;
+        }
+        cout << "debug------------" <<endl;
 
     }
     for(auto x : g){
