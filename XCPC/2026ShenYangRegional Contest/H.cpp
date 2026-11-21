@@ -13,6 +13,7 @@ void solve() {
     for(ll i=0;i<n;i++){
         cin >> g[i];
     }
+    vector<vector<bool>> vis(10,vector<bool>(10,0));
     
 
 }
