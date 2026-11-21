@@ -53,18 +53,19 @@ void solve() {
             }
             ll inix=x1;
             ll iniy=y1;
-            for (ll xx = x1 + 1; xx < n && vis[xx][y1] != 2 && vis[xx][y1]!=-1; xx++) {
-                vis[xx][y1] = 1;
-            }
-            for(ll xx=x1-1;xx>=0 && vis[xx][y1]!=2 && vis[xx][y1]!=-1;xx--){
-                vis[xx][y1]=1;
-            }
-            for (ll yy = y1 + 1; yy < n && vis[x1][yy] != 2 && vis[x1][yy]!=-1; yy++) {
-                vis[x1][yy] = 1;
-            }
-            for(ll yy=y1-1;yy>=0 && vis[x1][yy]!=2 && vis[x1][yy]!=-1;yy--){
-                vis[x1][yy]=1;
-            }
+            
+        }
+        for (ll xx = x + 1; xx < n && vis[xx][y] != 2 && vis[xx][y]!=-1; xx++) {
+            vis[xx][y] = 1;
+        }
+        for(ll xx=x-1;xx>=0 && vis[xx][y]!=2 && vis[xx][y]!=-1;xx--){
+            vis[xx][y]=1;
+        }
+        for (ll yy = y + 1; yy < n && vis[x][yy] != 2 && vis[x][yy]!=-1; yy++) {
+            vis[x][yy] = 1;
+        }
+        for(ll yy=y-1;yy>=0 && vis[x][yy]!=2 && vis[x][yy]!=-1;yy--){
+            vis[x][yy]=1;
         }
 
     }
