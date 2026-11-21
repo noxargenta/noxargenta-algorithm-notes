@@ -5,6 +5,7 @@ using i64 = long long;
 #define ll long long
 ll n;
 #define ull unsigned long long
+ll l,r;
 
 void solve() {
     cin >> n;
