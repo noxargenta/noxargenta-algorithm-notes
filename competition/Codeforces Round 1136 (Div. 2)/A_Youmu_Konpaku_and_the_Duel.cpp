@@ -12,11 +12,10 @@ void solve() {
         ll hp=x;
         ll cnt=c;
         ll atk=c+1;
-        while(hp>=0 && cnt < ans){
+        while(hp>0 && cnt < ans){
             cnt++;
             hp-=atk;
             atk=max(1LL,atk-1);
-
         }
         if(hp<=0)ans=min(ans,cnt);
     }
