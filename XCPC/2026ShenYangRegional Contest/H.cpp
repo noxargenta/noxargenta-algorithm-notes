@@ -24,6 +24,7 @@ void solve() {
             }
         }
     }
+    reverse(point.begin(), point.end()); // 从下往上
     queue<pair<ll,ll>> q;
     for(auto [x,y] : point){
         
