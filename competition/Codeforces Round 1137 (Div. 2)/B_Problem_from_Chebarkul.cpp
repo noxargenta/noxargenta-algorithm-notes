@@ -12,9 +12,27 @@ void solve() {
         cin >> a[i];
     }
     ll x=n-k+1;
+    ll last=-1;
+    ll cnt=1;
+    vector<ll> al(n+1);
     for(ll i=0;i<n;i++){
-        for(ll )
+        if(a[i]==last){
+            cnt++;
+        }else {
+            cnt=1;
+            
+        }
+        al[i]=cnt;
+        last=a[i];
+
     }
+    ll ans=0;
+    for(ll i=0;i<n;i++){
+        if(al[i]>=x){
+            ans++;
+        }
+    }
+    cout << ans << endl;
 }
 
 signed main() {
