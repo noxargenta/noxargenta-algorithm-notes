@@ -8,9 +8,9 @@ void solve() {
     ll x;
     cin >> x;
     if(x % 4==2){
-        cout << "NO\n";
+        cout << "No\n";
     }else {
-        cout << "YES\n";
+        cout << "Yes\n";
     }
 }
 
