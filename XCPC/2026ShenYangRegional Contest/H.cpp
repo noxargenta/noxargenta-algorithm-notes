@@ -25,7 +25,6 @@ void solve() {
         }
     }
     ll mid = point[0].second; // 新增，必须在 reverse 前
-    reverse(point.begin(), point.end()); // 从下往上
     queue<pair<ll,ll>> q;
     for(auto [x,y] : point){
         
