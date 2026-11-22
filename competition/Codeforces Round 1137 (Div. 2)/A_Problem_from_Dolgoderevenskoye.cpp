@@ -5,7 +5,13 @@ using i64 = long long;
 #define ll long long
 #define ull unsigned long long
 void solve() {
-    
+    ll x;
+    cin >> x;
+    if(x % 4==2){
+        cout << "NO\n";
+    }else {
+        cout << "YES\n";
+    }
 }
 
 signed main() {
@@ -13,7 +19,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+     cin >> _;
     while(_--) {
         solve();
     }
