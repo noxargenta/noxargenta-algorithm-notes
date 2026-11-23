@@ -24,7 +24,11 @@ void solve() {
             if(hitbase!=inf){
                 val = min(val,hitbase + hit);
             }
-            if()
+            if(best[y]!=inf) {
+                val=min(val,best[y] + miss);
+            }
+            dp[x][y] = val;
+            
         }
     }
 }
