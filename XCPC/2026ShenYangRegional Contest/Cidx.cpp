@@ -4,7 +4,10 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 #define ull unsigned long long
+const ll inf=LLONG_MAX;
 void solve() {
+    ll n,m,A,B,C;
+    cin >> n >> m >> A>> B >> C;
     
 }
 
@@ -13,13 +16,13 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
     return 0;
 }
-Input 
+/* Input 
 1
 4
 2 2 1 2 3
@@ -30,8 +33,10 @@ Input
 1 2 2 3 1
 5 3 3 1 4
 1 2 2 3 1
-Output 1
+Output 
+1
 2
 7
 9
-13
+13 
+*/
