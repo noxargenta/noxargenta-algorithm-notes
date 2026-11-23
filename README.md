@@ -193,6 +193,7 @@
 | 计数 DP | `P_1077_NOIP_2012_普及组_摆花.cpp` — **三维 DP，`dp[i][j][k]` 前 i 种花 j 盆和为 k** | [study/](./study/P_1077_NOIP_2012_普及组_摆花.cpp) |
 | 树形 DP | DSU on tree、树上 DFS 类 | 各比赛 |
 | 状压 DP — 排列计数（偏序约束） | `Lazy_Shuffling.cpp` — **DP over subsets 统计满足前置约束的排列数，见[笔记15](./笔记/15-状压DP-排列计数.md)** | [competition/niukemanyschool2](./competition/niukemanyschool2/Lazy_Shuffling.cpp) |
+| 缓存 DP — 基准费用与行最小值 | `Cidx.cpp`、`C. To Cache, or Not to Cache.cpp` — **有序双槽状态、`best` 优化与原地更新，见[笔记 22](./笔记/22-缓存DP-基准费用与行最小值优化.md)** | [XCPC/2026ShenYangRegional Contest](./XCPC/2026ShenYangRegional%20Contest) |
 
 </details>
 
