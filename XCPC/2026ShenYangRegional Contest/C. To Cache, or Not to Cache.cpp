@@ -4,7 +4,8 @@ using i64 = long long;
 #define endl '\n'
 #define ll long long
 #define ull unsigned long long
-constexpr long long INF = 1LL << 60;
+
+const ll INF=LLONG_MAX;
 void solve() {
     int n, m;
     long long A, B, C;
@@ -16,7 +17,7 @@ void solve() {
     vector<vector<long long>> dp(m + 1, vector<long long>(m + 1, INF));
     vector<long long> best(m + 1, INF);
     dp[0][0] = best[0] = 0;
-    long long answer = 0;
+    long long ans = 0;
 
     for (int i = 0; i < n; ++i) {
         int x;
@@ -34,10 +35,10 @@ void solve() {
             dp[x][y] = value;
             best[x] = min(best[x], value);
         }
-        answer = min(answer, best[x]);
+        ans = min(ans, best[x]);
     }
 
-    cout << n * A + answer << '\n';
+    cout << n * A + ans << '\n';
 }
 
 signed main() {
