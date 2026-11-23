@@ -44,7 +44,7 @@ void solve() {
             if (hitBase != INF) value = min(value, hitBase + hit);
 
             // 方式三：缓存未命中。原来是 [y, z]，
-            // 插入 x 后保留 y，得到 [x, y]。
+            // 插入 x 后保留 y，得到 [x, y]。   
             // 如果 best[y] 恰好来自 [y, x]，实际会命中。
             // 上面已按命中费用算过它，且 hit <= miss，因此取 min 时无碍。
             if (best[y] != INF) value = min(value, best[y] + miss);
