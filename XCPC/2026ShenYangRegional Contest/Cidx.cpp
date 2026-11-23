@@ -16,7 +16,7 @@ void solve() {
     for(ll i=1;i<=n;i++){
         ll x;
         cin >> x;
-        
+        for()
     }
 }
 
