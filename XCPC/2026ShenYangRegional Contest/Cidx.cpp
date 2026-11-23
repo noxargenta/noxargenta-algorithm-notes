@@ -28,7 +28,7 @@ void solve() {
                 val=min(val,best[y] + miss);
             }
             dp[x][y] = val;
-            
+            best[x] = min(best[x],val);
         }
     }
 }
