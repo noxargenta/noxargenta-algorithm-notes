@@ -45,6 +45,9 @@ void solve() {
                 ll xx=x1+dx[i];
                 ll yy=y1+dy[i];
                 if(xx > mx || yy > my || yy<0 || xx < 0)continue;
+                if(xx > x1){
+                    continue;
+                }
                 if(vis[xx][yy]==1){
                     vis[xx][yy]=-1;
                     g[xx][yy]=g[x1][y1];
