@@ -13,10 +13,19 @@ void solve() {
     const ll miss= C-A;
     vector<ll> best(m+1,inf);
     dp[0][0] = best[0] = 0;
-    for(ll i=1;i<=n;i++){
+    for(ll i=0;i<n;i++){
         ll x;
         cin >> x;
-        for()
+        for(ll y=0;y<=m;y++){
+            if(y==x)continue;
+            ll val = dp[x][y];
+            ll hitbase = min(dp[x][y],dp[y][x]);
+            //缓存命中之后都会变成[x][y];
+            if(hitbase!=inf){
+                val = min(val,hitbase + hit);
+            }
+            if()
+        }
     }
 }
 
