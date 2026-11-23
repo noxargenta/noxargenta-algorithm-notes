@@ -8,11 +8,11 @@ const ll inf=LLONG_MAX;
 void solve() {
     ll n,m,A,B,C;
     cin >> n >> m >> A>> B >> C;
-    vector<vector<ll>> dp(m+1,vector<ll> (m+1,inf));
+    vector<vector<ll>> dp(m+1,vector<ll> (m+100,inf));
     const ll hit = B-A;
     const ll miss= C-A;
     ll ans=0;
-    vector<ll> best(m+1,inf);
+    vector<ll> best(m+100,inf);
     dp[0][0] = best[0] = 0;
     for(ll i=0;i<n;i++){
         ll x;
