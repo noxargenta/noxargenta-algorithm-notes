@@ -11,6 +11,7 @@ void solve() {
     vector<vector<ll>> dp(m+1,vector<ll> (m+1,inf));
     const ll hit = B-A;
     const ll miss= C-A;
+    ll ans=0;
     vector<ll> best(m+1,inf);
     dp[0][0] = best[0] = 0;
     for(ll i=0;i<n;i++){
@@ -30,7 +31,9 @@ void solve() {
             dp[x][y] = val;
             best[x] = min(best[x],val);
         }
+        ans=min(ans,best[x]);
     }
+    cout << n * A + ans <<endl;
 }
 
 signed main() {
