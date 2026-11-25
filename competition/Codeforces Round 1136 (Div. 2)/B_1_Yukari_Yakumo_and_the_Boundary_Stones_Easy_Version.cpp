@@ -9,7 +9,27 @@ void solve() {
     cin >> x >> y >> m;
     string s;
     cin >> s;
-    
+    for(auto xx : s){
+        if(xx=='-'){
+            if(y>=2){
+                y--;
+                x++;
+            }else if(x>=1){
+                x--;
+            }else if(y>=1){
+                y--;
+                x++;
+            }
+        }else{
+            if(y>=1){
+                y++;
+            }else if(x>=1){
+                x--;
+                y++;
+            }
+        }
+    }
+    cout << x + y << endl;
 }
 
 signed main() {
@@ -17,7 +37,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
