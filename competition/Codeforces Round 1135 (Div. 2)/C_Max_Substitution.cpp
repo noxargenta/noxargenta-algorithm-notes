@@ -30,7 +30,7 @@ void solve() {
     ll ans=1;
 
     for(ll i=0;i<n;i++){
-        if(i!=n-2 && a[i] == a[i+1]){
+        if(i!=n-1 && a[i] == a[i+1]){
             break;
         }
         ans = (ans + qpow(a[i]-1,i + 1)) % mod;
