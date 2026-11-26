@@ -9,14 +9,18 @@ void solve(){
     }else {
         cout << 4 << " " ;
         ll cnt=2;
-        for(ll i=x;i>=2;i--){
+        for(ll i=x;i>=1;i--){
             if(i==4)continue;
             
             if(cnt==4){
                 cout << 1 << " ";
+                cnt++;
             }
-            cnt++;
+            if(i==1){
+                continue;
+            }
             cout << i <<  " ";
+            cnt++;
         } 
         cout <<endl;
     }
