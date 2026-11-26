@@ -8,12 +8,12 @@ void solve(){
         cout << -1  << endl;
     }else {
         cout << 4 << " " ;
-        ll cnt=1;
+        ll cnt=2;
         for(ll i=x;i>=2;i--){
             if(i==4)continue;
+            
             if(cnt==4){
                 cout << 1 << " ";
-                continue;
             }
             cnt++;
             cout << i <<  " ";
