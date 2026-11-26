@@ -10,13 +10,10 @@ void solve() {
     string s;
     cin >> s;
     ll a=0,b=0;
-    for(auto x : s){
-        if(x=='0'){
-            a++;
-        }else{
-            b++;
-        }
-    }
+    a=count(s.begin(),s.end(),'0');
+    b=n-a;
+    ll minn=min(a,b);
+    
     cout << 1 +( (a+1) * a /2) + ((b+1) * b/2 ) << endl;
 }
 
