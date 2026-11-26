@@ -12,8 +12,13 @@ void solve() {
     ll a=0,b=0;
     a=count(s.begin(),s.end(),'0');
     b=n-a;
-    ll minn=min(a,b);
-    
+    if(a>b){
+        swap(a,b);
+    }
+    ll cnt = min(a,k);
+    a-=cnt;
+    b+=cnt;
+
     cout << 1 +( (a+1) * a /2) + ((b+1) * b/2 ) << endl;
 }
 
