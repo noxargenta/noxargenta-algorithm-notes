@@ -9,6 +9,8 @@ void solve() {
     cin >> x >> y >> m;
     string s;
     cin >> s;
+    ll ans=x+y;
+
     for(auto xx : s){
         if(xx=='-'){
             if(y>=2){
@@ -20,6 +22,7 @@ void solve() {
                 y--;
                 x++;
             }
+            ans=max(ans,x+y);
         }else{
             if(y>=1){
                 y++;
@@ -27,9 +30,10 @@ void solve() {
                 x--;
                 y++;
             }
+            ans=max(ans,x+y);
         }
     }
-    cout << x + y << endl;
+    cout << ans << endl;
 }
 
 signed main() {
