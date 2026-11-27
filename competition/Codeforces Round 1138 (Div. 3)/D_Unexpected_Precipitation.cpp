@@ -11,11 +11,16 @@ void solve() {
     for(ll i=0;i<n;i++){
         cin >> a[i];
     }
+    vector<ll> b(n);
+    for(ll i=0;i<n;i++){
+        cin >> b[i];
+    }
     ll dp[n+1];
     dp[n]=0;
     for(ll i=n-1;i>=0;i--){
-        dp[i] = max()
+        dp[i] = max(dp[i+1] + a[i] - b[i] , -dp[i]);
     }
+    
 }
 
 signed main() {
