@@ -13,17 +13,22 @@ void solve() {
         cin >> a[i];
     }
     sort(a.begin()+1,a.end());
-    vector<ll> pre(n,0);
+    vector<ll> pre(n+1,0);
     for(ll i=1;i<=n;i++){
         pre[i] = pre[i-1] + a[i];
     }
     ll last = 0;
     ll ok=0;
-    for(ll i=1;i<=n;i++){
-        if(i+last>=k && pre[i] - pre[last]){
-
+    for(ll i=k;i<=n;i+=k){
+        if(i+last>=k && pre[i] - pre[last] <= p){
+            ans+=p;
+            last = i;
         }
     }
+    for(ll i=last;i<=n;i++){
+        ans+=a[i];
+    }
+    cout  <<  ans << endl;
 
 }
 
@@ -32,7 +37,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int _ = 1;
-    // cin >> _;
+    cin >> _;
     while(_--) {
         solve();
     }
