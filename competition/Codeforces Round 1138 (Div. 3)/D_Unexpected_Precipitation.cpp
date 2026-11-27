@@ -20,7 +20,13 @@ void solve() {
     for(ll i=n-1;i>=0;i--){
         dp[i] = max(dp[i+1] + a[i] - b[i] , -dp[i]);
     }
-    
+    if(dp[0]>0){
+        cout << "Sunny" << endl;
+    }else if(dp[0]<0){
+        cout << "Aubrey" << endl;
+    }else {
+        cout << "Draw" << endl;
+    }
 }
 
 signed main() {
