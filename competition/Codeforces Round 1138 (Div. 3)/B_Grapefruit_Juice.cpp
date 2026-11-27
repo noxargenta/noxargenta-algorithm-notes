@@ -25,7 +25,7 @@ void solve() {
             last = i;
         }
     }
-    for(ll i=last;i<=n;i++){
+    for(ll i=last+1;i<=n;i++){
         ans+=a[i];
     }
     cout  <<  ans << endl;
