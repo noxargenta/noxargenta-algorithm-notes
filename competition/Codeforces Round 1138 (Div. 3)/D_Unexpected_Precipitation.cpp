@@ -18,7 +18,7 @@ void solve() {
     ll dp[n+1];
     dp[n]=0;
     for(ll i=n-1;i>=0;i--){
-        dp[i] = max(dp[i+1] + a[i] - b[i] , -dp[i]);
+        dp[i] = max(dp[i+1] + a[i] - b[i] , -dp[i+1]);
     }
     if(dp[0]>0){
         cout << "Sunny" << endl;
